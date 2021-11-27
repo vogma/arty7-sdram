@@ -3,16 +3,10 @@ file mkdir $outputDir
 
 set_part XC7A100TCSG324-1
 
-read_vhdl -library work [ glob ./src/uart/debounce.vhd ]  
-read_vhdl -library work [ glob ./src/*.vhd ]  
-read_vhdl -library work [glob ./src/sseg/*.vhd]
-read_vhdl -library work [glob ./src/ddr/*.vhd]
-#read_vhdl -library work [glob ./src/protocols/*.vhd]
-#read_vhdl -library work [glob ./src/vga/*.vhd]
-read_xdc ./constr/Arty-A7-100-Master.xdc       
-read_ip ./src/ip/clk_wiz_test/clk_wiz_test.xci  
-read_ip ./src/ip/blk_mem_gen_0_1/blk_mem_gen_0.xci  
-read_ip ./src/ip/mig_7series_0/mig_7series_0.xci
+read_vhdl -library work [ glob ./src/top.vhd ]  
+read_xdc ./constraints/Arty-A7-100-Master.xdc       
+read_ip ./ip/clk_wiz_test/clk_wiz_test.xci    
+read_ip ./ip/mig_7series_0/mig_7series_0.xci
 
 synth_design -top top -part XC7A100TCSG324-1 -flatten rebuilt 
 write_checkpoint -force $outputDir/post_synth
