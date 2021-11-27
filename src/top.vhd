@@ -22,11 +22,7 @@ ENTITY top IS
         ddr3_cke : OUT STD_LOGIC_VECTOR (0 TO 0);
         ddr3_cs_n : OUT STD_LOGIC_VECTOR (0 TO 0);
         ddr3_dm : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
-        ddr3_odt : OUT STD_LOGIC_VECTOR (0 TO 0);
-        sseg_cs_out : OUT STD_LOGIC;
-        ck_a10_power : OUT STD_LOGIC;
-        ck_a11_power : OUT STD_LOGIC;
-        sseg : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
+        ddr3_odt : OUT STD_LOGIC_VECTOR (0 TO 0)
     );
 END top;
 
