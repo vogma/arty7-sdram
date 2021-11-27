@@ -1,10 +1,3 @@
-#########################################################################################################
-##	This is an example .gitignore file for Vivado, please treat it as an example as 
-##	it might not be complete. In addition, XAPP 1165 should be followed.
-#########################################################################################################
-
-test/vunit_out
-test/vunit_out/*
 #########
 #Exclude all
 #########
@@ -60,7 +53,6 @@ test/vunit_out/*
 #Do NOT ignore *.xpr files
 !*.xpr
 #Include *.xml files for 2013.4 or earlier version
-!*.xml
 #########
 #Constraint files
 #########
@@ -88,3 +80,5 @@ test/vunit_out/*
 !*.elf
 !*.bmm
 !*.xmp
+tcl/.Xil/
+tcl/.Xil/Vivado-26532-marco/
