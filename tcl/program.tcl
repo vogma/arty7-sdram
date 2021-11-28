@@ -12,7 +12,7 @@ current_hw_device $FPGA
 refresh_hw_device -update_hw_probes false [lindex $FPGA 0]
 set_property PROBES.FILE {} $FPGA
 set_property FULL_PROBES.FILE {} $FPGA
-set_property PROGRAM.FILE {./output/top.bit} $FPGA
+set_property PROGRAM.FILE {../output/top.bit} $FPGA
 
 program_hw_devices $FPGA
 refresh_hw_device [lindex $FPGA 0]

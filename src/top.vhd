@@ -86,26 +86,26 @@ ARCHITECTURE Behavioral OF top IS
     END COMPONENT;
 
     --MIG Signals
-    SIGNAL app_addr : STD_LOGIC_VECTOR (27 DOWNTO 0);
-    SIGNAL app_cmd : STD_LOGIC_VECTOR (2 DOWNTO 0);
-    SIGNAL app_en : STD_LOGIC;
-    SIGNAL app_wdf_data : STD_LOGIC_VECTOR (127 DOWNTO 0);
-    SIGNAL app_wdf_end : STD_LOGIC;
-    SIGNAL app_wdf_mask : STD_LOGIC_VECTOR (15 DOWNTO 0);
-    SIGNAL app_wdf_wren : STD_LOGIC;
-    SIGNAL app_rd_data : STD_LOGIC_VECTOR (127 DOWNTO 0);
-    SIGNAL app_rd_data_end : STD_LOGIC;
-    SIGNAL app_rd_data_valid : STD_LOGIC;
-    SIGNAL app_rdy : STD_LOGIC;
-    SIGNAL app_wdf_rdy : STD_LOGIC;
+    SIGNAL app_addr : STD_LOGIC_VECTOR (27 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL app_cmd : STD_LOGIC_VECTOR (2 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL app_en : STD_LOGIC := '0';
+    SIGNAL app_wdf_data : STD_LOGIC_VECTOR (127 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL app_wdf_end : STD_LOGIC := '0';
+    SIGNAL app_wdf_mask : STD_LOGIC_VECTOR (15 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL app_wdf_wren : STD_LOGIC := '0';
+    SIGNAL app_rd_data : STD_LOGIC_VECTOR (127 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL app_rd_data_end : STD_LOGIC := '0';
+    SIGNAL app_rd_data_valid : STD_LOGIC := '0';
+    SIGNAL app_rdy : STD_LOGIC := '0';
+    SIGNAL app_wdf_rdy : STD_LOGIC := '0';
     SIGNAL app_sr_req : STD_LOGIC := '0';
     SIGNAL app_ref_req : STD_LOGIC := '0';
     SIGNAL app_zq_req : STD_LOGIC := '0';
-    SIGNAL app_sr_active : STD_LOGIC;
-    SIGNAL app_ref_ack : STD_LOGIC;
-    SIGNAL app_zq_ack : STD_LOGIC;
-    SIGNAL init_calib_complete : STD_LOGIC;
-    SIGNAL device_temp : STD_LOGIC_VECTOR (11 DOWNTO 0);
+    SIGNAL app_sr_active : STD_LOGIC := '0';
+    SIGNAL app_ref_ack : STD_LOGIC := '0';
+    SIGNAL app_zq_ack : STD_LOGIC := '0';
+    SIGNAL init_calib_complete : STD_LOGIC := '0';
+    SIGNAL device_temp : STD_LOGIC_VECTOR (11 DOWNTO 0) := (OTHERS => '0');
     SIGNAL sys_rst : STD_LOGIC := '0';
     SIGNAL ui_clk : STD_LOGIC := '0';
     SIGNAL ui_clk_sync_rst : STD_LOGIC := '0';
@@ -121,10 +121,11 @@ ARCHITECTURE Behavioral OF top IS
     SIGNAL sseg_cs_o : STD_LOGIC := '0';
 
     --Button Debounce Signal
-    SIGNAL edge : STD_LOGIC_VECTOR(3 DOWNTO 0);
-
-
+    SIGNAL edge : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
 BEGIN
+
+    sys_rst <= '1';
+
     sseg_controller : ENTITY work.sseg_controller(arch)
         PORT MAP(
             clk => clk,
@@ -176,6 +177,25 @@ BEGIN
         device_temp => device_temp,
         sys_rst => sys_rst
     );
+
+    dram_controller : ENTITY work.dram_controller
+        PORT MAP(
+            ui_clk => ui_clk,
+            ui_clk_sync_rst => ui_clk_sync_rst,
+            init_calib_complete => init_calib_complete,
+            app_rd_data => app_rd_data,
+            app_rd_data_valid => app_rd_data_valid,
+            app_rdy => app_rdy,
+            app_wdf_rdy => app_wdf_rdy,
+            app_addr => app_addr,
+            app_cmd => app_cmd,
+            app_en => app_en,
+            app_wdf_data => app_wdf_data,
+            app_wdf_end => app_wdf_end,
+            app_wdf_mask => app_wdf_mask,
+            app_wdf_wren => app_wdf_wren,
+            result => led
+        );
 
     clk_div_inst : clk_wiz_test
     PORT MAP(
