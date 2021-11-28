@@ -85,14 +85,50 @@ ARCHITECTURE Behavioral OF top IS
 
     END COMPONENT;
 
+    --MIG Signals
+    SIGNAL app_addr : STD_LOGIC_VECTOR (27 DOWNTO 0);
+    SIGNAL app_cmd : STD_LOGIC_VECTOR (2 DOWNTO 0);
+    SIGNAL app_en : STD_LOGIC;
+    SIGNAL app_wdf_data : STD_LOGIC_VECTOR (127 DOWNTO 0);
+    SIGNAL app_wdf_end : STD_LOGIC;
+    SIGNAL app_wdf_mask : STD_LOGIC_VECTOR (15 DOWNTO 0);
+    SIGNAL app_wdf_wren : STD_LOGIC;
+    SIGNAL app_rd_data : STD_LOGIC_VECTOR (127 DOWNTO 0);
+    SIGNAL app_rd_data_end : STD_LOGIC;
+    SIGNAL app_rd_data_valid : STD_LOGIC;
+    SIGNAL app_rdy : STD_LOGIC;
+    SIGNAL app_wdf_rdy : STD_LOGIC;
+    SIGNAL app_sr_req : STD_LOGIC := '0';
+    SIGNAL app_ref_req : STD_LOGIC := '0';
+    SIGNAL app_zq_req : STD_LOGIC := '0';
+    SIGNAL app_sr_active : STD_LOGIC;
+    SIGNAL app_ref_ack : STD_LOGIC;
+    SIGNAL app_zq_ack : STD_LOGIC;
+    SIGNAL init_calib_complete : STD_LOGIC;
+    SIGNAL device_temp : STD_LOGIC_VECTOR (11 DOWNTO 0);
+    SIGNAL sys_rst : STD_LOGIC := '0';
+    SIGNAL ui_clk : STD_LOGIC := '0';
+    SIGNAL ui_clk_sync_rst : STD_LOGIC := '0';
+
+    --PLL Signals 
+    SIGNAL clk_100_o : STD_LOGIC := '0';
+    SIGNAL clk_166_o : STD_LOGIC := '0';
+    SIGNAL clk_200_o : STD_LOGIC := '0';
+    SIGNAL pll_locked : STD_LOGIC := '0';
+
+    --Seven Segment Signals
+    SIGNAL sseg_o : STD_LOGIC_VECTOR(6 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL sseg_cs_o : STD_LOGIC := '0';
+
+    --Button Debounce Signal
+    SIGNAL edge : STD_LOGIC_VECTOR(3 DOWNTO 0);
+
 
 BEGIN
- 
-
     sseg_controller : ENTITY work.sseg_controller(arch)
         PORT MAP(
             clk => clk,
-            data_i => unsigned(data_read_from_memory_reg(7 DOWNTO 0)),
+            data_i => X"34",
             sseg_cs_o => sseg_cs_o,
             sseg_o => sseg_o
         );
