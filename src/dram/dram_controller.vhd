@@ -29,6 +29,9 @@ ARCHITECTURE arch OF dram_controller IS
     TYPE state_type IS (IDLE, WRITE, WRITE_DONE, READ, READ_DONE, PARK);
     SIGNAL state_reg, state_next : state_type := IDLE;
 
+    CONSTANT C_READ_COMMAND : STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
+    CONSTANT C_WRITE_COMMAND : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
+
     SIGNAL clk_cnt_reg, clk_cnt_next : unsigned(31 DOWNTO 0) := (OTHERS => '0');
     SIGNAL data_reg, data_next : unsigned(127 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_wdf_wren_reg, app_wdf_wren_next : STD_LOGIC := '0';
@@ -46,7 +49,7 @@ BEGIN
     app_cmd <= app_cmd_reg;
     app_wdf_data <= app_wdf_data_reg;
     result <= data_read_from_memory_reg(7 DOWNTO 0);
-    debug <= std_logic_vector(app_wdf_data_reg(3 DOWNTO 0));
+    debug <= STD_LOGIC_VECTOR(app_wdf_data_reg(3 DOWNTO 0));
 
     app_wdf_mask <= X"FFFC";
 
@@ -94,8 +97,6 @@ BEGIN
             WHEN IDLE =>
                 app_addr_next <= (17 => '1', OTHERS => '0');
                 IF (init_calib_complete = '1') THEN
-                    clk_cnt_next <= to_unsigned(20_000_000, clk_cnt_reg'length);
-                    data_next <= data_reg + 1;
                     data_read_from_memory_next <= (OTHERS => '0');
                     state_next <= WRITE;
                 END IF;
@@ -105,7 +106,7 @@ BEGIN
                     state_next <= WRITE_DONE;
                     app_en_next <= '1';
                     app_wdf_wren_next <= '1';
-                    app_cmd_next <= "000";
+                    app_cmd_next <= C_WRITE_COMMAND;
                     app_wdf_data_next <= STD_LOGIC_VECTOR(data_reg);
                 END IF;
 
@@ -125,7 +126,7 @@ BEGIN
             WHEN READ =>
                 IF app_rdy = '1' THEN
                     app_en_next <= '1';
-                    app_cmd_next <= "001";
+                    app_cmd_next <= C_READ_COMMAND;
                     state_next <= READ_DONE;
                 END IF;
 
@@ -142,10 +143,11 @@ BEGIN
             WHEN PARK =>
                 clk_cnt_next <= clk_cnt_reg - 1;
                 IF clk_cnt_reg = 0 THEN
-                    state_next <= idle;
+                    clk_cnt_next <= to_unsigned(20_000_000, clk_cnt_reg'length);
+                    data_next <= data_reg + 1;
+                    state_next <= IDLE;
                 END IF;
         END CASE;
-
     END PROCESS;
 
 END arch;
