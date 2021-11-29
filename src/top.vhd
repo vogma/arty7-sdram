@@ -22,7 +22,11 @@ ENTITY top IS
         ddr3_cke : OUT STD_LOGIC_VECTOR (0 TO 0);
         ddr3_cs_n : OUT STD_LOGIC_VECTOR (0 TO 0);
         ddr3_dm : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
-        ddr3_odt : OUT STD_LOGIC_VECTOR (0 TO 0)
+        ddr3_odt : OUT STD_LOGIC_VECTOR (0 TO 0);
+        sseg_cs_out : OUT STD_LOGIC;
+        ck_a10_power : OUT STD_LOGIC;
+        ck_a11_power : OUT STD_LOGIC;
+        sseg : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 END top;
 
@@ -119,17 +123,22 @@ ARCHITECTURE Behavioral OF top IS
     --Seven Segment Signals
     SIGNAL sseg_o : STD_LOGIC_VECTOR(6 DOWNTO 0) := (OTHERS => '0');
     SIGNAL sseg_cs_o : STD_LOGIC := '0';
+    SIGNAL result : STD_LOGIC_VECTOR(7 DOWNTO 0);
 
     --Button Debounce Signal
     SIGNAL edge : STD_LOGIC_VECTOR(3 DOWNTO 0) := (OTHERS => '0');
 BEGIN
 
     sys_rst <= '1';
+    ck_a10_power <= '1';
+    ck_a11_power <= '1';
+    sseg <= sseg_o;
+    sseg_cs_out <= sseg_cs_o;
 
     sseg_controller : ENTITY work.sseg_controller(arch)
         PORT MAP(
             clk => clk,
-            data_i => X"34",
+            data_i => unsigned(result),
             sseg_cs_o => sseg_cs_o,
             sseg_o => sseg_o
         );
@@ -194,7 +203,8 @@ BEGIN
             app_wdf_end => app_wdf_end,
             app_wdf_mask => app_wdf_mask,
             app_wdf_wren => app_wdf_wren,
-            result => led
+            result => result,
+            debug => led
         );
 
     clk_div_inst : clk_wiz_test

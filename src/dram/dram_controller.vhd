@@ -19,7 +19,8 @@ ENTITY dram_controller IS
         app_wdf_end : OUT STD_LOGIC;
         app_wdf_mask : OUT STD_LOGIC_VECTOR (15 DOWNTO 0);
         app_wdf_wren : OUT STD_LOGIC;
-        result : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+        result : OUT STD_LOGIC_VECTOR(7 DOWNTO 0);
+        debug : OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
     );
 END dram_controller;
 
@@ -30,6 +31,8 @@ ARCHITECTURE arch OF dram_controller IS
 
     CONSTANT data_to_write : STD_LOGIC_VECTOR(127 DOWNTO 0) := X"00000000000000000000000000000005";
 
+    SIGNAL clk_cnt_reg, clk_cnt_next : unsigned(31 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL data_reg, data_next : unsigned(127 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_wdf_wren_reg, app_wdf_wren_next : STD_LOGIC := '0';
     SIGNAL app_addr_reg, app_addr_next : STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_cmd_reg, app_cmd_next : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
@@ -44,8 +47,10 @@ BEGIN
     app_addr <= app_addr_reg;
     app_cmd <= app_cmd_reg;
     app_wdf_data <= app_wdf_data_reg;
-    result <= data_read_from_memory_reg(3 DOWNTO 0);
-    app_wdf_mask <= (OTHERS => '0');
+    result <= data_read_from_memory_reg(7 DOWNTO 0);
+    debug <= std_logic_vector(app_wdf_data_reg(3 DOWNTO 0));
+
+    app_wdf_mask <= X"FFFC";
 
     PROCESS (ui_clk, ui_clk_sync_rst)
     BEGIN
@@ -58,6 +63,8 @@ BEGIN
                 app_cmd_reg <= (OTHERS => '0');
                 app_wdf_data_reg <= (OTHERS => '0');
                 data_read_from_memory_reg <= (OTHERS => '0');
+                data_reg <= (OTHERS => '0');
+                clk_cnt_reg <= (OTHERS => '0');
             ELSE
                 state_reg <= state_next;
                 app_en_reg <= app_en_next;
@@ -66,11 +73,13 @@ BEGIN
                 app_cmd_reg <= app_cmd_next;
                 app_wdf_data_reg <= app_wdf_data_next;
                 data_read_from_memory_reg <= data_read_from_memory_next;
+                data_reg <= data_next;
+                clk_cnt_reg <= clk_cnt_next;
             END IF;
         END IF;
     END PROCESS;
 
-    PROCESS (app_rdy, state_reg, init_calib_complete, app_rd_data, app_wdf_rdy, app_en_reg, app_rd_data_valid, app_wdf_data_reg, app_wdf_wren_reg, app_cmd_reg, app_addr_reg, data_read_from_memory_reg)
+    PROCESS (app_rdy, state_reg, clk_cnt_reg, data_reg, init_calib_complete, app_rd_data, app_wdf_rdy, app_en_reg, app_rd_data_valid, app_wdf_data_reg, app_wdf_wren_reg, app_cmd_reg, app_addr_reg, data_read_from_memory_reg)
     BEGIN
         state_next <= state_reg;
         app_en_next <= app_en_reg;
@@ -79,12 +88,16 @@ BEGIN
         app_cmd_next <= app_cmd_reg;
         app_wdf_data_next <= app_wdf_data_reg;
         data_read_from_memory_next <= data_read_from_memory_reg;
+        clk_cnt_next <= clk_cnt_reg;
+        data_next <= data_reg;
 
         CASE state_reg IS
 
             WHEN IDLE =>
                 app_addr_next <= (17 => '1', OTHERS => '0');
                 IF (init_calib_complete = '1') THEN
+                    clk_cnt_next <= to_unsigned(20_000_000, clk_cnt_reg'length);
+                    data_next <= data_reg + 1;
                     data_read_from_memory_next <= (OTHERS => '0');
                     state_next <= WRITE;
                 END IF;
@@ -95,7 +108,7 @@ BEGIN
                     app_en_next <= '1';
                     app_wdf_wren_next <= '1';
                     app_cmd_next <= "000";
-                    app_wdf_data_next <= data_to_write;
+                    app_wdf_data_next <= STD_LOGIC_VECTOR(data_reg);
                 END IF;
 
             WHEN WRITE_DONE =>
@@ -129,9 +142,10 @@ BEGIN
                 END IF;
 
             WHEN PARK =>
-                -- IF data_to_write = data_read_from_memory_reg THEN
-                --     state_next <= IDLE;
-                -- END IF;
+                clk_cnt_next <= clk_cnt_reg - 1;
+                IF clk_cnt_reg = 0 THEN
+                    state_next <= idle;
+                END IF;
         END CASE;
 
     END PROCESS;
