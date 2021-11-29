@@ -29,14 +29,12 @@ ARCHITECTURE arch OF dram_controller IS
     TYPE state_type IS (IDLE, WRITE, WRITE_DONE, READ, READ_DONE, PARK);
     SIGNAL state_reg, state_next : state_type := IDLE;
 
-    CONSTANT data_to_write : STD_LOGIC_VECTOR(127 DOWNTO 0) := X"00000000000000000000000000000005";
-
     SIGNAL clk_cnt_reg, clk_cnt_next : unsigned(31 DOWNTO 0) := (OTHERS => '0');
     SIGNAL data_reg, data_next : unsigned(127 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_wdf_wren_reg, app_wdf_wren_next : STD_LOGIC := '0';
     SIGNAL app_addr_reg, app_addr_next : STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_cmd_reg, app_cmd_next : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
-    SIGNAL app_wdf_data_reg, app_wdf_data_next : STD_LOGIC_VECTOR(127 DOWNTO 0) := data_to_write;
+    SIGNAL app_wdf_data_reg, app_wdf_data_next : STD_LOGIC_VECTOR(127 DOWNTO 0);
     SIGNAL app_en_reg, app_en_next : STD_LOGIC := '0';
     SIGNAL data_read_from_memory_reg, data_read_from_memory_next : STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
 

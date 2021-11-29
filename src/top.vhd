@@ -102,9 +102,6 @@ ARCHITECTURE Behavioral OF top IS
     SIGNAL app_rd_data_valid : STD_LOGIC := '0';
     SIGNAL app_rdy : STD_LOGIC := '0';
     SIGNAL app_wdf_rdy : STD_LOGIC := '0';
-    SIGNAL app_sr_req : STD_LOGIC := '0';
-    SIGNAL app_ref_req : STD_LOGIC := '0';
-    SIGNAL app_zq_req : STD_LOGIC := '0';
     SIGNAL app_sr_active : STD_LOGIC := '0';
     SIGNAL app_ref_ack : STD_LOGIC := '0';
     SIGNAL app_zq_ack : STD_LOGIC := '0';
@@ -168,17 +165,17 @@ BEGIN
         app_cmd => app_cmd,
         app_en => app_en,
         app_wdf_data => app_wdf_data,
-        app_wdf_end => '0',
-        app_wdf_mask => (OTHERS => '0'),
+        app_wdf_end => '1',
+        app_wdf_mask => app_wdf_mask,
         app_wdf_wren => app_wdf_wren,
         app_rd_data => app_rd_data,
         app_rd_data_end => app_rd_data_end,
         app_rd_data_valid => app_rd_data_valid,
         app_rdy => app_rdy,
         app_wdf_rdy => app_wdf_rdy,
-        app_sr_req => app_sr_req,
+        app_sr_req => '0',
         app_ref_req => '0',
-        app_zq_req => app_zq_req,
+        app_zq_req => '0',
         app_sr_active => app_sr_active,
         app_ref_ack => app_ref_ack,
         app_zq_ack => app_zq_ack,

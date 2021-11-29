@@ -1,7 +1,7 @@
 // Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2020.2 (lin64) Build 3064766 Wed Nov 18 09:12:47 MST 2020
-// Date        : Mon Nov 29 12:08:40 2021
+// Date        : Mon Nov 29 12:32:13 2021
 // Host        : marco running 64-bit Ubuntu 21.10
 // Command     : write_verilog -force ../output/top_impl_netlist.v
 // Design      : top
@@ -269,7 +269,7 @@ module dram_controller
   wire \clk_cnt_reg[7]_i_1_n_0 ;
   wire \clk_cnt_reg[8]_i_1_n_0 ;
   wire \clk_cnt_reg[9]_i_1_n_0 ;
-  wire \clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ;
+  wire \clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ;
   wire \data_read_from_memory_reg[0]_i_1_n_0 ;
   wire \data_read_from_memory_reg[1]_i_1_n_0 ;
   wire \data_read_from_memory_reg[2]_i_1_n_0 ;
@@ -689,6 +689,7 @@ module dram_controller
         .D(\app_addr_reg[17]_i_1_n_0 ),
         .Q(app_addr),
         .R(ui_clk_sync_rst));
+  (* \PinAttr:I4:HOLD_DETOUR  = "198" *) 
   LUT5 #(
     .INIT(32'hBFFFAA00)) 
     \app_cmd_reg[0]_i_1 
@@ -731,9 +732,7 @@ module dram_controller
         .I1(app_rdy),
         .I2(\FSM_onehot_state_reg_reg_n_0_[1] ),
         .O(app_wdf_data_next));
-  FDRE #(
-    .INIT(1'b1)) 
-    \app_wdf_data_reg_reg[0] 
+  FDRE \app_wdf_data_reg_reg[0] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[0]),
@@ -742,320 +741,243 @@ module dram_controller
   (* OPT_INSERTED_REPDRIVER *) 
   (* OPT_MODIFIED = "SWEEP" *) 
   FDRE #(
-    .INIT(1'b1)) 
+    .INIT(1'b0)) 
     \app_wdf_data_reg_reg[0]_lopt_replica 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[0]),
         .Q(\app_wdf_data_reg_reg[0]_lopt_replica_1 ),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[100] 
+  FDRE \app_wdf_data_reg_reg[100] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[100]),
         .Q(Q[100]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[101] 
+  FDRE \app_wdf_data_reg_reg[101] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[101]),
         .Q(Q[101]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[102] 
+  FDRE \app_wdf_data_reg_reg[102] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[102]),
         .Q(Q[102]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[103] 
+  FDRE \app_wdf_data_reg_reg[103] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[103]),
         .Q(Q[103]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[104] 
+  FDRE \app_wdf_data_reg_reg[104] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[104]),
         .Q(Q[104]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[105] 
+  FDRE \app_wdf_data_reg_reg[105] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[105]),
         .Q(Q[105]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[106] 
+  FDRE \app_wdf_data_reg_reg[106] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[106]),
         .Q(Q[106]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[107] 
+  FDRE \app_wdf_data_reg_reg[107] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[107]),
         .Q(Q[107]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[108] 
+  (* \PinAttr:D:HOLD_DETOUR  = "180" *) 
+  FDRE \app_wdf_data_reg_reg[108] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[108]),
         .Q(Q[108]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[109] 
+  FDRE \app_wdf_data_reg_reg[109] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[109]),
         .Q(Q[109]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[10] 
+  FDRE \app_wdf_data_reg_reg[10] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[10]),
         .Q(Q[10]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[110] 
+  FDRE \app_wdf_data_reg_reg[110] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[110]),
         .Q(Q[110]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[111] 
+  FDRE \app_wdf_data_reg_reg[111] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[111]),
         .Q(Q[111]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[112] 
+  FDRE \app_wdf_data_reg_reg[112] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[112]),
         .Q(Q[112]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[113] 
+  FDRE \app_wdf_data_reg_reg[113] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[113]),
         .Q(Q[113]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[114] 
+  FDRE \app_wdf_data_reg_reg[114] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[114]),
         .Q(Q[114]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[115] 
+  FDRE \app_wdf_data_reg_reg[115] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[115]),
         .Q(Q[115]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[116] 
+  FDRE \app_wdf_data_reg_reg[116] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[116]),
         .Q(Q[116]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[117] 
+  FDRE \app_wdf_data_reg_reg[117] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[117]),
         .Q(Q[117]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[118] 
+  FDRE \app_wdf_data_reg_reg[118] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[118]),
         .Q(Q[118]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[119] 
+  FDRE \app_wdf_data_reg_reg[119] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[119]),
         .Q(Q[119]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[11] 
+  FDRE \app_wdf_data_reg_reg[11] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[11]),
         .Q(Q[11]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[120] 
+  FDRE \app_wdf_data_reg_reg[120] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[120]),
         .Q(Q[120]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[121] 
+  FDRE \app_wdf_data_reg_reg[121] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[121]),
         .Q(Q[121]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[122] 
+  FDRE \app_wdf_data_reg_reg[122] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[122]),
         .Q(Q[122]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[123] 
+  FDRE \app_wdf_data_reg_reg[123] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[123]),
         .Q(Q[123]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[124] 
+  FDRE \app_wdf_data_reg_reg[124] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[124]),
         .Q(Q[124]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[125] 
+  FDRE \app_wdf_data_reg_reg[125] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[125]),
         .Q(Q[125]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[126] 
+  FDRE \app_wdf_data_reg_reg[126] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[126]),
         .Q(Q[126]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[127] 
+  FDRE \app_wdf_data_reg_reg[127] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[127]),
         .Q(Q[127]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[12] 
+  FDRE \app_wdf_data_reg_reg[12] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[12]),
         .Q(Q[12]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[13] 
+  FDRE \app_wdf_data_reg_reg[13] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[13]),
         .Q(Q[13]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[14] 
+  FDRE \app_wdf_data_reg_reg[14] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[14]),
         .Q(Q[14]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[15] 
+  FDRE \app_wdf_data_reg_reg[15] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[15]),
         .Q(Q[15]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[16] 
+  FDRE \app_wdf_data_reg_reg[16] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[16]),
         .Q(Q[16]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[17] 
+  FDRE \app_wdf_data_reg_reg[17] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[17]),
         .Q(Q[17]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[18] 
+  FDRE \app_wdf_data_reg_reg[18] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[18]),
         .Q(Q[18]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[19] 
+  FDRE \app_wdf_data_reg_reg[19] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[19]),
         .Q(Q[19]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[1] 
+  FDRE \app_wdf_data_reg_reg[1] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[1]),
@@ -1071,89 +993,67 @@ module dram_controller
         .D(data_reg_reg[1]),
         .Q(\app_wdf_data_reg_reg[1]_lopt_replica_1 ),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[20] 
+  FDRE \app_wdf_data_reg_reg[20] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[20]),
         .Q(Q[20]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[21] 
+  FDRE \app_wdf_data_reg_reg[21] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[21]),
         .Q(Q[21]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[22] 
+  FDRE \app_wdf_data_reg_reg[22] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[22]),
         .Q(Q[22]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[23] 
+  FDRE \app_wdf_data_reg_reg[23] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[23]),
         .Q(Q[23]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[24] 
+  FDRE \app_wdf_data_reg_reg[24] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[24]),
         .Q(Q[24]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[25] 
+  FDRE \app_wdf_data_reg_reg[25] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[25]),
         .Q(Q[25]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[26] 
+  FDRE \app_wdf_data_reg_reg[26] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[26]),
         .Q(Q[26]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[27] 
+  FDRE \app_wdf_data_reg_reg[27] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[27]),
         .Q(Q[27]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[28] 
+  FDRE \app_wdf_data_reg_reg[28] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[28]),
         .Q(Q[28]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[29] 
+  FDRE \app_wdf_data_reg_reg[29] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[29]),
         .Q(Q[29]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b1)) 
-    \app_wdf_data_reg_reg[2] 
+  FDRE \app_wdf_data_reg_reg[2] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[2]),
@@ -1162,96 +1062,74 @@ module dram_controller
   (* OPT_INSERTED_REPDRIVER *) 
   (* OPT_MODIFIED = "SWEEP" *) 
   FDRE #(
-    .INIT(1'b1)) 
+    .INIT(1'b0)) 
     \app_wdf_data_reg_reg[2]_lopt_replica 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[2]),
         .Q(\app_wdf_data_reg_reg[2]_lopt_replica_1 ),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[30] 
+  FDRE \app_wdf_data_reg_reg[30] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[30]),
         .Q(Q[30]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[31] 
+  FDRE \app_wdf_data_reg_reg[31] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[31]),
         .Q(Q[31]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[32] 
+  FDRE \app_wdf_data_reg_reg[32] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[32]),
         .Q(Q[32]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[33] 
+  FDRE \app_wdf_data_reg_reg[33] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[33]),
         .Q(Q[33]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[34] 
+  FDRE \app_wdf_data_reg_reg[34] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[34]),
         .Q(Q[34]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[35] 
+  FDRE \app_wdf_data_reg_reg[35] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[35]),
         .Q(Q[35]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[36] 
+  FDRE \app_wdf_data_reg_reg[36] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[36]),
         .Q(Q[36]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[37] 
+  FDRE \app_wdf_data_reg_reg[37] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[37]),
         .Q(Q[37]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[38] 
+  FDRE \app_wdf_data_reg_reg[38] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[38]),
         .Q(Q[38]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[39] 
+  FDRE \app_wdf_data_reg_reg[39] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[39]),
         .Q(Q[39]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[3] 
+  FDRE \app_wdf_data_reg_reg[3] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[3]),
@@ -1267,529 +1145,397 @@ module dram_controller
         .D(data_reg_reg[3]),
         .Q(\app_wdf_data_reg_reg[3]_lopt_replica_1 ),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[40] 
+  FDRE \app_wdf_data_reg_reg[40] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[40]),
         .Q(Q[40]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[41] 
+  FDRE \app_wdf_data_reg_reg[41] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[41]),
         .Q(Q[41]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[42] 
+  FDRE \app_wdf_data_reg_reg[42] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[42]),
         .Q(Q[42]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[43] 
+  FDRE \app_wdf_data_reg_reg[43] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[43]),
         .Q(Q[43]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[44] 
+  FDRE \app_wdf_data_reg_reg[44] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[44]),
         .Q(Q[44]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[45] 
+  FDRE \app_wdf_data_reg_reg[45] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[45]),
         .Q(Q[45]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[46] 
+  FDRE \app_wdf_data_reg_reg[46] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[46]),
         .Q(Q[46]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[47] 
+  FDRE \app_wdf_data_reg_reg[47] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[47]),
         .Q(Q[47]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[48] 
+  FDRE \app_wdf_data_reg_reg[48] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[48]),
         .Q(Q[48]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[49] 
+  FDRE \app_wdf_data_reg_reg[49] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[49]),
         .Q(Q[49]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[4] 
+  FDRE \app_wdf_data_reg_reg[4] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[4]),
         .Q(Q[4]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[50] 
+  FDRE \app_wdf_data_reg_reg[50] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[50]),
         .Q(Q[50]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[51] 
+  FDRE \app_wdf_data_reg_reg[51] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[51]),
         .Q(Q[51]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[52] 
+  FDRE \app_wdf_data_reg_reg[52] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[52]),
         .Q(Q[52]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[53] 
+  FDRE \app_wdf_data_reg_reg[53] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[53]),
         .Q(Q[53]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[54] 
+  FDRE \app_wdf_data_reg_reg[54] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[54]),
         .Q(Q[54]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[55] 
+  FDRE \app_wdf_data_reg_reg[55] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[55]),
         .Q(Q[55]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[56] 
+  FDRE \app_wdf_data_reg_reg[56] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[56]),
         .Q(Q[56]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[57] 
+  FDRE \app_wdf_data_reg_reg[57] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[57]),
         .Q(Q[57]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[58] 
+  FDRE \app_wdf_data_reg_reg[58] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[58]),
         .Q(Q[58]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[59] 
+  FDRE \app_wdf_data_reg_reg[59] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[59]),
         .Q(Q[59]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[5] 
+  FDRE \app_wdf_data_reg_reg[5] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[5]),
         .Q(Q[5]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[60] 
+  FDRE \app_wdf_data_reg_reg[60] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[60]),
         .Q(Q[60]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[61] 
+  FDRE \app_wdf_data_reg_reg[61] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[61]),
         .Q(Q[61]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[62] 
+  FDRE \app_wdf_data_reg_reg[62] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[62]),
         .Q(Q[62]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[63] 
+  FDRE \app_wdf_data_reg_reg[63] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[63]),
         .Q(Q[63]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[64] 
+  FDRE \app_wdf_data_reg_reg[64] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[64]),
         .Q(Q[64]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[65] 
+  FDRE \app_wdf_data_reg_reg[65] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[65]),
         .Q(Q[65]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[66] 
+  FDRE \app_wdf_data_reg_reg[66] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[66]),
         .Q(Q[66]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[67] 
+  FDRE \app_wdf_data_reg_reg[67] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[67]),
         .Q(Q[67]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[68] 
+  FDRE \app_wdf_data_reg_reg[68] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[68]),
         .Q(Q[68]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[69] 
+  FDRE \app_wdf_data_reg_reg[69] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[69]),
         .Q(Q[69]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[6] 
+  FDRE \app_wdf_data_reg_reg[6] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[6]),
         .Q(Q[6]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[70] 
+  FDRE \app_wdf_data_reg_reg[70] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[70]),
         .Q(Q[70]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[71] 
+  FDRE \app_wdf_data_reg_reg[71] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[71]),
         .Q(Q[71]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[72] 
+  FDRE \app_wdf_data_reg_reg[72] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[72]),
         .Q(Q[72]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[73] 
+  FDRE \app_wdf_data_reg_reg[73] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[73]),
         .Q(Q[73]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[74] 
+  FDRE \app_wdf_data_reg_reg[74] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[74]),
         .Q(Q[74]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[75] 
+  FDRE \app_wdf_data_reg_reg[75] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[75]),
         .Q(Q[75]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[76] 
+  FDRE \app_wdf_data_reg_reg[76] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[76]),
         .Q(Q[76]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[77] 
+  FDRE \app_wdf_data_reg_reg[77] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[77]),
         .Q(Q[77]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[78] 
+  FDRE \app_wdf_data_reg_reg[78] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[78]),
         .Q(Q[78]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[79] 
+  FDRE \app_wdf_data_reg_reg[79] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[79]),
         .Q(Q[79]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[7] 
+  FDRE \app_wdf_data_reg_reg[7] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[7]),
         .Q(Q[7]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[80] 
+  FDRE \app_wdf_data_reg_reg[80] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[80]),
         .Q(Q[80]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[81] 
+  FDRE \app_wdf_data_reg_reg[81] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[81]),
         .Q(Q[81]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[82] 
+  FDRE \app_wdf_data_reg_reg[82] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[82]),
         .Q(Q[82]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[83] 
+  FDRE \app_wdf_data_reg_reg[83] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[83]),
         .Q(Q[83]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[84] 
+  FDRE \app_wdf_data_reg_reg[84] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[84]),
         .Q(Q[84]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[85] 
+  FDRE \app_wdf_data_reg_reg[85] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[85]),
         .Q(Q[85]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[86] 
+  FDRE \app_wdf_data_reg_reg[86] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[86]),
         .Q(Q[86]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[87] 
+  FDRE \app_wdf_data_reg_reg[87] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[87]),
         .Q(Q[87]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[88] 
+  FDRE \app_wdf_data_reg_reg[88] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[88]),
         .Q(Q[88]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[89] 
+  FDRE \app_wdf_data_reg_reg[89] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[89]),
         .Q(Q[89]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[8] 
+  FDRE \app_wdf_data_reg_reg[8] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[8]),
         .Q(Q[8]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[90] 
+  FDRE \app_wdf_data_reg_reg[90] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[90]),
         .Q(Q[90]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[91] 
+  FDRE \app_wdf_data_reg_reg[91] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[91]),
         .Q(Q[91]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[92] 
+  FDRE \app_wdf_data_reg_reg[92] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[92]),
         .Q(Q[92]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[93] 
+  FDRE \app_wdf_data_reg_reg[93] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[93]),
         .Q(Q[93]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[94] 
+  FDRE \app_wdf_data_reg_reg[94] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[94]),
         .Q(Q[94]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[95] 
+  FDRE \app_wdf_data_reg_reg[95] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[95]),
         .Q(Q[95]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[96] 
+  FDRE \app_wdf_data_reg_reg[96] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[96]),
         .Q(Q[96]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[97] 
+  FDRE \app_wdf_data_reg_reg[97] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[97]),
         .Q(Q[97]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[98] 
+  FDRE \app_wdf_data_reg_reg[98] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[98]),
         .Q(Q[98]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[99] 
+  FDRE \app_wdf_data_reg_reg[99] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[99]),
         .Q(Q[99]),
         .R(ui_clk_sync_rst));
-  FDRE #(
-    .INIT(1'b0)) 
-    \app_wdf_data_reg_reg[9] 
+  FDRE \app_wdf_data_reg_reg[9] 
        (.C(ui_clk),
         .CE(app_wdf_data_next),
         .D(data_reg_reg[9]),
@@ -1812,7 +1558,6 @@ module dram_controller
         .D(app_wdf_wren_reg_i_1_n_0),
         .Q(app_wdf_wren),
         .R(ui_clk_sync_rst));
-  (* \PinAttr:I1:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT2 #(
     .INIT(4'h2)) 
@@ -2058,28 +1803,28 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[0] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[0]_i_1_n_0 ),
         .Q(clk_cnt_reg[0]),
         .R(ui_clk_sync_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'h00000000FFF70000)) 
-    \clk_cnt_reg_reg[0]_CE_cooolgate_en_gate_2_LOPT_REMAP 
+    \clk_cnt_reg_reg[0]_CE_cooolgate_en_gate_131_LOPT_REMAP 
        (.I0(app_addr_next),
         .I1(pwropt_1),
         .I2(\FSM_onehot_state_reg_reg_n_0_[5] ),
         .I3(\FSM_onehot_state_reg[5]_i_1_n_0 ),
         .I4(\clk_cnt_reg[31]_i_1_n_0 ),
         .I5(pwropt),
-        .O(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ));
+        .O(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[10] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[10]_i_1_n_0 ),
         .Q(clk_cnt_reg[10]),
         .R(ui_clk_sync_rst));
@@ -2089,7 +1834,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[11] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[11]_i_1_n_0 ),
         .Q(clk_cnt_reg[11]),
         .R(ui_clk_sync_rst));
@@ -2099,7 +1844,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[12] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[12]_i_1_n_0 ),
         .Q(clk_cnt_reg[12]),
         .R(ui_clk_sync_rst));
@@ -2109,7 +1854,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[13] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[13]_i_1_n_0 ),
         .Q(clk_cnt_reg[13]),
         .R(ui_clk_sync_rst));
@@ -2119,7 +1864,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[14] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[14]_i_1_n_0 ),
         .Q(clk_cnt_reg[14]),
         .R(ui_clk_sync_rst));
@@ -2129,7 +1874,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[15] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[15]_i_1_n_0 ),
         .Q(clk_cnt_reg[15]),
         .R(ui_clk_sync_rst));
@@ -2139,7 +1884,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[16] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[16]_i_1_n_0 ),
         .Q(clk_cnt_reg[16]),
         .R(ui_clk_sync_rst));
@@ -2149,7 +1894,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[17] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[17]_i_1_n_0 ),
         .Q(clk_cnt_reg[17]),
         .R(ui_clk_sync_rst));
@@ -2159,7 +1904,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[18] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[18]_i_1_n_0 ),
         .Q(clk_cnt_reg[18]),
         .R(ui_clk_sync_rst));
@@ -2169,7 +1914,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[19] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[19]_i_1_n_0 ),
         .Q(clk_cnt_reg[19]),
         .R(ui_clk_sync_rst));
@@ -2179,7 +1924,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[1] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[1]_i_1_n_0 ),
         .Q(clk_cnt_reg[1]),
         .R(ui_clk_sync_rst));
@@ -2189,7 +1934,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[20] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[20]_i_1_n_0 ),
         .Q(clk_cnt_reg[20]),
         .R(ui_clk_sync_rst));
@@ -2199,7 +1944,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[21] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[21]_i_1_n_0 ),
         .Q(clk_cnt_reg[21]),
         .R(ui_clk_sync_rst));
@@ -2209,7 +1954,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[22] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[22]_i_1_n_0 ),
         .Q(clk_cnt_reg[22]),
         .R(ui_clk_sync_rst));
@@ -2219,7 +1964,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[23] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[23]_i_1_n_0 ),
         .Q(clk_cnt_reg[23]),
         .R(ui_clk_sync_rst));
@@ -2229,7 +1974,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[24] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[24]_i_1_n_0 ),
         .Q(clk_cnt_reg[24]),
         .R(ui_clk_sync_rst));
@@ -2239,7 +1984,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[25] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[25]_i_1_n_0 ),
         .Q(clk_cnt_reg[25]),
         .R(ui_clk_sync_rst));
@@ -2249,7 +1994,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[26] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[26]_i_1_n_0 ),
         .Q(clk_cnt_reg[26]),
         .R(ui_clk_sync_rst));
@@ -2259,7 +2004,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[27] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[27]_i_1_n_0 ),
         .Q(clk_cnt_reg[27]),
         .R(ui_clk_sync_rst));
@@ -2269,7 +2014,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[28] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[28]_i_1_n_0 ),
         .Q(clk_cnt_reg[28]),
         .R(ui_clk_sync_rst));
@@ -2279,7 +2024,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[29] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[29]_i_1_n_0 ),
         .Q(clk_cnt_reg[29]),
         .R(ui_clk_sync_rst));
@@ -2289,7 +2034,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[2] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[2]_i_1_n_0 ),
         .Q(clk_cnt_reg[2]),
         .R(ui_clk_sync_rst));
@@ -2299,7 +2044,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[30] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[30]_i_1_n_0 ),
         .Q(clk_cnt_reg[30]),
         .R(ui_clk_sync_rst));
@@ -2309,7 +2054,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[31] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[31]_i_2_n_0 ),
         .Q(clk_cnt_reg[31]),
         .R(ui_clk_sync_rst));
@@ -2319,7 +2064,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[3] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[3]_i_1_n_0 ),
         .Q(clk_cnt_reg[3]),
         .R(ui_clk_sync_rst));
@@ -2329,7 +2074,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[4] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[4]_i_1_n_0 ),
         .Q(clk_cnt_reg[4]),
         .R(ui_clk_sync_rst));
@@ -2339,7 +2084,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[5] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[5]_i_1_n_0 ),
         .Q(clk_cnt_reg[5]),
         .R(ui_clk_sync_rst));
@@ -2349,7 +2094,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[6] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[6]_i_1_n_0 ),
         .Q(clk_cnt_reg[6]),
         .R(ui_clk_sync_rst));
@@ -2359,7 +2104,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[7] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[7]_i_1_n_0 ),
         .Q(clk_cnt_reg[7]),
         .R(ui_clk_sync_rst));
@@ -2369,7 +2114,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[8] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[8]_i_1_n_0 ),
         .Q(clk_cnt_reg[8]),
         .R(ui_clk_sync_rst));
@@ -2379,7 +2124,7 @@ module dram_controller
     .INIT(1'b0)) 
     \clk_cnt_reg_reg[9] 
        (.C(ui_clk),
-        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_2 ),
+        .CE(\clk_cnt_reg_reg[0]_CE_cooolgate_en_sig_4 ),
         .D(\clk_cnt_reg[9]_i_1_n_0 ),
         .Q(clk_cnt_reg[9]),
         .R(ui_clk_sync_rst));
@@ -4288,6 +4033,7 @@ module mig_7series_0
   wire app_rd_data_valid;
   wire app_rdy;
   wire [127:0]app_wdf_data;
+  wire [15:0]app_wdf_mask;
   wire app_wdf_rdy;
   wire app_wdf_wren;
   wire clk_ref_i;
@@ -4526,6 +4272,7 @@ module mig_7series_0
   wire ui_clk;
   wire ui_clk_sync_rst;
   wire [26:0]NLW_u_mig_7series_0_mig_app_addr_UNCONNECTED;
+  wire [15:0]NLW_u_mig_7series_0_mig_app_wdf_mask_UNCONNECTED;
 
   GND GND
        (.G(\<const0> ));
@@ -6229,6 +5976,7 @@ module mig_7series_0
         .app_rd_data_valid(app_rd_data_valid),
         .app_rdy_r_reg(app_rdy),
         .app_wdf_data(app_wdf_data),
+        .app_wdf_mask({app_wdf_mask[15:2],NLW_u_mig_7series_0_mig_app_wdf_mask_UNCONNECTED[1:0]}),
         .app_wdf_rdy(app_wdf_rdy),
         .app_wdf_wren(app_wdf_wren),
         .clk_ref_i(clk_ref_i),
@@ -6461,6 +6209,7 @@ module mig_7series_0mig_7series_0_mig
   wire app_rd_data_valid;
   wire app_rdy_r_reg;
   wire [127:0]app_wdf_data;
+  wire [15:0]app_wdf_mask;
   wire app_wdf_rdy;
   wire app_wdf_wren;
   wire clk_ref_i;
@@ -6570,6 +6319,7 @@ module mig_7series_0mig_7series_0_mig
   wire [3:0]\wr_ptr_reg[3] ;
   wire [3:0]\wr_ptr_reg[3]_0 ;
   wire [26:0]NLW_u_memc_ui_top_std_app_addr_UNCONNECTED;
+  wire [15:0]NLW_u_memc_ui_top_std_app_wdf_mask_UNCONNECTED;
 
   mig_7series_0mig_7series_v4_2_tempmon \temp_mon_enabled.u_tempmon 
        (.D(\mem_intfc0/ddr_phy_top0/u_ddr_calib_top/ddr_phy_tempmon_0/device_temp_100 ),
@@ -6652,6 +6402,7 @@ module mig_7series_0mig_7series_0_mig
         .app_rd_data(app_rd_data[7:0]),
         .app_rd_data_valid(app_rd_data_valid),
         .app_wdf_data(app_wdf_data),
+        .app_wdf_mask({app_wdf_mask[15:2],NLW_u_memc_ui_top_std_app_wdf_mask_UNCONNECTED[1:0]}),
         .app_wdf_rdy(app_wdf_rdy),
         .app_wdf_wren(app_wdf_wren),
         .\cmd_pipe_plus.mc_cke_reg[3] ({phy_dout[41:30],phy_dout[28:0]}),
@@ -6872,14 +6623,9 @@ module mig_7series_0mig_7series_v4_2_arb_mux
     \grant_r[3]_i_3_1 ,
     \grant_r[3]_i_3_2 ,
     pwropt,
-    .pwropt_1(\^pwropt_5 ),
-    .pwropt_2(\^pwropt_4 ),
-    .pwropt_3(\^pwropt_1 ),
-    .pwropt_4(\^pwropt_2 ),
-    .pwropt_5(\^pwropt_3 ),
-    .pwropt_6(pwropt_9),
-    .pwropt_7(pwropt_10),
-    .pwropt_8(pwropt_11));
+    .pwropt_1(pwropt_4),
+    .pwropt_2(\^pwropt_1 ),
+    pwropt_3);
   output granted_col_r_reg;
   output insert_maint_r1_lcl_reg;
   output [0:0]DIC;
@@ -7002,14 +6748,9 @@ module mig_7series_0mig_7series_v4_2_arb_mux
   input [0:0]\grant_r[3]_i_3_1 ;
   input \grant_r[3]_i_3_2 ;
   input pwropt;
-  output \^pwropt_5 ;
-  output \^pwropt_4 ;
+  output pwropt_3;
+  output pwropt_4;
   output \^pwropt_1 ;
-  output \^pwropt_2 ;
-  output \^pwropt_3 ;
-  input pwropt_9;
-  input pwropt_10;
-  input pwropt_11;
 
   wire CLK;
   wire [2:0]D;
@@ -7111,16 +6852,12 @@ module mig_7series_0mig_7series_v4_2_arb_mux
   wire [38:0]\pre_4_1_1T_arb.granted_pre_r_reg_0 ;
   wire pwropt;
   wire \^pwropt_1 ;
-  wire pwropt_10;
-  wire pwropt_11;
   wire \^pwropt_2 ;
-  wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
-  wire \^pwropt_5 ;
-  wire \^pwropt_6 ;
-  wire \^pwropt_7 ;
-  wire \^pwropt_8 ;
-  wire pwropt_9;
+  wire pwropt_3;
+  wire pwropt_4;
+  wire pwropt_5;
+  wire pwropt_6;
+  wire pwropt_7;
   wire [3:0]\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ;
   wire [3:0]rd_this_rank_r;
   wire [3:0]rd_wr_r;
@@ -7239,16 +6976,11 @@ module mig_7series_0mig_7series_v4_2_arb_mux
         .\pre_4_1_1T_arb.granted_pre_r_reg_1 (\pre_4_1_1T_arb.granted_pre_r_reg_0 ),
         .pwropt(\^pwropt_1 ),
         .pwropt_1(\^pwropt_2 ),
-        .pwropt_10(pwropt_10),
-        .pwropt_11(pwropt_11),
-        .pwropt_2(\^pwropt_3 ),
-        .pwropt_3(\^pwropt_4 ),
-        .pwropt_4(\^pwropt_5 ),
-        .pwropt_5(\^pwropt_6 ),
-        .pwropt_6(\^pwropt_7 ),
-        .pwropt_7(\^pwropt_8 ),
-        .pwropt_8(pwropt),
-        .pwropt_9(pwropt_9),
+        .pwropt_2(pwropt_3),
+        .pwropt_3(pwropt_4),
+        .pwropt_4(pwropt_5),
+        .pwropt_5(pwropt_6),
+        .pwropt_6(pwropt_7),
         .rd_this_rank_r(rd_this_rank_r),
         .rd_wr_r(rd_wr_r),
         .rd_wr_r_lcl_reg(rd_wr_r_lcl_reg),
@@ -7282,13 +7014,13 @@ module mig_7series_0mig_7series_v4_2_arb_mux
         .pwropt(pwropt),
         .pwropt_1(\^pwropt_1 ),
         .pwropt_2(\^pwropt_2 ),
-        .pwropt_3(\^pwropt_3 ),
-        .pwropt_4(\^pwropt_4 ),
+        .pwropt_3(pwropt_3),
+        .pwropt_4(pwropt_4),
         .pwropt_5(\last_master_r_reg[1]_0 ),
         .pwropt_6(rnk_config_strobe_ns),
-        .pwropt_7(\^pwropt_6 ),
-        .pwropt_8(\^pwropt_7 ),
-        .pwropt_9(\^pwropt_8 ),
+        .pwropt_7(pwropt_5),
+        .pwropt_8(pwropt_6),
+        .pwropt_9(pwropt_7),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ),
         .rnk_config_0(rnk_config_0),
         .rnk_config_r(rnk_config_r));
@@ -7422,14 +7154,9 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
     pwropt_1,
     pwropt_2,
     pwropt_3,
-    pwropt_4,
-    .pwropt_5(rnk_config_strobe),
-    .pwropt_6(\^pwropt_5 ),
-    .pwropt_7(\^pwropt_6 ),
-    .pwropt_8(\^pwropt_7 ),
-    .pwropt_9(\^pwropt_8 ),
-    .pwropt_10(\^pwropt_9 ),
-    .pwropt_11(\^pwropt_10 ));
+    .pwropt_4(rnk_config_strobe),
+    .pwropt_5(\^pwropt_4 ),
+    .pwropt_6(\^pwropt_5 ));
   output granted_col_r_reg_0;
   output insert_maint_r1_lcl_reg_0;
   output rnk_config_valid_r;
@@ -7556,14 +7283,9 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
   output pwropt_1;
   output pwropt_2;
   output pwropt_3;
-  output pwropt_4;
   output rnk_config_strobe;
+  output \^pwropt_4 ;
   output \^pwropt_5 ;
-  output \^pwropt_6 ;
-  input \^pwropt_7 ;
-  input \^pwropt_8 ;
-  input \^pwropt_9 ;
-  input \^pwropt_10 ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -7666,18 +7388,12 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
   wire \pre_4_1_1T_arb.granted_pre_ns ;
   wire [8:0]\pre_4_1_1T_arb.granted_pre_r_reg_0 ;
   wire [38:0]\pre_4_1_1T_arb.granted_pre_r_reg_1 ;
-  wire \pre_4_1_1T_arb.granted_pre_r_reg_CE_cooolgate_en_sig_235 ;
   wire pwropt;
   wire pwropt_1;
-  wire \^pwropt_10 ;
   wire pwropt_2;
   wire pwropt_3;
-  wire pwropt_4;
+  wire \^pwropt_4 ;
   wire \^pwropt_5 ;
-  wire \^pwropt_6 ;
-  wire \^pwropt_7 ;
-  wire \^pwropt_8 ;
-  wire \^pwropt_9 ;
   wire [3:0]rd_this_rank_r;
   wire [3:0]rd_wr_r;
   wire rd_wr_r_lcl_reg;
@@ -7804,8 +7520,8 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
         .ofs_rdy_r_3(ofs_rdy_r_3),
         .ofs_rdy_r_reg(config_arb0_n_1),
         .ofs_rdy_r_reg_0(ofs_rdy_r_reg),
-        .pwropt(\^pwropt_5 ),
-        .pwropt_1(\^pwropt_6 ),
+        .pwropt(\^pwropt_4 ),
+        .pwropt_1(\^pwropt_5 ),
         .rnk_config_0(rnk_config_0),
         .rnk_config_r(rnk_config_r),
         .rnk_config_strobe(rnk_config_strobe),
@@ -7852,23 +7568,14 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
         .D(insert_maint_r1_lcl_reg_1),
         .Q(insert_maint_r1_lcl_reg_0),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \pre_4_1_1T_arb.granted_pre_r_reg 
        (.C(CLK),
-        .CE(\pre_4_1_1T_arb.granted_pre_r_reg_CE_cooolgate_en_sig_235 ),
+        .CE(\<const1> ),
         .D(\pre_4_1_1T_arb.granted_pre_ns ),
         .Q(cs_en2),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'h2f)) 
-    \pre_4_1_1T_arb.granted_pre_r_reg_CE_cooolgate_en_gate_699 
-       (.I0(\^pwropt_9 ),
-        .I1(\^pwropt_8 ),
-        .I2(\^pwropt_7 ),
-        .O(\pre_4_1_1T_arb.granted_pre_r_reg_CE_cooolgate_en_sig_235 ));
   mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4 \pre_4_1_1T_arb.pre_arb0 
        (.CLK(CLK),
         .D(D[2]),
@@ -7883,8 +7590,6 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
         .mc_cas_n_ns(mc_cas_n_ns[2]),
         .\pre_4_1_1T_arb.granted_pre_r_reg (\pre_4_1_1T_arb.granted_pre_r_reg_1 [38:25]),
         .\pre_4_1_1T_arb.granted_pre_r_reg_0 (\pre_4_1_1T_arb.granted_pre_r_reg_0 [8:6]),
-        .pwropt(\pre_4_1_1T_arb.granted_pre_ns ),
-        .pwropt_1(\^pwropt_10 ),
         .req_row_r({req_row_r[33],\NLW_pre_4_1_1T_arb.pre_arb0_req_row_r_UNCONNECTED [31:22],req_row_r[21],\NLW_pre_4_1_1T_arb.pre_arb0_req_row_r_UNCONNECTED [20:11],req_row_r[10],\NLW_pre_4_1_1T_arb.pre_arb0_req_row_r_UNCONNECTED [9:0]}),
         .row_cmd_wr(row_cmd_wr));
   FDRE #(
@@ -7936,7 +7641,6 @@ module mig_7series_0mig_7series_v4_2_arb_row_col
         .maint_zq_r(maint_zq_r),
         .mc_cas_n_ns(mc_cas_n_ns[0]),
         .mc_ras_n_ns(mc_ras_n_ns[0]),
-        .pwropt(pwropt_4),
         .req_row_r({req_row_r[33],NLW_row_arb0_req_row_r_UNCONNECTED[32:22],req_row_r[21],NLW_row_arb0_req_row_r_UNCONNECTED[20:11],req_row_r[10],NLW_row_arb0_req_row_r_UNCONNECTED[9:0]}),
         .row_cmd_wr(row_cmd_wr),
         .sent_row(sent_row));
@@ -8006,9 +7710,9 @@ module mig_7series_0mig_7series_v4_2_arb_select
   wire [5:0]\cmd_pipe_plus.mc_data_offset_reg[5] ;
   wire [0:0]col_data_buf_addr;
   wire [0:0]\col_mux.col_data_buf_addr_r ;
-  wire \col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_126 ;
+  wire \col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_128 ;
   wire \col_mux.col_periodic_rd_r ;
-  wire \col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_124 ;
+  wire \col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_126 ;
   wire col_rd_wr;
   wire col_rd_wr_r;
   wire \mc_data_offset1_inferred__0/i__carry_n_0 ;
@@ -8025,7 +7729,7 @@ module mig_7series_0mig_7series_v4_2_arb_select
   wire [3:0]\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ;
   wire rnk_config_0;
   wire rnk_config_r;
-  wire \rnk_config_r_reg[0]_CE_cooolgate_en_sig_153 ;
+  wire \rnk_config_r_reg[0]_CE_cooolgate_en_sig_155 ;
   wire [3:0]\NLW_mc_data_offset1_inferred__0/i__carry_CO_UNCONNECTED ;
 
   GND GND
@@ -8046,37 +7750,37 @@ module mig_7series_0mig_7series_v4_2_arb_select
     .INIT(1'b0)) 
     \col_mux.col_data_buf_addr_r_reg[4] 
        (.C(CLK),
-        .CE(\col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_126 ),
+        .CE(\col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_128 ),
         .D(col_data_buf_addr),
         .Q(\col_mux.col_data_buf_addr_r ),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'h0001)) 
-    \col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_gate_501 
+    \col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_gate_631 
        (.I0(pwropt_4),
         .I1(pwropt_3),
         .I2(pwropt_2),
         .I3(pwropt_1),
-        .O(\col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_126 ));
+        .O(\col_mux.col_data_buf_addr_r_reg[4]_CE_cooolgate_en_sig_128 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \col_mux.col_periodic_rd_r_reg 
        (.C(CLK),
-        .CE(\col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_124 ),
+        .CE(\col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_126 ),
         .D(DIC),
         .Q(\col_mux.col_periodic_rd_r ),
         .R(\<const0> ));
   LUT5 #(
     .INIT(32'h00000001)) 
-    \col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_gate_497 
+    \col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_gate_627 
        (.I0(pwropt_4),
         .I1(pwropt_3),
         .I2(pwropt_2),
         .I3(pwropt_1),
         .I4(pwropt),
-        .O(\col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_124 ));
+        .O(\col_mux.col_periodic_rd_r_reg_CE_cooolgate_en_sig_126 ));
   FDRE #(
     .INIT(1'b0)) 
     \col_mux.col_rd_wr_r_reg 
@@ -8107,20 +7811,20 @@ module mig_7series_0mig_7series_v4_2_arb_select
     .INIT(1'b0)) 
     \rnk_config_r_reg[0] 
        (.C(CLK),
-        .CE(\rnk_config_r_reg[0]_CE_cooolgate_en_sig_153 ),
+        .CE(\rnk_config_r_reg[0]_CE_cooolgate_en_sig_155 ),
         .D(rnk_config_0),
         .Q(rnk_config_r),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'h0000000011fff0f0)) 
-    \rnk_config_r_reg[0]_CE_cooolgate_en_gate_551 
+    \rnk_config_r_reg[0]_CE_cooolgate_en_gate_681 
        (.I0(pwropt_9),
         .I1(pwropt_8),
         .I2(pwropt_7),
         .I3(pwropt_6),
         .I4(pwropt_5),
         .I5(pwropt),
-        .O(\rnk_config_r_reg[0]_CE_cooolgate_en_sig_153 ));
+        .O(\rnk_config_r_reg[0]_CE_cooolgate_en_sig_155 ));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_cntrl" *) 
@@ -8257,10 +7961,8 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
     lopt,
     pwropt,
     pwropt_1,
-    .pwropt_2(start_wtp_timer0),
-    .pwropt_3(\^pwropt_2 ),
-    .pwropt_4(\^pwropt_3 ),
-    .pwropt_5(\^pwropt_4 ));
+    pwropt_2,
+    pwropt_3);
   output [0:0]E;
   output [0:0]req_periodic_rd_r;
   output [0:0]rd_wr_r;
@@ -8393,10 +8095,8 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
   input lopt;
   input pwropt;
   input pwropt_1;
-  output start_wtp_timer0;
-  input \^pwropt_2 ;
-  input \^pwropt_3 ;
-  input \^pwropt_4 ;
+  input pwropt_2;
+  input pwropt_3;
 
   wire CLK;
   wire [0:0]D;
@@ -8450,7 +8150,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
   wire idle_r_lcl_reg_4;
   wire in0;
   wire lopt;
-  wire lopt_1;
   wire \maint_controller.maint_hit_busies_r_reg[0] ;
   wire maint_req_r;
   wire ofs_rdy_r;
@@ -8485,9 +8184,8 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
   wire pre_wait_r;
   wire pwropt;
   wire pwropt_1;
-  wire \^pwropt_2 ;
-  wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
+  wire pwropt_2;
+  wire pwropt_3;
   wire [0:0]q_entry_ns;
   wire \q_entry_r_reg[0] ;
   wire \q_entry_r_reg[0]_0 ;
@@ -8562,7 +8260,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
         .S(S),
         .head_r_lcl_i_2(\q_entry_r_reg[0]_1 ),
         .lopt(lopt),
-        .lopt_1(lopt_1),
         .maint_req_r(maint_req_r),
         .ordered_r(ordered_r),
         .ordered_r_lcl_reg(bank_compare0_n_9),
@@ -8580,8 +8277,8 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
         .pre_bm_end_r(pre_bm_end_r),
         .pre_wait_r(pre_wait_r),
         .pwropt(pwropt_1),
-        .pwropt_1(\^pwropt_2 ),
-        .pwropt_2(\^pwropt_3 ),
+        .pwropt_1(pwropt_2),
+        .pwropt_2(pwropt_3),
         .rb_hit_busy_r_reg_0(rb_hit_busy_r),
         .rb_hit_busy_r_reg_1(rb_hit_busy_r_reg),
         .rb_hit_busy_r_reg_2(rb_hit_busy_r_reg_0),
@@ -8661,9 +8358,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
         .pre_passing_open_bank_ns(pre_passing_open_bank_ns),
         .pre_passing_open_bank_r_reg_0(pre_passing_open_bank_r_reg),
         .pwropt(pwropt_1),
-        .pwropt_1(\^pwropt_4 ),
-        .pwropt_2(col_wait_r_reg_0),
-        .pwropt_3(pass_open_bank_r_lcl_reg_0),
         .q_entry_ns(q_entry_ns),
         .\q_entry_r_reg[0]_0 (\q_entry_r_reg[0] ),
         .\q_entry_r_reg[0]_1 (\q_entry_r_reg[0]_0 ),
@@ -8747,7 +8441,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl
         .\grant_r[3]_i_3__1 (act_wait_r_lcl_reg_1),
         .head_r(head_r),
         .in0(in0),
-        .lopt(lopt_1),
         .ofs_rdy_r(ofs_rdy_r),
         .ofs_rdy_r0(ofs_rdy_r0),
         .ofs_rdy_r0_0(ofs_rdy_r0_0),
@@ -8905,8 +8598,7 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized0
     \order_q_r_reg[0] ,
     lopt,
     pwropt,
-    pwropt_1,
-    pwropt_2);
+    pwropt_1);
   output [0:0]E;
   output [0:0]req_periodic_rd_r;
   output [0:0]rd_wr_r_lcl_reg;
@@ -9029,7 +8721,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized0
   input lopt;
   input pwropt;
   input pwropt_1;
-  input pwropt_2;
 
   wire CLK;
   wire [0:0]D;
@@ -9104,7 +8795,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized0
   wire pre_wait_r_reg;
   wire pwropt;
   wire pwropt_1;
-  wire pwropt_2;
   wire [0:0]q_entry_ns;
   wire \q_entry_r_reg[0] ;
   wire [0:0]\q_entry_r_reg[0]_0 ;
@@ -9273,7 +8963,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized0
         .pre_bm_end_r_reg_0(pre_bm_end_r_reg),
         .pre_passing_open_bank_ns(pre_passing_open_bank_ns),
         .pre_passing_open_bank_r_reg_0(pre_passing_open_bank_r_reg),
-        .pwropt(pass_open_bank_r_lcl_reg_0),
         .q_entry_ns(q_entry_ns),
         .\q_entry_r_reg[0]_0 (\q_entry_r_reg[0] ),
         .\q_entry_r_reg[0]_1 (\q_entry_r_reg[0]_0 ),
@@ -9373,8 +9062,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized0
         .pre_passing_open_bank_ns(pre_passing_open_bank_ns),
         .pre_wait_r(pre_wait_r),
         .pre_wait_r_reg_0(pre_wait_r_reg),
-        .pwropt(idle_r_lcl_reg_0),
-        .pwropt_1(pwropt_2),
         .q_has_rd_0(q_has_rd_0),
         .ras_timer_zero_r(ras_timer_zero_r),
         .ras_timer_zero_r_reg_0(bank_compare0_n_11),
@@ -9887,7 +9574,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized1
         .pre_bm_end_r_reg_1(pre_bm_end_r_reg_0),
         .pre_passing_open_bank_ns(pre_passing_open_bank_ns),
         .pre_passing_open_bank_r_reg_0(pre_passing_open_bank_r_reg),
-        .pwropt(pass_open_bank_r_lcl_reg_0),
         .\q_entry_r_reg[0]_0 (\q_entry_r_reg[0] ),
         .\q_entry_r_reg[0]_1 (\q_entry_r_reg[0]_0 ),
         .\q_entry_r_reg[1]_0 (bank_queue0_n_13),
@@ -9989,7 +9675,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized1
         .pre_wait_r(pre_wait_r),
         .pre_wait_r_reg_0(pre_wait_r_reg),
         .pwropt(pwropt),
-        .pwropt_1(pwropt_1),
         .q_has_rd_1(q_has_rd_1),
         .ras_timer_zero_r(ras_timer_zero_r),
         .ras_timer_zero_r_reg_0(ras_timer_zero_r_reg),
@@ -10134,9 +9819,7 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
     pwropt,
     pwropt_1,
     pwropt_2,
-    .pwropt_3(\^pwropt_4 ),
-    .pwropt_4(\^pwropt_5 ),
-    .pwropt_5(pwropt_7));
+    pwropt_3);
   output [0:0]E;
   output [0:0]req_periodic_rd_r;
   output [0:0]rd_wr_r_lcl_reg;
@@ -10262,9 +9945,7 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
   input pwropt;
   input pwropt_1;
   input pwropt_2;
-  input \^pwropt_4 ;
-  input \^pwropt_5 ;
-  output pwropt_7;
+  input pwropt_3;
 
   wire CLK;
   wire [0:0]D;
@@ -10344,11 +10025,8 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
   wire pwropt;
   wire pwropt_1;
   wire pwropt_2;
-  wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
-  wire \^pwropt_5 ;
-  wire pwropt_6;
-  wire pwropt_7;
+  wire pwropt_3;
+  wire pwropt_4;
   wire [2:0]\q_entry_r[1]_i_3 ;
   wire \q_entry_r_reg[0] ;
   wire \q_entry_r_reg[0]_0 ;
@@ -10443,12 +10121,11 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
         .periodic_rd_insert(periodic_rd_insert),
         .pre_bm_end_r(pre_bm_end_r),
         .pre_wait_r(pre_wait_r),
-        .pwropt(\^pwropt_3 ),
-        .pwropt_1(\^pwropt_4 ),
-        .pwropt_2(pwropt_1),
-        .pwropt_3(\^pwropt_5 ),
-        .pwropt_4(pwropt_6),
-        .pwropt_5(pre_bm_end_ns),
+        .pwropt(pwropt_1),
+        .pwropt_1(pwropt_2),
+        .pwropt_2(pwropt_3),
+        .pwropt_3(pwropt_4),
+        .pwropt_4(pre_bm_end_ns),
         .rb_hit_busy_r_reg_0(rb_hit_busy_r),
         .rd_wr_r_lcl_reg_0(rd_wr_r_lcl_reg),
         .rd_wr_r_lcl_reg_1(bank_compare0_n_14),
@@ -10525,12 +10202,7 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
         .pre_bm_end_r_reg_1(pre_bm_end_r_reg_0),
         .pre_passing_open_bank_ns(pre_passing_open_bank_ns),
         .pre_passing_open_bank_r_reg_0(pre_passing_open_bank_r_reg),
-        .pwropt(pwropt_1),
-        .pwropt_1(\^pwropt_3 ),
-        .pwropt_2(\^pwropt_4 ),
-        .pwropt_3(pwropt_6),
-        .pwropt_4(pwropt_7),
-        .pwropt_5(pass_open_bank_r_lcl_reg_0),
+        .pwropt(pwropt_4),
         .\q_entry_r[1]_i_3_0 (\q_entry_r[1]_i_3 ),
         .\q_entry_r_reg[0]_0 (\q_entry_r_reg[0] ),
         .\q_entry_r_reg[0]_1 (\q_entry_r_reg[0]_0 ),
@@ -10616,8 +10288,6 @@ module mig_7series_0mig_7series_v4_2_bank_cntrl__parameterized2
         .pre_passing_open_bank_r_reg({pre_passing_open_bank_r_reg_0[2],pre_passing_open_bank_r_reg_0[0]}),
         .pre_wait_r(pre_wait_r),
         .pwropt(pwropt),
-        .pwropt_1(pwropt_1),
-        .pwropt_2(pwropt_2),
         .q_has_priority(q_has_priority),
         .q_has_rd_2(q_has_rd_2),
         .ras_timer_zero_r(ras_timer_zero_r),
@@ -10756,7 +10426,7 @@ module mig_7series_0mig_7series_v4_2_bank_common
   wire [0:0]SR;
   wire accept_internal_r;
   wire accept_ns;
-  wire accept_r_reg_CE_cooolgate_en_sig_127;
+  wire accept_r_reg_CE_cooolgate_en_sig_129;
   wire accept_r_reg_n_0;
   wire app_en_r2;
   wire app_rdy_r_reg;
@@ -10775,7 +10445,6 @@ module mig_7series_0mig_7series_v4_2_bank_common
   wire \maint_controller.maint_wip_r_lcl_reg_0 ;
   wire \maint_controller.maint_wip_r_lcl_reg_1 ;
   wire \maint_controller.maint_wip_r_lcl_reg_2 ;
-  wire \maint_controller.maint_wip_r_lcl_reg_CE_cooolgate_en_sig_260 ;
   wire maint_req_r;
   wire maint_srx_r;
   wire maint_zq_r;
@@ -10817,7 +10486,6 @@ module mig_7series_0mig_7series_v4_2_bank_common
   wire was_priority_reg_1;
   wire was_wr;
   wire was_wr0;
-  wire was_wr_reg_CE_cooolgate_en_sig_283;
 
   GND GND
        (.G(\<const0> ));
@@ -10845,20 +10513,20 @@ module mig_7series_0mig_7series_v4_2_bank_common
     .INIT(1'b0)) 
     accept_r_reg
        (.C(CLK),
-        .CE(accept_r_reg_CE_cooolgate_en_sig_127),
+        .CE(accept_r_reg_CE_cooolgate_en_sig_129),
         .D(accept_ns),
         .Q(accept_r_reg_n_0),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'h000000000000ca00)) 
-    accept_r_reg_CE_cooolgate_en_gate_503
+    accept_r_reg_CE_cooolgate_en_gate_633
        (.I0(app_en_r2),
         .I1(pwropt_2),
         .I2(was_priority_reg_1),
         .I3(pwropt_1),
         .I4(pwropt),
         .I5(periodic_rd_ack_ns),
-        .O(accept_r_reg_CE_cooolgate_en_sig_127));
+        .O(accept_r_reg_CE_cooolgate_en_sig_129));
   LUT4 #(
     .INIT(16'h4F44)) 
     \generate_maint_cmds.insert_maint_r_lcl_i_1 
@@ -10938,26 +10606,14 @@ module mig_7series_0mig_7series_v4_2_bank_common
         .I2(\rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r [2]),
         .I3(\rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r[7]_i_3_n_0 ),
         .O(\maint_controller.maint_wip_r_lcl_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \maint_controller.maint_wip_r_lcl_reg 
        (.C(CLK),
-        .CE(\maint_controller.maint_wip_r_lcl_reg_CE_cooolgate_en_sig_260 ),
+        .CE(\<const1> ),
         .D(\maint_controller.maint_wip_r_lcl_i_1_n_0 ),
         .Q(\maint_controller.maint_wip_r_lcl_reg_0 ),
         .R(\maintenance_request.maint_req_r_lcl_reg ));
-  LUT5 #(
-    .INIT(32'hffff22f2)) 
-    \maint_controller.maint_wip_r_lcl_reg_CE_cooolgate_en_gate_749 
-       (.I0(\rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r[7]_i_3_n_0 ),
-        .I1(\rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r [2]),
-        .I2(maint_req_r),
-        .I3(periodic_rd_cntr_r_reg_0),
-        .I4(\maint_controller.maint_wip_r_lcl_reg_2 ),
-        .O(\maint_controller.maint_wip_r_lcl_reg_CE_cooolgate_en_sig_260 ));
   LUT2 #(
     .INIT(4'h8)) 
     \order_q_r[1]_i_2__2 
@@ -11287,22 +10943,14 @@ module mig_7series_0mig_7series_v4_2_bank_common
         .D(was_priority_reg_0),
         .Q(was_priority),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     was_wr_reg
        (.C(CLK),
-        .CE(was_wr_reg_CE_cooolgate_en_sig_283),
+        .CE(\<const1> ),
         .D(was_wr0),
         .Q(was_wr),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'he)) 
-    was_wr_reg_CE_cooolgate_en_gate_795
-       (.I0(pwropt_1),
-        .I1(periodic_rd_ack_ns),
-        .O(was_wr_reg_CE_cooolgate_en_sig_283));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_compare" *) 
@@ -11368,12 +11016,11 @@ module mig_7series_0mig_7series_v4_2_bank_compare
     \req_bank_r_lcl_reg[2]_1 ,
     \req_col_r_reg[9]_1 ,
     lopt,
-    .pwropt(rd_wr_ns),
-    .pwropt_1(\^pwropt ),
-    .pwropt_2(\^pwropt_1 ),
-    .pwropt_3(\^pwropt_2 ),
-    .pwropt_4(\^pwropt_3 ),
-    .pwropt_5(\^pwropt_4 ));
+    pwropt,
+    pwropt_1,
+    pwropt_2,
+    pwropt_3,
+    pwropt_4);
   output [0:0]req_periodic_rd_r;
   output rd_wr_r_lcl_reg_0;
   output [0:0]req_wr_r;
@@ -11435,12 +11082,11 @@ module mig_7series_0mig_7series_v4_2_bank_compare
   input [2:0]\req_bank_r_lcl_reg[2]_1 ;
   input [9:0]\req_col_r_reg[9]_1 ;
   input lopt;
-  output rd_wr_ns;
-  input \^pwropt ;
-  input \^pwropt_1 ;
-  input \^pwropt_2 ;
-  input \^pwropt_3 ;
-  input \^pwropt_4 ;
+  input pwropt;
+  input pwropt_1;
+  input pwropt_2;
+  input pwropt_3;
+  input pwropt_4;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -11473,18 +11119,17 @@ module mig_7series_0mig_7series_v4_2_bank_compare
   wire periodic_rd_insert;
   wire pre_bm_end_r;
   wire pre_wait_r;
-  wire \^pwropt ;
-  wire \^pwropt_1 ;
-  wire \^pwropt_2 ;
-  wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
+  wire pwropt;
+  wire pwropt_1;
+  wire pwropt_2;
+  wire pwropt_3;
+  wire pwropt_4;
   wire rb_hit_busy_r_reg_0;
   wire rd_wr_ns;
   wire rd_wr_r_lcl_reg_0;
   wire rd_wr_r_lcl_reg_1;
   wire rd_wr_r_lcl_reg_2;
   wire rd_wr_r_lcl_reg_3;
-  wire rd_wr_r_lcl_reg_CE_cooolgate_en_sig_397;
   wire req_bank_rdy_ns;
   wire req_bank_rdy_r_reg;
   wire [0:0]req_bank_rdy_r_reg_0;
@@ -11494,7 +11139,7 @@ module mig_7series_0mig_7series_v4_2_bank_compare
   wire \req_data_buf_addr_r_reg[4]_1 ;
   wire [4:0]\req_data_buf_addr_r_reg[4]_2 ;
   wire [0:0]req_periodic_rd_r;
-  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_152;
+  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_154;
   wire req_priority_r;
   wire req_priority_r_reg_0;
   wire [13:0]\req_row_r_lcl_reg[13]_0 ;
@@ -11502,7 +11147,6 @@ module mig_7series_0mig_7series_v4_2_bank_compare
   wire req_wr_r_lcl0;
   wire req_wr_r_lcl_reg_0;
   wire req_wr_r_lcl_reg_1;
-  wire req_wr_r_lcl_reg_CE_cooolgate_en_sig_175;
   wire \rnk_config_strobe_r_reg[0] ;
   wire \rnk_config_strobe_r_reg[0]_0 ;
   wire [13:0]row;
@@ -11627,26 +11271,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare
         .I2(rd_wr_r_lcl_reg_2),
         .I3(rd_wr_r_lcl_reg_3),
         .O(rd_wr_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rd_wr_r_lcl_reg
        (.C(CLK),
-        .CE(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_397),
+        .CE(\<const1> ),
         .D(rd_wr_ns),
         .Q(rd_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffffff4)) 
-    rd_wr_r_lcl_reg_CE_cooolgate_en_gate_1023
-       (.I0(ordered_r_lcl_reg_4),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(pre_bm_end_r),
-        .I3(ordered_r_lcl_reg_2[1]),
-        .I4(ordered_r_lcl_reg_3),
-        .O(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_397));
   LUT5 #(
     .INIT(32'h888A88AA)) 
     req_bank_rdy_r_i_1__0
@@ -11712,21 +11344,21 @@ module mig_7series_0mig_7series_v4_2_bank_compare
     .INIT(1'b0)) 
     req_periodic_rd_r_lcl_reg
        (.C(CLK),
-        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_152),
+        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_154),
         .D(periodic_rd_insert),
         .Q(req_periodic_rd_r),
         .R(\<const0> ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF004000000000)) 
-    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_550_LOPT_REMAP
-       (.I0(\^pwropt_4 ),
-        .I1(\^pwropt_3 ),
-        .I2(\^pwropt_2 ),
-        .I3(\^pwropt_1 ),
-        .I4(\^pwropt ),
+    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_680_LOPT_REMAP
+       (.I0(pwropt_4),
+        .I1(pwropt_3),
+        .I2(pwropt_2),
+        .I3(pwropt_1),
+        .I4(pwropt),
         .I5(rd_wr_r_lcl_reg_2),
-        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_152));
+        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_154));
   FDRE #(
     .INIT(1'b0)) 
     req_priority_r_reg
@@ -11743,27 +11375,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare
         .D(row[7]),
         .Q(\req_row_r_lcl_reg[13]_0 [7]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     req_wr_r_lcl_reg
        (.C(CLK),
-        .CE(req_wr_r_lcl_reg_CE_cooolgate_en_sig_175),
+        .CE(E),
         .D(req_wr_r_lcl0),
         .Q(req_wr_r),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT6 #(
-    .INIT(64'hFFFFFFF800000000)) 
-    req_wr_r_lcl_reg_CE_cooolgate_en_gate_584_LOPT_REMAP
-       (.I0(pass_open_bank_r),
-        .I1(ordered_r_lcl_reg_2[1]),
-        .I2(pre_bm_end_r),
-        .I3(\req_data_buf_addr_r_reg[4]_1 ),
-        .I4(ordered_r_lcl_reg_3),
-        .I5(rd_wr_r_lcl_reg_2),
-        .O(req_wr_r_lcl_reg_CE_cooolgate_en_sig_175));
   (* OPT_MODIFIED = "PROPCONST SWEEP" *) 
   CARRY4 row_hit_ns_carry
        (.CI(\<const0> ),
@@ -11931,19 +11550,17 @@ module mig_7series_0mig_7series_v4_2_bank_compare_0
   wire rd_wr_r_lcl_reg_2;
   wire rd_wr_r_lcl_reg_3;
   wire rd_wr_r_lcl_reg_4;
-  wire rd_wr_r_lcl_reg_CE_cooolgate_en_sig_396;
   wire [4:0]\req_data_buf_addr_r_reg[4]_0 ;
   wire \req_data_buf_addr_r_reg[4]_1 ;
   wire [4:0]\req_data_buf_addr_r_reg[4]_2 ;
   wire [0:0]req_periodic_rd_r;
-  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162;
+  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_164;
   wire req_priority_r;
   wire req_priority_r_reg_0;
   wire [13:0]\req_row_r_lcl_reg[13]_0 ;
   wire req_wr_r_lcl0;
   wire req_wr_r_lcl_reg_0;
   wire req_wr_r_lcl_reg_1;
-  wire req_wr_r_lcl_reg_CE_cooolgate_en_sig_183;
   wire [13:0]row;
   wire row_hit_ns_carry__0_n_3;
   wire row_hit_ns_carry_i_2__1_n_0;
@@ -12035,26 +11652,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_0
         .I2(rd_wr_r_lcl_reg_3),
         .I3(rd_wr_r_lcl_reg_4),
         .O(rd_wr_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rd_wr_r_lcl_reg
        (.C(CLK),
-        .CE(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_396),
+        .CE(\<const1> ),
         .D(rd_wr_ns),
         .Q(rd_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffffff4)) 
-    rd_wr_r_lcl_reg_CE_cooolgate_en_gate_1021
-       (.I0(ordered_r_lcl_reg_0),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(pre_bm_end_r),
-        .I3(bm_end_r1_reg),
-        .I4(ordered_r_lcl_reg),
-        .O(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_396));
   FDRE #(
     .INIT(1'b0)) 
     \req_data_buf_addr_r_reg[0] 
@@ -12101,19 +11706,19 @@ module mig_7series_0mig_7series_v4_2_bank_compare_0
     .INIT(1'b0)) 
     req_periodic_rd_r_lcl_reg
        (.C(CLK),
-        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162),
+        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_164),
         .D(periodic_rd_insert),
         .Q(req_periodic_rd_r),
         .R(\<const0> ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT4 #(
     .INIT(16'hF100)) 
-    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_562_LOPT_REMAP
+    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_692_LOPT_REMAP
        (.I0(pwropt_2),
         .I1(pwropt_1),
         .I2(pwropt),
         .I3(rd_wr_r_lcl_reg_3),
-        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162));
+        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_164));
   FDRE #(
     .INIT(1'b0)) 
     req_priority_r_reg
@@ -12130,26 +11735,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_0
         .D(row[7]),
         .Q(\req_row_r_lcl_reg[13]_0 [7]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     req_wr_r_lcl_reg
        (.C(CLK),
-        .CE(req_wr_r_lcl_reg_CE_cooolgate_en_sig_183),
+        .CE(E),
         .D(req_wr_r_lcl0),
         .Q(req_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
-    req_wr_r_lcl_reg_CE_cooolgate_en_gate_594_LOPT_REMAP
-       (.I0(pre_bm_end_r),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(bm_end_r1_reg),
-        .I3(ordered_r_lcl_reg),
-        .I4(rd_wr_r_lcl_reg_3),
-        .O(req_wr_r_lcl_reg_CE_cooolgate_en_sig_183));
   (* OPT_MODIFIED = "PROPCONST SWEEP" *) 
   CARRY4 row_hit_ns_carry
        (.CI(\<const0> ),
@@ -12330,13 +11923,12 @@ module mig_7series_0mig_7series_v4_2_bank_compare_1
   wire rd_wr_r_lcl_reg_2;
   wire rd_wr_r_lcl_reg_3;
   wire rd_wr_r_lcl_reg_4;
-  wire rd_wr_r_lcl_reg_CE_cooolgate_en_sig_395;
   wire [0:0]req_bank_rdy_r_i_2;
   wire [4:0]\req_data_buf_addr_r_reg[4]_0 ;
   wire \req_data_buf_addr_r_reg[4]_1 ;
   wire [4:0]\req_data_buf_addr_r_reg[4]_2 ;
   wire [0:0]req_periodic_rd_r;
-  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_168;
+  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_170;
   wire req_priority_r;
   wire req_priority_r_reg_0;
   wire [13:0]\req_row_r_lcl_reg[13]_0 ;
@@ -12344,7 +11936,6 @@ module mig_7series_0mig_7series_v4_2_bank_compare_1
   wire req_wr_r_lcl0;
   wire req_wr_r_lcl_reg_0;
   wire req_wr_r_lcl_reg_1;
-  wire req_wr_r_lcl_reg_CE_cooolgate_en_sig_181;
   wire [13:0]row;
   wire row_hit_ns_carry__0_n_3;
   wire row_hit_ns_carry_i_2__0_n_0;
@@ -12453,26 +12044,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_1
         .I2(rd_wr_r_lcl_reg_3),
         .I3(rd_wr_r_lcl_reg_4),
         .O(rd_wr_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rd_wr_r_lcl_reg
        (.C(CLK),
-        .CE(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_395),
+        .CE(\<const1> ),
         .D(rd_wr_ns),
         .Q(rd_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffffff4)) 
-    rd_wr_r_lcl_reg_CE_cooolgate_en_gate_1019
-       (.I0(ordered_r_lcl_reg_1),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(pre_bm_end_r),
-        .I3(bm_end_r1_reg[1]),
-        .I4(ordered_r_lcl_reg_0),
-        .O(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_395));
   LUT6 #(
     .INIT(64'h40FF404040404040)) 
     req_bank_rdy_r_i_3
@@ -12529,18 +12108,18 @@ module mig_7series_0mig_7series_v4_2_bank_compare_1
     .INIT(1'b0)) 
     req_periodic_rd_r_lcl_reg
        (.C(CLK),
-        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_168),
+        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_170),
         .D(periodic_rd_insert),
         .Q(req_periodic_rd_r),
         .R(\<const0> ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT3 #(
     .INIT(8'h70)) 
-    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_572_LOPT_REMAP
+    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_702_LOPT_REMAP
        (.I0(pwropt_1),
         .I1(pwropt),
         .I2(rd_wr_r_lcl_reg_3),
-        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_168));
+        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_170));
   FDRE #(
     .INIT(1'b0)) 
     req_priority_r_reg
@@ -12557,26 +12136,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_1
         .D(row[7]),
         .Q(\req_row_r_lcl_reg[13]_0 [7]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     req_wr_r_lcl_reg
        (.C(CLK),
-        .CE(req_wr_r_lcl_reg_CE_cooolgate_en_sig_181),
+        .CE(E),
         .D(req_wr_r_lcl0),
         .Q(req_wr_r),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
-    req_wr_r_lcl_reg_CE_cooolgate_en_gate_592_LOPT_REMAP
-       (.I0(pre_bm_end_r),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(bm_end_r1_reg[1]),
-        .I3(ordered_r_lcl_reg_0),
-        .I4(rd_wr_r_lcl_reg_3),
-        .O(req_wr_r_lcl_reg_CE_cooolgate_en_sig_181));
   (* OPT_MODIFIED = "PROPCONST SWEEP" *) 
   CARRY4 row_hit_ns_carry
        (.CI(\<const0> ),
@@ -12666,8 +12233,7 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
     lopt,
     pwropt,
     pwropt_1,
-    pwropt_2,
-    .lopt_1(\^start_wtp_timer0 ));
+    pwropt_2);
   output [0:0]req_periodic_rd_r;
   output rd_wr_r_lcl_reg_0;
   output req_wr_r_lcl_reg_0;
@@ -12720,7 +12286,6 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
   input pwropt;
   input pwropt_1;
   input pwropt_2;
-  output \^start_wtp_timer0 ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -12758,30 +12323,27 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
   wire rd_wr_r_lcl_reg_1;
   wire rd_wr_r_lcl_reg_2;
   wire rd_wr_r_lcl_reg_3;
-  wire rd_wr_r_lcl_reg_CE_cooolgate_en_sig_394;
   wire [4:0]\req_data_buf_addr_r_reg[4]_0 ;
   wire \req_data_buf_addr_r_reg[4]_1 ;
   wire [4:0]\req_data_buf_addr_r_reg[4]_2 ;
   wire [0:0]req_periodic_rd_r;
-  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_160;
+  wire req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162;
   wire req_priority_r;
   wire req_priority_r_reg_0;
   wire [13:0]\req_row_r_lcl_reg[13]_0 ;
   wire req_wr_r_lcl0;
   wire req_wr_r_lcl_reg_0;
   wire req_wr_r_lcl_reg_1;
-  wire req_wr_r_lcl_reg_CE_cooolgate_en_sig_179;
   wire [13:0]row;
   wire row_hit_ns;
   wire row_hit_ns_carry_n_0;
   wire row_hit_r;
   wire [0:0]row_hit_r_reg_0;
   wire set_order_q;
-  wire \^start_wtp_timer0 ;
+  wire start_wtp_timer0;
   wire tail_r;
   wire [3:0]NLW_row_hit_ns_carry_CO_UNCONNECTED;
 
-  assign start_wtp_timer0 = rd_wr_r_lcl_reg_0;
   GND GND
        (.G(\<const0> ));
   VCC VCC
@@ -12875,26 +12437,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
         .I2(rd_wr_r_lcl_reg_2),
         .I3(rd_wr_r_lcl_reg_3),
         .O(rd_wr_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rd_wr_r_lcl_reg
        (.C(CLK),
-        .CE(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_394),
+        .CE(\<const1> ),
         .D(rd_wr_ns),
         .Q(rd_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffffff4)) 
-    rd_wr_r_lcl_reg_CE_cooolgate_en_gate_1017
-       (.I0(ordered_r_lcl_reg_2),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(pre_bm_end_r),
-        .I3(ordered_r_lcl_reg_0),
-        .I4(ordered_r_lcl_reg_1),
-        .O(rd_wr_r_lcl_reg_CE_cooolgate_en_sig_394));
   FDRE #(
     .INIT(1'b0)) 
     \req_data_buf_addr_r_reg[0] 
@@ -12941,19 +12491,19 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
     .INIT(1'b0)) 
     req_periodic_rd_r_lcl_reg
        (.C(CLK),
-        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_160),
+        .CE(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162),
         .D(periodic_rd_insert),
         .Q(req_periodic_rd_r),
         .R(\<const0> ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT4 #(
     .INIT(16'h4F00)) 
-    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_560_LOPT_REMAP
+    req_periodic_rd_r_lcl_reg_CE_cooolgate_en_gate_690_LOPT_REMAP
        (.I0(pwropt_2),
         .I1(pwropt_1),
         .I2(pwropt),
         .I3(rd_wr_r_lcl_reg_2),
-        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_160));
+        .O(req_periodic_rd_r_lcl_reg_CE_cooolgate_en_sig_162));
   FDRE #(
     .INIT(1'b0)) 
     req_priority_r_reg
@@ -12970,26 +12520,14 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
         .D(row[7]),
         .Q(\req_row_r_lcl_reg[13]_0 [7]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     req_wr_r_lcl_reg
        (.C(CLK),
-        .CE(req_wr_r_lcl_reg_CE_cooolgate_en_sig_179),
+        .CE(E),
         .D(req_wr_r_lcl0),
         .Q(req_wr_r_lcl_reg_0),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT5 #(
-    .INIT(32'hFFFE0000)) 
-    req_wr_r_lcl_reg_CE_cooolgate_en_gate_590_LOPT_REMAP
-       (.I0(pre_bm_end_r),
-        .I1(\req_data_buf_addr_r_reg[4]_1 ),
-        .I2(ordered_r_lcl_reg_0),
-        .I3(ordered_r_lcl_reg_1),
-        .I4(rd_wr_r_lcl_reg_2),
-        .O(req_wr_r_lcl_reg_CE_cooolgate_en_sig_179));
   (* OPT_MODIFIED = "PROPCONST SWEEP" *) 
   CARRY4 row_hit_ns_carry
        (.CI(\<const0> ),
@@ -13015,7 +12553,7 @@ module mig_7series_0mig_7series_v4_2_bank_compare_2
     .INIT(2'h1)) 
     \wr_this_rank_r[0]_i_1 
        (.I0(rd_wr_r_lcl_reg_0),
-        .O(\^start_wtp_timer0 ));
+        .O(start_wtp_timer0));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_mach" *) 
@@ -13139,13 +12677,7 @@ module mig_7series_0mig_7series_v4_2_bank_mach
     .pwropt_5(\^pwropt_1 ),
     .pwropt_6(\^pwropt_2 ),
     .pwropt_7(\^pwropt_3 ),
-    .pwropt_8(\^pwropt_4 ),
-    .pwropt_9(\^pwropt_7 ),
-    .pwropt_10(\^pwropt_8 ),
-    .pwropt_11(\^pwropt_6 ),
-    .pwropt_12(\^pwropt_9 ),
-    .pwropt_13(\^pwropt_11 ),
-    .pwropt_14(\^pwropt_12 ));
+    .pwropt_8(\^pwropt_4 ));
   output sent_col;
   output insert_maint_r1;
   output \generate_maint_cmds.insert_maint_r_lcl_reg ;
@@ -13266,12 +12798,6 @@ module mig_7series_0mig_7series_v4_2_bank_mach
   input \^pwropt_2 ;
   input \^pwropt_3 ;
   input \^pwropt_4 ;
-  output \^pwropt_7 ;
-  output \^pwropt_8 ;
-  output \^pwropt_6 ;
-  output \^pwropt_9 ;
-  input \^pwropt_11 ;
-  input \^pwropt_12 ;
 
   wire CLK;
   wire [2:0]D;
@@ -13476,18 +13002,12 @@ module mig_7series_0mig_7series_v4_2_bank_mach
   wire [38:0]\pre_4_1_1T_arb.granted_pre_r_reg_0 ;
   wire pwropt;
   wire \^pwropt_1 ;
-  wire \^pwropt_10 ;
-  wire \^pwropt_11 ;
-  wire \^pwropt_12 ;
-  wire \^pwropt_13 ;
   wire \^pwropt_2 ;
   wire \^pwropt_3 ;
   wire \^pwropt_4 ;
   wire \^pwropt_5 ;
   wire \^pwropt_6 ;
   wire \^pwropt_7 ;
-  wire \^pwropt_8 ;
-  wire \^pwropt_9 ;
   wire q_has_rd;
   wire q_has_rd_0;
   wire q_has_rd_1;
@@ -13658,11 +13178,6 @@ module mig_7series_0mig_7series_v4_2_bank_mach
         .pwropt_1(\^pwropt_5 ),
         .pwropt_2(\^pwropt_6 ),
         .pwropt_3(\^pwropt_7 ),
-        .pwropt_4(\^pwropt_8 ),
-        .pwropt_5(\^pwropt_10 ),
-        .pwropt_6(\^pwropt_11 ),
-        .pwropt_7(\^pwropt_12 ),
-        .pwropt_8(\^pwropt_13 ),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ),
         .rd_this_rank_r(rd_this_rank_r),
         .rd_wr_r(rd_wr_r),
@@ -13750,10 +13265,8 @@ module mig_7series_0mig_7series_v4_2_bank_mach
         .pre_passing_open_bank_r_reg(\bank_cntrl[0].bank0_n_29 ),
         .pwropt(pwropt),
         .pwropt_1(\^pwropt_1 ),
-        .pwropt_2(\^pwropt_9 ),
-        .pwropt_3(\^pwropt_7 ),
-        .pwropt_4(\^pwropt_6 ),
-        .pwropt_5(\arb_row_col0/granted_col_ns ),
+        .pwropt_2(\^pwropt_6 ),
+        .pwropt_3(\^pwropt_5 ),
         .q_entry_ns(\bank_queue0/q_entry_ns ),
         .\q_entry_r_reg[0] (\bank_cntrl[0].bank0_n_37 ),
         .\q_entry_r_reg[0]_0 (periodic_rd_ack_r_lcl_reg_0),
@@ -13867,8 +13380,7 @@ module mig_7series_0mig_7series_v4_2_bank_mach
         .pre_passing_open_bank_r_reg(\bank_cntrl[1].bank0_n_34 ),
         .pre_wait_r_reg(\maint_controller.maint_wip_r_lcl_reg ),
         .pwropt(\^pwropt_1 ),
-        .pwropt_1(\^pwropt_6 ),
-        .pwropt_2(\^pwropt_8 ),
+        .pwropt_1(\^pwropt_5 ),
         .q_entry_ns(\bank_queue0/q_entry_ns ),
         .\q_entry_r_reg[0] (\bank_cntrl[1].bank0_n_31 ),
         .\q_entry_r_reg[0]_0 (idle_r[0]),
@@ -13999,7 +13511,7 @@ module mig_7series_0mig_7series_v4_2_bank_mach
         .pre_passing_open_bank_r_reg_0(sending_col[2:1]),
         .pre_wait_r_reg(\maint_controller.maint_wip_r_lcl_reg ),
         .pwropt(pwropt),
-        .pwropt_1(\^pwropt_10 ),
+        .pwropt_1(\^pwropt_7 ),
         .pwropt_2(\^pwropt_1 ),
         .\q_entry_r_reg[0] (\bank_cntrl[2].bank0_n_29 ),
         .\q_entry_r_reg[0]_0 (\bank_cntrl[1].bank0_n_20 ),
@@ -14111,11 +13623,9 @@ module mig_7series_0mig_7series_v4_2_bank_mach
         .pre_passing_open_bank_r_reg(\bank_cntrl[3].bank0_n_32 ),
         .pre_passing_open_bank_r_reg_0({sending_col[3:2],sending_col[0]}),
         .pwropt(pwropt),
-        .pwropt_1(\^pwropt_1 ),
-        .pwropt_2(\^pwropt_5 ),
-        .pwropt_3(\^pwropt_6 ),
-        .pwropt_4(p_9_in),
-        .pwropt_5(\^pwropt_13 ),
+        .pwropt_1(\^pwropt_5 ),
+        .pwropt_2(\^pwropt_1 ),
+        .pwropt_3(p_9_in),
         .\q_entry_r[1]_i_3 (rb_hit_busy_r[2:0]),
         .\q_entry_r_reg[0] (\bank_cntrl[0].bank0_n_26 ),
         .\q_entry_r_reg[0]_0 (\bank_cntrl[0].bank0_n_38 ),
@@ -14330,10 +13840,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue
     \order_q_r_reg[1]_2 ,
     set_order_q,
     \order_q_r_reg[0]_0 ,
-    pwropt,
-    pwropt_1,
-    pwropt_2,
-    pwropt_3);
+    pwropt);
   output idle_r_lcl_reg_0;
   output [0:0]E;
   output pass_open_bank_r;
@@ -14438,9 +13945,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   input set_order_q;
   input \order_q_r_reg[0]_0 ;
   input pwropt;
-  input pwropt_1;
-  input pwropt_2;
-  input pwropt_3;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -14489,14 +13993,11 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire \order_q_r[0]_i_1_n_0 ;
   wire \order_q_r[1]_i_1_n_0 ;
   wire \order_q_r_reg[0]_0 ;
-  wire \order_q_r_reg[0]_CE_cooolgate_en_sig_356 ;
   wire \order_q_r_reg[1]_0 ;
   wire \order_q_r_reg[1]_1 ;
   wire \order_q_r_reg[1]_2 ;
-  wire \order_q_r_reg[1]_CE_cooolgate_en_sig_275 ;
   wire ordered_r;
   wire ordered_r_lcl_reg_0;
-  wire ordered_r_lcl_reg_CE_cooolgate_en_sig_239;
   wire p_9_in;
   wire pass_open_bank_ns;
   wire pass_open_bank_r;
@@ -14510,9 +14011,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire pre_passing_open_bank_r;
   wire pre_passing_open_bank_r_reg_0;
   wire pwropt;
-  wire pwropt_1;
-  wire pwropt_2;
-  wire pwropt_3;
   wire [0:0]q_entry_ns;
   wire [1:0]q_entry_r;
   wire \q_entry_r[0]_i_1_n_0 ;
@@ -14528,7 +14026,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire \q_entry_r_reg[0]_1 ;
   wire [2:0]\q_entry_r_reg[0]_2 ;
   wire \q_entry_r_reg[0]_3 ;
-  wire \q_entry_r_reg[0]_CE_cooolgate_en_sig_109 ;
+  wire \q_entry_r_reg[0]_CE_cooolgate_en_sig_111 ;
   wire \q_entry_r_reg[1]_0 ;
   wire [1:0]\q_entry_r_reg[1]_1 ;
   wire [0:0]\q_entry_r_reg[1]_2 ;
@@ -14543,7 +14041,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire q_has_rd;
   wire q_has_rd_r_i_1_n_0;
   wire q_has_rd_r_reg_0;
-  wire q_has_rd_r_reg_CE_cooolgate_en_sig_276;
   wire \ras_timer_r[0]_i_2__2_n_0 ;
   wire \ras_timer_r[1]_i_2__2_n_0 ;
   wire \ras_timer_r[1]_i_3__2_n_0 ;
@@ -14562,13 +14059,10 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire [3:1]\rb_hit_busies.rb_hit_busies_ns ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_CE_cooolgate_en_sig_357 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_358 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ;
   wire [0:0]\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_359 ;
   wire [3:1]rb_hit_busies_r;
   wire req_bank_rdy_ns;
   wire req_bank_rdy_r_reg;
@@ -14583,7 +14077,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue
   wire wait_for_maint_r_lcl_reg_0;
   wire wait_for_maint_r_lcl_reg_1;
   wire wait_for_maint_r_lcl_reg_2;
-  wire wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_360;
   wire was_priority;
   wire was_wr;
 
@@ -14809,60 +14302,30 @@ module mig_7series_0mig_7series_v4_2_bank_queue
         .I4(set_order_q),
         .I5(\order_q_r_reg[1]_1 ),
         .O(\order_q_r[1]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \order_q_r_reg[0] 
        (.C(CLK),
-        .CE(\order_q_r_reg[0]_CE_cooolgate_en_sig_356 ),
+        .CE(\<const1> ),
         .D(\order_q_r[0]_i_1_n_0 ),
         .Q(order_q_r[0]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \order_q_r_reg[0]_CE_cooolgate_en_gate_941 
-       (.I0(req_bank_rdy_r_reg_1),
-        .I1(\q_entry_r_reg[0]_1 ),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\order_q_r_reg[0]_CE_cooolgate_en_sig_356 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \order_q_r_reg[1] 
        (.C(CLK),
-        .CE(\order_q_r_reg[1]_CE_cooolgate_en_sig_275 ),
+        .CE(\<const1> ),
         .D(\order_q_r[1]_i_1_n_0 ),
         .Q(order_q_r[1]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \order_q_r_reg[1]_CE_cooolgate_en_gate_779 
-       (.I0(order_q_r[0]),
-        .I1(req_bank_rdy_r_reg_1),
-        .O(\order_q_r_reg[1]_CE_cooolgate_en_sig_275 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ordered_r_lcl_reg
        (.C(CLK),
-        .CE(ordered_r_lcl_reg_CE_cooolgate_en_sig_239),
+        .CE(\<const1> ),
         .D(ordered_r_lcl_reg_0),
         .Q(ordered_r),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffff400)) 
-    ordered_r_lcl_reg_CE_cooolgate_en_gate_707
-       (.I0(req_bank_rdy_r_reg),
-        .I1(bm_end_r1_reg),
-        .I2(\q_entry_r_reg[0]_1 ),
-        .I3(bm_end_r1_reg_0),
-        .I4(\order_q_r_reg[1]_1 ),
-        .O(ordered_r_lcl_reg_CE_cooolgate_en_sig_239));
   FDRE #(
     .INIT(1'b0)) 
     pass_open_bank_r_lcl_reg
@@ -15038,23 +14501,23 @@ module mig_7series_0mig_7series_v4_2_bank_queue
     .INIT(1'b0)) 
     \q_entry_r_reg[0] 
        (.C(CLK),
-        .CE(\q_entry_r_reg[0]_CE_cooolgate_en_sig_109 ),
+        .CE(\q_entry_r_reg[0]_CE_cooolgate_en_sig_111 ),
         .D(\q_entry_r[0]_i_1_n_0 ),
         .Q(q_entry_r[0]),
         .R(SR));
   LUT2 #(
     .INIT(4'h7)) 
-    \q_entry_r_reg[0]_CE_cooolgate_en_gate_456 
+    \q_entry_r_reg[0]_CE_cooolgate_en_gate_586 
        (.I0(E),
         .I1(pwropt),
-        .O(\q_entry_r_reg[0]_CE_cooolgate_en_sig_109 ));
+        .O(\q_entry_r_reg[0]_CE_cooolgate_en_sig_111 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \q_entry_r_reg[1] 
        (.C(CLK),
-        .CE(\q_entry_r_reg[0]_CE_cooolgate_en_sig_109 ),
+        .CE(\q_entry_r_reg[0]_CE_cooolgate_en_sig_111 ),
         .D(\q_entry_r[1]_i_1_n_0 ),
         .Q(q_entry_r[1]),
         .R(SR));
@@ -15086,22 +14549,14 @@ module mig_7series_0mig_7series_v4_2_bank_queue
         .I4(q_has_priority_r_reg_0),
         .I5(q_has_priority_r_reg_1),
         .O(q_has_rd_r_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     q_has_rd_r_reg
        (.C(CLK),
-        .CE(q_has_rd_r_reg_CE_cooolgate_en_sig_276),
+        .CE(\<const1> ),
         .D(q_has_rd_r_i_1_n_0),
         .Q(q_has_rd),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    q_has_rd_r_reg_CE_cooolgate_en_gate_781
-       (.I0(pwropt),
-        .I1(pwropt_1),
-        .O(q_has_rd_r_reg_CE_cooolgate_en_sig_276));
   LUT6 #(
     .INIT(64'hFFFFFFDF00200000)) 
     \ras_timer_r[0]_i_1__2 
@@ -15191,59 +14646,30 @@ module mig_7series_0mig_7series_v4_2_bank_queue
         .I3(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
         .I4(\order_q_r_reg[1]_1 ),
         .O(\rb_hit_busies.rb_hit_busies_ns [3]));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[1] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_CE_cooolgate_en_sig_357 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [1]),
         .Q(rb_hit_busies_r[1]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_CE_cooolgate_en_gate_943 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_0 ),
-        .I1(E),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[1]_CE_cooolgate_en_sig_357 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[2] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_358 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [2]),
         .Q(rb_hit_busies_r[2]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_gate_945 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_0 ),
-        .I1(E),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_358 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[3] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_359 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [3]),
         .Q(rb_hit_busies_r[3]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_gate_947 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
-        .I1(E),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_359 ));
   LUT5 #(
     .INIT(32'h888A88AA)) 
     req_bank_rdy_r_i_1
@@ -15253,24 +14679,14 @@ module mig_7series_0mig_7series_v4_2_bank_queue
         .I3(order_q_r[1]),
         .I4(req_bank_rdy_r_reg_1),
         .O(req_bank_rdy_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wait_for_maint_r_lcl_reg
        (.C(CLK),
-        .CE(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_360),
+        .CE(\<const1> ),
         .D(wait_for_maint_r_lcl_reg_2),
         .Q(wait_for_maint_r_lcl_reg_0),
         .R(wait_for_maint_r_lcl_reg_1));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    wait_for_maint_r_lcl_reg_CE_cooolgate_en_gate_949
-       (.I0(pwropt_3),
-        .I1(\q_entry_r_reg[0]_1 ),
-        .I2(pwropt_2),
-        .O(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_360));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_queue" *) 
@@ -15374,8 +14790,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
     \q_entry_r_reg[0]_5 ,
     \order_q_r_reg[1]_2 ,
     set_order_q,
-    \order_q_r_reg[0]_0 ,
-    pwropt);
+    \order_q_r_reg[0]_0 );
   output idle_r_lcl_reg_0;
   output [0:0]E;
   output pass_open_bank_r;
@@ -15476,7 +14891,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
   input \order_q_r_reg[1]_2 ;
   input set_order_q;
   input \order_q_r_reg[0]_0 ;
-  input pwropt;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -15523,10 +14937,8 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
   wire \order_q_r_reg[1]_0 ;
   wire \order_q_r_reg[1]_1 ;
   wire \order_q_r_reg[1]_2 ;
-  wire \order_q_r_reg[1]_CE_cooolgate_en_sig_277 ;
   wire ordered_r_lcl;
   wire ordered_r_lcl_reg_0;
-  wire ordered_r_lcl_reg_CE_cooolgate_en_sig_240;
   wire pass_open_bank_ns;
   wire pass_open_bank_r;
   wire pre_bm_end_ns;
@@ -15535,7 +14947,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
   wire pre_passing_open_bank_ns;
   wire pre_passing_open_bank_r;
   wire pre_passing_open_bank_r_reg_0;
-  wire pwropt;
   wire [0:0]q_entry_ns;
   wire \q_entry_r[0]_i_1_n_0 ;
   wire \q_entry_r[0]_i_2_n_0 ;
@@ -15579,13 +14990,10 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
   wire [4:2]\rb_hit_busies.rb_hit_busies_ns ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_363 ;
   wire [1:0]\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_2 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_364 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_0 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_365 ;
   wire [4:2]rb_hit_busies_r;
   wire [2:0]rb_hit_busy_r;
   wire req_bank_rdy_ns;
@@ -15608,7 +15016,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
   wire wait_for_maint_r_lcl_reg_0;
   wire wait_for_maint_r_lcl_reg_1;
   wire wait_for_maint_r_lcl_reg_2;
-  wire wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_366;
   wire was_priority;
   wire was_wr;
 
@@ -15820,43 +15227,22 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
         .D(\order_q_r[0]_i_1_n_0 ),
         .Q(order_q_r[0]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \order_q_r_reg[1] 
        (.C(CLK),
-        .CE(\order_q_r_reg[1]_CE_cooolgate_en_sig_277 ),
+        .CE(\<const1> ),
         .D(\order_q_r[1]_i_1_n_0 ),
         .Q(order_q_r[1]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \order_q_r_reg[1]_CE_cooolgate_en_gate_783 
-       (.I0(order_q_r[0]),
-        .I1(req_bank_rdy_r_reg_1),
-        .O(\order_q_r_reg[1]_CE_cooolgate_en_sig_277 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ordered_r_lcl_reg
        (.C(CLK),
-        .CE(ordered_r_lcl_reg_CE_cooolgate_en_sig_240),
+        .CE(\<const1> ),
         .D(ordered_r_lcl_reg_0),
         .Q(ordered_r_lcl),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffff400)) 
-    ordered_r_lcl_reg_CE_cooolgate_en_gate_709
-       (.I0(req_bank_rdy_r_reg_0),
-        .I1(q_has_priority_r_reg_2),
-        .I2(\compute_tail.tail_r_lcl_reg_0 ),
-        .I3(req_wr_r),
-        .I4(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
-        .O(ordered_r_lcl_reg_CE_cooolgate_en_sig_240));
   FDRE #(
     .INIT(1'b0)) 
     pass_open_bank_r_lcl_reg
@@ -16094,60 +15480,30 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
         .I3(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 [0]),
         .I4(\order_q_r_reg[1]_1 ),
         .O(\rb_hit_busies.rb_hit_busies_ns [4]));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[2] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_363 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [2]),
         .Q(rb_hit_busies_r[2]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_gate_955 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_0 ),
-        .I1(E),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[2]_CE_cooolgate_en_sig_363 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[3] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_364 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [3]),
         .Q(rb_hit_busies_r[3]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_gate_957 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 [1]),
-        .I1(E),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_364 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[4] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_365 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [4]),
         .Q(rb_hit_busies_r[4]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_gate_959 
-       (.I0(E),
-        .I1(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 [0]),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_365 ));
   LUT5 #(
     .INIT(32'h888A88AA)) 
     req_bank_rdy_r_i_1__2
@@ -16174,24 +15530,14 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized0
         .I3(\rnk_config_strobe_r_reg[0]_1 ),
         .I4(rnk_config_valid_r),
         .O(rnk_config_valid_r_lcl_reg));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wait_for_maint_r_lcl_reg
        (.C(CLK),
-        .CE(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_366),
+        .CE(\<const1> ),
         .D(wait_for_maint_r_lcl_reg_2),
         .Q(wait_for_maint_r_lcl_reg_0),
         .R(wait_for_maint_r_lcl_reg_1));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    wait_for_maint_r_lcl_reg_CE_cooolgate_en_gate_961
-       (.I0(pwropt),
-        .I1(\compute_tail.tail_r_lcl_reg_0 ),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ),
-        .O(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_366));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_queue" *) 
@@ -16286,8 +15632,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
     \q_entry_r_reg[0]_1 ,
     \order_q_r_reg[1]_2 ,
     \order_q_r_reg[0]_0 ,
-    \order_q_r_reg[0]_1 ,
-    pwropt);
+    \order_q_r_reg[0]_1 );
   output idle_r_lcl_reg_0;
   output [0:0]E;
   output pass_open_bank_r;
@@ -16379,7 +15724,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
   input \order_q_r_reg[1]_2 ;
   input \order_q_r_reg[0]_0 ;
   input \order_q_r_reg[0]_1 ;
-  input pwropt;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -16428,10 +15772,8 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
   wire \order_q_r_reg[1]_0 ;
   wire \order_q_r_reg[1]_1 ;
   wire \order_q_r_reg[1]_2 ;
-  wire \order_q_r_reg[1]_CE_cooolgate_en_sig_280 ;
   wire ordered_r_lcl_reg_0;
   wire ordered_r_lcl_reg_1;
-  wire ordered_r_lcl_reg_CE_cooolgate_en_sig_241;
   wire pass_open_bank_ns;
   wire pass_open_bank_r;
   wire pre_bm_end_ns;
@@ -16441,7 +15783,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
   wire pre_passing_open_bank_ns;
   wire pre_passing_open_bank_r;
   wire pre_passing_open_bank_r_reg_0;
-  wire pwropt;
   wire \q_entry_r[0]_i_1_n_0 ;
   wire \q_entry_r[0]_i_3__1_n_0 ;
   wire \q_entry_r[1]_i_1_n_0 ;
@@ -16483,12 +15824,9 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ;
   wire [1:0]\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_2 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_368 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_0 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_369 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_370 ;
   wire [5:3]rb_hit_busies_r;
   wire req_bank_rdy_ns;
   wire req_bank_rdy_r_reg;
@@ -16501,7 +15839,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
   wire wait_for_maint_r_lcl_reg_0;
   wire wait_for_maint_r_lcl_reg_1;
   wire wait_for_maint_r_lcl_reg_2;
-  wire wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_371;
   wire was_priority;
   wire was_wr;
 
@@ -16719,43 +16056,22 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
         .D(\order_q_r[0]_i_1_n_0 ),
         .Q(order_q_r[0]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \order_q_r_reg[1] 
        (.C(CLK),
-        .CE(\order_q_r_reg[1]_CE_cooolgate_en_sig_280 ),
+        .CE(\<const1> ),
         .D(\order_q_r[1]_i_1_n_0 ),
         .Q(order_q_r[1]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \order_q_r_reg[1]_CE_cooolgate_en_gate_789 
-       (.I0(order_q_r[0]),
-        .I1(req_bank_rdy_r_reg_0),
-        .O(\order_q_r_reg[1]_CE_cooolgate_en_sig_280 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ordered_r_lcl_reg
        (.C(CLK),
-        .CE(ordered_r_lcl_reg_CE_cooolgate_en_sig_241),
+        .CE(\<const1> ),
         .D(ordered_r_lcl_reg_1),
         .Q(ordered_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffff400)) 
-    ordered_r_lcl_reg_CE_cooolgate_en_gate_711
-       (.I0(req_bank_rdy_r_reg),
-        .I1(q_has_priority_r_reg_2),
-        .I2(\compute_tail.tail_r_lcl_reg_0 ),
-        .I3(q_has_priority_r_reg_3),
-        .I4(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ),
-        .O(ordered_r_lcl_reg_CE_cooolgate_en_sig_241));
   FDRE #(
     .INIT(1'b0)) 
     pass_open_bank_r_lcl_reg
@@ -16978,60 +16294,30 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
         .I3(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_0 ),
         .I4(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ),
         .O(\rb_hit_busies.rb_hit_busies_ns [5]));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[3] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_368 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [3]),
         .Q(rb_hit_busies_r[3]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_gate_965 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 [1]),
-        .I1(E),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_CE_cooolgate_en_sig_368 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[4] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_369 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [4]),
         .Q(rb_hit_busies_r[4]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_gate_967 
-       (.I0(E),
-        .I1(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_1 [0]),
-        .I2(\order_q_r_reg[1]_1 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_369 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[5] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_370 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [5]),
         .Q(rb_hit_busies_r[5]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_gate_969 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_0 ),
-        .I1(E),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_370 ));
   LUT5 #(
     .INIT(32'h888A88AA)) 
     req_bank_rdy_r_i_1__1
@@ -17041,24 +16327,14 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized1
         .I3(order_q_r[1]),
         .I4(req_bank_rdy_r_reg_0),
         .O(req_bank_rdy_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wait_for_maint_r_lcl_reg
        (.C(CLK),
-        .CE(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_371),
+        .CE(\<const1> ),
         .D(wait_for_maint_r_lcl_reg_2),
         .Q(wait_for_maint_r_lcl_reg_0),
         .R(wait_for_maint_r_lcl_reg_1));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    wait_for_maint_r_lcl_reg_CE_cooolgate_en_gate_971
-       (.I0(pwropt),
-        .I1(\compute_tail.tail_r_lcl_reg_0 ),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[3]_0 ),
-        .O(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_371));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_queue" *) 
@@ -17148,12 +16424,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
     \order_q_r_reg[0]_0 ,
     set_order_q,
     \order_q_r_reg[0]_1 ,
-    pwropt,
-    pwropt_1,
-    pwropt_2,
-    .pwropt_3(head_r_lcl_i_1__2_n_0),
-    .pwropt_4(auto_pre_r_lcl_i_1__2_n_0),
-    .pwropt_5(\^pwropt_3 ));
+    .pwropt(head_r_lcl_i_1__2_n_0));
   output idle_r_lcl_reg_0;
   output [0:0]E;
   output pass_open_bank_r;
@@ -17239,12 +16510,7 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   input \order_q_r_reg[0]_0 ;
   input set_order_q;
   input \order_q_r_reg[0]_1 ;
-  input pwropt;
-  input pwropt_1;
-  input pwropt_2;
   output head_r_lcl_i_1__2_n_0;
-  output auto_pre_r_lcl_i_1__2_n_0;
-  input \^pwropt_3 ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -17290,10 +16556,8 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   wire \order_q_r_reg[0]_1 ;
   wire \order_q_r_reg[1]_0 ;
   wire \order_q_r_reg[1]_1 ;
-  wire \order_q_r_reg[1]_CE_cooolgate_en_sig_282 ;
   wire ordered_r_lcl_reg_0;
   wire ordered_r_lcl_reg_1;
-  wire ordered_r_lcl_reg_CE_cooolgate_en_sig_242;
   wire pass_open_bank_ns;
   wire pass_open_bank_r;
   wire pre_bm_end_ns;
@@ -17303,10 +16567,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   wire pre_passing_open_bank_ns;
   wire pre_passing_open_bank_r;
   wire pre_passing_open_bank_r_reg_0;
-  wire pwropt;
-  wire pwropt_1;
-  wire pwropt_2;
-  wire \^pwropt_3 ;
   wire \q_entry_r[0]_i_1_n_0 ;
   wire \q_entry_r[0]_i_2__0_n_0 ;
   wire \q_entry_r[1]_i_1_n_0 ;
@@ -17330,7 +16590,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   wire q_has_rd_2;
   wire q_has_rd_r_i_1__2_n_0;
   wire q_has_rd_r_reg_0;
-  wire q_has_rd_r_reg_CE_cooolgate_en_sig_141;
   wire \ras_timer_r[0]_i_2_n_0 ;
   wire \ras_timer_r[1]_i_2_n_0 ;
   wire \ras_timer_r[1]_i_3_n_0 ;
@@ -17348,14 +16607,11 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   wire ras_timer_zero_r;
   wire [6:4]\rb_hit_busies.rb_hit_busies_ns ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_0 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_373 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_1 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_374 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_0 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_1 ;
   wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_2 ;
-  wire \rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_CE_cooolgate_en_sig_375 ;
   wire [6:4]rb_hit_busies_r;
   wire [0:0]req_wr_r;
   wire row_hit_r;
@@ -17364,7 +16620,6 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
   wire wait_for_maint_r_lcl_reg_0;
   wire wait_for_maint_r_lcl_reg_1;
   wire wait_for_maint_r_lcl_reg_2;
-  wire wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_376;
   wire was_priority;
   wire was_wr;
 
@@ -17556,43 +16811,22 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
         .D(\order_q_r[0]_i_1_n_0 ),
         .Q(order_q_r[0]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \order_q_r_reg[1] 
        (.C(CLK),
-        .CE(\order_q_r_reg[1]_CE_cooolgate_en_sig_282 ),
+        .CE(\<const1> ),
         .D(\order_q_r[1]_i_1_n_0 ),
         .Q(order_q_r[1]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \order_q_r_reg[1]_CE_cooolgate_en_gate_793 
-       (.I0(order_q_r[0]),
-        .I1(\order_q_r_reg[0]_0 ),
-        .O(\order_q_r_reg[1]_CE_cooolgate_en_sig_282 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ordered_r_lcl_reg
        (.C(CLK),
-        .CE(ordered_r_lcl_reg_CE_cooolgate_en_sig_242),
+        .CE(\<const1> ),
         .D(ordered_r_lcl_reg_1),
         .Q(ordered_r_lcl_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffff400)) 
-    ordered_r_lcl_reg_CE_cooolgate_en_gate_713
-       (.I0(bm_end_r1_reg),
-        .I1(bm_end_r1_reg_0),
-        .I2(\compute_tail.tail_r_lcl_reg_1 ),
-        .I3(req_wr_r),
-        .I4(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_0 ),
-        .O(ordered_r_lcl_reg_CE_cooolgate_en_sig_242));
   FDRE #(
     .INIT(1'b0)) 
     pass_open_bank_r_lcl_reg
@@ -17728,25 +16962,14 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
         .I4(q_has_priority_r_reg_0),
         .I5(q_has_priority_r_reg_1),
         .O(q_has_rd_r_i_1__2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     q_has_rd_r_reg
        (.C(CLK),
-        .CE(q_has_rd_r_reg_CE_cooolgate_en_sig_141),
+        .CE(\<const1> ),
         .D(q_has_rd_r_i_1__2_n_0),
         .Q(q_has_rd_2),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'h000000f7)) 
-    q_has_rd_r_reg_CE_cooolgate_en_gate_531
-       (.I0(pass_open_bank_ns),
-        .I1(pwropt_2),
-        .I2(pwropt_1),
-        .I3(pre_bm_end_ns),
-        .I4(pwropt),
-        .O(q_has_rd_r_reg_CE_cooolgate_en_sig_141));
   LUT6 #(
     .INIT(64'hFFFFFFDF00200000)) 
     \ras_timer_r[0]_i_1 
@@ -17836,78 +17059,38 @@ module mig_7series_0mig_7series_v4_2_bank_queue__parameterized2
         .I3(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_1 ),
         .I4(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_0 ),
         .O(\rb_hit_busies.rb_hit_busies_ns [6]));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[4] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_373 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [4]),
         .Q(rb_hit_busies_r[4]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_gate_975 
-       (.I0(E),
-        .I1(bm_end),
-        .I2(\order_q_r_reg[1]_0 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[4]_CE_cooolgate_en_sig_373 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[5] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_374 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [5]),
         .Q(rb_hit_busies_r[5]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_gate_977 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_0 ),
-        .I1(E),
-        .I2(\order_q_r_reg[1]_0 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[5]_CE_cooolgate_en_sig_374 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rb_hit_busies.rb_hit_busies_r_lcl_reg[6] 
        (.C(CLK),
-        .CE(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_CE_cooolgate_en_sig_375 ),
+        .CE(\<const1> ),
         .D(\rb_hit_busies.rb_hit_busies_ns [6]),
         .Q(rb_hit_busies_r[6]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_CE_cooolgate_en_gate_979 
-       (.I0(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_1 ),
-        .I1(E),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_0 ),
-        .O(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_CE_cooolgate_en_sig_375 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wait_for_maint_r_lcl_reg
        (.C(CLK),
-        .CE(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_376),
+        .CE(\<const1> ),
         .D(wait_for_maint_r_lcl_reg_2),
         .Q(wait_for_maint_r_lcl_reg_0),
         .R(wait_for_maint_r_lcl_reg_1));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    wait_for_maint_r_lcl_reg_CE_cooolgate_en_gate_981
-       (.I0(\^pwropt_3 ),
-        .I1(\compute_tail.tail_r_lcl_reg_1 ),
-        .I2(\rb_hit_busies.rb_hit_busies_r_lcl_reg[6]_0 ),
-        .O(wait_for_maint_r_lcl_reg_CE_cooolgate_en_sig_376));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_bank_state" *) 
@@ -17976,8 +17159,7 @@ module mig_7series_0mig_7series_v4_2_bank_state
     ofs_rdy_r_reg_0,
     \rtp_timer_r_reg[0]_0 ,
     D,
-    pwropt,
-    lopt);
+    pwropt);
   output bm_end_r1;
   output act_wait_r_lcl_reg_0;
   output ras_timer_zero_r;
@@ -18043,7 +17225,6 @@ module mig_7series_0mig_7series_v4_2_bank_state
   input \rtp_timer_r_reg[0]_0 ;
   input [1:0]D;
   input pwropt;
-  input lopt;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -18082,11 +17263,10 @@ module mig_7series_0mig_7series_v4_2_bank_state
   wire demanded_prior_r_reg_0;
   wire [1:0]demanded_prior_r_reg_1;
   wire demanded_prior_r_reg_2;
-  wire demanded_prior_r_reg_CE_cooolgate_en_sig_166;
+  wire demanded_prior_r_reg_CE_cooolgate_en_sig_168;
   wire [0:0]\grant_r[3]_i_3__1 ;
   wire [0:0]head_r;
   wire in0;
-  wire lopt;
   wire ofs_rdy_r;
   wire ofs_rdy_r0;
   wire ofs_rdy_r0_0;
@@ -18107,7 +17287,6 @@ module mig_7series_0mig_7series_v4_2_bank_state
   wire pre_wait_ns;
   wire pre_wait_r;
   wire pre_wait_r_i_2_n_0;
-  wire pre_wait_r_reg_CE_cooolgate_en_sig_361;
   wire pwropt;
   wire q_has_rd;
   wire [1:0]ras_timer_r;
@@ -18125,14 +17304,14 @@ module mig_7series_0mig_7series_v4_2_bank_state
   wire \rtp_timer_r[1]_i_1_n_0 ;
   wire \rtp_timer_r_reg[0]_0 ;
   wire \rtp_timer_r_reg[1]_0 ;
-  wire \rtp_timer_r_reg[1]_CE_cooolgate_en_sig_362 ;
+  wire start_wtp_timer0;
   wire [2:0]starve_limit_cntr_r;
   wire starve_limit_cntr_r0;
   wire \starve_limit_cntr_r[0]_i_1_n_0 ;
   wire \starve_limit_cntr_r[1]_i_1_n_0 ;
   wire \starve_limit_cntr_r[2]_i_1_n_0 ;
   wire \starve_limit_cntr_r_reg[0]_0 ;
-  wire \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_72 ;
+  wire \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ;
   wire tail_r;
   wire [0:0]wr_this_rank_r;
 
@@ -18252,17 +17431,17 @@ module mig_7series_0mig_7series_v4_2_bank_state
     .INIT(1'b0)) 
     demanded_prior_r_reg
        (.C(CLK),
-        .CE(demanded_prior_r_reg_CE_cooolgate_en_sig_166),
+        .CE(demanded_prior_r_reg_CE_cooolgate_en_sig_168),
         .D(demanded_prior_ns),
         .Q(demanded_prior_r_reg_0),
         .R(\<const0> ));
   LUT3 #(
     .INIT(8'hd0)) 
-    demanded_prior_r_reg_CE_cooolgate_en_gate_569
+    demanded_prior_r_reg_CE_cooolgate_en_gate_699
        (.I0(demand_priority_r_reg_0),
         .I1(demanded_prior_r_reg_2),
         .I2(demand_priority_ns),
-        .O(demanded_prior_r_reg_CE_cooolgate_en_sig_166));
+        .O(demanded_prior_r_reg_CE_cooolgate_en_sig_168));
   LUT4 #(
     .INIT(16'h1000)) 
     \grant_r[2]_i_3__2 
@@ -18398,23 +17577,14 @@ module mig_7series_0mig_7series_v4_2_bank_state
         .I3(pre_bm_end_r_reg),
         .I4(pre_bm_end_r_reg_0),
         .O(pre_wait_r_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     pre_wait_r_reg
        (.C(CLK),
-        .CE(pre_wait_r_reg_CE_cooolgate_en_sig_361),
+        .CE(\<const1> ),
         .D(pre_wait_ns),
         .Q(pre_wait_r),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    pre_wait_r_reg_CE_cooolgate_en_gate_951
-       (.I0(\rtp_timer_r_reg[1]_0 ),
-        .I1(ras_timer_zero_r),
-        .I2(col_wait_r_reg_2),
-        .O(pre_wait_r_reg_CE_cooolgate_en_sig_361));
   LUT6 #(
     .INIT(64'h0000111011111111)) 
     \ras_timer_r[0]_i_3 
@@ -18506,24 +17676,14 @@ module mig_7series_0mig_7series_v4_2_bank_state
         .D(\rtp_timer_r[0]_i_1_n_0 ),
         .Q(rtp_timer_r[0]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[1] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_362 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[1]_i_1_n_0 ),
         .Q(rtp_timer_r[1]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rtp_timer_r_reg[1]_CE_cooolgate_en_gate_953 
-       (.I0(rtp_timer_r[0]),
-        .I1(pass_open_bank_r),
-        .I2(\rtp_timer_r_reg[1]_0 ),
-        .O(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_362 ));
   LUT3 #(
     .INIT(8'h60)) 
     \starve_limit_cntr_r[0]_i_1 
@@ -18531,7 +17691,6 @@ module mig_7series_0mig_7series_v4_2_bank_state
         .I1(starve_limit_cntr_r0),
         .I2(col_wait_r_reg_0),
         .O(\starve_limit_cntr_r[0]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair504" *) 
   LUT4 #(
     .INIT(16'h6A00)) 
@@ -18541,7 +17700,6 @@ module mig_7series_0mig_7series_v4_2_bank_state
         .I2(starve_limit_cntr_r[0]),
         .I3(col_wait_r_reg_0),
         .O(\starve_limit_cntr_r[1]_i_1_n_0 ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair504" *) 
   LUT5 #(
     .INIT(32'h6AAA0000)) 
@@ -18569,18 +17727,18 @@ module mig_7series_0mig_7series_v4_2_bank_state
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[0] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_72 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
         .D(\starve_limit_cntr_r[0]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[0]),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'h08ff)) 
-    \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_gate_349 
+    \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_gate_479 
        (.I0(req_bank_rdy_r),
         .I1(\starve_limit_cntr_r_reg[0]_0 ),
         .I2(demanded_prior_r_reg_1[0]),
         .I3(col_wait_r_reg_0),
-        .O(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_72 ));
+        .O(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -18588,7 +17746,7 @@ module mig_7series_0mig_7series_v4_2_bank_state
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[1] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_72 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
         .D(\starve_limit_cntr_r[1]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[1]),
         .R(\<const0> ));
@@ -18599,17 +17757,16 @@ module mig_7series_0mig_7series_v4_2_bank_state
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[2] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_72 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
         .D(\starve_limit_cntr_r[2]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[2]),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "RETARGET" *) 
   FDRE #(
     .INIT(1'b0)) 
     \wr_this_rank_r_reg[0] 
        (.C(CLK),
         .CE(\<const1> ),
-        .D(lopt),
+        .D(start_wtp_timer0),
         .Q(wr_this_rank_r),
         .R(\<const0> ));
 endmodule
@@ -18671,9 +17828,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
     q_has_rd_0,
     req_wr_r,
     \rtp_timer_r_reg[0]_0 ,
-    D,
-    pwropt,
-    pwropt_1);
+    D);
   output act_wait_r_lcl_reg_0;
   output [0:0]act_this_rank_r;
   output [0:0]wr_this_rank_r;
@@ -18730,8 +17885,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
   input [0:0]req_wr_r;
   input \rtp_timer_r_reg[0]_0 ;
   input [1:0]D;
-  input pwropt;
-  input pwropt_1;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -18769,7 +17922,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
   wire demanded_prior_r_reg_1;
   wire [1:0]demanded_prior_r_reg_2;
   wire demanded_prior_r_reg_3;
-  wire demanded_prior_r_reg_CE_cooolgate_en_sig_257;
   wire [0:0]\grant_r[2]_i_3__0 ;
   wire [0:0]head_r;
   wire ofs_rdy_r;
@@ -18784,15 +17936,12 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
   wire pre_wait_r;
   wire pre_wait_r_i_2__0_n_0;
   wire pre_wait_r_reg_0;
-  wire pwropt;
-  wire pwropt_1;
   wire q_has_rd_0;
   wire \ras_timer_r_reg_n_0_[0] ;
   wire \ras_timer_r_reg_n_0_[1] ;
   wire ras_timer_zero_r;
   wire ras_timer_zero_r_i_1__0_n_0;
   wire ras_timer_zero_r_reg_0;
-  wire ras_timer_zero_r_reg_CE_cooolgate_en_sig_278;
   wire [0:0]rd_this_rank_r;
   wire \rd_this_rank_r_reg[0]_0 ;
   wire req_bank_rdy_ns;
@@ -18802,9 +17951,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
   wire \rtp_timer_r[0]_i_1__0_n_0 ;
   wire \rtp_timer_r[1]_i_1__0_n_0 ;
   wire \rtp_timer_r_reg[0]_0 ;
-  wire \rtp_timer_r_reg[0]_CE_cooolgate_en_sig_279 ;
   wire \rtp_timer_r_reg[1]_0 ;
-  wire \rtp_timer_r_reg[1]_CE_cooolgate_en_sig_367 ;
   wire start_wtp_timer0;
   wire [2:0]starve_limit_cntr_r;
   wire starve_limit_cntr_r0;
@@ -18812,7 +17959,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
   wire \starve_limit_cntr_r[1]_i_1_n_0 ;
   wire \starve_limit_cntr_r[2]_i_1_n_0 ;
   wire \starve_limit_cntr_r_reg[0]_0 ;
-  wire \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_73 ;
+  wire \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_75 ;
   wire tail_r;
   wire [0:0]wr_this_rank_r;
 
@@ -18934,26 +18081,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
         .I4(demand_priority_r_0),
         .I5(demanded_prior_r_reg_2[1]),
         .O(demanded_prior_r_reg_1));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     demanded_prior_r_reg
        (.C(CLK),
-        .CE(demanded_prior_r_reg_CE_cooolgate_en_sig_257),
+        .CE(\<const1> ),
         .D(demanded_prior_ns),
         .Q(demanded_prior_r_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'h00fdffff)) 
-    demanded_prior_r_reg_CE_cooolgate_en_gate_743
-       (.I0(demand_priority_r_0),
-        .I1(demanded_prior_r_1),
-        .I2(demanded_prior_r_reg_2[1]),
-        .I3(demanded_prior_r_reg_3),
-        .I4(demand_priority_r_reg_0),
-        .O(demanded_prior_r_reg_CE_cooolgate_en_sig_257));
   LUT2 #(
     .INIT(4'h8)) 
     \grant_r[2]_i_5__0 
@@ -19073,22 +18208,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
        (.I0(bm_end_r1_reg_0),
         .I1(bm_end_r1_reg_1),
         .O(ras_timer_zero_r_i_1__0_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ras_timer_zero_r_reg
        (.C(CLK),
-        .CE(ras_timer_zero_r_reg_CE_cooolgate_en_sig_278),
+        .CE(\<const1> ),
         .D(ras_timer_zero_r_i_1__0_n_0),
         .Q(ras_timer_zero_r),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    ras_timer_zero_r_reg_CE_cooolgate_en_gate_785
-       (.I0(pwropt),
-        .I1(pre_wait_ns),
-        .O(ras_timer_zero_r_reg_CE_cooolgate_en_sig_278));
   FDRE #(
     .INIT(1'b0)) 
     \rd_this_rank_r_reg[0] 
@@ -19122,40 +18249,22 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
         .I3(pass_open_bank_r),
         .I4(\rtp_timer_r_reg[1]_0 ),
         .O(\rtp_timer_r[1]_i_1__0_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[0] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[0]_CE_cooolgate_en_sig_279 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[0]_i_1__0_n_0 ),
         .Q(rtp_timer_r[0]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \rtp_timer_r_reg[0]_CE_cooolgate_en_gate_787 
-       (.I0(pass_open_bank_ns),
-        .I1(pwropt_1),
-        .O(\rtp_timer_r_reg[0]_CE_cooolgate_en_sig_279 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[1] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_367 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[1]_i_1__0_n_0 ),
         .Q(rtp_timer_r[1]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rtp_timer_r_reg[1]_CE_cooolgate_en_gate_963 
-       (.I0(rtp_timer_r[0]),
-        .I1(pass_open_bank_r),
-        .I2(\rtp_timer_r_reg[1]_0 ),
-        .O(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_367 ));
   LUT3 #(
     .INIT(8'h60)) 
     \starve_limit_cntr_r[0]_i_1 
@@ -19199,18 +18308,18 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[0] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_73 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_75 ),
         .D(\starve_limit_cntr_r[0]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[0]),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'h08ff)) 
-    \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_gate_353 
+    \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_gate_483 
        (.I0(req_bank_rdy_r),
         .I1(\starve_limit_cntr_r_reg[0]_0 ),
         .I2(demanded_prior_r_reg_2[0]),
         .I3(col_wait_r_reg_0),
-        .O(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_73 ));
+        .O(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_75 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -19218,7 +18327,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[1] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_73 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_75 ),
         .D(\starve_limit_cntr_r[1]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[1]),
         .R(\<const0> ));
@@ -19229,7 +18338,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized0
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[2] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_73 ),
+        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_75 ),
         .D(\starve_limit_cntr_r[2]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[2]),
         .R(\<const0> ));
@@ -19320,8 +18429,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
     \cmd_pipe_plus.mc_address_reg[38]_1 ,
     \rtp_timer_r_reg[0]_0 ,
     D,
-    pwropt,
-    pwropt_1);
+    pwropt);
   output act_wait_r_lcl_reg_0;
   output [0:0]act_this_rank_r;
   output [0:0]wr_this_rank_r;
@@ -19398,7 +18506,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
   input \rtp_timer_r_reg[0]_0 ;
   input [1:0]D;
   input pwropt;
-  input pwropt_1;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -19435,7 +18542,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
   wire demanded_prior_r_0;
   wire demanded_prior_r_reg_0;
   wire demanded_prior_r_reg_1;
-  wire demanded_prior_r_reg_CE_cooolgate_en_sig_258;
   wire \grant_r[1]_i_2_0 ;
   wire \grant_r[1]_i_2_1 ;
   wire \grant_r[3]_i_10_n_0 ;
@@ -19468,7 +18574,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
   wire pre_wait_r_i_2__1_n_0;
   wire pre_wait_r_reg_0;
   wire pwropt;
-  wire pwropt_1;
   wire q_has_rd_1;
   wire \ras_timer_r_reg_n_0_[0] ;
   wire \ras_timer_r_reg_n_0_[1] ;
@@ -19486,9 +18591,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
   wire \rtp_timer_r[0]_i_1__1_n_0 ;
   wire \rtp_timer_r[1]_i_1__1_n_0 ;
   wire \rtp_timer_r_reg[0]_0 ;
-  wire \rtp_timer_r_reg[0]_CE_cooolgate_en_sig_281 ;
   wire \rtp_timer_r_reg[1]_0 ;
-  wire \rtp_timer_r_reg[1]_CE_cooolgate_en_sig_372 ;
   wire start_wtp_timer0;
   wire [2:0]starve_limit_cntr_r;
   wire starve_limit_cntr_r0;
@@ -19496,7 +18599,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
   wire \starve_limit_cntr_r[1]_i_1_n_0 ;
   wire \starve_limit_cntr_r[2]_i_1_n_0 ;
   wire \starve_limit_cntr_r_reg[0]_0 ;
-  wire \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ;
   wire tail_r;
   wire [0:0]wr_this_rank_r;
 
@@ -19610,26 +18712,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
         .I4(demand_priority_r_1),
         .I5(demanded_prior_r_0),
         .O(demanded_prior_ns));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     demanded_prior_r_reg
        (.C(CLK),
-        .CE(demanded_prior_r_reg_CE_cooolgate_en_sig_258),
+        .CE(\<const1> ),
         .D(demanded_prior_ns),
         .Q(demanded_prior_r_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'h00fdffff)) 
-    demanded_prior_r_reg_CE_cooolgate_en_gate_745
-       (.I0(demand_priority_r_1),
-        .I1(demanded_prior_r_0),
-        .I2(pre_passing_open_bank_r_reg[0]),
-        .I3(demanded_prior_r_reg_1),
-        .I4(demand_priority_r_reg_0),
-        .O(demanded_prior_r_reg_CE_cooolgate_en_sig_258));
   LUT5 #(
     .INIT(32'hEEEFFFFF)) 
     \grant_r[1]_i_2 
@@ -19864,40 +18954,22 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
         .I3(pass_open_bank_r),
         .I4(\rtp_timer_r_reg[1]_0 ),
         .O(\rtp_timer_r[1]_i_1__1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[0] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[0]_CE_cooolgate_en_sig_281 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[0]_i_1__1_n_0 ),
         .Q(rtp_timer_r[0]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'h7)) 
-    \rtp_timer_r_reg[0]_CE_cooolgate_en_gate_791 
-       (.I0(pass_open_bank_ns),
-        .I1(pwropt_1),
-        .O(\rtp_timer_r_reg[0]_CE_cooolgate_en_sig_281 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[1] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_372 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[1]_i_1__1_n_0 ),
         .Q(rtp_timer_r[1]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rtp_timer_r_reg[1]_CE_cooolgate_en_gate_973 
-       (.I0(rtp_timer_r[0]),
-        .I1(pass_open_bank_r),
-        .I2(\rtp_timer_r_reg[1]_0 ),
-        .O(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_372 ));
   LUT3 #(
     .INIT(8'h60)) 
     \starve_limit_cntr_r[0]_i_1 
@@ -19934,44 +19006,27 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized1
         .I4(pre_passing_open_bank_r_reg[1]),
         .I5(req_bank_rdy_r),
         .O(starve_limit_cntr_r0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[0] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
+        .CE(\<const1> ),
         .D(\starve_limit_cntr_r[0]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[0]),
         .R(\<const0> ));
-  LUT4 #(
-    .INIT(16'h08ff)) 
-    \starve_limit_cntr_r_reg[0]_CE_cooolgate_en_gate_357 
-       (.I0(req_bank_rdy_r),
-        .I1(\starve_limit_cntr_r_reg[0]_0 ),
-        .I2(pre_passing_open_bank_r_reg[1]),
-        .I3(col_wait_r),
-        .O(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[1] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
+        .CE(\<const1> ),
         .D(\starve_limit_cntr_r[1]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[1]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \starve_limit_cntr_r_reg[2] 
        (.C(CLK),
-        .CE(\starve_limit_cntr_r_reg[0]_CE_cooolgate_en_sig_74 ),
+        .CE(\<const1> ),
         .D(\starve_limit_cntr_r[2]_i_1_n_0 ),
         .Q(starve_limit_cntr_r[2]),
         .R(\<const0> ));
@@ -20054,9 +19109,7 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
     req_wr_r,
     \rtp_timer_r_reg[0]_0 ,
     D,
-    pwropt,
-    pwropt_1,
-    pwropt_2);
+    pwropt);
   output act_wait_r_lcl_reg_0;
   output [0:0]act_this_rank_r;
   output [0:0]wr_this_rank_r;
@@ -20125,8 +19178,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
   input \rtp_timer_r_reg[0]_0 ;
   input [1:0]D;
   input pwropt;
-  input pwropt_1;
-  input pwropt_2;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -20164,7 +19215,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
   wire demanded_prior_r_reg_0;
   wire demanded_prior_r_reg_1;
   wire demanded_prior_r_reg_2;
-  wire demanded_prior_r_reg_CE_cooolgate_en_sig_259;
   wire [0:0]head_r;
   wire ofs_rdy_r;
   wire ofs_rdy_r0;
@@ -20184,11 +19234,8 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
   wire pre_wait_r;
   wire pre_wait_r_i_2__2_n_0;
   wire pwropt;
-  wire pwropt_1;
-  wire pwropt_2;
   wire q_has_priority;
   wire q_has_rd_2;
-  wire \ras_timer_r_reg[0]_CE_cooolgate_en_sig_139 ;
   wire \ras_timer_r_reg_n_0_[0] ;
   wire \ras_timer_r_reg_n_0_[1] ;
   wire ras_timer_zero_r;
@@ -20208,7 +19255,6 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
   wire \rtp_timer_r[1]_i_1__2_n_0 ;
   wire \rtp_timer_r_reg[0]_0 ;
   wire \rtp_timer_r_reg[1]_0 ;
-  wire \rtp_timer_r_reg[1]_CE_cooolgate_en_sig_377 ;
   wire start_wtp_timer0;
   wire [2:0]starve_limit_cntr_r;
   wire starve_limit_cntr_r0;
@@ -20350,26 +19396,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
         .I4(demand_priority_r_0),
         .I5(pre_passing_open_bank_r_reg[0]),
         .O(demanded_prior_r_reg_1));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     demanded_prior_r_reg
        (.C(CLK),
-        .CE(demanded_prior_r_reg_CE_cooolgate_en_sig_259),
+        .CE(\<const1> ),
         .D(demanded_prior_ns),
         .Q(demanded_prior_r_reg_0),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfd00ffff)) 
-    demanded_prior_r_reg_CE_cooolgate_en_gate_747
-       (.I0(demand_priority_r_0),
-        .I1(demanded_prior_r_1),
-        .I2(pre_passing_open_bank_r_reg[0]),
-        .I3(demanded_prior_r_reg_2),
-        .I4(demand_priority_r_reg_0),
-        .O(demanded_prior_r_reg_CE_cooolgate_en_sig_259));
   LUT5 #(
     .INIT(32'hFFEFAAAA)) 
     \grant_r[2]_i_5__1 
@@ -20481,25 +19515,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
         .I4(\rd_this_rank_r_reg[0]_0 ),
         .I5(pre_passing_open_bank_r_reg[1]),
         .O(bm_end_r1_reg_1));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \ras_timer_r_reg[0] 
        (.C(CLK),
-        .CE(\ras_timer_r_reg[0]_CE_cooolgate_en_sig_139 ),
+        .CE(\<const1> ),
         .D(D[0]),
         .Q(\ras_timer_r_reg_n_0_[0] ),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'h000000f8)) 
-    \ras_timer_r_reg[0]_CE_cooolgate_en_gate_527 
-       (.I0(act_wait_ns),
-        .I1(pwropt_2),
-        .I2(D[1]),
-        .I3(bm_end_r1_reg_2),
-        .I4(pwropt_1),
-        .O(\ras_timer_r_reg[0]_CE_cooolgate_en_sig_139 ));
   FDRE #(
     .INIT(1'b0)) 
     \ras_timer_r_reg[1] 
@@ -20573,24 +19596,14 @@ module mig_7series_0mig_7series_v4_2_bank_state__parameterized2
         .D(\rtp_timer_r[0]_i_1__2_n_0 ),
         .Q(rtp_timer_r[0]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rtp_timer_r_reg[1] 
        (.C(CLK),
-        .CE(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_377 ),
+        .CE(\<const1> ),
         .D(\rtp_timer_r[1]_i_1__2_n_0 ),
         .Q(rtp_timer_r[1]),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    \rtp_timer_r_reg[1]_CE_cooolgate_en_gate_983 
-       (.I0(rtp_timer_r[0]),
-        .I1(pass_open_bank_r),
-        .I2(\rtp_timer_r_reg[1]_0 ),
-        .O(\rtp_timer_r_reg[1]_CE_cooolgate_en_sig_377 ));
   LUT3 #(
     .INIT(8'h60)) 
     \starve_limit_cntr_r[0]_i_1 
@@ -20758,7 +19771,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
   wire col_rd_wr;
   wire col_rd_wr_r1;
   wire col_rd_wr_r2;
-  wire \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ;
+  wire \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ;
   wire in0;
   wire maint_ref_zq_wip;
   wire [0:0]mc_cmd;
@@ -20783,7 +19796,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
   wire ram_init_done_r;
   wire rd_data_en;
   wire [7:0]\read_fifo.fifo_out_data_ns ;
-  wire \read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ;
+  wire \read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ;
   wire \read_fifo.fifo_out_data_r_reg[5]_0 ;
   wire \read_fifo.fifo_out_data_r_reg[5]_1 ;
   wire \read_fifo.fifo_out_data_r_reg[6]_0 ;
@@ -20827,18 +19840,18 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0] 
        (.C(CLK),
-        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ),
+        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ),
         .D(col_data_buf_addr[0]),
         .Q(D[0]),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'hfffe)) 
-    \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_gate_315 
+    \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_gate_449 
        (.I0(pwropt_3),
         .I1(pwropt_2),
         .I2(pwropt_1),
         .I3(pwropt),
-        .O(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ));
+        .O(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -20846,7 +19859,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[1] 
        (.C(CLK),
-        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ),
+        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ),
         .D(col_data_buf_addr[1]),
         .Q(D[1]),
         .R(\<const0> ));
@@ -20857,7 +19870,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[2] 
        (.C(CLK),
-        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ),
+        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ),
         .D(col_data_buf_addr[2]),
         .Q(D[2]),
         .R(\<const0> ));
@@ -20868,7 +19881,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[3] 
        (.C(CLK),
-        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_62 ),
+        .CE(\delay_wr_data_cntrl_eq_1.col_wr_data_buf_addr_r_reg[0]_CE_cooolgate_en_sig_66 ),
         .D(col_data_buf_addr[3]),
         .Q(D[3]),
         .R(\<const0> ));
@@ -20965,25 +19978,25 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \read_fifo.fifo_out_data_r_reg[1] 
        (.C(CLK),
-        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ),
+        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ),
         .D(\read_fifo.fifo_out_data_ns [1]),
         .Q(Q[1]),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'hfff7)) 
-    \read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_gate_320 
+    \read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_gate_454 
        (.I0(pwropt_7),
         .I1(pwropt_6),
         .I2(pwropt_5),
         .I3(pwropt_4),
-        .O(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ));
+        .O(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \read_fifo.fifo_out_data_r_reg[2] 
        (.C(CLK),
-        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ),
+        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ),
         .D(\read_fifo.fifo_out_data_ns [2]),
         .Q(Q[2]),
         .R(\<const0> ));
@@ -20993,7 +20006,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \read_fifo.fifo_out_data_r_reg[3] 
        (.C(CLK),
-        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ),
+        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ),
         .D(\read_fifo.fifo_out_data_ns [3]),
         .Q(Q[3]),
         .R(\<const0> ));
@@ -21019,7 +20032,7 @@ module mig_7series_0mig_7series_v4_2_col_mach
     .INIT(1'b0)) 
     \read_fifo.fifo_out_data_r_reg[6] 
        (.C(CLK),
-        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_63 ),
+        .CE(\read_fifo.fifo_out_data_r_reg[1]_CE_cooolgate_en_sig_67 ),
         .D(\read_fifo.fifo_out_data_ns [6]),
         .Q(Q[6]),
         .R(\<const0> ));
@@ -21120,7 +20133,6 @@ module mig_7series_0mig_7series_v4_2_col_mach
     \read_fifo.head_r[0]_i_1 
        (.I0(\read_fifo.head_r_reg [0]),
         .O(p_0_in[0]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair536" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -21128,7 +20140,6 @@ module mig_7series_0mig_7series_v4_2_col_mach
        (.I0(\read_fifo.head_r_reg [0]),
         .I1(\read_fifo.head_r_reg [1]),
         .O(p_0_in[1]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair536" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -21203,7 +20214,6 @@ module mig_7series_0mig_7series_v4_2_col_mach
         .I1(\read_fifo.tail_r_reg[0]_0 ),
         .I2(\read_fifo.tail_r_reg [1]),
         .O(\read_fifo.tail_r[1]_i_1_n_0 ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair534" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -21213,7 +20223,6 @@ module mig_7series_0mig_7series_v4_2_col_mach
         .I2(\read_fifo.tail_r_reg [1]),
         .I3(\read_fifo.tail_r_reg [2]),
         .O(\read_fifo.tail_r[2]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair534" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
@@ -23697,7 +22706,6 @@ module mig_7series_0mig_7series_v4_2_ddr_byte_group_io__parameterized1_7
   wire idelay_ld_rst;
   wire idelay_ld_rst_i_1_n_0;
   wire idelay_ld_rst_reg_0;
-  wire idelay_ld_rst_reg_CE_cooolgate_en_sig_273;
   wire \input_[8].iserdes_dq_.iserdesdq_0 ;
   wire iserdes_clkdiv;
   wire [7:0]mem_dq_in;
@@ -23712,7 +22720,7 @@ module mig_7series_0mig_7series_v4_2_ddr_byte_group_io__parameterized1_7
   wire pwropt;
   wire rst_r3_reg_srl3_n_0;
   wire rst_r4;
-  wire rst_r4_reg_CE_cooolgate_en_sig_149;
+  wire rst_r4_reg_CE_cooolgate_en_sig_151;
   wire tbyte_out;
   wire ts_dqs_1;
 
@@ -23761,22 +22769,14 @@ module mig_7series_0mig_7series_v4_2_ddr_byte_group_io__parameterized1_7
         .I1(idelay_ld_rst),
         .I2(idelay_ld_rst_reg_0),
         .O(idelay_ld_rst_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     idelay_ld_rst_reg
        (.C(CLK),
-        .CE(idelay_ld_rst_reg_CE_cooolgate_en_sig_273),
+        .CE(\<const1> ),
         .D(idelay_ld_rst_i_1_n_0),
         .Q(idelay_ld_rst),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'he)) 
-    idelay_ld_rst_reg_CE_cooolgate_en_gate_775
-       (.I0(rst_r4),
-        .I1(idelay_ld_rst_reg_0),
-        .O(idelay_ld_rst_reg_CE_cooolgate_en_sig_273));
   (* BOX_TYPE = "PRIMITIVE" *) 
   (* IODELAY_GROUP = "MIG_7SERIES_0_IODELAY_MIG0" *) 
   (* SIM_DELAY_D = "0" *) 
@@ -24811,16 +23811,16 @@ module mig_7series_0mig_7series_v4_2_ddr_byte_group_io__parameterized1_7
     .INIT(1'b0)) 
     rst_r4_reg
        (.C(CLK),
-        .CE(rst_r4_reg_CE_cooolgate_en_sig_149),
+        .CE(rst_r4_reg_CE_cooolgate_en_sig_151),
         .D(rst_r3_reg_srl3_n_0),
         .Q(rst_r4),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'h4)) 
-    rst_r4_reg_CE_cooolgate_en_gate_545
+    rst_r4_reg_CE_cooolgate_en_gate_675
        (.I0(pwropt),
         .I1(idelay_ld_rst_i_1_n_0),
-        .O(rst_r4_reg_CE_cooolgate_en_sig_149));
+        .O(rst_r4_reg_CE_cooolgate_en_sig_151));
   (* BOX_TYPE = "PRIMITIVE" *) 
   OSERDESE2 #(
     .DATA_RATE_OQ("DDR"),
@@ -29143,9 +28143,7 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
     .pwropt_3(\^pwropt_2 ),
     .pwropt_4(\^pwropt_3 ),
     pwropt_5,
-    .pwropt_6(init_calib_complete_reg_rep__4_n_0),
-    pwropt_7,
-    pwropt_8);
+    .pwropt_6(init_calib_complete_reg_rep__4_n_0));
   output dqs_po_dec_done;
   output po_cnt_dec_reg;
   output po_cnt_dec_0;
@@ -29479,8 +28477,6 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
   input out_fifo_5;
   input [1:0]pi_dqs_found_lanes;
   output pwropt_5;
-  input pwropt_7;
-  output pwropt_8;
   output calib_complete;
   input \^pwropt ;
   output \^pwropt_1 ;
@@ -29605,7 +28601,7 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
   wire \gen_byte_sel_div2.calib_in_common_reg_6 ;
   wire \gen_byte_sel_div2.calib_in_common_reg_7 ;
   wire \gen_byte_sel_div2.calib_in_common_reg_8 ;
-  wire \gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_94 ;
+  wire \gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_96 ;
   wire \gen_byte_sel_div2.ctl_lane_sel_reg_n_0_[0] ;
   wire \gen_byte_sel_div2.ctl_lane_sel_reg_n_0_[1] ;
   wire \gen_mux_rd[0].mux_rd_fall0_r_reg0 ;
@@ -29766,7 +28762,7 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
   wire idelay_ce_int;
   wire idelay_ce_r1;
   wire idelay_ce_r2_reg_0;
-  wire idelay_ce_r2_reg_CE_cooolgate_en_sig_154;
+  wire idelay_ce_r2_reg_CE_cooolgate_en_sig_156;
   wire idelay_inc;
   wire idelay_inc_int;
   wire idelay_inc_r1;
@@ -29872,8 +28868,6 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
   wire pwropt_5;
   wire \^pwropt_6 ;
   wire pwropt_7;
-  wire pwropt_8;
-  wire pwropt_9;
   wire \rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] ;
   wire [5:0]\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ;
   wire rd_active_r;
@@ -30137,6 +29131,9 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
         .pwropt_1(\^pwropt ),
         .pwropt_2(init_calib_complete_reg_0),
         .pwropt_3(\^pwropt_4 ),
+        .pwropt_4(wrcal_sanity_chk_done_reg),
+        .pwropt_5(\^pwropt_6 ),
+        .pwropt_6(pwropt_7),
         .\rd_mux_sel_r_reg[0]_0 (\rd_mux_sel_r_reg[0] ),
         .\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 (\rdlvl_dqs_tap_cnt_r_reg[0][1][4] ),
         .rdlvl_last_byte_done(rdlvl_last_byte_done),
@@ -30238,11 +29235,8 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
         .\pi_rst_stg1_cal_reg[0]_0 (\pi_rst_stg1_cal_reg[0] ),
         .prech_done(prech_done),
         .prech_req_posedge_r_reg(\dqsfind_calib_left.u_ddr_phy_dqs_found_cal_hr_n_26 ),
-        .pwropt(\^pwropt ),
-        .pwropt_1(\^pwropt_6 ),
-        .pwropt_2(pwropt_7),
-        .pwropt_3(pwropt_9),
-        .pwropt_4(ddr_phy_tempmon_0_n_5),
+        .pwropt(\^pwropt_6 ),
+        .pwropt_1(\^pwropt ),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0]_0 (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] ),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5]_0 (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_reg[0][5]_0 (\smallest_reg[1][0] [0]),
@@ -30281,20 +29275,20 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
     .INIT(1'b0)) 
     \gen_byte_sel_div2.ctl_lane_sel_reg[0] 
        (.C(CLK),
-        .CE(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_94 ),
+        .CE(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_96 ),
         .D(\dqsfind_calib_left.u_ddr_phy_dqs_found_cal_hr_n_31 ),
         .Q(\gen_byte_sel_div2.ctl_lane_sel_reg_n_0_[0] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]));
   LUT6 #(
     .INIT(64'hffffffff2f000000)) 
-    \gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_gate_411 
+    \gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_gate_541 
        (.I0(rd_data_offset_cal_done),
         .I1(\dqsfind_calib_left.u_ddr_phy_dqs_found_cal_hr_n_2 ),
         .I2(ck_addr_cmd_delay_done),
         .I3(dqs_po_dec_done),
         .I4(pi_fine_dly_dec_done),
         .I5(\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]),
-        .O(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_94 ));
+        .O(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_96 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -30302,7 +29296,7 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
     .INIT(1'b0)) 
     \gen_byte_sel_div2.ctl_lane_sel_reg[1] 
        (.C(CLK),
-        .CE(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_94 ),
+        .CE(\gen_byte_sel_div2.ctl_lane_sel_reg[0]_CE_cooolgate_en_sig_96 ),
         .D(\mb_wrlvl_inst.u_ddr_phy_ck_addr_cmd_delay_n_5 ),
         .Q(\gen_byte_sel_div2.ctl_lane_sel_reg_n_0_[1] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]));
@@ -30322,18 +29316,18 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
     .INIT(1'b0)) 
     idelay_ce_r2_reg
        (.C(CLK),
-        .CE(idelay_ce_r2_reg_CE_cooolgate_en_sig_154),
+        .CE(idelay_ce_r2_reg_CE_cooolgate_en_sig_156),
         .D(idelay_ce_r1),
         .Q(idelay_ce),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]));
   LUT4 #(
     .INIT(16'h00f2)) 
-    idelay_ce_r2_reg_CE_cooolgate_en_gate_553
+    idelay_ce_r2_reg_CE_cooolgate_en_gate_683
        (.I0(\gen_byte_sel_div2.calib_in_common_reg_8 ),
         .I1(\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]),
         .I2(\dqsfind_calib_left.u_ddr_phy_dqs_found_cal_hr_n_32 ),
         .I3(ddr_phy_tempmon_0_n_5),
-        .O(idelay_ce_r2_reg_CE_cooolgate_en_sig_154));
+        .O(idelay_ce_r2_reg_CE_cooolgate_en_sig_156));
   FDRE #(
     .INIT(1'b0)) 
     idelay_inc_r1_reg
@@ -30511,7 +29505,6 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
         .in0(in0),
         .p_1_in(p_1_in),
         .po_cnt_dec_0(po_cnt_dec_0),
-        .pwropt(pwropt_9),
         .rd_data_offset_cal_done(rd_data_offset_cal_done),
         .\wait_cnt_r_reg[0]_0 (dqs_po_dec_done),
         .\wait_cnt_r_reg[0]_1 (pi_fine_dly_dec_done),
@@ -30582,10 +29575,7 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
         .pwropt(\^pwropt_2 ),
         .pwropt_1(\^pwropt_3 ),
         .pwropt_2(\^pwropt ),
-        .pwropt_3(ddr_phy_tempmon_0_n_5),
-        .pwropt_4(po_cnt_dec_0),
-        .pwropt_5(wrcal_sanity_chk_done_reg),
-        .pwropt_6(\^pwropt_6 ),
+        .pwropt_3(pwropt_7),
         .\single_rank.done_dqs_dec_reg_0 (wrcal_done_reg_0),
         .\smallest_reg[1][0]_0 (\smallest_reg[1][0] ),
         .\wl_dqs_tap_count_r_reg[0][0][2]_0 (\rdlvl_dqs_tap_cnt_r_reg[0][1][4] [0]),
@@ -31497,7 +30487,6 @@ module mig_7series_0mig_7series_v4_2_ddr_calib_top
         .pwropt_1(\^pwropt_1 ),
         .pwropt_2(\^pwropt_4 ),
         .pwropt_3(pwropt_5),
-        .pwropt_4(pwropt_8),
         .rdlvl_last_byte_done(rdlvl_last_byte_done),
         .rdlvl_pi_incdec(rdlvl_pi_incdec),
         .rdlvl_prech_req(rdlvl_prech_req),
@@ -32167,7 +31156,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
   wire \my_empty_reg[0]_2 ;
   wire \my_empty_reg[3]_0 ;
   wire \my_empty_reg[4]_rep_0 ;
-  wire \my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ;
+  wire \my_empty_reg[4]_rep_CE_cooolgate_en_sig_160 ;
   wire \my_empty_reg[4]_rep__0_n_0 ;
   wire \my_empty_reg[4]_rep__1_n_0 ;
   wire \my_empty_reg[4]_rep__2_0 ;
@@ -32179,7 +31168,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
   wire \my_full[1]_i_1_n_0 ;
   wire \my_full[1]_i_2_n_0 ;
   wire \my_full[1]_i_3_n_0 ;
-  wire \my_full_reg[0]_CE_cooolgate_en_sig_90 ;
+  wire \my_full_reg[0]_CE_cooolgate_en_sig_92 ;
   wire [0:0]\not_strict_mode.app_rd_data[127]_i_2 ;
   wire \not_strict_mode.app_rd_data_reg[0] ;
   wire [63:0]\not_strict_mode.app_rd_data_reg[117] ;
@@ -32189,11 +31178,11 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
   wire [1:0]rd_ptr;
   wire \rd_ptr[0]_i_1__0_n_0 ;
   wire \rd_ptr[1]_i_1__0_n_0 ;
-  wire \rd_ptr_reg[0]_CE_cooolgate_en_sig_96 ;
+  wire \rd_ptr_reg[0]_CE_cooolgate_en_sig_98 ;
   (* RTL_KEEP = "true" *) (* syn_maxfan = "10" *) wire [1:0]rd_ptr_timing;
   wire \rd_ptr_timing[0]_i_1__1_n_0 ;
   wire \rd_ptr_timing[1]_i_1__1_n_0 ;
-  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ;
+  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_88 ;
   wire [0:0]\read_fifo.tail_r_reg ;
   wire \read_fifo.tail_r_reg_0_sn_1 ;
   wire wr_en;
@@ -32201,7 +31190,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
   wire \wr_ptr[1]_i_1__1_n_0 ;
   wire \wr_ptr[1]_i_2_n_0 ;
   wire \wr_ptr_reg[0]_0 ;
-  wire \wr_ptr_reg[0]_CE_cooolgate_en_sig_99 ;
+  wire \wr_ptr_reg[0]_CE_cooolgate_en_sig_101 ;
   wire \wr_ptr_reg[1]_0 ;
 
   LUT5 #(
@@ -32907,20 +31896,20 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b1)) 
     \my_empty_reg[4]_rep 
        (.C(CLK),
-        .CE(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ),
+        .CE(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_160 ),
         .D(\my_empty[4]_i_1_n_0 ),
         .Q(\my_empty_reg[4]_rep_0 ),
         .S(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT5 #(
     .INIT(32'hFF060000)) 
-    \my_empty_reg[4]_rep_CE_cooolgate_en_gate_558_LOPT_REMAP 
+    \my_empty_reg[4]_rep_CE_cooolgate_en_gate_688_LOPT_REMAP 
        (.I0(\my_empty_reg[4]_rep__2_0 ),
         .I1(my_empty[1]),
         .I2(my_full[1]),
         .I3(ififo_rst),
         .I4(\my_full[1]_i_1_n_0 ),
-        .O(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ));
+        .O(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_160 ));
   (* IS_FANOUT_CONSTRAINED = "1" *) 
   (* ORIG_CELL_NAME = "my_empty_reg[4]" *) 
   FDSE #(
@@ -33005,25 +31994,25 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \my_full_reg[0] 
        (.C(CLK),
-        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_90 ),
+        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_92 ),
         .D(\my_full[0]_i_1_n_0 ),
         .Q(my_full[0]),
         .R(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT3 #(
     .INIT(8'hD0)) 
-    \my_full_reg[0]_CE_cooolgate_en_gate_400_LOPT_REMAP 
+    \my_full_reg[0]_CE_cooolgate_en_gate_530_LOPT_REMAP 
        (.I0(my_empty[1]),
         .I1(ififo_rst),
         .I2(\my_full[1]_i_1_n_0 ),
-        .O(\my_full_reg[0]_CE_cooolgate_en_sig_90 ));
+        .O(\my_full_reg[0]_CE_cooolgate_en_sig_92 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \my_full_reg[1] 
        (.C(CLK),
-        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_90 ),
+        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_92 ),
         .D(\my_full[1]_i_2_n_0 ),
         .Q(my_full[1]),
         .R(ififo_rst));
@@ -33581,19 +32570,19 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \rd_ptr_reg[0] 
        (.C(CLK),
-        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_96 ),
+        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_98 ),
         .D(\rd_ptr[0]_i_1__0_n_0 ),
         .Q(rd_ptr[0]),
         .R(ififo_rst));
   LUT5 #(
     .INIT(32'hffff00d0)) 
-    \rd_ptr_reg[0]_CE_cooolgate_en_gate_417 
+    \rd_ptr_reg[0]_CE_cooolgate_en_gate_547 
        (.I0(pwropt),
         .I1(rd_ptr[0]),
         .I2(\wr_ptr[1]_i_2_n_0 ),
         .I3(my_empty[1]),
         .I4(ififo_rst),
-        .O(\rd_ptr_reg[0]_CE_cooolgate_en_sig_96 ));
+        .O(\rd_ptr_reg[0]_CE_cooolgate_en_sig_98 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -33602,7 +32591,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \rd_ptr_reg[1] 
        (.C(CLK),
-        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_96 ),
+        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_98 ),
         .D(\rd_ptr[1]_i_1__0_n_0 ),
         .Q(rd_ptr[1]),
         .R(ififo_rst));
@@ -33640,21 +32629,21 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \rd_ptr_timing_reg[0] 
        (.C(CLK),
-        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ),
+        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_88 ),
         .D(\rd_ptr_timing[0]_i_1__1_n_0 ),
         .Q(rd_ptr_timing[0]),
         .R(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF1F0000000000)) 
-    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_394_LOPT_REMAP 
+    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_524_LOPT_REMAP 
        (.I0(\my_empty_reg[4]_rep__2_0 ),
         .I1(my_full[1]),
         .I2(my_empty[1]),
         .I3(\wr_ptr[1]_i_2_n_0 ),
         .I4(ififo_rst),
         .I5(\my_full[1]_i_1_n_0 ),
-        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ));
+        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_88 ));
   (* IS_CLOCK_GATED *) 
   (* KEEP = "yes" *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
@@ -33663,7 +32652,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \rd_ptr_timing_reg[1] 
        (.C(CLK),
-        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ),
+        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_88 ),
         .D(\rd_ptr_timing[1]_i_1__1_n_0 ),
         .Q(rd_ptr_timing[1]),
         .R(ififo_rst));
@@ -33722,19 +32711,19 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \wr_ptr_reg[0] 
        (.C(CLK),
-        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_99 ),
+        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_101 ),
         .D(\wr_ptr[0]_i_1__1_n_0 ),
         .Q(\wr_ptr_reg[0]_0 ),
         .R(ififo_rst));
   LUT5 #(
     .INIT(32'hffff0035)) 
-    \wr_ptr_reg[0]_CE_cooolgate_en_gate_426 
+    \wr_ptr_reg[0]_CE_cooolgate_en_gate_556 
        (.I0(my_full[1]),
         .I1(my_empty[1]),
         .I2(\wr_ptr[1]_i_2_n_0 ),
         .I3(\my_empty_reg[4]_rep__2_0 ),
         .I4(ififo_rst),
-        .O(\wr_ptr_reg[0]_CE_cooolgate_en_sig_99 ));
+        .O(\wr_ptr_reg[0]_CE_cooolgate_en_sig_101 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -33743,7 +32732,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo
     .INIT(1'b0)) 
     \wr_ptr_reg[1] 
        (.C(CLK),
-        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_99 ),
+        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_101 ),
         .D(\wr_ptr[1]_i_1__1_n_0 ),
         .Q(\wr_ptr_reg[1]_0 ),
         .R(ififo_rst));
@@ -34259,9 +33248,9 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
   wire \my_empty[4]_i_2_n_0 ;
   wire [4:1]my_empty_0;
   wire \my_empty_reg[0]_0 ;
-  wire \my_empty_reg[0]_CE_cooolgate_en_sig_44 ;
+  wire \my_empty_reg[0]_CE_cooolgate_en_sig_46 ;
   wire \my_empty_reg[3]_0 ;
-  wire \my_empty_reg[4]_rep_CE_cooolgate_en_sig_156 ;
+  wire \my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ;
   wire \my_empty_reg[4]_rep__0_0 ;
   wire \my_empty_reg[4]_rep__1_n_0 ;
   wire \my_empty_reg[4]_rep__2_0 ;
@@ -34273,25 +33262,25 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
   wire \my_full[1]_i_1__0_n_0 ;
   wire \my_full[1]_i_2__0_n_0 ;
   wire \my_full[1]_i_3__0_n_0 ;
-  wire \my_full_reg[0]_CE_cooolgate_en_sig_88 ;
+  wire \my_full_reg[0]_CE_cooolgate_en_sig_90 ;
   wire [63:0]\not_strict_mode.app_rd_data_reg[124] ;
   wire phy_rddata_en;
   wire pwropt;
   wire [1:0]rd_ptr;
   wire \rd_ptr[0]_i_1_n_0 ;
   wire \rd_ptr[1]_i_1_n_0 ;
-  wire \rd_ptr_reg[0]_CE_cooolgate_en_sig_95 ;
+  wire \rd_ptr_reg[0]_CE_cooolgate_en_sig_97 ;
   (* RTL_KEEP = "true" *) (* syn_maxfan = "10" *) wire [1:0]rd_ptr_timing;
   wire \rd_ptr_timing[0]_i_1__2_n_0 ;
   wire \rd_ptr_timing[1]_i_1__2_n_0 ;
-  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_84 ;
+  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ;
   wire \read_fifo.tail_r_reg[1] ;
   wire wr_en_2;
   wire \wr_ptr[0]_i_1__0_n_0 ;
   wire \wr_ptr[1]_i_1__0_n_0 ;
   wire \wr_ptr[1]_i_2__0_n_0 ;
   wire \wr_ptr_reg[0]_0 ;
-  wire \wr_ptr_reg[0]_CE_cooolgate_en_sig_98 ;
+  wire \wr_ptr_reg[0]_CE_cooolgate_en_sig_100 ;
   wire \wr_ptr_reg[1]_0 ;
 
   LUT5 #(
@@ -34954,28 +33943,28 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b1)) 
     \my_empty_reg[0] 
        (.C(CLK),
-        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_44 ),
+        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_46 ),
         .D(\my_empty[0]_i_1__0_n_0 ),
         .Q(\my_empty_reg[0]_0 ),
         .S(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF00FE00000000)) 
-    \my_empty_reg[0]_CE_cooolgate_en_gate_251_LOPT_REMAP 
+    \my_empty_reg[0]_CE_cooolgate_en_gate_380_LOPT_REMAP 
        (.I0(if_empty_r_0),
         .I1(\my_empty_reg[4]_rep__2_0 ),
         .I2(my_empty_0[1]),
         .I3(my_full[1]),
         .I4(ififo_rst),
         .I5(\my_full[1]_i_1__0_n_0 ),
-        .O(\my_empty_reg[0]_CE_cooolgate_en_sig_44 ));
+        .O(\my_empty_reg[0]_CE_cooolgate_en_sig_46 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDSE #(
     .INIT(1'b1)) 
     \my_empty_reg[1] 
        (.C(CLK),
-        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_44 ),
+        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_46 ),
         .D(\my_empty[1]_i_1__0_n_0 ),
         .Q(my_empty_0[1]),
         .S(ififo_rst));
@@ -34985,7 +33974,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b1)) 
     \my_empty_reg[2] 
        (.C(CLK),
-        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_44 ),
+        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_46 ),
         .D(\my_empty[2]_i_1__0_n_0 ),
         .Q(my_empty_0[2]),
         .S(ififo_rst));
@@ -34995,7 +33984,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b1)) 
     \my_empty_reg[3] 
        (.C(CLK),
-        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_44 ),
+        .CE(\my_empty_reg[0]_CE_cooolgate_en_sig_46 ),
         .D(\my_empty[3]_i_1__0_n_0 ),
         .Q(\my_empty_reg[3]_0 ),
         .S(ififo_rst));
@@ -35007,20 +33996,20 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b1)) 
     \my_empty_reg[4]_rep 
        (.C(CLK),
-        .CE(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_156 ),
+        .CE(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ),
         .D(\my_empty[4]_i_1__0_n_0 ),
         .Q(\my_empty_reg[4]_rep_n_0 ),
         .S(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT5 #(
     .INIT(32'hFF060000)) 
-    \my_empty_reg[4]_rep_CE_cooolgate_en_gate_556_LOPT_REMAP 
+    \my_empty_reg[4]_rep_CE_cooolgate_en_gate_686_LOPT_REMAP 
        (.I0(\my_empty_reg[4]_rep__2_0 ),
         .I1(my_empty_0[1]),
         .I2(my_full[1]),
         .I3(ififo_rst),
         .I4(\my_full[1]_i_1__0_n_0 ),
-        .O(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_156 ));
+        .O(\my_empty_reg[4]_rep_CE_cooolgate_en_sig_158 ));
   (* IS_FANOUT_CONSTRAINED = "1" *) 
   (* ORIG_CELL_NAME = "my_empty_reg[4]" *) 
   FDSE #(
@@ -35105,28 +34094,28 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \my_full_reg[0] 
        (.C(CLK),
-        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_88 ),
+        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_90 ),
         .D(\my_full[0]_i_1__0_n_0 ),
         .Q(my_full[0]),
         .R(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF00FD00000000)) 
-    \my_full_reg[0]_CE_cooolgate_en_gate_397_LOPT_REMAP 
+    \my_full_reg[0]_CE_cooolgate_en_gate_527_LOPT_REMAP 
        (.I0(\wr_ptr[1]_i_2__0_n_0 ),
         .I1(if_empty_r_0),
         .I2(\my_empty_reg[4]_rep__2_0 ),
         .I3(my_empty_0[1]),
         .I4(ififo_rst),
         .I5(\my_full[1]_i_1__0_n_0 ),
-        .O(\my_full_reg[0]_CE_cooolgate_en_sig_88 ));
+        .O(\my_full_reg[0]_CE_cooolgate_en_sig_90 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \my_full_reg[1] 
        (.C(CLK),
-        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_88 ),
+        .CE(\my_full_reg[0]_CE_cooolgate_en_sig_90 ),
         .D(\my_full[1]_i_2__0_n_0 ),
         .Q(my_full[1]),
         .R(ififo_rst));
@@ -35586,7 +34575,6 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
         .I2(if_empty_r_0),
         .I3(my_empty[0]),
         .O(phy_rddata_en));
-  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair464" *) 
   LUT3 #(
     .INIT(8'hB4)) 
@@ -35595,7 +34583,6 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
         .I1(\wr_ptr[1]_i_2__0_n_0 ),
         .I2(rd_ptr[0]),
         .O(\rd_ptr[0]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair464" *) 
   LUT4 #(
     .INIT(16'hF708)) 
@@ -35612,19 +34599,19 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \rd_ptr_reg[0] 
        (.C(CLK),
-        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_95 ),
+        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_97 ),
         .D(\rd_ptr[0]_i_1_n_0 ),
         .Q(rd_ptr[0]),
         .R(ififo_rst));
   LUT5 #(
     .INIT(32'hffff00d0)) 
-    \rd_ptr_reg[0]_CE_cooolgate_en_gate_414 
+    \rd_ptr_reg[0]_CE_cooolgate_en_gate_544 
        (.I0(pwropt),
         .I1(rd_ptr[0]),
         .I2(\wr_ptr[1]_i_2__0_n_0 ),
         .I3(my_empty_0[1]),
         .I4(ififo_rst),
-        .O(\rd_ptr_reg[0]_CE_cooolgate_en_sig_95 ));
+        .O(\rd_ptr_reg[0]_CE_cooolgate_en_sig_97 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -35633,7 +34620,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \rd_ptr_reg[1] 
        (.C(CLK),
-        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_95 ),
+        .CE(\rd_ptr_reg[0]_CE_cooolgate_en_sig_97 ),
         .D(\rd_ptr[1]_i_1_n_0 ),
         .Q(rd_ptr[1]),
         .R(ififo_rst));
@@ -35671,21 +34658,21 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \rd_ptr_timing_reg[0] 
        (.C(CLK),
-        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_84 ),
+        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ),
         .D(\rd_ptr_timing[0]_i_1__2_n_0 ),
         .Q(rd_ptr_timing[0]),
         .R(ififo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF1F0000000000)) 
-    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_391_LOPT_REMAP 
+    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_521_LOPT_REMAP 
        (.I0(\my_empty_reg[4]_rep__2_0 ),
         .I1(my_full[1]),
         .I2(my_empty_0[1]),
         .I3(\wr_ptr[1]_i_2__0_n_0 ),
         .I4(ififo_rst),
         .I5(\my_full[1]_i_1__0_n_0 ),
-        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_84 ));
+        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ));
   (* IS_CLOCK_GATED *) 
   (* KEEP = "yes" *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
@@ -35694,7 +34681,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \rd_ptr_timing_reg[1] 
        (.C(CLK),
-        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_84 ),
+        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_86 ),
         .D(\rd_ptr_timing[1]_i_1__2_n_0 ),
         .Q(rd_ptr_timing[1]),
         .R(ififo_rst));
@@ -35742,19 +34729,19 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \wr_ptr_reg[0] 
        (.C(CLK),
-        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_98 ),
+        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_100 ),
         .D(\wr_ptr[0]_i_1__0_n_0 ),
         .Q(\wr_ptr_reg[0]_0 ),
         .R(ififo_rst));
   LUT5 #(
     .INIT(32'hffff0035)) 
-    \wr_ptr_reg[0]_CE_cooolgate_en_gate_423 
+    \wr_ptr_reg[0]_CE_cooolgate_en_gate_553 
        (.I0(my_full[1]),
         .I1(my_empty_0[1]),
         .I2(\wr_ptr[1]_i_2__0_n_0 ),
         .I3(\my_empty_reg[4]_rep__2_0 ),
         .I4(ififo_rst),
-        .O(\wr_ptr_reg[0]_CE_cooolgate_en_sig_98 ));
+        .O(\wr_ptr_reg[0]_CE_cooolgate_en_sig_100 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -35763,7 +34750,7 @@ module mig_7series_0mig_7series_v4_2_ddr_if_post_fifo_8
     .INIT(1'b0)) 
     \wr_ptr_reg[1] 
        (.C(CLK),
-        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_98 ),
+        .CE(\wr_ptr_reg[0]_CE_cooolgate_en_sig_100 ),
         .D(\wr_ptr[1]_i_1__0_n_0 ),
         .Q(\wr_ptr_reg[1]_0 ),
         .R(ififo_rst));
@@ -39652,7 +38639,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
   wire \my_empty[7]_i_4__1_n_0 ;
   wire \my_empty_reg[1]_0 ;
   wire \my_empty_reg[1]_1 ;
-  wire \my_empty_reg[1]_CE_cooolgate_en_sig_103 ;
+  wire \my_empty_reg[1]_CE_cooolgate_en_sig_105 ;
   wire \my_empty_reg_n_0_[7] ;
   wire my_full0;
   wire \my_full[4]_i_1__1_n_0 ;
@@ -39679,12 +38666,14 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
        (.G(\<const0> ));
   VCC VCC
        (.P(\<const1> ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair474" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \entry_cnt[0]_i_1__0 
        (.I0(\entry_cnt_reg_n_0_[0] ),
         .O(\entry_cnt[0]_i_1__0_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair474" *) 
   LUT5 #(
     .INIT(32'hAA6A5595)) 
@@ -39848,20 +38837,20 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
     .INIT(1'b0)) 
     \my_empty_reg[1] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_103 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ),
         .D(\my_empty[1]_i_1__2_n_0 ),
         .Q(\my_empty_reg[1]_1 ),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'hffffffff0000ff4f)) 
-    \my_empty_reg[1]_CE_cooolgate_en_gate_438 
+    \my_empty_reg[1]_CE_cooolgate_en_gate_568 
        (.I0(wr_ptr_timing[2]),
         .I1(\rd_ptr_reg[0]_0 ),
         .I2(wr_ptr_timing[3]),
         .I3(mux_wrdata_en),
         .I4(\my_full_reg_n_0_[4] ),
         .I5(ofifo_rst),
-        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_103 ));
+        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -39870,7 +38859,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
     .INIT(1'b0)) 
     \my_empty_reg[7] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_103 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ),
         .D(\my_empty[7]_i_1__1_n_0 ),
         .Q(\my_empty_reg_n_0_[7] ),
         .R(\<const0> ));
@@ -40049,6 +39038,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
         .I1(\wr_ptr_reg[3]_0 [0]),
         .I2(\wr_ptr_reg[3]_0 [1]),
         .O(nxt_wr_ptr[1]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "181" *) 
   LUT4 #(
     .INIT(16'hAA6A)) 
     \wr_ptr[2]_i_1__2 
@@ -40067,6 +39057,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1
         .I4(\my_full_reg_n_0_[4] ),
         .I5(\my_empty_reg_n_0_[7] ),
         .O(wr_ptr0));
+  (* \PinAttr:I3:HOLD_DETOUR  = "181" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \wr_ptr[3]_i_2__0 
@@ -40208,7 +39199,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
   wire \my_empty[6]_i_4_n_0 ;
   wire \my_empty_reg[1]_0 ;
   wire \my_empty_reg[1]_1 ;
-  wire \my_empty_reg[1]_CE_cooolgate_en_sig_106 ;
+  wire \my_empty_reg[1]_CE_cooolgate_en_sig_108 ;
   wire \my_empty_reg_n_0_[6] ;
   wire my_full0;
   wire \my_full[3]_i_1_n_0 ;
@@ -40232,7 +39223,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
   wire wr_ptr0__0;
   wire [3:0]wr_ptr_timing;
   wire \wr_ptr_timing_reg[0]_0 ;
-  wire \wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_65 ;
+  wire \wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_69 ;
 
   GND GND
        (.G(\<const0> ));
@@ -40293,20 +39284,20 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
     .INIT(1'b0)) 
     \my_empty_reg[1] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_106 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_108 ),
         .D(\my_empty[1]_i_1__0_n_0 ),
         .Q(\my_empty_reg[1]_0 ),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'hffffffff0000fff7)) 
-    \my_empty_reg[1]_CE_cooolgate_en_gate_447 
+    \my_empty_reg[1]_CE_cooolgate_en_gate_577 
        (.I0(wr_ptr_timing[3]),
         .I1(wr_ptr_timing[2]),
         .I2(calib_cmd_wren),
         .I3(pwropt_1),
         .I4(\my_full_reg_n_0_[3] ),
         .I5(ofifo_rst),
-        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_106 ));
+        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_108 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -40315,7 +39306,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
     .INIT(1'b0)) 
     \my_empty_reg[6] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_106 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_108 ),
         .D(\my_empty[6]_i_1_n_0 ),
         .Q(\my_empty_reg_n_0_[6] ),
         .R(\<const0> ));
@@ -40522,6 +39513,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
        (.I0(Q[3]),
         .I1(Q[0]),
         .O(nxt_wr_ptr[0]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "191" *) 
   LUT3 #(
     .INIT(8'hB4)) 
     \wr_ptr[1]_i_1__2 
@@ -40588,17 +39580,17 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
     .INIT(1'b0)) 
     \wr_ptr_timing_reg[0] 
        (.C(CLK),
-        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_65 ),
+        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_69 ),
         .D(nxt_wr_ptr[0]),
         .Q(wr_ptr_timing[0]),
         .R(ofifo_rst));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT2 #(
     .INIT(4'h2)) 
-    \wr_ptr_timing_reg[0]_CE_cooolgate_en_gate_326_LOPT_REMAP 
+    \wr_ptr_timing_reg[0]_CE_cooolgate_en_gate_460_LOPT_REMAP 
        (.I0(wr_ptr0__0),
         .I1(pwropt),
-        .O(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_65 ));
+        .O(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_69 ));
   (* IS_CLOCK_GATED *) 
   (* KEEP = "yes" *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
@@ -40606,7 +39598,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
     .INIT(1'b0)) 
     \wr_ptr_timing_reg[1] 
        (.C(CLK),
-        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_65 ),
+        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_69 ),
         .D(nxt_wr_ptr[1]),
         .Q(wr_ptr_timing[1]),
         .R(ofifo_rst));
@@ -40617,7 +39609,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_10
     .INIT(1'b0)) 
     \wr_ptr_timing_reg[2] 
        (.C(CLK),
-        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_65 ),
+        .CE(\wr_ptr_timing_reg[0]_CE_cooolgate_en_sig_69 ),
         .D(nxt_wr_ptr[2]),
         .Q(wr_ptr_timing[2]),
         .R(ofifo_rst));
@@ -40698,7 +39690,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
   wire \my_empty[7]_i_5_n_0 ;
   wire \my_empty_reg[1]_0 ;
   wire \my_empty_reg[1]_1 ;
-  wire \my_empty_reg[1]_CE_cooolgate_en_sig_105 ;
+  wire \my_empty_reg[1]_CE_cooolgate_en_sig_107 ;
   wire \my_empty_reg_n_0_[7] ;
   wire my_full0;
   wire \my_full[4]_i_1_n_0 ;
@@ -40714,7 +39706,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
   wire [3:0]rd_ptr;
   wire [3:0]rd_ptr_timing;
   wire \rd_ptr_timing[3]_i_1_n_0 ;
-  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_148 ;
+  wire \rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_150 ;
   (* MAX_FANOUT = "50" *) (* RTL_MAX_FANOUT = "found" *) wire wr_en;
   wire [3:0]wr_ptr;
   wire wr_ptr0__0;
@@ -41127,20 +40119,20 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
     .INIT(1'b0)) 
     \my_empty_reg[1] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_107 ),
         .D(\my_empty[1]_i_1_n_0 ),
         .Q(\my_empty_reg[1]_0 ),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'hffffffff0000fff7)) 
-    \my_empty_reg[1]_CE_cooolgate_en_gate_444 
+    \my_empty_reg[1]_CE_cooolgate_en_gate_574 
        (.I0(wr_ptr_timing[3]),
         .I1(wr_ptr_timing[2]),
         .I2(calib_cmd_wren),
         .I3(pwropt),
         .I4(\my_full_reg_n_0_[4] ),
         .I5(SR),
-        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ));
+        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_107 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -41149,7 +40141,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
     .INIT(1'b0)) 
     \my_empty_reg[7] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_105 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_107 ),
         .D(\my_empty[7]_i_1_n_0 ),
         .Q(\my_empty_reg_n_0_[7] ),
         .R(\<const0> ));
@@ -41378,17 +40370,17 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
     .INIT(1'b0)) 
     \rd_ptr_timing_reg[0] 
        (.C(CLK),
-        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_148 ),
+        .CE(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_150 ),
         .D(nxt_rd_ptr[0]),
         .Q(rd_ptr_timing[0]),
         .R(SR));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT2 #(
     .INIT(4'h2)) 
-    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_544_LOPT_REMAP 
+    \rd_ptr_timing_reg[0]_CE_cooolgate_en_gate_674_LOPT_REMAP 
        (.I0(\rd_ptr_timing[3]_i_1_n_0 ),
         .I1(pwropt_1),
-        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_148 ));
+        .O(\rd_ptr_timing_reg[0]_CE_cooolgate_en_sig_150 ));
   (* KEEP = "yes" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -41438,6 +40430,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
         .I1(wr_ptr[0]),
         .I2(wr_ptr[1]),
         .O(nxt_wr_ptr[1]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   LUT4 #(
     .INIT(16'hAA6A)) 
     \wr_ptr[2]_i_1 
@@ -41446,6 +40439,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_11
         .I2(wr_ptr[1]),
         .I3(wr_ptr[3]),
         .O(nxt_wr_ptr[2]));
+  (* \PinAttr:I3:HOLD_DETOUR  = "193" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \wr_ptr[3]_i_1 
@@ -41590,7 +40584,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
   wire \my_empty[7]_i_5__0_n_0 ;
   wire \my_empty_reg[1]_0 ;
   wire \my_empty_reg[1]_1 ;
-  wire \my_empty_reg[1]_CE_cooolgate_en_sig_102 ;
+  wire \my_empty_reg[1]_CE_cooolgate_en_sig_104 ;
   wire \my_empty_reg_n_0_[7] ;
   wire my_full0;
   wire \my_full[4]_i_1__0_n_0 ;
@@ -41643,7 +40637,6 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
         .I4(entry_cnt_reg[2]),
         .I5(\entry_cnt_reg_n_0_[1] ),
         .O(\entry_cnt[2]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "150" *) 
   LUT5 #(
     .INIT(32'h7F80FE01)) 
     \entry_cnt[3]_i_1 
@@ -41787,20 +40780,20 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
     .INIT(1'b0)) 
     \my_empty_reg[1] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_102 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_104 ),
         .D(\my_empty[1]_i_1__1_n_0 ),
         .Q(\my_empty_reg[1]_1 ),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'hffffffff0000ff4f)) 
-    \my_empty_reg[1]_CE_cooolgate_en_gate_435 
+    \my_empty_reg[1]_CE_cooolgate_en_gate_565 
        (.I0(wr_ptr_timing[2]),
         .I1(\rd_ptr_reg[0]_0 ),
         .I2(wr_ptr_timing[3]),
         .I3(mux_wrdata_en),
         .I4(\my_full_reg_n_0_[4] ),
         .I5(ofifo_rst),
-        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_102 ));
+        .O(\my_empty_reg[1]_CE_cooolgate_en_sig_104 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -41809,7 +40802,7 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
     .INIT(1'b0)) 
     \my_empty_reg[7] 
        (.C(CLK),
-        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_102 ),
+        .CE(\my_empty_reg[1]_CE_cooolgate_en_sig_104 ),
         .D(\my_empty[7]_i_1__0_n_0 ),
         .Q(\my_empty_reg_n_0_[7] ),
         .R(\<const0> ));
@@ -41985,12 +40978,14 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
         .D(nxt_rd_ptr[3]),
         .Q(rd_ptr_timing[3]),
         .R(ofifo_rst));
+  (* \PinAttr:I1:HOLD_DETOUR  = "185" *) 
   LUT2 #(
     .INIT(4'h9)) 
     \wr_ptr[0]_i_1__3 
        (.I0(Q[3]),
         .I1(Q[0]),
         .O(nxt_wr_ptr[0]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "185" *) 
   LUT3 #(
     .INIT(8'hB4)) 
     \wr_ptr[1]_i_1__3 
@@ -41998,7 +40993,6 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
         .I1(Q[0]),
         .I2(Q[1]),
         .O(nxt_wr_ptr[1]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   LUT4 #(
     .INIT(16'hAA6A)) 
     \wr_ptr[2]_i_1__1 
@@ -42017,7 +41011,6 @@ module mig_7series_0mig_7series_v4_2_ddr_of_pre_fifo__parameterized1_9
         .I4(\my_full_reg_n_0_[4] ),
         .I5(\my_empty_reg_n_0_[7] ),
         .O(wr_ptr0));
-  (* \PinAttr:I3:HOLD_DETOUR  = "179" *) 
   LUT4 #(
     .INIT(16'h4000)) 
     \wr_ptr[3]_i_2 
@@ -43323,7 +42316,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
   wire \pi_dqs_found_lanes_r1_reg[3]_3 ;
   wire [5:0]\pi_dqs_found_lanes_r1_reg[3]_4 ;
   wire pll_locked;
-  wire \po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ;
+  wire \po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ;
   wire [8:0]\po_counter_read_val_reg[8]_0 ;
   wire \po_counter_read_val_reg[8]_1 ;
   wire \po_counter_read_val_reg[8]_10 ;
@@ -44044,24 +43037,24 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[0] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_31 ),
         .Q(\po_counter_read_val_reg[8]_0 [0]),
         .R(\<const0> ));
   LUT3 #(
     .INIT(8'h04)) 
-    \po_counter_read_val_reg[0]_CE_cooolgate_en_gate_89 
+    \po_counter_read_val_reg[0]_CE_cooolgate_en_gate_218 
        (.I0(pwropt_3),
         .I1(pwropt_2),
         .I2(pwropt_1),
-        .O(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ));
+        .O(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \po_counter_read_val_reg[1] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_30 ),
         .Q(\po_counter_read_val_reg[8]_0 [1]),
         .R(\<const0> ));
@@ -44071,7 +43064,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[2] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_29 ),
         .Q(\po_counter_read_val_reg[8]_0 [2]),
         .R(\<const0> ));
@@ -44081,7 +43074,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[3] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_28 ),
         .Q(\po_counter_read_val_reg[8]_0 [3]),
         .R(\<const0> ));
@@ -44091,7 +43084,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[4] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_27 ),
         .Q(\po_counter_read_val_reg[8]_0 [4]),
         .R(\<const0> ));
@@ -44101,7 +43094,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[5] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_26 ),
         .Q(\po_counter_read_val_reg[8]_0 [5]),
         .R(\<const0> ));
@@ -44111,7 +43104,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[6] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_25 ),
         .Q(\po_counter_read_val_reg[8]_0 [6]),
         .R(\<const0> ));
@@ -44121,7 +43114,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[7] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_24 ),
         .Q(\po_counter_read_val_reg[8]_0 [7]),
         .R(\<const0> ));
@@ -44131,7 +43124,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_4lanes
     .INIT(1'b0)) 
     \po_counter_read_val_reg[8] 
        (.C(CLK),
-        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_6 ),
+        .CE(\po_counter_read_val_reg[0]_CE_cooolgate_en_sig_8 ),
         .D(\ddr_byte_lane_B.ddr_byte_lane_B_n_23 ),
         .Q(\po_counter_read_val_reg[8]_0 [8]),
         .R(\<const0> ));
@@ -44213,8 +43206,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
     \gen_byte_sel_div2.ctl_lane_sel_reg[1] ,
     \gen_byte_sel_div2.ctl_lane_sel_reg[1]_0 ,
     delay_dec_done_reg_0,
-    \wait_cnt_r_reg[0]_2 ,
-    .pwropt(delay_done_r3_reg_srl3_n_0));
+    \wait_cnt_r_reg[0]_2 );
   output ck_addr_cmd_delay_done;
   output cmd_po_en_stg2_f;
   output po_cnt_dec_0;
@@ -44235,7 +43227,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
   input \gen_byte_sel_div2.ctl_lane_sel_reg[1]_0 ;
   input delay_dec_done_reg_0;
   input [0:0]\wait_cnt_r_reg[0]_2 ;
-  output delay_done_r3_reg_srl3_n_0;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -44255,7 +43246,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
   wire delay_dec_done_i_1_n_0;
   wire delay_dec_done_i_2_n_0;
   wire delay_dec_done_reg_0;
-  wire delay_dec_done_reg_CE_cooolgate_en_sig_378;
   wire delay_done_r3_reg_srl3_n_0;
   wire delay_done_r4_reg_0;
   wire delaydec_cnt_r0;
@@ -44282,7 +43272,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
        (.G(\<const0> ));
   VCC VCC
        (.P(\<const1> ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair220" *) 
   LUT5 #(
     .INIT(32'h0000CCC7)) 
@@ -44293,7 +43282,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
         .I3(\ctl_lane_cnt[1]_i_3_n_0 ),
         .I4(p_1_in),
         .O(\ctl_lane_cnt[0]_i_1_n_0 ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair220" *) 
   LUT5 #(
     .INIT(32'h54550000)) 
@@ -44349,27 +43337,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
         .I4(delaydec_cnt_r_reg[4]),
         .I5(delaydec_cnt_r_reg[0]),
         .O(delay_dec_done_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     delay_dec_done_reg
        (.C(CLK),
-        .CE(delay_dec_done_reg_CE_cooolgate_en_sig_378),
+        .CE(\<const1> ),
         .D(delay_dec_done_i_1_n_0),
         .Q(delay_dec_done),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff01ffffff)) 
-    delay_dec_done_reg_CE_cooolgate_en_gate_985
-       (.I0(delaydec_cnt_r_reg[5]),
-        .I1(delaydec_cnt_r_reg[3]),
-        .I2(delaydec_cnt_r_reg[1]),
-        .I3(\wait_cnt_r_reg[0]_0 ),
-        .I4(\wait_cnt_r_reg[0]_1 ),
-        .I5(delay_dec_done_reg_0),
-        .O(delay_dec_done_reg_CE_cooolgate_en_sig_378));
   (* srl_name = "\u_mig_7series_0_mig/u_memc_ui_top_std/mem_intfc0/ddr_phy_top0/u_ddr_calib_top/mb_wrlvl_inst.u_ddr_phy_ck_addr_cmd_delay/delay_done_r3_reg_srl3 " *) 
   SRL16E #(
     .INIT(16'h0000)) 
@@ -44554,6 +43529,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
     \wait_cnt_r[0]_i_1 
        (.I0(wait_cnt_r_reg[0]),
         .O(wait_cnt_r0__0[0]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair223" *) 
   LUT2 #(
     .INIT(4'h9)) 
@@ -44561,6 +43537,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
        (.I0(wait_cnt_r_reg[1]),
         .I1(wait_cnt_r_reg[0]),
         .O(wait_cnt_r0__0[1]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair223" *) 
   LUT3 #(
     .INIT(8'hA9)) 
@@ -44579,6 +43556,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_ck_addr_cmd_delay
         .I4(\wait_cnt_r_reg[0]_1 ),
         .I5(\wait_cnt_r_reg[0]_0 ),
         .O(wait_cnt_r0));
+  (* \PinAttr:I3:HOLD_DETOUR  = "149" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \wait_cnt_r[3]_i_3 
@@ -44687,11 +43665,8 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     detect_pi_found_dqs,
     prech_done,
     rst_dqs_find_i_4_0,
-    pwropt,
-    .pwropt_1(ck_po_stg2_f_en_i_1_n_0),
-    .pwropt_2(\^pwropt_1 ),
-    .pwropt_3(\^pwropt_2 ),
-    .pwropt_4(\^pwropt_3 ));
+    .pwropt(dqs_found_done_r0),
+    .pwropt_1(\^pwropt ));
   output rd_data_offset_cal_done;
   output pi_dqs_found_done;
   output fine_adjust_done_r_reg_0;
@@ -44756,11 +43731,8 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   input detect_pi_found_dqs;
   input prech_done;
   input rst_dqs_find_i_4_0;
-  input pwropt;
-  output ck_po_stg2_f_en_i_1_n_0;
-  input \^pwropt_1 ;
-  input \^pwropt_2 ;
-  input \^pwropt_3 ;
+  output dqs_found_done_r0;
+  input \^pwropt ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -44814,7 +43786,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire [0:0]ctl_lane_cnt;
   wire \ctl_lane_cnt[0]_i_1__0_n_0 ;
   wire \ctl_lane_cnt_reg[0]_0 ;
-  wire \ctl_lane_cnt_reg[0]_CE_cooolgate_en_sig_262 ;
   wire ctl_lane_sel;
   wire [5:0]dec_cnt;
   wire \dec_cnt[0]_i_2_n_0 ;
@@ -44906,7 +43877,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire first_fail_detect_i_1_n_0;
   wire first_fail_detect_reg_n_0;
   wire \first_fail_taps[5]_i_2_n_0 ;
-  wire \first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ;
+  wire \first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ;
   wire \first_fail_taps_reg_n_0_[0] ;
   wire \first_fail_taps_reg_n_0_[1] ;
   wire \first_fail_taps_reg_n_0_[2] ;
@@ -44963,7 +43934,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire pi_dqs_found_all_bank;
   wire \pi_dqs_found_all_bank[0]_i_1_n_0 ;
   wire pi_dqs_found_all_bank_r;
-  wire \pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_108 ;
+  wire \pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_110 ;
   wire pi_dqs_found_any_bank;
   wire \pi_dqs_found_any_bank[0]_i_1_n_0 ;
   wire pi_dqs_found_any_bank_r;
@@ -44982,18 +43953,13 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire \pi_rst_stg1_cal[0]_i_1_n_0 ;
   wire pi_rst_stg1_cal_r;
   wire \pi_rst_stg1_cal_r1[0]_i_1_n_0 ;
-  wire \pi_rst_stg1_cal_r1_reg[0]_CE_cooolgate_en_sig_391 ;
   wire \pi_rst_stg1_cal_r1_reg_n_0_[0] ;
   wire \pi_rst_stg1_cal_r[0]_i_1_n_0 ;
   wire \pi_rst_stg1_cal_r[0]_i_2_n_0 ;
   wire \pi_rst_stg1_cal_reg[0]_0 ;
-  wire \pi_rst_stg1_cal_reg[0]_CE_cooolgate_en_sig_263 ;
   wire prech_done;
   wire prech_req_posedge_r_reg;
-  wire pwropt;
-  wire \^pwropt_1 ;
-  wire \^pwropt_2 ;
-  wire \^pwropt_3 ;
+  wire \^pwropt ;
   wire rank_done_r1;
   wire rank_done_r_i_1_n_0;
   wire \rank_final_loop[0].bank_final_loop[0].final_data_offset_mc[0][0]_i_1_n_0 ;
@@ -45017,7 +43983,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire [5:0]rd_data_offset_ranks_0;
   wire \rnk_cnt_r[0]_i_1_n_0 ;
   wire \rnk_cnt_r[1]_i_1_n_0 ;
-  wire \rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_100 ;
+  wire \rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_102 ;
   wire \rnk_cnt_r_reg_n_0_[0] ;
   wire \rnk_cnt_r_reg_n_0_[1] ;
   wire rst_dqs_find;
@@ -45039,9 +44005,8 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
   wire rst_dqs_find_i_8_n_0;
   wire rst_dqs_find_i_9_n_0;
   wire rst_dqs_find_r1;
-  wire rst_dqs_find_r1_reg_CE_cooolgate_en_sig_145;
   wire rst_dqs_find_r2;
-  wire rst_dqs_find_r2_reg_CE_cooolgate_en_sig_131;
+  wire rst_dqs_find_r2_reg_CE_cooolgate_en_sig_133;
   wire rst_stg1_cal;
   wire stable_pass_cnt;
   wire \stable_pass_cnt[5]_i_3_n_0 ;
@@ -45085,7 +44050,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I1(\FSM_sequential_fine_adj_state_r[3]_i_5_n_0 ),
         .I2(\FSM_sequential_fine_adj_state_r[0]_i_6_n_0 ),
         .O(\FSM_sequential_fine_adj_state_r[0]_i_4_n_0 ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "190" *) 
+  (* \PinAttr:I4:HOLD_DETOUR  = "189" *) 
   LUT5 #(
     .INIT(32'hF0110011)) 
     \FSM_sequential_fine_adj_state_r[0]_i_5 
@@ -45420,7 +44385,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .D(ck_po_stg2_f_en_i_1_n_0),
         .Q(ck_po_stg2_f_en),
         .R(ck_po_stg2_f_en_reg_0));
-  (* \PinAttr:I4:HOLD_DETOUR  = "179" *) 
   LUT5 #(
     .INIT(32'hDB7F0040)) 
     ck_po_stg2_f_indec_i_1
@@ -45443,7 +44407,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     \cmd_pipe_plus.mc_data_offset[0]_i_1 
        (.I0(\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5]_0 [0]),
         .O(\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0]_0 ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "190" *) 
+  (* \PinAttr:I4:HOLD_DETOUR  = "189" *) 
   LUT5 #(
     .INIT(32'hDBFF2400)) 
     \ctl_lane_cnt[0]_i_1__0 
@@ -45453,22 +44417,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I3(fine_adj_state_r[2]),
         .I4(fine_adjust_lane_cnt),
         .O(\ctl_lane_cnt[0]_i_1__0_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \ctl_lane_cnt_reg[0] 
        (.C(CLK),
-        .CE(\ctl_lane_cnt_reg[0]_CE_cooolgate_en_sig_262 ),
+        .CE(\<const1> ),
         .D(\ctl_lane_cnt[0]_i_1__0_n_0 ),
         .Q(fine_adjust_lane_cnt),
         .R(ck_po_stg2_f_en_reg_0));
-  LUT2 #(
-    .INIT(4'he)) 
-    \ctl_lane_cnt_reg[0]_CE_cooolgate_en_gate_753 
-       (.I0(fine_adj_state_r[2]),
-        .I1(ck_po_stg2_f_en_reg_0),
-        .O(\ctl_lane_cnt_reg[0]_CE_cooolgate_en_sig_262 ));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFF44F4)) 
     \dec_cnt[0]_i_1 
@@ -46181,28 +45137,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \first_fail_taps_reg[0] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[0] ),
         .Q(\first_fail_taps_reg_n_0_[0] ),
         .R(ck_po_stg2_f_en_reg_0));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF002000000000)) 
-    \first_fail_taps_reg[0]_CE_cooolgate_en_gate_123_LOPT_REMAP 
+    \first_fail_taps_reg[0]_CE_cooolgate_en_gate_252_LOPT_REMAP 
        (.I0(fine_adj_state_r[3]),
         .I1(fine_adj_state_r[2]),
         .I2(fine_adj_state_r[1]),
         .I3(Q),
         .I4(ck_po_stg2_f_en_reg_0),
         .I5(first_fail_detect),
-        .O(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ));
+        .O(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \first_fail_taps_reg[1] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[1] ),
         .Q(\first_fail_taps_reg_n_0_[1] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46212,7 +45168,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \first_fail_taps_reg[2] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[2] ),
         .Q(\first_fail_taps_reg_n_0_[2] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46222,7 +45178,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \first_fail_taps_reg[3] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[3] ),
         .Q(\first_fail_taps_reg_n_0_[3] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46232,7 +45188,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \first_fail_taps_reg[4] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[4] ),
         .Q(\first_fail_taps_reg_n_0_[4] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46242,7 +45198,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \first_fail_taps_reg[5] 
        (.C(CLK),
-        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_13 ),
+        .CE(\first_fail_taps_reg[0]_CE_cooolgate_en_sig_15 ),
         .D(\inc_cnt_reg_n_0_[5] ),
         .Q(\first_fail_taps_reg_n_0_[5] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46436,7 +45392,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     \init_dec_cnt[0]_i_1 
        (.I0(init_dec_cnt_reg[0]),
         .O(init_dec_cnt0));
-  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair215" *) 
   LUT2 #(
     .INIT(4'h9)) 
@@ -46444,7 +45400,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
        (.I0(init_dec_cnt_reg[0]),
         .I1(init_dec_cnt_reg[1]),
         .O(\init_dec_cnt[1]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair215" *) 
   LUT3 #(
     .INIT(8'hE1)) 
@@ -46453,7 +45409,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I1(init_dec_cnt_reg[0]),
         .I2(init_dec_cnt_reg[2]),
         .O(\init_dec_cnt[2]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT4 #(
     .INIT(16'hFE01)) 
@@ -46463,7 +45419,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I2(init_dec_cnt_reg[1]),
         .I3(init_dec_cnt_reg[3]),
         .O(\init_dec_cnt[3]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "196" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair202" *) 
   LUT5 #(
     .INIT(32'hFFFE0001)) 
@@ -46718,16 +45674,16 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \pi_dqs_found_all_bank_reg[0] 
        (.C(CLK),
-        .CE(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_108 ),
+        .CE(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_110 ),
         .D(\pi_dqs_found_all_bank[0]_i_1_n_0 ),
         .Q(pi_dqs_found_all_bank),
         .R(ck_po_stg2_f_en_reg_0));
   LUT2 #(
     .INIT(4'he)) 
-    \pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_gate_453 
+    \pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_gate_583 
        (.I0(dqs_found_start_r_reg_0),
         .I1(ck_po_stg2_f_en_reg_0),
-        .O(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_108 ));
+        .O(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_110 ));
   LUT4 #(
     .INIT(16'hEFE0)) 
     \pi_dqs_found_any_bank[0]_i_1 
@@ -46751,7 +45707,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \pi_dqs_found_any_bank_reg[0] 
        (.C(CLK),
-        .CE(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_108 ),
+        .CE(\pi_dqs_found_all_bank_reg[0]_CE_cooolgate_en_sig_110 ),
         .D(\pi_dqs_found_any_bank[0]_i_1_n_0 ),
         .Q(pi_dqs_found_any_bank),
         .R(ck_po_stg2_f_en_reg_0));
@@ -46831,26 +45787,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I4(pi_dqs_found_any_bank_r),
         .I5(pi_dqs_found_all_bank),
         .O(\pi_rst_stg1_cal_r1[0]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \pi_rst_stg1_cal_r1_reg[0] 
        (.C(CLK),
-        .CE(\pi_rst_stg1_cal_r1_reg[0]_CE_cooolgate_en_sig_391 ),
+        .CE(\<const1> ),
         .D(\pi_rst_stg1_cal_r1[0]_i_1_n_0 ),
         .Q(\pi_rst_stg1_cal_r1_reg_n_0_[0] ),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hfffffff1)) 
-    \pi_rst_stg1_cal_r1_reg[0]_CE_cooolgate_en_gate_1011 
-       (.I0(pi_dqs_found_any_bank_r),
-        .I1(pi_dqs_found_all_bank),
-        .I2(pi_rst_stg1_cal_r),
-        .I3(fine_adjust_reg_n_0),
-        .I4(\detect_rd_cnt_reg[2]_0 ),
-        .O(\pi_rst_stg1_cal_r1_reg[0]_CE_cooolgate_en_sig_391 ));
   LUT4 #(
     .INIT(16'h0004)) 
     \pi_rst_stg1_cal_r[0]_i_1 
@@ -46877,22 +45821,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .D(\pi_rst_stg1_cal_r[0]_i_1_n_0 ),
         .Q(pi_rst_stg1_cal_r),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \pi_rst_stg1_cal_reg[0] 
        (.C(CLK),
-        .CE(\pi_rst_stg1_cal_reg[0]_CE_cooolgate_en_sig_263 ),
+        .CE(\<const1> ),
         .D(\pi_rst_stg1_cal[0]_i_1_n_0 ),
         .Q(rst_stg1_cal),
         .R(ck_po_stg2_f_en_reg_0));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \pi_rst_stg1_cal_reg[0]_CE_cooolgate_en_gate_755 
-       (.I0(\^pwropt_3 ),
-        .I1(\^pwropt_2 ),
-        .O(\pi_rst_stg1_cal_reg[0]_CE_cooolgate_en_sig_263 ));
   FDRE #(
     .INIT(1'b0)) 
     rank_done_r1_reg
@@ -47239,25 +46175,25 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
     .INIT(1'b0)) 
     \rnk_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_100 ),
+        .CE(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_102 ),
         .D(\rnk_cnt_r[0]_i_1_n_0 ),
         .Q(\rnk_cnt_r_reg_n_0_[0] ),
         .R(ck_po_stg2_f_en_reg_0));
   LUT4 #(
     .INIT(16'hff0d)) 
-    \rnk_cnt_r_reg[0]_CE_cooolgate_en_gate_429 
+    \rnk_cnt_r_reg[0]_CE_cooolgate_en_gate_559 
        (.I0(\rnk_cnt_r_reg_n_0_[0] ),
         .I1(pi_dqs_found_rank_done),
         .I2(rd_data_offset_cal_done),
         .I3(ck_po_stg2_f_en_reg_0),
-        .O(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_100 ));
+        .O(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_102 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rnk_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_100 ),
+        .CE(\rnk_cnt_r_reg[0]_CE_cooolgate_en_sig_102 ),
         .D(\rnk_cnt_r[1]_i_1_n_0 ),
         .Q(\rnk_cnt_r_reg_n_0_[1] ),
         .R(ck_po_stg2_f_en_reg_0));
@@ -47432,42 +46368,34 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_dqs_found_cal_hr
         .I2(Q),
         .I3(fine_adj_state_r[2]),
         .O(rst_dqs_find_i_9_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rst_dqs_find_r1_reg
        (.C(CLK),
-        .CE(rst_dqs_find_r1_reg_CE_cooolgate_en_sig_145),
+        .CE(\<const1> ),
         .D(rst_dqs_find__0),
         .Q(rst_dqs_find_r1),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'h1)) 
-    rst_dqs_find_r1_reg_CE_cooolgate_en_gate_539
-       (.I0(pwropt),
-        .I1(\^pwropt_1 ),
-        .O(rst_dqs_find_r1_reg_CE_cooolgate_en_sig_145));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     rst_dqs_find_r2_reg
        (.C(CLK),
-        .CE(rst_dqs_find_r2_reg_CE_cooolgate_en_sig_131),
+        .CE(rst_dqs_find_r2_reg_CE_cooolgate_en_sig_133),
         .D(rst_dqs_find_r1),
         .Q(rst_dqs_find_r2),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'h00000000000000f8)) 
-    rst_dqs_find_r2_reg_CE_cooolgate_en_gate_511
+    rst_dqs_find_r2_reg_CE_cooolgate_en_gate_641
        (.I0(\FSM_sequential_fine_adj_state_r[3]_i_1_n_0 ),
         .I1(\FSM_sequential_fine_adj_state_r[0]_i_1_n_0 ),
         .I2(Q),
         .I3(\pi_dqs_found_any_bank[0]_i_1_n_0 ),
-        .I4(pwropt),
+        .I4(\^pwropt ),
         .I5(ck_po_stg2_f_en_reg_0),
-        .O(rst_dqs_find_r2_reg_CE_cooolgate_en_sig_131));
+        .O(rst_dqs_find_r2_reg_CE_cooolgate_en_sig_133));
   FDRE #(
     .INIT(1'b0)) 
     rst_dqs_find_reg
@@ -47763,10 +46691,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     \phy_ctl_wd_i1_reg[21] ,
     \phy_ctl_wd_i1_reg[22]_0 ,
     pwropt,
-    .pwropt_1(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+    .pwropt_1(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
     .pwropt_2(rdlvl_stg1_start_i_1_n_0),
-    .pwropt_3(init_complete_r_timing),
-    .pwropt_4(init_complete_r2));
+    .pwropt_3(init_complete_r_timing));
   output prech_done;
   output prech_req_posedge_r_reg_0;
   output wrlvl_done_r1;
@@ -47933,10 +46860,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   input \phy_ctl_wd_i1_reg[22]_0 ;
   input pwropt;
   output init_complete_r1_timing;
-  output cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3;
+  output cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5;
   output rdlvl_stg1_start_i_1_n_0;
   output init_complete_r_timing;
-  output init_complete_r2;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -47967,15 +46893,12 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \back_to_back_reads_4_1.num_reads[1]_i_1_n_0 ;
   wire \back_to_back_reads_4_1.num_reads[2]_i_1_n_0 ;
   wire \back_to_back_reads_4_1.num_reads[2]_i_2_n_0 ;
-  wire \back_to_back_reads_4_1.num_reads_reg[0]_CE_cooolgate_en_sig_243 ;
-  wire \back_to_back_reads_4_1.num_reads_reg[1]_CE_cooolgate_en_sig_286 ;
   wire \back_to_back_reads_4_1.num_reads_reg[2]_0 ;
-  wire \back_to_back_reads_4_1.num_reads_reg[2]_CE_cooolgate_en_sig_256 ;
   wire [2:0]bank_w;
   wire burst_addr_r_i_1_n_0;
   wire burst_addr_r_i_2_n_0;
   wire burst_addr_r_reg_0;
-  wire cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3;
+  wire cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5;
   wire [3:3]calib_cke;
   wire [2:0]calib_cmd;
   wire \calib_cmd[0]_i_1_n_0 ;
@@ -48004,7 +46927,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \calib_odt[0]_i_4_n_0 ;
   wire \calib_seq[0]_i_1_n_0 ;
   wire \calib_seq[1]_i_1_n_0 ;
-  wire \calib_seq_reg[0]_CE_cooolgate_en_sig_97 ;
+  wire \calib_seq_reg[0]_CE_cooolgate_en_sig_99 ;
   wire [10:0]\calib_seq_reg[1]_0 ;
   wire calib_wrdata_en;
   wire calib_wrdata_en_i_2_n_0;
@@ -48041,13 +46964,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire cnt_dllk_zqinit_done_r_i_1_n_0;
   wire \cnt_dllk_zqinit_r[7]_i_1_n_0 ;
   wire [7:0]cnt_dllk_zqinit_r_reg;
-  wire \cnt_dllk_zqinit_r_reg[1]_CE_cooolgate_en_sig_266 ;
-  wire \cnt_dllk_zqinit_r_reg[2]_CE_cooolgate_en_sig_233 ;
-  wire \cnt_dllk_zqinit_r_reg[3]_CE_cooolgate_en_sig_213 ;
-  wire \cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_69 ;
+  wire \cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_71 ;
   wire cnt_init_af_done_r;
   wire cnt_init_af_done_r_i_1_n_0;
-  wire cnt_init_af_done_r_reg_CE_cooolgate_en_sig_70;
+  wire cnt_init_af_done_r_reg_CE_cooolgate_en_sig_72;
   wire [1:0]cnt_init_af_r;
   wire \cnt_init_af_r[0]_i_1_n_0 ;
   wire \cnt_init_af_r[1]_i_1_n_0 ;
@@ -48058,29 +46978,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \cnt_init_mr_r[0]_i_1_n_0 ;
   wire \cnt_init_mr_r[0]_i_2_n_0 ;
   wire \cnt_init_mr_r[1]_i_1_n_0 ;
-  wire \cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_146 ;
+  wire \cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_148 ;
   wire [9:0]cnt_pwron_ce_r_reg;
-  wire \cnt_pwron_ce_r_reg[1]_CE_cooolgate_en_sig_267 ;
-  wire \cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ;
+  wire \cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ;
   wire [3:0]\cnt_pwron_ce_r_reg[9]_0 ;
   wire cnt_pwron_cke_done_r;
   wire cnt_pwron_cke_done_r_i_1_n_0;
   wire cnt_pwron_cke_done_r_i_2_n_0;
   wire cnt_pwron_cke_done_r_i_3_n_0;
-  wire cnt_pwron_cke_done_r_reg_CE_cooolgate_en_sig_287;
   wire \cnt_pwron_r[6]_i_2_n_0 ;
   wire \cnt_pwron_r[8]_i_2_n_0 ;
   wire [8:0]cnt_pwron_r_reg;
   wire cnt_pwron_reset_done_r;
   wire cnt_pwron_reset_done_r_i_1_n_0;
   wire cnt_pwron_reset_done_r_i_2_n_0;
-  wire cnt_pwron_reset_done_r_reg_CE_cooolgate_en_sig_288;
   wire cnt_txpr_done_r;
   wire cnt_txpr_done_r_i_1_n_0;
   wire cnt_txpr_done_r_i_2_n_0;
   wire \cnt_txpr_r[7]_i_3_n_0 ;
   wire [7:0]cnt_txpr_r_reg;
-  wire \cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ;
+  wire \cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ;
   wire complex_address0;
   wire \complex_address[9]_i_2_n_0 ;
   wire \complex_address[9]_i_3_n_0 ;
@@ -48098,7 +47015,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire complex_byte_rd_done_i_1_n_0;
   wire complex_byte_rd_done_i_2_n_0;
   wire complex_byte_rd_done_reg_0;
-  wire complex_byte_rd_done_reg_CE_cooolgate_en_sig_379;
   wire \complex_num_reads[0]_i_1_n_0 ;
   wire \complex_num_reads[1]_i_1_n_0 ;
   wire \complex_num_reads[1]_i_2_n_0 ;
@@ -48130,7 +47046,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \complex_num_reads_dec[3]_i_3_n_0 ;
   wire \complex_num_reads_dec[3]_i_4_n_0 ;
   wire \complex_num_reads_dec[3]_i_5_n_0 ;
-  wire \complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ;
+  wire \complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ;
   wire \complex_num_reads_reg_n_0_[0] ;
   wire \complex_num_reads_reg_n_0_[1] ;
   wire \complex_num_reads_reg_n_0_[2] ;
@@ -48170,7 +47086,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \complex_num_writes_dec[4]_i_4_n_0 ;
   wire \complex_num_writes_dec[4]_i_5_n_0 ;
   wire [4:0]complex_num_writes_dec_reg;
-  wire \complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ;
+  wire \complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ;
   wire \complex_num_writes_reg_n_0_[0] ;
   wire \complex_num_writes_reg_n_0_[1] ;
   wire \complex_num_writes_reg_n_0_[2] ;
@@ -48180,7 +47096,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire complex_ocal_odt_ext_i_1_n_0;
   wire complex_ocal_odt_ext_i_2_n_0;
   wire complex_ocal_odt_ext_i_3_n_0;
-  wire complex_ocal_odt_ext_reg_CE_cooolgate_en_sig_268;
   wire complex_ocal_reset_rd_addr;
   wire complex_ocal_reset_rd_addr0;
   wire complex_ocal_reset_rd_addr_i_2_n_0;
@@ -48190,7 +47105,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire complex_oclkdelay_calib_start_r1;
   wire complex_odt_ext;
   wire complex_odt_ext_i_1_n_0;
-  wire complex_odt_ext_reg_CE_cooolgate_en_sig_244;
   wire complex_row0_rd_done;
   wire complex_row0_rd_done1;
   wire complex_row0_rd_done_i_1_n_0;
@@ -48201,7 +47115,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \complex_row1_rd_cnt[0]_i_1_n_0 ;
   wire \complex_row1_rd_cnt[1]_i_1_n_0 ;
   wire \complex_row1_rd_cnt[2]_i_1_n_0 ;
-  wire \complex_row1_rd_cnt_reg[2]_CE_cooolgate_en_sig_289 ;
   wire complex_row1_rd_done;
   wire complex_row1_rd_done_i_1_n_0;
   wire complex_row1_rd_done_i_2_n_0;
@@ -48227,12 +47140,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire ddr2_pre_flag_r;
   wire ddr2_pre_flag_r_i_1_n_0;
   wire ddr2_pre_flag_r_i_2_n_0;
-  wire ddr2_pre_flag_r_reg_CE_cooolgate_en_sig_138;
   wire ddr2_pre_flag_r_reg_n_0;
   wire ddr2_refresh_flag_r;
   wire ddr2_refresh_flag_r_i_1_n_0;
   wire ddr2_refresh_flag_r_i_2_n_0;
-  wire ddr2_refresh_flag_r_reg_CE_cooolgate_en_sig_222;
   wire ddr3_lm_done_r;
   wire ddr3_lm_done_r_i_1_n_0;
   wire \ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_30_35 ;
@@ -48254,14 +47165,12 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \en_cnt_div4.enable_wrlvl_cnt[4]_i_1_n_0 ;
   wire \en_cnt_div4.enable_wrlvl_cnt_reg[2]_0 ;
   wire \en_cnt_div4.enable_wrlvl_cnt_reg[4]_0 ;
-  wire \en_cnt_div4.enable_wrlvl_cnt_reg[4]_CE_cooolgate_en_sig_269 ;
   wire \en_cnt_div4.wrlvl_odt_i_1_n_0 ;
   wire \en_cnt_div4.wrlvl_odt_i_2_n_0 ;
   wire [4:0]enable_wrlvl_cnt;
   wire enable_wrlvl_cnt0;
   wire first_rdlvl_pat_r;
   wire first_rdlvl_pat_r_i_1_n_0;
-  wire first_rdlvl_pat_r_reg_CE_cooolgate_en_sig_353;
   wire first_wrcal_pat_r;
   wire first_wrcal_pat_r_i_1_n_0;
   wire first_wrcal_pat_r_i_2_n_0;
@@ -48330,7 +47239,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \gen_no_mirror.div_clk_loop[0].phy_address[9]_i_8_n_0 ;
   wire \gen_no_mirror.div_clk_loop[0].phy_address[9]_i_9_n_0 ;
   wire [4:0]\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_0 ;
-  wire \gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ;
+  wire \gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ;
   wire [3:0]\gen_no_mirror.div_clk_loop[0].phy_address_reg[10]_0 ;
   wire [3:0]\gen_no_mirror.div_clk_loop[0].phy_address_reg[12]_0 ;
   wire [3:0]\gen_no_mirror.div_clk_loop[0].phy_address_reg[1]_0 ;
@@ -48369,16 +47278,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire init_complete_r2;
   wire init_complete_r_i_1_n_0;
   wire init_complete_r_i_2_n_0;
-  wire init_complete_r_reg_CE_cooolgate_en_sig_91;
+  wire init_complete_r_reg_CE_cooolgate_en_sig_93;
   wire init_complete_r_reg_n_0;
   (* RTL_KEEP = "true" *) wire init_complete_r_timing;
   wire init_complete_r_timing_i_1_n_0;
   wire init_next_state199_out;
   wire [6:6]init_state_r;
   wire [6:0]init_state_r1;
-  wire \init_state_r1_reg[0]_CE_cooolgate_en_sig_270 ;
-  wire \init_state_r1_reg[1]_CE_cooolgate_en_sig_393 ;
-  wire \init_state_r1_reg[4]_CE_cooolgate_en_sig_101 ;
+  wire \init_state_r1_reg[4]_CE_cooolgate_en_sig_103 ;
   wire \init_state_r[0]_i_10_n_0 ;
   wire \init_state_r[0]_i_11_n_0 ;
   wire \init_state_r[0]_i_12_n_0 ;
@@ -48582,7 +47489,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \init_state_r[6]_i_5_n_0 ;
   wire \init_state_r_reg[2]_0 ;
   wire \init_state_r_reg[3]_0 ;
-  wire \init_state_r_reg[6]_CE_cooolgate_en_sig_354 ;
   wire \init_state_r_reg_n_0_[0] ;
   wire \init_state_r_reg_n_0_[1] ;
   wire \init_state_r_reg_n_0_[2] ;
@@ -48682,9 +47588,8 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire pi_calib_done;
   wire pi_calib_done_r;
   wire pi_calib_done_r_i_1_n_0;
-  wire pi_calib_done_r_reg_CE_cooolgate_en_sig_271;
   wire pi_calib_rank_done_r;
-  wire pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_164;
+  wire pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_166;
   wire pi_dqs_found_done;
   wire pi_dqs_found_done_r1;
   wire pi_dqs_found_start_i_1_n_0;
@@ -48734,7 +47639,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire reg_ctrl_cnt_r;
   wire \reg_ctrl_cnt_r[3]_i_4_n_0 ;
   wire [3:0]reg_ctrl_cnt_r_reg;
-  wire \reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ;
+  wire \reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ;
   wire reset_rd_addr_r1;
   wire \row_cnt_victim_rotate.complex_row_cnt[0]_i_1_n_0 ;
   wire \row_cnt_victim_rotate.complex_row_cnt[1]_i_1_n_0 ;
@@ -48755,8 +47660,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \row_cnt_victim_rotate.complex_row_cnt[7]_i_1_n_0 ;
   wire \row_cnt_victim_rotate.complex_row_cnt[7]_i_2_n_0 ;
   wire \row_cnt_victim_rotate.complex_row_cnt[7]_i_3_n_0 ;
-  wire \row_cnt_victim_rotate.complex_row_cnt_reg[0]_CE_cooolgate_en_sig_185 ;
-  wire \row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ;
+  wire \row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ;
   wire \row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[0] ;
   wire \row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[1] ;
   wire \row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[2] ;
@@ -48814,7 +47718,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire wrcal_final_chk;
   wire wrcal_final_chk_i_1_n_0;
   wire wrcal_final_chk_i_2_n_0;
-  wire wrcal_final_chk_reg_CE_cooolgate_en_sig_238;
   wire wrcal_prech_req;
   wire wrcal_rd_wait;
   wire wrcal_rd_wait_i_1_n_0;
@@ -48842,7 +47745,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire \wrcal_reads_reg_n_0_[6] ;
   wire \wrcal_reads_reg_n_0_[7] ;
   wire wrcal_resume_r;
-  wire wrcal_resume_r_reg_CE_cooolgate_en_sig_165;
+  wire wrcal_resume_r_reg_CE_cooolgate_en_sig_167;
   wire wrcal_resume_w;
   wire wrcal_sanity_chk;
   wire [5:5]wrcal_start_dly_r;
@@ -48850,7 +47753,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire wrcal_start_i_1_n_0;
   wire wrcal_start_pre;
   wire wrcal_start_reg_0;
-  wire wrcal_start_reg_CE_cooolgate_en_sig_355;
   wire [3:2]wrcal_wr_cnt0;
   wire \wrcal_wr_cnt[0]_i_1_n_0 ;
   wire \wrcal_wr_cnt[1]_i_1_n_0 ;
@@ -48893,7 +47795,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   wire wrlvl_rank_done_r1;
   wire wrlvl_rank_done_r6_reg_srl5_n_0;
   wire wrlvl_rank_done_r7;
-  wire wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_123;
+  wire wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_125;
 
   LUT6 #(
     .INIT(64'h0000E0EE00000000)) 
@@ -49034,67 +47936,30 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(\init_state_r_reg_n_0_[5] ),
         .I5(\init_state_r_reg_n_0_[4] ),
         .O(\back_to_back_reads_4_1.num_reads[2]_i_2_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \back_to_back_reads_4_1.num_reads_reg[0] 
        (.C(CLK),
-        .CE(\back_to_back_reads_4_1.num_reads_reg[0]_CE_cooolgate_en_sig_243 ),
+        .CE(\<const1> ),
         .D(\back_to_back_reads_4_1.num_reads[0]_i_1_n_0 ),
         .Q(num_reads[0]),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'h0404ff04ffffffff)) 
-    \back_to_back_reads_4_1.num_reads_reg[0]_CE_cooolgate_en_gate_715 
-       (.I0(\init_state_r[2]_i_1_n_0 ),
-        .I1(\init_state_r[0]_i_1_n_0 ),
-        .I2(init_calib_complete_reg_0),
-        .I3(\back_to_back_reads_4_1.num_reads[2]_i_1_n_0 ),
-        .I4(\back_to_back_reads_4_1.num_reads[1]_i_1_n_0 ),
-        .I5(pwropt),
-        .O(\back_to_back_reads_4_1.num_reads_reg[0]_CE_cooolgate_en_sig_243 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \back_to_back_reads_4_1.num_reads_reg[1] 
        (.C(CLK),
-        .CE(\back_to_back_reads_4_1.num_reads_reg[1]_CE_cooolgate_en_sig_286 ),
+        .CE(\<const1> ),
         .D(\back_to_back_reads_4_1.num_reads[1]_i_1_n_0 ),
         .Q(num_reads[1]),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff0004ffff)) 
-    \back_to_back_reads_4_1.num_reads_reg[1]_CE_cooolgate_en_gate_801 
-       (.I0(\init_state_r_reg_n_0_[5] ),
-        .I1(\init_state_r_reg_n_0_[4] ),
-        .I2(\init_state_r_reg_n_0_[2] ),
-        .I3(init_state_r),
-        .I4(num_reads[0]),
-        .I5(complex_byte_rd_done_reg_0),
-        .O(\back_to_back_reads_4_1.num_reads_reg[1]_CE_cooolgate_en_sig_286 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \back_to_back_reads_4_1.num_reads_reg[2] 
        (.C(CLK),
-        .CE(\back_to_back_reads_4_1.num_reads_reg[2]_CE_cooolgate_en_sig_256 ),
+        .CE(\<const1> ),
         .D(\back_to_back_reads_4_1.num_reads[2]_i_1_n_0 ),
         .Q(num_reads[2]),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff11f1)) 
-    \back_to_back_reads_4_1.num_reads_reg[2]_CE_cooolgate_en_gate_741 
-       (.I0(num_reads[1]),
-        .I1(num_reads[0]),
-        .I2(prech_req_posedge_r_i_3_n_0),
-        .I3(\init_state_r_reg_n_0_[3] ),
-        .I4(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(\back_to_back_reads_4_1.num_reads_reg[2]_CE_cooolgate_en_sig_256 ));
   LUT5 #(
     .INIT(32'h000000AB)) 
     burst_addr_r_i_1
@@ -49124,9 +47989,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .R(\<const0> ));
   LUT1 #(
     .INIT(2'h1)) 
-    cal1_dq_idel_ce_reg_CE_cooolgate_en_gate_55
+    cal1_dq_idel_ce_reg_CE_cooolgate_en_gate_184
        (.I0(pwropt),
-        .O(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3));
+        .O(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5));
   FDRE #(
     .INIT(1'b0)) 
     \calib_cke_reg[0] 
@@ -49348,6 +48213,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\calib_odt[0]_i_1_n_0 ),
         .Q(calib_odt),
         .R(\<const0> ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair380" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -49356,6 +48222,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I1(cnt_pwron_cke_done_r),
         .I2(\calib_seq_reg[1]_0 [9]),
         .O(\calib_seq[0]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair380" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -49372,17 +48239,17 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \calib_seq_reg[0] 
        (.C(CLK),
-        .CE(\calib_seq_reg[0]_CE_cooolgate_en_sig_97 ),
+        .CE(\calib_seq_reg[0]_CE_cooolgate_en_sig_99 ),
         .D(\calib_seq[0]_i_1_n_0 ),
         .Q(\calib_seq_reg[1]_0 [9]),
         .R(init_calib_complete_reg_0));
   LUT3 #(
     .INIT(8'hf8)) 
-    \calib_seq_reg[0]_CE_cooolgate_en_gate_420 
+    \calib_seq_reg[0]_CE_cooolgate_en_gate_550 
        (.I0(Q),
         .I1(cnt_pwron_cke_done_r),
         .I2(init_calib_complete_reg_0),
-        .O(\calib_seq_reg[0]_CE_cooolgate_en_sig_97 ));
+        .O(\calib_seq_reg[0]_CE_cooolgate_en_sig_99 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -49390,7 +48257,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \calib_seq_reg[1] 
        (.C(CLK),
-        .CE(\calib_seq_reg[0]_CE_cooolgate_en_sig_97 ),
+        .CE(\calib_seq_reg[0]_CE_cooolgate_en_sig_99 ),
         .D(\calib_seq[1]_i_1_n_0 ),
         .Q(\calib_seq_reg[1]_0 [10]),
         .R(init_calib_complete_reg_0));
@@ -49464,6 +48331,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     \cnt_cmd_r[0]_i_1 
        (.I0(\cnt_cmd_r_reg_n_0_[0] ),
         .O(\cnt_cmd_r[0]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair395" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -49471,6 +48339,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
        (.I0(\cnt_cmd_r_reg_n_0_[1] ),
         .I1(\cnt_cmd_r_reg_n_0_[0] ),
         .O(\cnt_cmd_r[1]_i_1_n_0 ));
+  (* \PinAttr:I1:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair395" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -49479,6 +48348,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I1(\cnt_cmd_r_reg_n_0_[1] ),
         .I2(\cnt_cmd_r_reg_n_0_[0] ),
         .O(\cnt_cmd_r[2]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair344" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -49488,6 +48358,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(\cnt_cmd_r_reg_n_0_[0] ),
         .I3(\cnt_cmd_r_reg_n_0_[1] ),
         .O(\cnt_cmd_r[3]_i_1_n_0 ));
+  (* \PinAttr:I1:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair344" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
@@ -49607,7 +48478,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\cnt_cmd_r[6]_i_2_n_0 ),
         .Q(\cnt_cmd_r_reg_n_0_[6] ),
         .R(\cnt_cmd_r[6]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair375" *) 
   LUT4 #(
     .INIT(16'hEAAA)) 
@@ -49664,6 +48534,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I3(cnt_dllk_zqinit_r_reg[0]),
         .I4(cnt_dllk_zqinit_r_reg[3]),
         .O(p_0_in__3[4]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "155" *) 
   LUT6 #(
     .INIT(64'h6AAAAAAAAAAAAAAA)) 
     \cnt_dllk_zqinit_r[5]_i_1 
@@ -49706,57 +48577,30 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(p_0_in__3[0]),
         .Q(cnt_dllk_zqinit_r_reg[0]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[1] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[1]_CE_cooolgate_en_sig_266 ),
+        .CE(\<const1> ),
         .D(p_0_in__3[1]),
         .Q(cnt_dllk_zqinit_r_reg[1]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
-  LUT2 #(
-    .INIT(4'he)) 
-    \cnt_dllk_zqinit_r_reg[1]_CE_cooolgate_en_gate_761 
-       (.I0(cnt_dllk_zqinit_r_reg[0]),
-        .I1(\cnt_dllk_zqinit_r[7]_i_1_n_0 ),
-        .O(\cnt_dllk_zqinit_r_reg[1]_CE_cooolgate_en_sig_266 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[2] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[2]_CE_cooolgate_en_sig_233 ),
+        .CE(\<const1> ),
         .D(p_0_in__3[2]),
         .Q(cnt_dllk_zqinit_r_reg[2]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
-  LUT3 #(
-    .INIT(8'hf8)) 
-    \cnt_dllk_zqinit_r_reg[2]_CE_cooolgate_en_gate_695 
-       (.I0(cnt_dllk_zqinit_r_reg[1]),
-        .I1(cnt_dllk_zqinit_r_reg[0]),
-        .I2(\cnt_dllk_zqinit_r[7]_i_1_n_0 ),
-        .O(\cnt_dllk_zqinit_r_reg[2]_CE_cooolgate_en_sig_233 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[3] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[3]_CE_cooolgate_en_sig_213 ),
+        .CE(\<const1> ),
         .D(p_0_in__3[3]),
         .Q(cnt_dllk_zqinit_r_reg[3]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
-  LUT4 #(
-    .INIT(16'hff80)) 
-    \cnt_dllk_zqinit_r_reg[3]_CE_cooolgate_en_gate_655 
-       (.I0(cnt_dllk_zqinit_r_reg[2]),
-        .I1(cnt_dllk_zqinit_r_reg[1]),
-        .I2(cnt_dllk_zqinit_r_reg[0]),
-        .I3(\cnt_dllk_zqinit_r[7]_i_1_n_0 ),
-        .O(\cnt_dllk_zqinit_r_reg[3]_CE_cooolgate_en_sig_213 ));
   FDRE #(
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[4] 
@@ -49772,20 +48616,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[5] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_69 ),
+        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_71 ),
         .D(p_0_in__3[5]),
         .Q(cnt_dllk_zqinit_r_reg[5]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hffffffff80000000)) 
-    \cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_gate_337 
+    \cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_gate_467 
        (.I0(cnt_dllk_zqinit_r_reg[4]),
         .I1(cnt_dllk_zqinit_r_reg[3]),
         .I2(cnt_dllk_zqinit_r_reg[2]),
         .I3(cnt_dllk_zqinit_r_reg[1]),
         .I4(cnt_dllk_zqinit_r_reg[0]),
         .I5(\cnt_dllk_zqinit_r[7]_i_1_n_0 ),
-        .O(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_69 ));
+        .O(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_71 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -49793,7 +48637,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[6] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_69 ),
+        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_71 ),
         .D(p_0_in__3[6]),
         .Q(cnt_dllk_zqinit_r_reg[6]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
@@ -49804,11 +48648,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_dllk_zqinit_r_reg[7] 
        (.C(CLK),
-        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_69 ),
+        .CE(\cnt_dllk_zqinit_r_reg[5]_CE_cooolgate_en_sig_71 ),
         .D(p_0_in__3[7]),
         .Q(cnt_dllk_zqinit_r_reg[7]),
         .R(\cnt_dllk_zqinit_r[7]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair304" *) 
   LUT5 #(
     .INIT(32'h0000E222)) 
@@ -49825,20 +48668,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     cnt_init_af_done_r_reg
        (.C(CLK),
-        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_70),
+        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_72),
         .D(cnt_init_af_done_r_i_1_n_0),
         .Q(cnt_init_af_done_r),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'hffffffff00000020)) 
-    cnt_init_af_done_r_reg_CE_cooolgate_en_gate_341
+    cnt_init_af_done_r_reg_CE_cooolgate_en_gate_471
        (.I0(\init_state_r_reg_n_0_[4] ),
         .I1(\init_state_r_reg_n_0_[1] ),
         .I2(\init_state_r_reg_n_0_[0] ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_bank[0]_i_4_n_0 ),
         .I4(detect_pi_found_dqs_i_2_n_0),
         .I5(ddr2_pre_flag_r),
-        .O(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_70));
+        .O(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_72));
   LUT3 #(
     .INIT(8'h06)) 
     \cnt_init_af_r[0]_i_1 
@@ -49861,7 +48704,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_init_af_r_reg[0] 
        (.C(CLK),
-        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_70),
+        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_72),
         .D(\cnt_init_af_r[0]_i_1_n_0 ),
         .Q(cnt_init_af_r[0]),
         .R(\<const0> ));
@@ -49871,7 +48714,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_init_af_r_reg[1] 
        (.C(CLK),
-        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_70),
+        .CE(cnt_init_af_done_r_reg_CE_cooolgate_en_sig_72),
         .D(\cnt_init_af_r[1]_i_1_n_0 ),
         .Q(cnt_init_af_r[1]),
         .R(\<const0> ));
@@ -49945,19 +48788,19 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_init_mr_r_reg[0] 
        (.C(CLK),
-        .CE(\cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_146 ),
+        .CE(\cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_148 ),
         .D(\cnt_init_mr_r[0]_i_1_n_0 ),
         .Q(cnt_init_mr_r[0]),
         .R(\<const0> ));
   LUT5 #(
     .INIT(32'h000f4444)) 
-    \cnt_init_mr_r_reg[0]_CE_cooolgate_en_gate_541 
+    \cnt_init_mr_r_reg[0]_CE_cooolgate_en_gate_671 
        (.I0(\init_state_r[5]_i_5_n_0 ),
         .I1(\cnt_init_mr_r[0]_i_2_n_0 ),
         .I2(mem_init_done_r),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_bank[0]_i_4_n_0 ),
         .I4(\init_state_r_reg_n_0_[0] ),
-        .O(\cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_146 ));
+        .O(\cnt_init_mr_r_reg[0]_CE_cooolgate_en_sig_148 ));
   FDRE #(
     .INIT(1'b0)) 
     \cnt_init_mr_r_reg[1] 
@@ -49966,14 +48809,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\cnt_init_mr_r[1]_i_1_n_0 ),
         .Q(cnt_init_mr_r[1]),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "186" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair410" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \cnt_pwron_ce_r[0]_i_1 
        (.I0(cnt_pwron_ce_r_reg[0]),
         .O(p_0_in__0[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "186" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair410" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -50017,6 +48860,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(cnt_pwron_ce_r_reg[2]),
         .I5(cnt_pwron_ce_r_reg[4]),
         .O(p_0_in__0[5]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair393" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -50024,6 +48868,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
        (.I0(cnt_pwron_ce_r_reg[6]),
         .I1(pwron_ce_r_i_2_n_0),
         .O(p_0_in__0[6]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair393" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -50057,33 +48902,25 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[0] 
        (.C(CLK),
-        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
         .D(p_0_in__0[0]),
         .Q(cnt_pwron_ce_r_reg[0]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [0]));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[1] 
        (.C(CLK),
-        .CE(\cnt_pwron_ce_r_reg[1]_CE_cooolgate_en_sig_267 ),
+        .CE(\<const1> ),
         .D(p_0_in__0[1]),
         .Q(cnt_pwron_ce_r_reg[1]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [0]));
-  LUT2 #(
-    .INIT(4'he)) 
-    \cnt_pwron_ce_r_reg[1]_CE_cooolgate_en_gate_763 
-       (.I0(cnt_pwron_ce_r_reg[0]),
-        .I1(\cnt_pwron_ce_r_reg[9]_0 [0]),
-        .O(\cnt_pwron_ce_r_reg[1]_CE_cooolgate_en_sig_267 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[2] 
        (.C(CLK),
-        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
         .D(p_0_in__0[2]),
         .Q(cnt_pwron_ce_r_reg[2]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [1]));
@@ -50093,7 +48930,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[3] 
        (.C(CLK),
-        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
         .D(p_0_in__0[3]),
         .Q(cnt_pwron_ce_r_reg[3]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [1]));
@@ -50120,20 +48957,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[6] 
        (.C(CLK),
-        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ),
+        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ),
         .D(p_0_in__0[6]),
         .Q(cnt_pwron_ce_r_reg[6]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [3]));
   LUT6 #(
     .INIT(64'hffffffff80000000)) 
-    \cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_gate_280 
+    \cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_gate_414 
        (.I0(cnt_pwron_ce_r_reg[4]),
         .I1(cnt_pwron_ce_r_reg[3]),
         .I2(cnt_pwron_ce_r_reg[2]),
         .I3(cnt_pwron_ce_r_reg[1]),
         .I4(cnt_pwron_ce_r_reg[0]),
         .I5(\cnt_pwron_ce_r_reg[9]_0 [3]),
-        .O(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ));
+        .O(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -50141,7 +48978,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[7] 
        (.C(CLK),
-        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ),
+        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ),
         .D(p_0_in__0[7]),
         .Q(cnt_pwron_ce_r_reg[7]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [3]));
@@ -50152,7 +48989,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[8] 
        (.C(CLK),
-        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ),
+        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ),
         .D(p_0_in__0[8]),
         .Q(cnt_pwron_ce_r_reg[8]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [3]));
@@ -50163,7 +49000,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_pwron_ce_r_reg[9] 
        (.C(CLK),
-        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_55 ),
+        .CE(\cnt_pwron_ce_r_reg[6]_CE_cooolgate_en_sig_59 ),
         .D(p_0_in__0[9]),
         .Q(cnt_pwron_ce_r_reg[9]),
         .R(\cnt_pwron_ce_r_reg[9]_0 [3]));
@@ -50193,27 +49030,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(cnt_pwron_r_reg[2]),
         .I5(cnt_pwron_r_reg[4]),
         .O(cnt_pwron_cke_done_r_i_3_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     cnt_pwron_cke_done_r_reg
        (.C(CLK),
-        .CE(cnt_pwron_cke_done_r_reg_CE_cooolgate_en_sig_287),
+        .CE(\<const1> ),
         .D(cnt_pwron_cke_done_r_i_1_n_0),
         .Q(cnt_pwron_cke_done_r),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff0100ffff)) 
-    cnt_pwron_cke_done_r_reg_CE_cooolgate_en_gate_803
-       (.I0(cnt_pwron_r_reg[8]),
-        .I1(cnt_pwron_r_reg[7]),
-        .I2(cnt_pwron_r_reg[6]),
-        .I3(cnt_pwron_r_reg[1]),
-        .I4(Q),
-        .I5(complex_byte_rd_done_reg_0),
-        .O(cnt_pwron_cke_done_r_reg_CE_cooolgate_en_sig_287));
   (* SOFT_HLUTNM = "soft_lutpair411" *) 
   LUT1 #(
     .INIT(2'h1)) 
@@ -50397,27 +49221,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(cnt_pwron_r_reg[2]),
         .I5(cnt_pwron_r_reg[4]),
         .O(cnt_pwron_reset_done_r_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     cnt_pwron_reset_done_r_reg
        (.C(CLK),
-        .CE(cnt_pwron_reset_done_r_reg_CE_cooolgate_en_sig_288),
+        .CE(\<const1> ),
         .D(cnt_pwron_reset_done_r_i_1_n_0),
         .Q(cnt_pwron_reset_done_r),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff0001ffff)) 
-    cnt_pwron_reset_done_r_reg_CE_cooolgate_en_gate_805
-       (.I0(cnt_pwron_r_reg[8]),
-        .I1(cnt_pwron_r_reg[7]),
-        .I2(cnt_pwron_r_reg[6]),
-        .I3(cnt_pwron_r_reg[1]),
-        .I4(Q),
-        .I5(complex_byte_rd_done_reg_0),
-        .O(cnt_pwron_reset_done_r_reg_CE_cooolgate_en_sig_288));
   LUT6 #(
     .INIT(64'hAAAAAAAAAAABAAAA)) 
     cnt_txpr_done_r_i_1
@@ -50444,14 +49255,12 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(cnt_txpr_done_r_i_1_n_0),
         .Q(cnt_txpr_done_r),
         .R(clear));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair412" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \cnt_txpr_r[0]_i_1 
        (.I0(cnt_txpr_r_reg[0]),
         .O(p_0_in__1[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair412" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -50531,27 +49340,27 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[0] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[0]),
         .Q(cnt_txpr_r_reg[0]),
         .R(clear));
   (* OPT_MODIFIED = "RETARGET" *) 
   LUT5 #(
     .INIT(32'hFF80FFFF)) 
-    \cnt_txpr_r_reg[0]_CE_cooolgate_en_gate_99 
+    \cnt_txpr_r_reg[0]_CE_cooolgate_en_gate_228 
        (.I0(cnt_txpr_r_reg[2]),
         .I1(cnt_txpr_r_reg[1]),
         .I2(cnt_txpr_r_reg[0]),
         .I3(cnt_pwron_cke_done_r_i_1_n_0),
         .I4(cnt_pwron_cke_done_r),
-        .O(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ));
+        .O(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[1] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[1]),
         .Q(cnt_txpr_r_reg[1]),
         .R(clear));
@@ -50561,7 +49370,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[2] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[2]),
         .Q(cnt_txpr_r_reg[2]),
         .R(clear));
@@ -50572,7 +49381,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[3] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[3]),
         .Q(cnt_txpr_r_reg[3]),
         .R(clear));
@@ -50583,7 +49392,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[4] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[4]),
         .Q(cnt_txpr_r_reg[4]),
         .R(clear));
@@ -50594,7 +49403,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[5] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[5]),
         .Q(cnt_txpr_r_reg[5]),
         .R(clear));
@@ -50605,7 +49414,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[6] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[6]),
         .Q(cnt_txpr_r_reg[6]),
         .R(clear));
@@ -50616,7 +49425,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \cnt_txpr_r_reg[7] 
        (.C(CLK),
-        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_7 ),
+        .CE(\cnt_txpr_r_reg[0]_CE_cooolgate_en_sig_9 ),
         .D(p_0_in__1[7]),
         .Q(cnt_txpr_r_reg[7]),
         .R(clear));
@@ -50746,27 +49555,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(complex_row1_rd_done_r1),
         .I5(D[3]),
         .O(complex_byte_rd_done_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     complex_byte_rd_done_reg
        (.C(CLK),
-        .CE(complex_byte_rd_done_reg_CE_cooolgate_en_sig_379),
+        .CE(\<const1> ),
         .D(complex_byte_rd_done_i_1_n_0),
         .Q(complex_byte_rd_done),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffffffff80ff)) 
-    complex_byte_rd_done_reg_CE_cooolgate_en_gate_987
-       (.I0(complex_row1_rd_cnt[1]),
-        .I1(complex_row1_rd_cnt[0]),
-        .I2(D[3]),
-        .I3(\stg1_wr_rd_cnt[8]_i_5_n_0 ),
-        .I4(prbs_rdlvl_done_pulse_reg_0),
-        .I5(complex_byte_rd_done_reg_0),
-        .O(complex_byte_rd_done_reg_CE_cooolgate_en_sig_379));
   LUT6 #(
     .INIT(64'hFBFBFFEAFBFFFFEA)) 
     \complex_num_reads[0]_i_1 
@@ -50847,6 +49643,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I3(\complex_num_reads_reg_n_0_[1] ),
         .I4(\complex_num_writes[2]_i_8_n_0 ),
         .O(\complex_num_reads[2]_i_3_n_0 ));
+  (* \PinAttr:I5:HOLD_DETOUR  = "99" *) 
   LUT6 #(
     .INIT(64'h1515150000001500)) 
     \complex_num_reads[3]_i_1 
@@ -51078,18 +49875,18 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_reads_reg[0] 
        (.C(CLK),
-        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ),
+        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ),
         .D(\complex_num_reads[0]_i_1_n_0 ),
         .Q(\complex_num_reads_reg_n_0_[0] ),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'hfff2)) 
-    \complex_num_reads_reg[0]_CE_cooolgate_en_gate_310 
+    \complex_num_reads_reg[0]_CE_cooolgate_en_gate_444 
        (.I0(complex_wait_cnt_reg[3]),
         .I1(complex_wait_cnt_reg[0]),
         .I2(\complex_num_reads_dec[3]_i_4_n_0 ),
         .I3(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ));
+        .O(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -51097,7 +49894,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_reads_reg[1] 
        (.C(CLK),
-        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ),
+        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ),
         .D(\complex_num_reads[1]_i_1_n_0 ),
         .Q(\complex_num_reads_reg_n_0_[1] ),
         .R(\<const0> ));
@@ -51108,7 +49905,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_reads_reg[2] 
        (.C(CLK),
-        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ),
+        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ),
         .D(\complex_num_reads[2]_i_1_n_0 ),
         .Q(\complex_num_reads_reg_n_0_[2] ),
         .R(\<const0> ));
@@ -51119,7 +49916,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_reads_reg[3] 
        (.C(CLK),
-        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_61 ),
+        .CE(\complex_num_reads_reg[0]_CE_cooolgate_en_sig_65 ),
         .D(\complex_num_reads[3]_i_1_n_0 ),
         .Q(\complex_num_reads_reg_n_0_[3] ),
         .R(\<const0> ));
@@ -51406,6 +50203,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I1(\complex_num_writes_dec[4]_i_5_n_0 ),
         .I2(\complex_num_writes_reg_n_0_[0] ),
         .O(p_0_in__7[0]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "193" *) 
   LUT4 #(
     .INIT(16'h9F90)) 
     \complex_num_writes_dec[1]_i_1 
@@ -51414,6 +50212,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(\complex_num_writes_dec[4]_i_5_n_0 ),
         .I3(\complex_num_writes_reg_n_0_[1] ),
         .O(p_0_in__7[1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "180" *) 
   LUT5 #(
     .INIT(32'hA9FFA900)) 
     \complex_num_writes_dec[2]_i_1 
@@ -51457,6 +50256,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I3(\complex_num_writes_dec[4]_i_5_n_0 ),
         .I4(\complex_num_writes_reg_n_0_[4] ),
         .O(p_0_in__7[4]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "180" *) 
   LUT3 #(
     .INIT(8'h01)) 
     \complex_num_writes_dec[4]_i_4 
@@ -51521,19 +50321,19 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_writes_reg[0] 
        (.C(CLK),
-        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ),
+        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ),
         .D(\complex_num_writes[0]_i_1_n_0 ),
         .Q(\complex_num_writes_reg_n_0_[0] ),
         .R(\<const0> ));
   LUT5 #(
     .INIT(32'hffffffd0)) 
-    \complex_num_writes_reg[0]_CE_cooolgate_en_gate_234 
+    \complex_num_writes_reg[0]_CE_cooolgate_en_gate_363 
        (.I0(\init_state_r_reg_n_0_[1] ),
         .I1(\wrcal_reads[7]_i_4_n_0 ),
         .I2(\init_state_r_reg_n_0_[0] ),
         .I3(prbs_rdlvl_done_pulse_reg_0),
         .I4(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ));
+        .O(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -51541,7 +50341,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_writes_reg[1] 
        (.C(CLK),
-        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ),
+        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ),
         .D(\complex_num_writes[1]_i_1_n_0 ),
         .Q(\complex_num_writes_reg_n_0_[1] ),
         .R(\<const0> ));
@@ -51552,7 +50352,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_writes_reg[2] 
        (.C(CLK),
-        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ),
+        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ),
         .D(\complex_num_writes[2]_i_1_n_0 ),
         .Q(\complex_num_writes_reg_n_0_[2] ),
         .R(\<const0> ));
@@ -51563,7 +50363,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_writes_reg[3] 
        (.C(CLK),
-        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ),
+        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ),
         .D(\complex_num_writes[3]_i_1_n_0 ),
         .Q(\complex_num_writes_reg_n_0_[3] ),
         .R(\<const0> ));
@@ -51574,7 +50374,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \complex_num_writes_reg[4] 
        (.C(CLK),
-        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_38 ),
+        .CE(\complex_num_writes_reg[0]_CE_cooolgate_en_sig_40 ),
         .D(\complex_num_writes[4]_i_1_n_0 ),
         .Q(\complex_num_writes_reg_n_0_[4] ),
         .R(\<const0> ));
@@ -51605,24 +50405,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(\init_state_r_reg_n_0_[1] ),
         .I3(calib_wrdata_en_i_2_n_0),
         .O(complex_ocal_odt_ext_i_3_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     complex_ocal_odt_ext_reg
        (.C(CLK),
-        .CE(complex_ocal_odt_ext_reg_CE_cooolgate_en_sig_268),
+        .CE(\<const1> ),
         .D(complex_ocal_odt_ext_i_1_n_0),
         .Q(complex_ocal_odt_ext),
         .R(\<const0> ));
-  LUT4 #(
-    .INIT(16'hffc5)) 
-    complex_ocal_odt_ext_reg_CE_cooolgate_en_gate_765
-       (.I0(calib_wrdata_en_i_2_n_0),
-        .I1(\init_state_r_reg_n_0_[4] ),
-        .I2(\init_state_r_reg_n_0_[1] ),
-        .I3(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(complex_ocal_odt_ext_reg_CE_cooolgate_en_sig_268));
   LUT6 #(
     .INIT(64'hAAAAAEAAAAAAAAAA)) 
     complex_ocal_reset_rd_addr_i_1
@@ -51695,27 +50485,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(complex_odt_ext),
         .I5(complex_row1_rd_done_i_2_n_0),
         .O(complex_odt_ext_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     complex_odt_ext_reg
        (.C(CLK),
-        .CE(complex_odt_ext_reg_CE_cooolgate_en_sig_244),
+        .CE(\<const1> ),
         .D(complex_odt_ext_i_1_n_0),
         .Q(complex_odt_ext),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff04ff0404)) 
-    complex_odt_ext_reg_CE_cooolgate_en_gate_717
-       (.I0(\stg1_wr_rd_cnt[8]_i_5_n_0 ),
-        .I1(rdlvl_stg1_done_r1_reg_0),
-        .I2(complex_sample_cnt_inc_i_2_n_0),
-        .I3(\init_state_r_reg_n_0_[3] ),
-        .I4(\init_state_r_reg_n_0_[2] ),
-        .I5(complex_byte_rd_done_reg_0),
-        .O(complex_odt_ext_reg_CE_cooolgate_en_sig_244));
   LUT6 #(
     .INIT(64'h00000000AAAA8000)) 
     complex_row0_rd_done_i_1
@@ -51788,27 +50565,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\complex_row1_rd_cnt[1]_i_1_n_0 ),
         .Q(complex_row1_rd_cnt[1]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \complex_row1_rd_cnt_reg[2] 
        (.C(CLK),
-        .CE(\complex_row1_rd_cnt_reg[2]_CE_cooolgate_en_sig_289 ),
+        .CE(\<const1> ),
         .D(\complex_row1_rd_cnt[2]_i_1_n_0 ),
         .Q(complex_row1_rd_cnt[2]),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffffffff2000)) 
-    \complex_row1_rd_cnt_reg[2]_CE_cooolgate_en_gate_807 
-       (.I0(complex_row1_rd_done),
-        .I1(complex_row1_rd_done_r1),
-        .I2(complex_row1_rd_cnt[1]),
-        .I3(complex_row1_rd_cnt[0]),
-        .I4(prbs_rdlvl_done_pulse_reg_0),
-        .I5(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(\complex_row1_rd_cnt_reg[2]_CE_cooolgate_en_sig_289 ));
   LUT6 #(
     .INIT(64'h0000000011110100)) 
     complex_row1_rd_done_i_1
@@ -52101,27 +50865,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(cnt_init_mr_done_r),
         .I5(ddr2_refresh_flag_r),
         .O(ddr2_pre_flag_r_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ddr2_pre_flag_r_reg
        (.C(CLK),
-        .CE(ddr2_pre_flag_r_reg_CE_cooolgate_en_sig_138),
+        .CE(\<const1> ),
         .D(ddr2_pre_flag_r_i_1_n_0),
         .Q(ddr2_pre_flag_r_reg_n_0),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'h000080ff00000000)) 
-    ddr2_pre_flag_r_reg_CE_cooolgate_en_gate_525
-       (.I0(\reg_ctrl_cnt_r[3]_i_4_n_0 ),
-        .I1(cnt_init_mr_done_r),
-        .I2(cnt_cmd_done_r),
-        .I3(\init_state_r_reg_n_0_[0] ),
-        .I4(\init_state_r[5]_i_5_n_0 ),
-        .I5(\cnt_init_mr_r[0]_i_2_n_0 ),
-        .O(ddr2_pre_flag_r_reg_CE_cooolgate_en_sig_138));
   LUT6 #(
     .INIT(64'h00000000FFFF7F00)) 
     ddr2_refresh_flag_r_i_1
@@ -52142,27 +50893,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(init_state_r),
         .I5(\init_state_r_reg_n_0_[5] ),
         .O(ddr2_refresh_flag_r_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     ddr2_refresh_flag_r_reg
        (.C(CLK),
-        .CE(ddr2_refresh_flag_r_reg_CE_cooolgate_en_sig_222),
+        .CE(\<const1> ),
         .D(ddr2_refresh_flag_r_i_1_n_0),
         .Q(ddr2_refresh_flag_r),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff440f0000)) 
-    ddr2_refresh_flag_r_reg_CE_cooolgate_en_gate_673
-       (.I0(init_state_r),
-        .I1(\cnt_init_mr_r[0]_i_2_n_0 ),
-        .I2(detect_pi_found_dqs_i_2_n_0),
-        .I3(\init_state_r_reg_n_0_[1] ),
-        .I4(\init_state_r_reg_n_0_[0] ),
-        .I5(ddr2_pre_flag_r),
-        .O(ddr2_refresh_flag_r_reg_CE_cooolgate_en_sig_222));
   LUT6 #(
     .INIT(64'hFFFFFFFF00800000)) 
     ddr3_lm_done_r_i_1
@@ -52659,7 +51397,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \en_cnt_div4.enable_wrlvl_cnt_reg[0] 
        (.C(CLK),
-        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
         .D(\en_cnt_div4.enable_wrlvl_cnt[0]_i_1_n_0 ),
         .Q(enable_wrlvl_cnt[0]),
         .R(\<const0> ));
@@ -52677,7 +51415,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \en_cnt_div4.enable_wrlvl_cnt_reg[2] 
        (.C(CLK),
-        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_3),
+        .CE(cal1_dq_idel_ce_reg_CE_cooolgate_en_sig_5),
         .D(\en_cnt_div4.enable_wrlvl_cnt[2]_i_1_n_0 ),
         .Q(enable_wrlvl_cnt[2]),
         .R(\en_cnt_div4.enable_wrlvl_cnt_reg[2]_0 ));
@@ -52689,26 +51427,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\en_cnt_div4.enable_wrlvl_cnt[3]_i_1_n_0 ),
         .Q(enable_wrlvl_cnt[3]),
         .R(\en_cnt_div4.enable_wrlvl_cnt_reg[2]_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \en_cnt_div4.enable_wrlvl_cnt_reg[4] 
        (.C(CLK),
-        .CE(\en_cnt_div4.enable_wrlvl_cnt_reg[4]_CE_cooolgate_en_sig_269 ),
+        .CE(\<const1> ),
         .D(\en_cnt_div4.enable_wrlvl_cnt[4]_i_1_n_0 ),
         .Q(enable_wrlvl_cnt[4]),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff223f)) 
-    \en_cnt_div4.enable_wrlvl_cnt_reg[4]_CE_cooolgate_en_gate_767 
-       (.I0(prech_req_posedge_r_i_3_n_0),
-        .I1(\init_state_r_reg_n_0_[3] ),
-        .I2(enable_wrlvl_cnt[1]),
-        .I3(enable_wrlvl_cnt[0]),
-        .I4(complex_byte_rd_done_reg_0),
-        .O(\en_cnt_div4.enable_wrlvl_cnt_reg[4]_CE_cooolgate_en_sig_269 ));
   LUT4 #(
     .INIT(16'h0054)) 
     \en_cnt_div4.wrlvl_odt_i_1 
@@ -52742,24 +51468,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(rdlvl_stg1_rank_done),
         .I3(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
         .O(first_rdlvl_pat_r_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     first_rdlvl_pat_r_reg
        (.C(CLK),
-        .CE(first_rdlvl_pat_r_reg_CE_cooolgate_en_sig_353),
+        .CE(\<const1> ),
         .D(first_rdlvl_pat_r_i_1_n_0),
         .Q(first_rdlvl_pat_r),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfd)) 
-    first_rdlvl_pat_r_reg_CE_cooolgate_en_gate_935
-       (.I0(\stg1_wr_rd_cnt[8]_i_5_n_0 ),
-        .I1(rdlvl_stg1_rank_done),
-        .I2(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .O(first_rdlvl_pat_r_reg_CE_cooolgate_en_sig_353));
   LUT6 #(
     .INIT(64'hFFFFFFFFFFFBAAAB)) 
     first_wrcal_pat_r_i_1
@@ -52792,7 +51508,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(64'hFFFFFFBAAAAAAAAA)) 
     \gen_no_mirror.div_clk_loop[0].phy_address[0]_i_1 
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[0]_i_2_n_0 ),
-        .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[0] ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[0]_i_3_n_0 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[0]_i_4_n_0 ),
@@ -52847,7 +51563,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   LUT6 #(
     .INIT(64'hFFFFFFFFFFF40000)) 
     \gen_no_mirror.div_clk_loop[0].phy_address[1]_i_1 
-       (.I0(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+       (.I0(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[1] ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[1]_i_2_n_0 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[1]_i_3_n_0 ),
@@ -52885,7 +51601,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     \gen_no_mirror.div_clk_loop[0].phy_address[2]_i_1 
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[2]_i_2_n_0 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[2] ),
-        .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[2]_i_3_n_0 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_3_n_0 ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[2]_i_4_n_0 ),
@@ -52941,7 +51657,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[3]_i_2_n_0 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address[3]_i_3_n_0 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[3]_i_4_n_0 ),
-        .I3(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I3(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[3] ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_3_n_0 ),
         .O(address_w[3]));
@@ -53009,7 +51725,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(64'hFFFFABBAAAAAAAAA)) 
     \gen_no_mirror.div_clk_loop[0].phy_address[4]_i_1 
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_4_n_0 ),
-        .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[3] ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[4] ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[4]_i_2_n_0 ),
@@ -53047,7 +51763,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_3_n_0 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address[5]_i_2_n_0 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[5]_i_3_n_0 ),
-        .I3(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I3(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[5]_i_4_n_0 ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_3_n_0 ),
         .O(address_w[5]));
@@ -53079,7 +51795,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_3_n_0 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_4_n_0 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_5_n_0 ),
-        .I4(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I4(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[6]_i_6_n_0 ),
         .O(address_w[6]));
   LUT3 #(
@@ -53174,7 +51890,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     \gen_no_mirror.div_clk_loop[0].phy_address[7]_i_1 
        (.I0(\gen_no_mirror.div_clk_loop[0].phy_address[7]_i_2_n_0 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address[7]_i_3_n_0 ),
-        .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I2(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[7]_i_4_n_0 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[7]_i_5_n_0 ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_3_n_0 ),
@@ -53267,7 +51983,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
   LUT6 #(
     .INIT(64'hFFFFFF14FF14FF14)) 
     \gen_no_mirror.div_clk_loop[0].phy_address[8]_i_1 
-       (.I0(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+       (.I0(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[8] ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[8]_i_2_n_0 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[8]_i_3_n_0 ),
@@ -53331,7 +52047,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I1(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_2_n_0 ),
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_3_n_0 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_4_n_0 ),
-        .I4(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .I4(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .I5(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_6_n_0 ),
         .O(address_w[9]));
   LUT5 #(
@@ -53465,7 +52181,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_7_n_0 ),
         .I3(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_10_n_0 ),
         .I4(\gen_no_mirror.div_clk_loop[0].phy_address[9]_i_9_n_0 ),
-        .O(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ));
+        .O(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ));
   LUT3 #(
     .INIT(8'h95)) 
     \gen_no_mirror.div_clk_loop[0].phy_address[9]_i_6 
@@ -53506,7 +52222,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \gen_no_mirror.div_clk_loop[0].phy_address_reg[0] 
        (.C(CLK),
-        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .D(address_w[0]),
         .Q(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[0] ),
         .R(\<const0> ));
@@ -53533,7 +52249,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \gen_no_mirror.div_clk_loop[0].phy_address_reg[1] 
        (.C(CLK),
-        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .D(address_w[1]),
         .Q(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[1] ),
         .R(\<const0> ));
@@ -53544,7 +52260,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \gen_no_mirror.div_clk_loop[0].phy_address_reg[2] 
        (.C(CLK),
-        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_68 ),
+        .CE(\gen_no_mirror.div_clk_loop[0].phy_address_reg[0]_CE_cooolgate_en_sig_70 ),
         .D(address_w[2]),
         .Q(\gen_no_mirror.div_clk_loop[0].phy_address_reg_n_0_[2] ),
         .R(\<const0> ));
@@ -53753,6 +52469,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(init_complete_r1),
         .Q(init_complete_r2),
         .R(init_calib_complete_reg_0));
+  (* \PinAttr:I3:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair376" *) 
   LUT4 #(
     .INIT(16'hFF01)) 
@@ -53778,20 +52495,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     init_complete_r_reg
        (.C(CLK),
-        .CE(init_complete_r_reg_CE_cooolgate_en_sig_91),
+        .CE(init_complete_r_reg_CE_cooolgate_en_sig_93),
         .D(init_complete_r_i_1_n_0),
         .Q(init_complete_r_reg_n_0),
         .R(init_calib_complete_reg_0));
   LUT6 #(
     .INIT(64'hffffffff00000040)) 
-    init_complete_r_reg_CE_cooolgate_en_gate_402
+    init_complete_r_reg_CE_cooolgate_en_gate_532
        (.I0(\init_state_r_reg_n_0_[5] ),
         .I1(\init_state_r_reg_n_0_[4] ),
         .I2(\init_state_r_reg_n_0_[1] ),
         .I3(\init_state_r_reg_n_0_[0] ),
         .I4(init_state_r),
         .I5(init_calib_complete_reg_0),
-        .O(init_complete_r_reg_CE_cooolgate_en_sig_91));
+        .O(init_complete_r_reg_CE_cooolgate_en_sig_93));
   (* SOFT_HLUTNM = "soft_lutpair376" *) 
   LUT4 #(
     .INIT(16'hFF01)) 
@@ -53809,45 +52526,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     init_complete_r_timing_reg
        (.C(CLK),
-        .CE(init_complete_r_reg_CE_cooolgate_en_sig_91),
+        .CE(init_complete_r_reg_CE_cooolgate_en_sig_93),
         .D(init_complete_r_timing_i_1_n_0),
         .Q(init_complete_r_timing),
         .R(init_calib_complete_reg_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \init_state_r1_reg[0] 
        (.C(CLK),
-        .CE(\init_state_r1_reg[0]_CE_cooolgate_en_sig_270 ),
+        .CE(\<const1> ),
         .D(\init_state_r_reg_n_0_[0] ),
         .Q(init_state_r1[0]),
         .R(init_calib_complete_reg_0));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \init_state_r1_reg[0]_CE_cooolgate_en_gate_769 
-       (.I0(init_state_r),
-        .I1(init_calib_complete_reg_0),
-        .O(\init_state_r1_reg[0]_CE_cooolgate_en_sig_270 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \init_state_r1_reg[1] 
        (.C(CLK),
-        .CE(\init_state_r1_reg[1]_CE_cooolgate_en_sig_393 ),
+        .CE(\<const1> ),
         .D(\init_state_r_reg_n_0_[1] ),
         .Q(init_state_r1[1]),
         .R(init_calib_complete_reg_0));
-  LUT5 #(
-    .INIT(32'hffffff2f)) 
-    \init_state_r1_reg[1]_CE_cooolgate_en_gate_1015 
-       (.I0(\init_state_r_reg_n_0_[3] ),
-        .I1(\init_state_r_reg_n_0_[0] ),
-        .I2(\init_state_r[0]_i_1_n_0 ),
-        .I3(\init_state_r[3]_i_1_n_0 ),
-        .I4(init_calib_complete_reg_0),
-        .O(\init_state_r1_reg[1]_CE_cooolgate_en_sig_393 ));
   FDRE #(
     .INIT(1'b0)) 
     \init_state_r1_reg[2] 
@@ -53870,27 +52568,27 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \init_state_r1_reg[4] 
        (.C(CLK),
-        .CE(\init_state_r1_reg[4]_CE_cooolgate_en_sig_101 ),
+        .CE(\init_state_r1_reg[4]_CE_cooolgate_en_sig_103 ),
         .D(\init_state_r_reg_n_0_[4] ),
         .Q(init_state_r1[4]),
         .R(init_calib_complete_reg_0));
   LUT6 #(
     .INIT(64'hffffffff0000ff2f)) 
-    \init_state_r1_reg[4]_CE_cooolgate_en_gate_432 
+    \init_state_r1_reg[4]_CE_cooolgate_en_gate_562 
        (.I0(\init_state_r_reg_n_0_[1] ),
         .I1(\init_state_r_reg_n_0_[0] ),
         .I2(\init_state_r[0]_i_1_n_0 ),
         .I3(\init_state_r[3]_i_1_n_0 ),
         .I4(init_state_r),
         .I5(init_calib_complete_reg_0),
-        .O(\init_state_r1_reg[4]_CE_cooolgate_en_sig_101 ));
+        .O(\init_state_r1_reg[4]_CE_cooolgate_en_sig_103 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \init_state_r1_reg[5] 
        (.C(CLK),
-        .CE(\init_state_r1_reg[4]_CE_cooolgate_en_sig_101 ),
+        .CE(\init_state_r1_reg[4]_CE_cooolgate_en_sig_103 ),
         .D(\init_state_r_reg_n_0_[5] ),
         .Q(init_state_r1[5]),
         .R(init_calib_complete_reg_0));
@@ -54046,6 +52744,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(ocal_act_wait_cnt_reg[1]),
         .I3(ocal_act_wait_cnt_reg[3]),
         .O(\init_state_r[0]_i_22_n_0 ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "193" *) 
   LUT5 #(
     .INIT(32'h00000020)) 
     \init_state_r[0]_i_23 
@@ -55193,7 +53892,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(pi_dqs_found_done),
         .I5(wrlvl_byte_redo),
         .O(\init_state_r[4]_i_25_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "197" *) 
   LUT4 #(
     .INIT(16'h0010)) 
     \init_state_r[4]_i_27 
@@ -55724,27 +54423,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\init_state_r[5]_i_1_n_0 ),
         .Q(\init_state_r_reg_n_0_[5] ),
         .R(init_calib_complete_reg_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \init_state_r_reg[6] 
        (.C(CLK),
-        .CE(\init_state_r_reg[6]_CE_cooolgate_en_sig_354 ),
+        .CE(\<const1> ),
         .D(\init_state_r[6]_i_1_n_0 ),
         .Q(init_state_r),
         .R(init_calib_complete_reg_0));
-  LUT6 #(
-    .INIT(64'hffffffffffff113f)) 
-    \init_state_r_reg[6]_CE_cooolgate_en_gate_937 
-       (.I0(\init_state_r_reg_n_0_[5] ),
-        .I1(\init_state_r_reg_n_0_[4] ),
-        .I2(\init_state_r[6]_i_3_n_0 ),
-        .I3(\init_state_r_reg_n_0_[2] ),
-        .I4(\init_state_r_reg_n_0_[1] ),
-        .I5(init_calib_complete_reg_0),
-        .O(\init_state_r_reg[6]_CE_cooolgate_en_sig_354 ));
   LUT5 #(
     .INIT(32'hFFFF4000)) 
     mem_init_done_r_i_1
@@ -56911,7 +55597,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(pi_dqs_found_done),
         .I3(D[3]),
         .O(num_refresh0));
-  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "197" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
     \num_refresh[3]_i_3 
@@ -57087,6 +55773,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     \oclk_wr_cnt[0]_i_1 
        (.I0(oclk_wr_cnt_reg[0]),
         .O(\oclk_wr_cnt[0]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair378" *) 
   LUT2 #(
     .INIT(4'h9)) 
@@ -57121,6 +55808,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(\init_state_r_reg_n_0_[5] ),
         .I5(\init_state_r_reg_n_0_[4] ),
         .O(p_0_in0_in));
+  (* \PinAttr:I1:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair378" *) 
   LUT4 #(
     .INIT(16'hFE01)) 
@@ -58427,30 +57115,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(pi_calib_done_r),
         .Q(pi_calib_done),
         .R(\<const0> ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "184" *) 
   LUT2 #(
     .INIT(4'hE)) 
     pi_calib_done_r_i_1
        (.I0(pi_calib_rank_done_r),
         .I1(pi_calib_done_r),
         .O(pi_calib_done_r_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     pi_calib_done_r_reg
        (.C(CLK),
-        .CE(pi_calib_done_r_reg_CE_cooolgate_en_sig_271),
+        .CE(\<const1> ),
         .D(pi_calib_done_r_i_1_n_0),
         .Q(pi_calib_done_r),
         .R(init_calib_complete_reg_0));
-  LUT2 #(
-    .INIT(4'he)) 
-    pi_calib_done_r_reg_CE_cooolgate_en_gate_771
-       (.I0(pi_calib_rank_done_r),
-        .I1(init_calib_complete_reg_0),
-        .O(pi_calib_done_r_reg_CE_cooolgate_en_sig_271));
   LUT2 #(
     .INIT(4'h2)) 
     pi_calib_rank_done_r_i_1
@@ -58463,17 +57141,17 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     pi_calib_rank_done_r_reg
        (.C(CLK),
-        .CE(pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_164),
+        .CE(pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_166),
         .D(init_next_state199_out),
         .Q(pi_calib_rank_done_r),
         .R(init_calib_complete_reg_0));
   LUT3 #(
     .INIT(8'h0d)) 
-    pi_calib_rank_done_r_reg_CE_cooolgate_en_gate_565
+    pi_calib_rank_done_r_reg_CE_cooolgate_en_gate_695
        (.I0(pi_calib_done_r_i_1_n_0),
         .I1(init_calib_complete_reg_0),
         .I2(pwropt),
-        .O(pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_164));
+        .O(pi_calib_rank_done_r_reg_CE_cooolgate_en_sig_166));
   FDRE #(
     .INIT(1'b0)) 
     pi_dqs_found_done_r1_reg
@@ -58585,7 +57263,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .D(\prech_done_dly_r_reg[15]_srl16_n_0 ),
         .Q(prech_done),
         .R(\<const0> ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "178" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair385" *) 
   LUT3 #(
     .INIT(8'hBA)) 
@@ -58890,28 +57568,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \reg_ctrl_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ),
+        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ),
         .D(p_0_in__2[0]),
         .Q(reg_ctrl_cnt_r_reg[0]),
         .R(ddr2_pre_flag_r));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF000400000000)) 
-    \reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_gate_246_LOPT_REMAP 
+    \reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_gate_375_LOPT_REMAP 
        (.I0(\init_state_r_reg_n_0_[5] ),
         .I1(\init_state_r_reg_n_0_[4] ),
         .I2(\init_state_r_reg_n_0_[2] ),
         .I3(init_state_r),
         .I4(ddr2_pre_flag_r),
         .I5(reg_ctrl_cnt_r),
-        .O(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ));
+        .O(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \reg_ctrl_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ),
+        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ),
         .D(p_0_in__2[1]),
         .Q(reg_ctrl_cnt_r_reg[1]),
         .R(ddr2_pre_flag_r));
@@ -58921,7 +57599,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \reg_ctrl_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ),
+        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ),
         .D(p_0_in__2[2]),
         .Q(reg_ctrl_cnt_r_reg[2]),
         .R(ddr2_pre_flag_r));
@@ -58931,7 +57609,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \reg_ctrl_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_42 ),
+        .CE(\reg_ctrl_cnt_r_reg[0]_CE_cooolgate_en_sig_44 ),
         .D(p_0_in__2[3]),
         .Q(reg_ctrl_cnt_r_reg[3]),
         .R(ddr2_pre_flag_r));
@@ -58972,7 +57650,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(\one_rank.stg1_wr_done_reg_n_0 ),
         .I5(complex_sample_cnt_inc_r2),
         .O(\row_cnt_victim_rotate.complex_row_cnt[2]_i_1_n_0 ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "179" *) 
   LUT5 #(
     .INIT(32'h00007F80)) 
     \row_cnt_victim_rotate.complex_row_cnt[3]_i_1 
@@ -59081,7 +57758,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(complex_sample_cnt_inc_r2),
         .I5(\row_cnt_victim_rotate.complex_row_cnt[7]_i_3_n_0 ),
         .O(\row_cnt_victim_rotate.complex_row_cnt[5]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \row_cnt_victim_rotate.complex_row_cnt[5]_i_2 
@@ -59128,55 +57804,42 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I3(complex_sample_cnt_inc_r2),
         .I4(\row_cnt_victim_rotate.complex_row_cnt[4]_i_6_n_0 ),
         .O(\row_cnt_victim_rotate.complex_row_cnt[7]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \row_cnt_victim_rotate.complex_row_cnt_reg[0] 
        (.C(CLK),
-        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[0]_CE_cooolgate_en_sig_185 ),
+        .CE(complex_row_cnt),
         .D(\row_cnt_victim_rotate.complex_row_cnt[0]_i_1_n_0 ),
         .Q(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[0] ),
         .R(\row_cnt_victim_rotate.complex_row_cnt[4]_i_1_n_0 ));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT6 #(
-    .INIT(64'hFFFFFFF700000000)) 
-    \row_cnt_victim_rotate.complex_row_cnt_reg[0]_CE_cooolgate_en_gate_596_LOPT_REMAP 
-       (.I0(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[4] ),
-        .I1(rdlvl_stg1_done_r1_reg_0),
-        .I2(\one_rank.stg1_wr_done_reg_n_0 ),
-        .I3(D[3]),
-        .I4(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
-        .I5(complex_row_cnt),
-        .O(\row_cnt_victim_rotate.complex_row_cnt_reg[0]_CE_cooolgate_en_sig_185 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \row_cnt_victim_rotate.complex_row_cnt_reg[1] 
        (.C(CLK),
-        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ),
+        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ),
         .D(\row_cnt_victim_rotate.complex_row_cnt[1]_i_1_n_0 ),
         .Q(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[1] ),
         .R(\row_cnt_victim_rotate.complex_row_cnt[4]_i_1_n_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFFFD00000000)) 
-    \row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_gate_271_LOPT_REMAP 
+    \row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_gate_405_LOPT_REMAP 
        (.I0(rdlvl_stg1_done_r1_reg_0),
         .I1(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[0] ),
         .I2(\one_rank.stg1_wr_done_reg_n_0 ),
         .I3(D[3]),
         .I4(\back_to_back_reads_4_1.num_reads_reg[2]_0 ),
         .I5(complex_row_cnt),
-        .O(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ));
+        .O(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \row_cnt_victim_rotate.complex_row_cnt_reg[2] 
        (.C(CLK),
-        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ),
+        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ),
         .D(\row_cnt_victim_rotate.complex_row_cnt[2]_i_1_n_0 ),
         .Q(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[2] ),
         .R(\row_cnt_victim_rotate.complex_row_cnt[4]_i_1_n_0 ));
@@ -59186,7 +57849,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \row_cnt_victim_rotate.complex_row_cnt_reg[3] 
        (.C(CLK),
-        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ),
+        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ),
         .D(\row_cnt_victim_rotate.complex_row_cnt[3]_i_1_n_0 ),
         .Q(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[3] ),
         .R(\row_cnt_victim_rotate.complex_row_cnt[4]_i_1_n_0 ));
@@ -59196,7 +57859,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     \row_cnt_victim_rotate.complex_row_cnt_reg[4] 
        (.C(CLK),
-        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_52 ),
+        .CE(\row_cnt_victim_rotate.complex_row_cnt_reg[1]_CE_cooolgate_en_sig_56 ),
         .D(\row_cnt_victim_rotate.complex_row_cnt[4]_i_3_n_0 ),
         .Q(\row_cnt_victim_rotate.complex_row_cnt_reg_n_0_[4] ),
         .R(\row_cnt_victim_rotate.complex_row_cnt[4]_i_1_n_0 ));
@@ -59649,26 +58312,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I3(burst_addr_r_reg_0),
         .I4(\init_state_r[2]_i_1_n_0 ),
         .O(wrcal_final_chk_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wrcal_final_chk_reg
        (.C(CLK),
-        .CE(wrcal_final_chk_reg_CE_cooolgate_en_sig_238),
+        .CE(\<const1> ),
         .D(wrcal_final_chk_i_1_n_0),
         .Q(wrcal_final_chk),
         .R(init_calib_complete_reg_0));
-  LUT5 #(
-    .INIT(32'hffff2f00)) 
-    wrcal_final_chk_reg_CE_cooolgate_en_gate_705
-       (.I0(prech_req_posedge_r_reg_0),
-        .I1(\init_state_r[6]_i_3_n_0 ),
-        .I2(init_state_r),
-        .I3(burst_addr_r_reg_0),
-        .I4(init_calib_complete_reg_0),
-        .O(wrcal_final_chk_reg_CE_cooolgate_en_sig_238));
   LUT6 #(
     .INIT(64'h0000000000080000)) 
     wrcal_rd_wait_i_1
@@ -59729,7 +58380,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(\wrcal_reads_reg_n_0_[4] ),
         .I5(wrcal_reads),
         .O(\wrcal_reads[4]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "172" *) 
   (* SOFT_HLUTNM = "soft_lutpair305" *) 
   LUT4 #(
     .INIT(16'hFFE1)) 
@@ -59739,7 +58389,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(\wrcal_reads_reg_n_0_[5] ),
         .I3(wrcal_reads),
         .O(\wrcal_reads[5]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "172" *) 
   (* SOFT_HLUTNM = "soft_lutpair305" *) 
   LUT5 #(
     .INIT(32'hFFFFFE01)) 
@@ -59888,17 +58537,17 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     wrcal_resume_r_reg
        (.C(CLK),
-        .CE(wrcal_resume_r_reg_CE_cooolgate_en_sig_165),
+        .CE(wrcal_resume_r_reg_CE_cooolgate_en_sig_167),
         .D(wrcal_resume_w),
         .Q(wrcal_resume_r),
         .R(\<const0> ));
   LUT3 #(
     .INIT(8'h0d)) 
-    wrcal_resume_r_reg_CE_cooolgate_en_gate_567
+    wrcal_resume_r_reg_CE_cooolgate_en_gate_697
        (.I0(\init_state_r[1]_i_1_n_0 ),
         .I1(init_calib_complete_reg_0),
         .I2(pwropt),
-        .O(wrcal_resume_r_reg_CE_cooolgate_en_sig_165));
+        .O(wrcal_resume_r_reg_CE_cooolgate_en_sig_167));
   FDRE #(
     .INIT(1'b0)) 
     wrcal_sanity_chk_reg
@@ -59946,24 +58595,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I2(wrlvl_byte_redo),
         .I3(complex_byte_rd_done_reg_0),
         .O(wrcal_start_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wrcal_start_reg
        (.C(CLK),
-        .CE(wrcal_start_reg_CE_cooolgate_en_sig_355),
+        .CE(\<const1> ),
         .D(wrcal_start_i_1_n_0),
         .Q(wrcal_start_reg_0),
         .R(\<const0> ));
-  LUT3 #(
-    .INIT(8'hfe)) 
-    wrcal_start_reg_CE_cooolgate_en_gate_939
-       (.I0(wrlvl_byte_redo),
-        .I1(wrcal_start_dly_r),
-        .I2(complex_byte_rd_done_reg_0),
-        .O(wrcal_start_reg_CE_cooolgate_en_sig_355));
   (* SOFT_HLUTNM = "soft_lutpair409" *) 
   LUT1 #(
     .INIT(2'h1)) 
@@ -60004,6 +58643,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
         .I4(\init_state_r_reg_n_0_[5] ),
         .I5(init_state_r),
         .O(\wrcal_wr_cnt[3]_i_2_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \wrcal_wr_cnt[3]_i_3 
@@ -60296,19 +58936,19 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_init
     .INIT(1'b0)) 
     wrlvl_rank_done_r7_reg
        (.C(CLK),
-        .CE(wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_123),
+        .CE(wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_125),
         .D(wrlvl_rank_done_r6_reg_srl5_n_0),
         .Q(wrlvl_rank_done_r7),
         .R(\<const0> ));
   LUT5 #(
     .INIT(32'h00000040)) 
-    wrlvl_rank_done_r7_reg_CE_cooolgate_en_gate_495
+    wrlvl_rank_done_r7_reg_CE_cooolgate_en_gate_625
        (.I0(\init_state_r[4]_i_1_n_0 ),
         .I1(\init_state_r[1]_i_1_n_0 ),
         .I2(\init_state_r[0]_i_1_n_0 ),
         .I3(pwropt),
         .I4(init_calib_complete_reg_0),
-        .O(wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_123));
+        .O(wrlvl_rank_done_r7_reg_CE_cooolgate_en_sig_125));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_ddr_phy_rdlvl" *) 
@@ -60443,7 +59083,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     pwropt,
     pwropt_1,
     pwropt_2,
-    pwropt_3);
+    pwropt_3,
+    pwropt_4,
+    pwropt_5,
+    pwropt_6);
   output \rd_mux_sel_r_reg[0]_0 ;
   output new_cnt_cpt_r_reg_0;
   output samp_edge_cnt0_en_r;
@@ -60575,6 +59218,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   input pwropt_1;
   input pwropt_2;
   input pwropt_3;
+  input pwropt_4;
+  input pwropt_5;
+  input pwropt_6;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -60636,7 +59282,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire [0:0]cal1_cnt_cpt_r;
   wire \cal1_cnt_cpt_r[0]_i_1_n_0 ;
   wire \cal1_cnt_cpt_r_reg[0]_0 ;
-  wire \cal1_cnt_cpt_r_reg[0]_CE_cooolgate_en_sig_111 ;
   wire \cal1_cnt_cpt_r_reg_n_0_[0] ;
   wire cal1_dlyce_cpt_r;
   wire cal1_dlyce_cpt_r_reg_n_0;
@@ -60658,7 +59303,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \cal1_state_r1[3]_i_3_n_0 ;
   wire \cal1_state_r1[4]_i_1_n_0 ;
   wire \cal1_state_r1[5]_i_1_n_0 ;
-  wire \cal1_state_r1_reg[4]_CE_cooolgate_en_sig_82 ;
+  wire \cal1_state_r1_reg[4]_CE_cooolgate_en_sig_84 ;
   wire \cal1_state_r1_reg_n_0_[0] ;
   wire \cal1_state_r1_reg_n_0_[1] ;
   wire \cal1_state_r1_reg_n_0_[2] ;
@@ -60670,7 +59315,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire cal1_wait_cnt_en_r_i_2_n_0;
   wire \cal1_wait_cnt_r[4]_i_1_n_0 ;
   wire [4:0]cal1_wait_cnt_r_reg;
-  wire \cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ;
+  wire \cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ;
   wire cal1_wait_r;
   wire cal1_wait_r_i_1_n_0;
   wire \calib_sel_reg[1] ;
@@ -60734,7 +59379,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \cnt_idel_dec_cpt_r_reg_n_0_[5] ;
   wire [3:0]cnt_shift_r_reg;
   wire [0:0]\cnt_shift_r_reg[0]_0 ;
-  wire \cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ;
+  wire \cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ;
   wire detect_edge_done_r;
   wire detect_edge_done_r_i_1_n_0;
   wire detect_edge_done_r_i_2_n_0;
@@ -60755,7 +59400,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \first_edge_taps_r[5]_i_1_n_0 ;
   wire \first_edge_taps_r[5]_i_2_n_0 ;
   wire \first_edge_taps_r[5]_i_3_n_0 ;
-  wire \first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ;
+  wire \first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ;
   wire \first_edge_taps_r_reg_n_0_[0] ;
   wire \first_edge_taps_r_reg_n_0_[1] ;
   wire \first_edge_taps_r_reg_n_0_[2] ;
@@ -60774,7 +59419,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire found_second_edge_r_reg_n_0;
   wire found_stable_eye_last_r;
   wire found_stable_eye_last_r_i_1_n_0;
-  wire found_stable_eye_last_r_reg_CE_cooolgate_en_sig_261;
   wire found_stable_eye_r_i_1_n_0;
   wire found_stable_eye_r_i_2_n_0;
   wire found_stable_eye_r_reg_n_0;
@@ -61477,9 +60121,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_1_n_0 ;
   wire \gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ;
   wire \gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_4_n_0 ;
-  wire \gen_track_left_edge[0].pb_found_stable_eye_r_reg[0]_CE_cooolgate_en_sig_224 ;
   wire \gen_track_left_edge[0].pb_last_tap_jitter_r[0]_i_1_n_0 ;
-  wire \gen_track_left_edge[0].pb_last_tap_jitter_r_reg[0]_CE_cooolgate_en_sig_214 ;
   wire \gen_track_left_edge[0].pb_last_tap_jitter_r_reg_n_0_[0] ;
   wire \gen_track_left_edge[1].pb_cnt_eye_size_r[1][4]_i_1_n_0 ;
   wire \gen_track_left_edge[1].pb_cnt_eye_size_r[1][4]_i_2_n_0 ;
@@ -61491,9 +60133,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[1].pb_found_edge_r_reg_n_0_[1] ;
   wire \gen_track_left_edge[1].pb_found_stable_eye_r[1]_i_1_n_0 ;
   wire \gen_track_left_edge[1].pb_found_stable_eye_r[1]_i_3_n_0 ;
-  wire \gen_track_left_edge[1].pb_found_stable_eye_r_reg[1]_CE_cooolgate_en_sig_225 ;
   wire \gen_track_left_edge[1].pb_last_tap_jitter_r[1]_i_1_n_0 ;
-  wire \gen_track_left_edge[1].pb_last_tap_jitter_r_reg[1]_CE_cooolgate_en_sig_215 ;
   wire \gen_track_left_edge[2].pb_cnt_eye_size_r[2][4]_i_1_n_0 ;
   wire \gen_track_left_edge[2].pb_cnt_eye_size_r[2][4]_i_2_n_0 ;
   wire \gen_track_left_edge[2].pb_cnt_eye_size_r[2][4]_i_4_n_0 ;
@@ -61504,9 +60144,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[2].pb_found_edge_r_reg_n_0_[2] ;
   wire \gen_track_left_edge[2].pb_found_stable_eye_r[2]_i_1_n_0 ;
   wire \gen_track_left_edge[2].pb_found_stable_eye_r[2]_i_3_n_0 ;
-  wire \gen_track_left_edge[2].pb_found_stable_eye_r_reg[2]_CE_cooolgate_en_sig_226 ;
   wire \gen_track_left_edge[2].pb_last_tap_jitter_r[2]_i_1_n_0 ;
-  wire \gen_track_left_edge[2].pb_last_tap_jitter_r_reg[2]_CE_cooolgate_en_sig_216 ;
   wire \gen_track_left_edge[3].pb_cnt_eye_size_r[3][4]_i_1_n_0 ;
   wire \gen_track_left_edge[3].pb_cnt_eye_size_r[3][4]_i_2_n_0 ;
   wire \gen_track_left_edge[3].pb_cnt_eye_size_r[3][4]_i_4_n_0 ;
@@ -61517,9 +60155,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[3].pb_found_edge_r_reg_n_0_[3] ;
   wire \gen_track_left_edge[3].pb_found_stable_eye_r[3]_i_1_n_0 ;
   wire \gen_track_left_edge[3].pb_found_stable_eye_r[3]_i_3_n_0 ;
-  wire \gen_track_left_edge[3].pb_found_stable_eye_r_reg[3]_CE_cooolgate_en_sig_227 ;
   wire \gen_track_left_edge[3].pb_last_tap_jitter_r[3]_i_1_n_0 ;
-  wire \gen_track_left_edge[3].pb_last_tap_jitter_r_reg[3]_CE_cooolgate_en_sig_217 ;
   wire \gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_1_n_0 ;
   wire \gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_2_n_0 ;
   wire \gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_4_n_0 ;
@@ -61530,9 +60166,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[4].pb_found_edge_r_reg_n_0_[4] ;
   wire \gen_track_left_edge[4].pb_found_stable_eye_r[4]_i_1_n_0 ;
   wire \gen_track_left_edge[4].pb_found_stable_eye_r[4]_i_3_n_0 ;
-  wire \gen_track_left_edge[4].pb_found_stable_eye_r_reg[4]_CE_cooolgate_en_sig_228 ;
   wire \gen_track_left_edge[4].pb_last_tap_jitter_r[4]_i_1_n_0 ;
-  wire \gen_track_left_edge[4].pb_last_tap_jitter_r_reg[4]_CE_cooolgate_en_sig_218 ;
   wire \gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_1_n_0 ;
   wire \gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_2_n_0 ;
   wire \gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_4_n_0 ;
@@ -61543,40 +60177,31 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \gen_track_left_edge[5].pb_found_edge_r_reg_n_0_[5] ;
   wire \gen_track_left_edge[5].pb_found_stable_eye_r[5]_i_1_n_0 ;
   wire \gen_track_left_edge[5].pb_found_stable_eye_r[5]_i_3_n_0 ;
-  wire \gen_track_left_edge[5].pb_found_stable_eye_r_reg[5]_CE_cooolgate_en_sig_229 ;
   wire \gen_track_left_edge[5].pb_last_tap_jitter_r[5]_i_1_n_0 ;
-  wire \gen_track_left_edge[5].pb_last_tap_jitter_r_reg[5]_CE_cooolgate_en_sig_219 ;
   wire \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_1_n_0 ;
   wire \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_2_n_0 ;
   wire \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_4_n_0 ;
   wire \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_5_n_0 ;
   wire [4:0]\gen_track_left_edge[6].pb_cnt_eye_size_r_reg[6]_209 ;
   wire \gen_track_left_edge[6].pb_detect_edge_done_r[6]_i_1_n_0 ;
-  wire \gen_track_left_edge[6].pb_detect_edge_done_r_reg[6]_CE_cooolgate_en_sig_389 ;
   wire \gen_track_left_edge[6].pb_found_edge_r[6]_i_1_n_0 ;
   wire \gen_track_left_edge[6].pb_found_edge_r_reg_n_0_[6] ;
   wire \gen_track_left_edge[6].pb_found_stable_eye_r[6]_i_1_n_0 ;
   wire \gen_track_left_edge[6].pb_found_stable_eye_r[6]_i_3_n_0 ;
-  wire \gen_track_left_edge[6].pb_found_stable_eye_r_reg[6]_CE_cooolgate_en_sig_230 ;
   wire \gen_track_left_edge[6].pb_last_tap_jitter_r[6]_i_1_n_0 ;
-  wire \gen_track_left_edge[6].pb_last_tap_jitter_r_reg[6]_CE_cooolgate_en_sig_220 ;
   wire \gen_track_left_edge[7].pb_cnt_eye_size_r[7][4]_i_1_n_0 ;
   wire \gen_track_left_edge[7].pb_cnt_eye_size_r[7][4]_i_2_n_0 ;
   wire \gen_track_left_edge[7].pb_cnt_eye_size_r[7][4]_i_4_n_0 ;
   wire \gen_track_left_edge[7].pb_cnt_eye_size_r[7][4]_i_5_n_0 ;
   wire [4:0]\gen_track_left_edge[7].pb_cnt_eye_size_r_reg[7]_210 ;
   wire \gen_track_left_edge[7].pb_detect_edge_done_r[7]_i_1_n_0 ;
-  wire \gen_track_left_edge[7].pb_detect_edge_done_r_reg[7]_CE_cooolgate_en_sig_390 ;
   wire \gen_track_left_edge[7].pb_found_edge_r[7]_i_1_n_0 ;
   wire \gen_track_left_edge[7].pb_found_edge_r_reg_n_0_[7] ;
   wire \gen_track_left_edge[7].pb_found_stable_eye_r[7]_i_1_n_0 ;
   wire \gen_track_left_edge[7].pb_found_stable_eye_r[7]_i_2_n_0 ;
   wire \gen_track_left_edge[7].pb_found_stable_eye_r[7]_i_3_n_0 ;
-  wire \gen_track_left_edge[7].pb_found_stable_eye_r_reg[7]_CE_cooolgate_en_sig_231 ;
   wire \gen_track_left_edge[7].pb_last_tap_jitter_r[7]_i_1_n_0 ;
-  wire \gen_track_left_edge[7].pb_last_tap_jitter_r_reg[7]_CE_cooolgate_en_sig_221 ;
   wire idel_adj_inc_i_1_n_0;
-  wire idel_adj_inc_reg_CE_cooolgate_en_sig_254;
   wire idel_adj_inc_reg_n_0;
   wire [4:0]idel_dec_cnt;
   wire \idel_dec_cnt[3]_i_2_n_0 ;
@@ -61624,7 +60249,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \idelay_tap_cnt_r[0][1][4]_i_2_n_0 ;
   wire \idelay_tap_cnt_r[0][1][4]_i_3_n_0 ;
   wire \idelay_tap_cnt_r_reg[0][0][0]_0 ;
-  wire \idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ;
+  wire \idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ;
   wire \idelay_tap_cnt_r_reg[0][1][1]_0 ;
   wire [0:0]\idelay_tap_cnt_r_reg[0][1][4]_0 ;
   wire \idelay_tap_cnt_r_reg_n_0_[0][0][0] ;
@@ -61638,7 +60263,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \idelay_tap_cnt_r_reg_n_0_[0][1][3] ;
   wire \idelay_tap_cnt_r_reg_n_0_[0][1][4] ;
   wire [4:0]idelay_tap_cnt_slice_r;
-  wire \idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ;
+  wire \idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ;
   wire idelay_tap_limit_r_i_1_n_0;
   wire idelay_tap_limit_r_i_2_n_0;
   wire idelay_tap_limit_r_reg_n_0;
@@ -61653,7 +60278,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \mpr_4to1.inhibit_edge_detect_r_i_4_n_0 ;
   wire \mpr_4to1.inhibit_edge_detect_r_i_5_n_0 ;
   wire \mpr_4to1.inhibit_edge_detect_r_i_6_n_0 ;
-  wire \mpr_4to1.inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_232 ;
   wire \mpr_4to1.stable_idel_cnt[0]_i_1_n_0 ;
   wire \mpr_4to1.stable_idel_cnt[1]_i_1_n_0 ;
   wire \mpr_4to1.stable_idel_cnt[2]_i_1_n_0 ;
@@ -61922,11 +60546,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire pwropt_1;
   wire pwropt_2;
   wire pwropt_3;
+  wire pwropt_4;
+  wire pwropt_5;
+  wire pwropt_6;
   wire \rd_mux_sel_r_reg[0]_0 ;
   wire rdlvl_dqs_tap_cnt_r;
   wire \rdlvl_dqs_tap_cnt_r[0][0][5]_i_1_n_0 ;
   wire \rdlvl_dqs_tap_cnt_r[0][0][5]_i_2_n_0 ;
-  wire \rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ;
+  wire \rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ;
   wire [1:0]\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 ;
   wire \rdlvl_dqs_tap_cnt_r_reg_n_0_[0][0][0] ;
   wire \rdlvl_dqs_tap_cnt_r_reg_n_0_[0][0][1] ;
@@ -61963,14 +60590,15 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \regl_dqs_cnt[0]_i_1_n_0 ;
   wire \regl_dqs_cnt[1]_i_1_n_0 ;
   wire [1:0]regl_dqs_cnt_r;
-  wire \regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_107 ;
+  wire \regl_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_122 ;
+  wire \regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_109 ;
   wire \regl_dqs_cnt_reg_n_0_[0] ;
   wire \regl_dqs_cnt_reg_n_0_[1] ;
   wire [1:0]regl_rank_cnt;
   wire \regl_rank_cnt[0]_i_1_n_0 ;
   wire \regl_rank_cnt[1]_i_1_n_0 ;
   wire \regl_rank_cnt[1]_i_2_n_0 ;
-  wire \regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_93 ;
+  wire \regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_95 ;
   wire reset_if;
   wire reset_if_r9;
   wire reset_if_reg;
@@ -61993,7 +60621,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire samp_cnt_done_r_i_2_n_0;
   wire samp_cnt_done_r_i_3_n_0;
   wire samp_cnt_done_r_i_4_n_0;
-  wire samp_cnt_done_r_reg_CE_cooolgate_en_sig_285;
   wire samp_cnt_done_r_reg_n_0;
   wire samp_edge_cnt0_en_r;
   wire \samp_edge_cnt0_r[0]_i_3_n_0 ;
@@ -62040,7 +60667,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \second_edge_taps_r[5]_i_1_n_0 ;
   wire \second_edge_taps_r[5]_i_2_n_0 ;
   wire \second_edge_taps_r[5]_i_3_n_0 ;
-  wire \second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ;
+  wire \second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ;
   wire \second_edge_taps_r_reg_n_0_[0] ;
   wire \second_edge_taps_r_reg_n_0_[1] ;
   wire \second_edge_taps_r_reg_n_0_[2] ;
@@ -62058,10 +60685,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire store_sr_r_reg_n_0;
   wire store_sr_req_pulsed_r;
   wire store_sr_req_pulsed_r__0;
-  wire store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_132;
+  wire store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_134;
   wire store_sr_req_r;
   wire store_sr_req_r_reg_0;
-  wire store_sr_req_r_reg_CE_cooolgate_en_sig_170;
+  wire store_sr_req_r_reg_CE_cooolgate_en_sig_172;
   wire store_sr_req_r_reg_n_0;
   wire tap_cnt_cpt_r;
   wire [0:0]tap_cnt_cpt_r0;
@@ -62086,7 +60713,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
   wire \wait_cnt_r[1]_i_1__0_n_0 ;
   wire [3:0]wait_cnt_r_reg;
   wire [0:0]\wait_cnt_r_reg[0]_0 ;
-  wire \wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ;
+  wire \wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ;
   wire wrlvl_done_r1;
   wire [3:0]\NLW_cnt_idel_dec_cpt_r_reg[2]_i_10_CO_UNCONNECTED ;
   wire [3:0]\NLW_cnt_idel_dec_cpt_r_reg[2]_i_10_O_UNCONNECTED ;
@@ -62679,25 +61306,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\rnk_cnt_r_reg_n_0_[1] ),
         .I5(\rnk_cnt_r_reg_n_0_[0] ),
         .O(\cal1_cnt_cpt_r[0]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cal1_cnt_cpt_r_reg[0] 
        (.C(CLK),
-        .CE(\cal1_cnt_cpt_r_reg[0]_CE_cooolgate_en_sig_111 ),
+        .CE(\<const1> ),
         .D(\cal1_cnt_cpt_r[0]_i_1_n_0 ),
         .Q(\cal1_cnt_cpt_r_reg_n_0_[0] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
-  LUT4 #(
-    .INIT(16'hfff8)) 
-    \cal1_cnt_cpt_r_reg[0]_CE_cooolgate_en_gate_462 
-       (.I0(prech_done),
-        .I1(cal1_prech_req_r),
-        .I2(p_0_in118_in),
-        .I3(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
-        .O(\cal1_cnt_cpt_r_reg[0]_CE_cooolgate_en_sig_111 ));
   LUT3 #(
     .INIT(8'hBA)) 
     cal1_dlyce_cpt_r_i_1
@@ -62902,23 +61518,23 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cal1_state_r1_reg[4] 
        (.C(CLK),
-        .CE(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_82 ),
+        .CE(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_84 ),
         .D(\cal1_state_r1[4]_i_1_n_0 ),
         .Q(\cal1_state_r1_reg_n_0_[4] ),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'h2)) 
-    \cal1_state_r1_reg[4]_CE_cooolgate_en_gate_387 
+    \cal1_state_r1_reg[4]_CE_cooolgate_en_gate_517 
        (.I0(\cal1_state_r1[2]_i_1_n_0 ),
         .I1(\cal1_state_r1[0]_i_1_n_0 ),
-        .O(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_82 ));
+        .O(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_84 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cal1_state_r1_reg[5] 
        (.C(CLK),
-        .CE(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_82 ),
+        .CE(\cal1_state_r1_reg[4]_CE_cooolgate_en_sig_84 ),
         .D(\cal1_state_r1[5]_i_1_n_0 ),
         .Q(\cal1_state_r1_reg_n_0_[5] ),
         .R(\<const0> ));
@@ -62953,7 +61569,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     \cal1_wait_cnt_r[0]_i_1 
        (.I0(cal1_wait_cnt_r_reg[0]),
         .O(p_0_in__0__0[0]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -62961,7 +61576,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
        (.I0(cal1_wait_cnt_r_reg[0]),
         .I1(cal1_wait_cnt_r_reg[1]),
         .O(p_0_in__0__0[1]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -62970,7 +61584,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I1(cal1_wait_cnt_r_reg[1]),
         .I2(cal1_wait_cnt_r_reg[0]),
         .O(p_0_in__0__0[2]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "198" *) 
   (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -62990,7 +61603,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(cal1_wait_cnt_r_reg[2]),
         .I5(cal1_wait_cnt_en_r),
         .O(\cal1_wait_cnt_r[4]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "198" *) 
   (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
@@ -63007,27 +61619,27 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cal1_wait_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ),
+        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ),
         .D(p_0_in__0__0[0]),
         .Q(cal1_wait_cnt_r_reg[0]),
         .R(\cal1_wait_cnt_r[4]_i_1_n_0 ));
   LUT6 #(
     .INIT(64'hffffffff8000ffff)) 
-    \cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_gate_228 
+    \cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_gate_357 
        (.I0(cal1_wait_cnt_r_reg[3]),
         .I1(cal1_wait_cnt_r_reg[2]),
         .I2(cal1_wait_cnt_r_reg[1]),
         .I3(cal1_wait_cnt_r_reg[0]),
         .I4(cal1_wait_cnt_en_r),
         .I5(cal1_wait_cnt_en_r0),
-        .O(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ));
+        .O(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cal1_wait_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ),
+        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ),
         .D(p_0_in__0__0[1]),
         .Q(cal1_wait_cnt_r_reg[1]),
         .R(\cal1_wait_cnt_r[4]_i_1_n_0 ));
@@ -63037,7 +61649,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cal1_wait_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ),
+        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ),
         .D(p_0_in__0__0[2]),
         .Q(cal1_wait_cnt_r_reg[2]),
         .R(\cal1_wait_cnt_r[4]_i_1_n_0 ));
@@ -63047,7 +61659,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cal1_wait_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ),
+        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ),
         .D(p_0_in__0__0[3]),
         .Q(cal1_wait_cnt_r_reg[3]),
         .R(\cal1_wait_cnt_r[4]_i_1_n_0 ));
@@ -63058,7 +61670,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cal1_wait_cnt_r_reg[4] 
        (.C(CLK),
-        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_37 ),
+        .CE(\cal1_wait_cnt_r_reg[0]_CE_cooolgate_en_sig_39 ),
         .D(p_0_in__0__0[4]),
         .Q(cal1_wait_cnt_r_reg[4]),
         .R(\cal1_wait_cnt_r[4]_i_1_n_0 ));
@@ -63558,28 +62170,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b1)) 
     \cnt_shift_r_reg[0] 
        (.C(CLK),
-        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ),
+        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ),
         .D(p_0_in__1[0]),
         .Q(cnt_shift_r_reg[0]),
         .S(\cnt_shift_r_reg[0]_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFF2F00000000)) 
-    \cnt_shift_r_reg[0]_CE_cooolgate_en_gate_261_LOPT_REMAP 
+    \cnt_shift_r_reg[0]_CE_cooolgate_en_gate_395_LOPT_REMAP 
        (.I0(pwropt_3),
         .I1(pwropt_2),
         .I2(rdlvl_stg1_start_r_reg_0),
         .I3(cnt_shift_r_reg[0]),
         .I4(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
         .I5(E),
-        .O(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ));
+        .O(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \cnt_shift_r_reg[1] 
        (.C(CLK),
-        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ),
+        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ),
         .D(p_0_in__1[1]),
         .Q(cnt_shift_r_reg[1]),
         .R(\cnt_shift_r_reg[0]_0 ));
@@ -63589,7 +62201,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cnt_shift_r_reg[2] 
        (.C(CLK),
-        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ),
+        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ),
         .D(p_0_in__1[2]),
         .Q(cnt_shift_r_reg[2]),
         .R(\cnt_shift_r_reg[0]_0 ));
@@ -63599,7 +62211,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \cnt_shift_r_reg[3] 
        (.C(CLK),
-        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_48 ),
+        .CE(\cnt_shift_r_reg[0]_CE_cooolgate_en_sig_52 ),
         .D(p_0_in__1[3]),
         .Q(cnt_shift_r_reg[3]),
         .R(\cnt_shift_r_reg[0]_0 ));
@@ -63645,6 +62257,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(done_cnt1),
         .I5(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
         .O(\done_cnt[0]_i_1_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "198" *) 
   (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT5 #(
     .INIT(32'hFAAFFAAE)) 
@@ -63665,6 +62278,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(done_cnt1),
         .I5(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
         .O(\done_cnt[2]_i_1_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "198" *) 
   (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT5 #(
     .INIT(32'hEEEEEEEA)) 
@@ -63804,28 +62418,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[0] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[0] ),
         .Q(\first_edge_taps_r_reg_n_0_[0] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF400000000000)) 
-    \first_edge_taps_r_reg[0]_CE_cooolgate_en_gate_109_LOPT_REMAP 
+    \first_edge_taps_r_reg[0]_CE_cooolgate_en_gate_238_LOPT_REMAP 
        (.I0(tap_limit_cpt_r),
         .I1(store_sr_req_pulsed_r),
         .I2(found_edge_r_reg_n_0),
         .I3(detect_edge_done_r),
         .I4(cal1_prech_req_r),
         .I5(\first_edge_taps_r[5]_i_2_n_0 ),
-        .O(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ));
+        .O(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[1] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[1] ),
         .Q(\first_edge_taps_r_reg_n_0_[1] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
@@ -63835,7 +62449,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[2] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[2] ),
         .Q(\first_edge_taps_r_reg_n_0_[2] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
@@ -63845,7 +62459,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[3] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[3] ),
         .Q(\first_edge_taps_r_reg_n_0_[3] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
@@ -63855,7 +62469,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[4] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[4] ),
         .Q(\first_edge_taps_r_reg_n_0_[4] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
@@ -63865,7 +62479,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \first_edge_taps_r_reg[5] 
        (.C(CLK),
-        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_9 ),
+        .CE(\first_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[5] ),
         .Q(\first_edge_taps_r_reg_n_0_[5] ),
         .R(\first_edge_taps_r[5]_i_1_n_0 ));
@@ -63936,23 +62550,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I1(detect_edge_done_r),
         .I2(found_stable_eye_last_r),
         .O(found_stable_eye_last_r_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     found_stable_eye_last_r_reg
        (.C(CLK),
-        .CE(found_stable_eye_last_r_reg_CE_cooolgate_en_sig_261),
+        .CE(\<const1> ),
         .D(found_stable_eye_last_r_i_1_n_0),
         .Q(found_stable_eye_last_r),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT2 #(
-    .INIT(4'he)) 
-    found_stable_eye_last_r_reg_CE_cooolgate_en_gate_751
-       (.I0(detect_edge_done_r),
-        .I1(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(found_stable_eye_last_r_reg_CE_cooolgate_en_sig_261));
   LUT5 #(
     .INIT(32'h00008000)) 
     found_stable_eye_r_i_1
@@ -65891,7 +64496,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_div4.gen_sr_len_eq1.gen_sr[2].sr_fall1_r_reg[2]_29 ),
         .Q(\gen_pat_match_div4.gen_pat_match[2].idel_pat0_match_fall1_r_reg ),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "233" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_pat_match_div4.gen_pat_match[2].idel_pat0_match_fall2_r[2]_i_1 
@@ -66945,6 +65549,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.idel_pat0_match_fall1_and_r_i_1_n_0 ),
         .Q(idel_pat0_match_fall1_and_r),
         .R(\<const0> ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "188" *) 
   (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT3 #(
     .INIT(8'h80)) 
@@ -67056,6 +65661,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.idel_pat0_match_rise2_and_r_i_1_n_0 ),
         .Q(idel_pat0_match_rise2_and_r),
         .R(\<const0> ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "141" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.idel_pat0_match_rise3_and_r_i_1 
@@ -67149,6 +65755,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.idel_pat1_match_fall1_and_r_i_1_n_0 ),
         .Q(idel_pat1_match_fall1_and_r),
         .R(\<const0> ));
+  (* \PinAttr:I1:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.idel_pat1_match_fall2_and_r_i_1 
@@ -67529,7 +66136,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.pat1_match_fall0_and_r_i_1_n_0 ),
         .Q(pat1_match_fall0_and_r),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "153" *) 
   LUT6 #(
     .INIT(64'h8000000000000000)) 
     \gen_pat_match_div4.pat1_match_fall1_and_r_i_1 
@@ -67631,7 +66237,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.pat1_match_rise0_and_r_i_1_n_0 ),
         .Q(pat1_match_rise0_and_r),
         .R(\<const0> ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "152" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.pat1_match_rise1_and_r_i_1 
@@ -67682,7 +66287,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_pat_match_div4.pat1_match_rise2_and_r_i_1_n_0 ),
         .Q(pat1_match_rise2_and_r),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.pat1_match_rise3_and_r_i_1 
@@ -68403,7 +67007,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[0].prev_sr_match_cyc2_r_reg ),
         .Q(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r_reg_n_0_[0] ),
         .R(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r[0]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \gen_sr_match_div4.gen_sr_match[0].prev_sr_match_cyc2_r[0]_inv_i_1 
@@ -68744,7 +67347,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[1].prev_sr_match_cyc2_r_reg ),
         .Q(p_0_in103_in),
         .R(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r[0]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "152" *) 
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \gen_sr_match_div4.gen_sr_match[1].prev_sr_match_cyc2_r[1]_inv_i_1 
@@ -68975,7 +67577,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[2].old_sr_match_fall1_r[2]_i_1_n_0 ),
         .Q(p_3_in202_in),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "181" *) 
   (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -69061,7 +67662,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[2].old_sr_match_rise2_r[2]_i_1_n_0 ),
         .Q(p_4_in203_in),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "182" *) 
   (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -69087,6 +67687,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[2].prev_sr_match_cyc2_r_reg ),
         .Q(p_0_in100_in),
         .R(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r[0]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "141" *) 
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \gen_sr_match_div4.gen_sr_match[2].prev_sr_match_cyc2_r[2]_inv_i_1 
@@ -69181,6 +67782,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[2].prev_sr_match_fall3_r[2]_i_1_n_0 ),
         .Q(p_7_in214_in),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "154" *) 
   (* SOFT_HLUTNM = "soft_lutpair109" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -69427,7 +68029,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[3].prev_sr_match_cyc2_r_reg ),
         .Q(p_0_in97_in),
         .R(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r[0]_i_1_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "141" *) 
+  (* \PinAttr:I3:HOLD_DETOUR  = "152" *) 
   LUT5 #(
     .INIT(32'hFFFF7FFF)) 
     \gen_sr_match_div4.gen_sr_match[3].prev_sr_match_cyc2_r[3]_inv_i_1 
@@ -69573,7 +68175,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[3].prev_sr_match_rise2_r[3]_i_1_n_0 ),
         .Q(p_4_in195_in),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "175" *) 
   (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -69676,7 +68277,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[4].old_sr_match_fall2_r[4]_i_1_n_0 ),
         .Q(p_5_in172_in),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "181" *) 
   (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -69813,7 +68413,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[4].prev_sr_match_fall0_r[4]_i_1_n_0 ),
         .Q(p_0_in176_in),
         .R(\<const0> ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "176" *) 
   (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -70137,6 +68736,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[5].prev_sr_match_cyc2_r_reg0 ),
         .Q(\gen_sr_match_div4.gen_sr_match[5].prev_sr_match_cyc2_r_reg ),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "197" *) 
   (* SOFT_HLUTNM = "soft_lutpair97" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -70375,6 +68975,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[6].old_sr_match_fall3_r[6]_i_1_n_0 ),
         .Q(p_7_in142_in),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "182" *) 
   (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -70511,6 +69112,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[6].prev_sr_match_fall1_r[6]_i_1_n_0 ),
         .Q(p_3_in146_in),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "198" *) 
   (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -70868,6 +69470,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\gen_sr_match_div4.gen_sr_match[7].prev_sr_match_fall2_r[7]_i_1_n_0 ),
         .Q(p_5_in132_in),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT4 #(
     .INIT(16'hE00E)) 
@@ -71136,24 +69739,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(\gen_track_left_edge[0].pb_last_tap_jitter_r_reg_n_0_[0] ),
         .I3(\gen_sr_match_div4.gen_sr_match[0].old_sr_diff_r_reg_n_0_[0] ),
         .O(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_4_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[0].pb_found_stable_eye_r_reg[0] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[0].pb_found_stable_eye_r_reg[0]_CE_cooolgate_en_sig_224 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[0]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[0].pb_found_stable_eye_r_reg[0]_CE_cooolgate_en_gate_677 
-       (.I0(pb_detect_edge_done_r[0]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[0].pb_found_stable_eye_r_reg[0]_CE_cooolgate_en_sig_224 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[0].pb_last_tap_jitter_r[0]_i_1 
@@ -71164,34 +69757,22 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\gen_track_left_edge[0].pb_last_tap_jitter_r_reg_n_0_[0] ),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[0].pb_last_tap_jitter_r[0]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[0].pb_last_tap_jitter_r_reg[0] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[0].pb_last_tap_jitter_r_reg[0]_CE_cooolgate_en_sig_214 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[0].pb_last_tap_jitter_r[0]_i_1_n_0 ),
         .Q(\gen_track_left_edge[0].pb_last_tap_jitter_r_reg_n_0_[0] ),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[0].pb_last_tap_jitter_r_reg[0]_CE_cooolgate_en_gate_657 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(\gen_sr_match_div4.gen_sr_match[0].prev_sr_diff_r_reg_n_0_[0] ),
-        .I2(pb_detect_edge_done_r[0]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[0].pb_last_tap_jitter_r_reg[0]_CE_cooolgate_en_sig_214 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_track_left_edge[1].pb_cnt_eye_size_r[1][0]_i_1 
        (.I0(\gen_track_left_edge[1].pb_cnt_eye_size_r_reg[1]_204 [0]),
         .O(p_0_in__3[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair160" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -71199,7 +69780,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
        (.I0(\gen_track_left_edge[1].pb_cnt_eye_size_r_reg[1]_204 [0]),
         .I1(\gen_track_left_edge[1].pb_cnt_eye_size_r_reg[1]_204 [1]),
         .O(p_0_in__3[1]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -71208,7 +69789,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I1(\gen_track_left_edge[1].pb_cnt_eye_size_r_reg[1]_204 [1]),
         .I2(\gen_track_left_edge[1].pb_cnt_eye_size_r_reg[1]_204 [0]),
         .O(p_0_in__3[2]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -71363,24 +69944,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in28_in),
         .I3(p_1_in29_in),
         .O(\gen_track_left_edge[1].pb_found_stable_eye_r[1]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[1].pb_found_stable_eye_r_reg[1] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[1].pb_found_stable_eye_r_reg[1]_CE_cooolgate_en_sig_225 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[1].pb_found_stable_eye_r[1]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[1]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[1].pb_found_stable_eye_r_reg[1]_CE_cooolgate_en_gate_679 
-       (.I0(pb_detect_edge_done_r[1]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[1].pb_found_stable_eye_r_reg[1]_CE_cooolgate_en_sig_225 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[1].pb_last_tap_jitter_r[1]_i_1 
@@ -71391,34 +69962,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in28_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[1].pb_last_tap_jitter_r[1]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[1].pb_last_tap_jitter_r_reg[1] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[1].pb_last_tap_jitter_r_reg[1]_CE_cooolgate_en_sig_215 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[1].pb_last_tap_jitter_r[1]_i_1_n_0 ),
         .Q(p_0_in28_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[1].pb_last_tap_jitter_r_reg[1]_CE_cooolgate_en_gate_659 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in103_in),
-        .I2(pb_detect_edge_done_r[1]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[1].pb_last_tap_jitter_r_reg[1]_CE_cooolgate_en_sig_215 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_track_left_edge[2].pb_cnt_eye_size_r[2][0]_i_1 
        (.I0(\gen_track_left_edge[2].pb_cnt_eye_size_r_reg[2]_205 [0]),
         .O(p_0_in__4[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair161" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -71590,24 +70147,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in25_in),
         .I3(p_1_in26_in),
         .O(\gen_track_left_edge[2].pb_found_stable_eye_r[2]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[2].pb_found_stable_eye_r_reg[2] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[2].pb_found_stable_eye_r_reg[2]_CE_cooolgate_en_sig_226 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[2].pb_found_stable_eye_r[2]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[2]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[2].pb_found_stable_eye_r_reg[2]_CE_cooolgate_en_gate_681 
-       (.I0(pb_detect_edge_done_r[2]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[2].pb_found_stable_eye_r_reg[2]_CE_cooolgate_en_sig_226 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[2].pb_last_tap_jitter_r[2]_i_1 
@@ -71618,26 +70165,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in25_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[2].pb_last_tap_jitter_r[2]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[2].pb_last_tap_jitter_r_reg[2] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[2].pb_last_tap_jitter_r_reg[2]_CE_cooolgate_en_sig_216 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[2].pb_last_tap_jitter_r[2]_i_1_n_0 ),
         .Q(p_0_in25_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[2].pb_last_tap_jitter_r_reg[2]_CE_cooolgate_en_gate_661 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in100_in),
-        .I2(pb_detect_edge_done_r[2]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[2].pb_last_tap_jitter_r_reg[2]_CE_cooolgate_en_sig_216 ));
   (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair162" *) 
   LUT1 #(
@@ -71817,24 +70352,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in22_in),
         .I3(p_1_in23_in),
         .O(\gen_track_left_edge[3].pb_found_stable_eye_r[3]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[3].pb_found_stable_eye_r_reg[3] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[3].pb_found_stable_eye_r_reg[3]_CE_cooolgate_en_sig_227 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[3].pb_found_stable_eye_r[3]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[3]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[3].pb_found_stable_eye_r_reg[3]_CE_cooolgate_en_gate_683 
-       (.I0(pb_detect_edge_done_r[3]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[3].pb_found_stable_eye_r_reg[3]_CE_cooolgate_en_sig_227 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[3].pb_last_tap_jitter_r[3]_i_1 
@@ -71845,26 +70370,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in22_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[3].pb_last_tap_jitter_r[3]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[3].pb_last_tap_jitter_r_reg[3] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[3].pb_last_tap_jitter_r_reg[3]_CE_cooolgate_en_sig_217 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[3].pb_last_tap_jitter_r[3]_i_1_n_0 ),
         .Q(p_0_in22_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[3].pb_last_tap_jitter_r_reg[3]_CE_cooolgate_en_gate_663 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in97_in),
-        .I2(pb_detect_edge_done_r[3]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[3].pb_last_tap_jitter_r_reg[3]_CE_cooolgate_en_sig_217 ));
   (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair163" *) 
   LUT1 #(
@@ -71916,6 +70429,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(store_sr_req_pulsed_r),
         .I4(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_2_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_3 
@@ -71935,6 +70449,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\gen_track_left_edge[4].pb_found_edge_r_reg_n_0_[4] ),
         .I5(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_4_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'hBFFFFFFF)) 
     \gen_track_left_edge[4].pb_cnt_eye_size_r[4][4]_i_5 
@@ -72044,24 +70559,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in19_in),
         .I3(p_1_in20_in),
         .O(\gen_track_left_edge[4].pb_found_stable_eye_r[4]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[4].pb_found_stable_eye_r_reg[4] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[4].pb_found_stable_eye_r_reg[4]_CE_cooolgate_en_sig_228 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[4].pb_found_stable_eye_r[4]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[4]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[4].pb_found_stable_eye_r_reg[4]_CE_cooolgate_en_gate_685 
-       (.I0(pb_detect_edge_done_r[4]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[4].pb_found_stable_eye_r_reg[4]_CE_cooolgate_en_sig_228 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[4].pb_last_tap_jitter_r[4]_i_1 
@@ -72072,34 +70577,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in19_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[4].pb_last_tap_jitter_r[4]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[4].pb_last_tap_jitter_r_reg[4] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[4].pb_last_tap_jitter_r_reg[4]_CE_cooolgate_en_sig_218 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[4].pb_last_tap_jitter_r[4]_i_1_n_0 ),
         .Q(p_0_in19_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[4].pb_last_tap_jitter_r_reg[4]_CE_cooolgate_en_gate_665 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in94_in),
-        .I2(pb_detect_edge_done_r[4]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[4].pb_last_tap_jitter_r_reg[4]_CE_cooolgate_en_sig_218 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_track_left_edge[5].pb_cnt_eye_size_r[5][0]_i_1 
        (.I0(\gen_track_left_edge[5].pb_cnt_eye_size_r_reg[5]_208 [0]),
         .O(p_0_in__7[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair164" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -72107,7 +70598,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
        (.I0(\gen_track_left_edge[5].pb_cnt_eye_size_r_reg[5]_208 [0]),
         .I1(\gen_track_left_edge[5].pb_cnt_eye_size_r_reg[5]_208 [1]),
         .O(p_0_in__7[1]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "195" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -72116,7 +70607,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I1(\gen_track_left_edge[5].pb_cnt_eye_size_r_reg[5]_208 [1]),
         .I2(\gen_track_left_edge[5].pb_cnt_eye_size_r_reg[5]_208 [0]),
         .O(p_0_in__7[2]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "195" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -72143,7 +70634,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(store_sr_req_pulsed_r),
         .I4(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_2_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "152" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_3 
@@ -72163,7 +70653,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\gen_track_left_edge[5].pb_found_edge_r_reg_n_0_[5] ),
         .I5(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_4_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "152" *) 
   LUT5 #(
     .INIT(32'hBFFFFFFF)) 
     \gen_track_left_edge[5].pb_cnt_eye_size_r[5][4]_i_5 
@@ -72273,24 +70762,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in16_in),
         .I3(p_1_in17_in),
         .O(\gen_track_left_edge[5].pb_found_stable_eye_r[5]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[5].pb_found_stable_eye_r_reg[5] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[5].pb_found_stable_eye_r_reg[5]_CE_cooolgate_en_sig_229 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[5].pb_found_stable_eye_r[5]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[5]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[5].pb_found_stable_eye_r_reg[5]_CE_cooolgate_en_gate_687 
-       (.I0(pb_detect_edge_done_r[5]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[5].pb_found_stable_eye_r_reg[5]_CE_cooolgate_en_sig_229 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[5].pb_last_tap_jitter_r[5]_i_1 
@@ -72301,26 +70780,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in16_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[5].pb_last_tap_jitter_r[5]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[5].pb_last_tap_jitter_r_reg[5] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[5].pb_last_tap_jitter_r_reg[5]_CE_cooolgate_en_sig_219 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[5].pb_last_tap_jitter_r[5]_i_1_n_0 ),
         .Q(p_0_in16_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[5].pb_last_tap_jitter_r_reg[5]_CE_cooolgate_en_gate_667 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in91_in),
-        .I2(pb_detect_edge_done_r[5]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[5].pb_last_tap_jitter_r_reg[5]_CE_cooolgate_en_sig_219 ));
   (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair165" *) 
   LUT1 #(
@@ -72372,6 +70839,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(store_sr_req_pulsed_r),
         .I4(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_2_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_3 
@@ -72391,6 +70859,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\gen_track_left_edge[6].pb_found_edge_r_reg_n_0_[6] ),
         .I5(samp_cnt_done_r_reg_n_0),
         .O(\gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_4_n_0 ));
+  (* \PinAttr:I2:HOLD_DETOUR  = "151" *) 
   LUT5 #(
     .INIT(32'hBFFFFFFF)) 
     \gen_track_left_edge[6].pb_cnt_eye_size_r[6][4]_i_5 
@@ -72449,26 +70918,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(p_0_in88_in),
         .I4(pb_detect_edge_done_r[6]),
         .O(\gen_track_left_edge[6].pb_detect_edge_done_r[6]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[6].pb_detect_edge_done_r_reg[6] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[6].pb_detect_edge_done_r_reg[6]_CE_cooolgate_en_sig_389 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[6].pb_detect_edge_done_r[6]_i_1_n_0 ),
         .Q(pb_detect_edge_done_r[6]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT5 #(
-    .INIT(32'hfffffff1)) 
-    \gen_track_left_edge[6].pb_detect_edge_done_r_reg[6]_CE_cooolgate_en_gate_1007 
-       (.I0(store_sr_req_pulsed_r),
-        .I1(p_37_in),
-        .I2(samp_cnt_done_r_reg_n_0),
-        .I3(p_0_in88_in),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[6].pb_detect_edge_done_r_reg[6]_CE_cooolgate_en_sig_389 ));
   LUT6 #(
     .INIT(64'h5050505050505551)) 
     \gen_track_left_edge[6].pb_found_edge_r[6]_i_1 
@@ -72512,24 +70969,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in13_in),
         .I3(p_1_in14_in),
         .O(\gen_track_left_edge[6].pb_found_stable_eye_r[6]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[6].pb_found_stable_eye_r_reg[6] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[6].pb_found_stable_eye_r_reg[6]_CE_cooolgate_en_sig_230 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[6].pb_found_stable_eye_r[6]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[6]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[6].pb_found_stable_eye_r_reg[6]_CE_cooolgate_en_gate_689 
-       (.I0(pb_detect_edge_done_r[6]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[6].pb_found_stable_eye_r_reg[6]_CE_cooolgate_en_sig_230 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[6].pb_last_tap_jitter_r[6]_i_1 
@@ -72540,32 +70987,22 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in13_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[6].pb_last_tap_jitter_r[6]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[6].pb_last_tap_jitter_r_reg[6] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[6].pb_last_tap_jitter_r_reg[6]_CE_cooolgate_en_sig_220 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[6].pb_last_tap_jitter_r[6]_i_1_n_0 ),
         .Q(p_0_in13_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[6].pb_last_tap_jitter_r_reg[6]_CE_cooolgate_en_gate_669 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in88_in),
-        .I2(pb_detect_edge_done_r[6]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[6].pb_last_tap_jitter_r_reg[6]_CE_cooolgate_en_sig_220 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair166" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_track_left_edge[7].pb_cnt_eye_size_r[7][0]_i_1 
        (.I0(\gen_track_left_edge[7].pb_cnt_eye_size_r_reg[7]_210 [0]),
         .O(p_0_in__9[0]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   (* SOFT_HLUTNM = "soft_lutpair166" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -72686,26 +71123,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(p_0_in),
         .I4(pb_detect_edge_done_r[7]),
         .O(\gen_track_left_edge[7].pb_detect_edge_done_r[7]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[7].pb_detect_edge_done_r_reg[7] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[7].pb_detect_edge_done_r_reg[7]_CE_cooolgate_en_sig_390 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[7].pb_detect_edge_done_r[7]_i_1_n_0 ),
         .Q(pb_detect_edge_done_r[7]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT5 #(
-    .INIT(32'hfffffff1)) 
-    \gen_track_left_edge[7].pb_detect_edge_done_r_reg[7]_CE_cooolgate_en_gate_1009 
-       (.I0(store_sr_req_pulsed_r),
-        .I1(p_37_in),
-        .I2(samp_cnt_done_r_reg_n_0),
-        .I3(p_0_in),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[7].pb_detect_edge_done_r_reg[7]_CE_cooolgate_en_sig_390 ));
   LUT6 #(
     .INIT(64'h5050505050505551)) 
     \gen_track_left_edge[7].pb_found_edge_r[7]_i_1 
@@ -72749,24 +71174,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(p_0_in11_in),
         .I3(p_1_in12_in),
         .O(\gen_track_left_edge[7].pb_found_stable_eye_r[7]_i_3_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[7].pb_found_stable_eye_r_reg[7] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[7].pb_found_stable_eye_r_reg[7]_CE_cooolgate_en_sig_231 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[7].pb_found_stable_eye_r[7]_i_1_n_0 ),
         .Q(pb_found_stable_eye_r[7]),
         .R(\FSM_onehot_cal1_state_r_reg_n_0_[16] ));
-  LUT3 #(
-    .INIT(8'hf1)) 
-    \gen_track_left_edge[7].pb_found_stable_eye_r_reg[7]_CE_cooolgate_en_gate_691 
-       (.I0(pb_detect_edge_done_r[7]),
-        .I1(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I2(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[7].pb_found_stable_eye_r_reg[7]_CE_cooolgate_en_sig_231 ));
   LUT6 #(
     .INIT(64'h00000000FDFD0100)) 
     \gen_track_left_edge[7].pb_last_tap_jitter_r[7]_i_1 
@@ -72777,26 +71192,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(p_0_in11_in),
         .I5(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
         .O(\gen_track_left_edge[7].pb_last_tap_jitter_r[7]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \gen_track_left_edge[7].pb_last_tap_jitter_r_reg[7] 
        (.C(CLK),
-        .CE(\gen_track_left_edge[7].pb_last_tap_jitter_r_reg[7]_CE_cooolgate_en_sig_221 ),
+        .CE(\<const1> ),
         .D(\gen_track_left_edge[7].pb_last_tap_jitter_r[7]_i_1_n_0 ),
         .Q(p_0_in11_in),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff000e)) 
-    \gen_track_left_edge[7].pb_last_tap_jitter_r_reg[7]_CE_cooolgate_en_gate_671 
-       (.I0(samp_cnt_done_r_reg_n_0),
-        .I1(p_0_in),
-        .I2(pb_detect_edge_done_r[7]),
-        .I3(\gen_track_left_edge[0].pb_found_stable_eye_r[0]_i_3_n_0 ),
-        .I4(\FSM_onehot_cal1_state_r_reg_n_0_[16] ),
-        .O(\gen_track_left_edge[7].pb_last_tap_jitter_r_reg[7]_CE_cooolgate_en_sig_221 ));
   LUT4 #(
     .INIT(16'hC580)) 
     idel_adj_inc_i_1
@@ -72805,26 +71208,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(\FSM_onehot_cal1_state_r_reg_n_0_[3] ),
         .I3(idel_adj_inc_reg_n_0),
         .O(idel_adj_inc_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     idel_adj_inc_reg
        (.C(CLK),
-        .CE(idel_adj_inc_reg_CE_cooolgate_en_sig_254),
+        .CE(\<const1> ),
         .D(idel_adj_inc_i_1_n_0),
         .Q(idel_adj_inc_reg_n_0),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
-  LUT5 #(
-    .INIT(32'hffff8f88)) 
-    idel_adj_inc_reg_CE_cooolgate_en_gate_737
-       (.I0(p_37_in),
-        .I1(detect_edge_done_r),
-        .I2(cal1_wait_r),
-        .I3(\FSM_onehot_cal1_state_r_reg_n_0_[3] ),
-        .I4(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
-        .O(idel_adj_inc_reg_CE_cooolgate_en_sig_254));
   LUT6 #(
     .INIT(64'hF444F4F4F4444444)) 
     \idel_dec_cnt[0]_i_1 
@@ -73045,26 +71436,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_r_reg[0][0][0] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ),
+        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ),
         .D(\idelay_tap_cnt_r[0][1][0]_i_1_n_0 ),
         .Q(\idelay_tap_cnt_r_reg_n_0_[0][0][0] ),
         .R(\<const0> ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT4 #(
     .INIT(16'hF700)) 
-    \idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_gate_205_LOPT_REMAP 
+    \idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_gate_334_LOPT_REMAP 
        (.I0(\cal1_cnt_cpt_r[0]_i_1_n_0 ),
         .I1(pwropt_1),
         .I2(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
         .I3(\idelay_tap_cnt_r[0][0][4]_i_1_n_0 ),
-        .O(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ));
+        .O(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \idelay_tap_cnt_r_reg[0][0][1] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ),
+        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ),
         .D(\idelay_tap_cnt_r[0][1][1]_i_1_n_0 ),
         .Q(\idelay_tap_cnt_r_reg_n_0_[0][0][1] ),
         .R(\<const0> ));
@@ -73074,7 +71465,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_r_reg[0][0][2] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ),
+        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ),
         .D(\idelay_tap_cnt_r[0][1][2]_i_1_n_0 ),
         .Q(\idelay_tap_cnt_r_reg_n_0_[0][0][2] ),
         .R(\<const0> ));
@@ -73084,7 +71475,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_r_reg[0][0][3] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ),
+        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ),
         .D(\idelay_tap_cnt_r[0][1][3]_i_1_n_0 ),
         .Q(\idelay_tap_cnt_r_reg_n_0_[0][0][3] ),
         .R(\<const0> ));
@@ -73094,7 +71485,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_r_reg[0][0][4] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_31 ),
+        .CE(\idelay_tap_cnt_r_reg[0][0][0]_CE_cooolgate_en_sig_33 ),
         .D(\idelay_tap_cnt_r[0][1][4]_i_2_n_0 ),
         .Q(\idelay_tap_cnt_r_reg_n_0_[0][0][4] ),
         .R(\<const0> ));
@@ -73179,26 +71570,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_slice_r_reg[0] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ),
+        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ),
         .D(idelay_tap_cnt_r[0]),
         .Q(idelay_tap_cnt_slice_r[0]),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
   LUT5 #(
     .INIT(32'h00000010)) 
-    \idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_gate_198 
+    \idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_gate_327 
        (.I0(\rnk_cnt_r[1]_i_1__0_n_0 ),
         .I1(\rnk_cnt_r[0]_i_1__0_n_0 ),
         .I2(cal1_dq_idel_ce),
         .I3(pwropt_1),
         .I4(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
-        .O(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ));
+        .O(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \idelay_tap_cnt_slice_r_reg[1] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ),
+        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ),
         .D(idelay_tap_cnt_r[1]),
         .Q(idelay_tap_cnt_slice_r[1]),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -73208,7 +71599,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_slice_r_reg[2] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ),
+        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ),
         .D(idelay_tap_cnt_r[2]),
         .Q(idelay_tap_cnt_slice_r[2]),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -73218,7 +71609,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_slice_r_reg[3] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ),
+        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ),
         .D(idelay_tap_cnt_r[3]),
         .Q(idelay_tap_cnt_slice_r[3]),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -73228,7 +71619,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \idelay_tap_cnt_slice_r_reg[4] 
        (.C(CLK),
-        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_29 ),
+        .CE(\idelay_tap_cnt_slice_r_reg[0]_CE_cooolgate_en_sig_31 ),
         .D(idelay_tap_cnt_r[4]),
         .Q(idelay_tap_cnt_slice_r[4]),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -73371,26 +71762,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(mpr_rd_rise2_prev_r),
         .I3(mpr_rd_rise3_prev_r),
         .O(\mpr_4to1.inhibit_edge_detect_r_i_6_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \mpr_4to1.inhibit_edge_detect_r_reg 
        (.C(CLK),
-        .CE(\mpr_4to1.inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_232 ),
+        .CE(\<const1> ),
         .D(\mpr_4to1.inhibit_edge_detect_r_i_1_n_0 ),
         .Q(inhibit_edge_detect_r),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffffc005)) 
-    \mpr_4to1.inhibit_edge_detect_r_reg_CE_cooolgate_en_gate_693 
-       (.I0(mpr_rd_fall0_prev_r),
-        .I1(mpr_rd_fall1_prev_r),
-        .I2(mpr_rd_fall3_prev_r),
-        .I3(mpr_rd_fall2_prev_r),
-        .I4(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
-        .O(\mpr_4to1.inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_232 ));
   LUT3 #(
     .INIT(8'h06)) 
     \mpr_4to1.stable_idel_cnt[0]_i_1 
@@ -73790,7 +72169,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I4(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
         .I5(pi_cnt_dec_i_2_n_0),
         .O(pi_cnt_dec_i_1_n_0));
-  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "196" *) 
   LUT2 #(
     .INIT(4'hE)) 
     pi_cnt_dec_i_2
@@ -73835,7 +72214,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(fine_dly_dec_done_r2),
         .Q(pi_fine_dly_dec_done_reg_0),
         .R(\<const0> ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "180" *) 
   LUT5 #(
     .INIT(32'h0808FB08)) 
     \pi_rdval_cnt[0]_i_1 
@@ -74085,7 +72463,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I1(\regl_dqs_cnt_reg_n_0_[0] ),
         .I2(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][0][0] ),
         .O(\pi_stg2_reg_l_timing[0]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "175" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "174" *) 
   (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT3 #(
     .INIT(8'hB8)) 
@@ -74269,28 +72647,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][0] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[0] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][0] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [0]));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFF1000000000)) 
-    \rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_gate_151_LOPT_REMAP 
+    \rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_gate_280_LOPT_REMAP 
        (.I0(\rnk_cnt_r_reg_n_0_[1] ),
         .I1(\rnk_cnt_r_reg_n_0_[0] ),
         .I2(\rdlvl_dqs_tap_cnt_r[0][0][5]_i_2_n_0 ),
         .I3(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
         .I4(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [0]),
         .I5(rdlvl_dqs_tap_cnt_r),
-        .O(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ));
+        .O(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][1] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[1] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][1] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [0]));
@@ -74300,7 +72678,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][2] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[2] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][2] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [0]));
@@ -74310,7 +72688,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][3] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[3] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][3] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [0]));
@@ -74320,7 +72698,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][4] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[4] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][4] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -74330,7 +72708,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \rdlvl_dqs_tap_cnt_r_reg[0][1][5] 
        (.C(CLK),
-        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_21 ),
+        .CE(\rdlvl_dqs_tap_cnt_r_reg[0][1][0]_CE_cooolgate_en_sig_23 ),
         .D(\tap_cnt_cpt_r_reg_n_0_[5] ),
         .Q(\rdlvl_dqs_tap_cnt_r_reg_n_0_[0][1][5] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -74479,14 +72857,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(\regl_dqs_cnt_reg_n_0_[0] ),
         .I3(\regl_dqs_cnt_reg_n_0_[1] ),
         .O(\regl_dqs_cnt[1]_i_1_n_0 ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \regl_dqs_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\<const1> ),
+        .CE(\regl_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_122 ),
         .D(\regl_dqs_cnt_reg_n_0_[0] ),
         .Q(regl_dqs_cnt_r[0]),
         .R(\<const0> ));
+  LUT6 #(
+    .INIT(64'h0000000000000080)) 
+    \regl_dqs_cnt_r_reg[0]_CE_cooolgate_en_gate_619 
+       (.I0(pwropt_6),
+        .I1(pwropt_5),
+        .I2(fine_dly_dec_done_r2),
+        .I3(pwropt_1),
+        .I4(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
+        .I5(pwropt_4),
+        .O(\regl_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_122 ));
   FDRE #(
     .INIT(1'b0)) 
     \regl_dqs_cnt_r_reg[1] 
@@ -74502,16 +72892,16 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \regl_dqs_cnt_reg[0] 
        (.C(CLK),
-        .CE(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_107 ),
+        .CE(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_109 ),
         .D(\regl_dqs_cnt[0]_i_1_n_0 ),
         .Q(\regl_dqs_cnt_reg_n_0_[0] ),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'he)) 
-    \regl_dqs_cnt_reg[0]_CE_cooolgate_en_gate_450 
+    \regl_dqs_cnt_reg[0]_CE_cooolgate_en_gate_580 
        (.I0(\regl_rank_cnt[1]_i_2_n_0 ),
         .I1(\FSM_onehot_cal1_state_r[5]_i_2_n_0 ),
-        .O(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_107 ));
+        .O(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_109 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -74519,7 +72909,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \regl_dqs_cnt_reg[1] 
        (.C(CLK),
-        .CE(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_107 ),
+        .CE(\regl_dqs_cnt_reg[0]_CE_cooolgate_en_sig_109 ),
         .D(\regl_dqs_cnt[1]_i_1_n_0 ),
         .Q(\regl_dqs_cnt_reg_n_0_[1] ),
         .R(\<const0> ));
@@ -74559,18 +72949,18 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \regl_rank_cnt_reg[0] 
        (.C(CLK),
-        .CE(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_93 ),
+        .CE(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_95 ),
         .D(\regl_rank_cnt[0]_i_1_n_0 ),
         .Q(regl_rank_cnt[0]),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'hff40)) 
-    \regl_rank_cnt_reg[0]_CE_cooolgate_en_gate_408 
+    \regl_rank_cnt_reg[0]_CE_cooolgate_en_gate_538 
        (.I0(\regl_dqs_cnt_reg_n_0_[1] ),
         .I1(\regl_dqs_cnt_reg_n_0_[0] ),
         .I2(\FSM_onehot_cal1_state_r[5]_i_2_n_0 ),
         .I3(\regl_rank_cnt[1]_i_2_n_0 ),
-        .O(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_93 ));
+        .O(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_95 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -74578,10 +72968,11 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \regl_rank_cnt_reg[1] 
        (.C(CLK),
-        .CE(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_93 ),
+        .CE(\regl_rank_cnt_reg[0]_CE_cooolgate_en_sig_95 ),
         .D(\regl_rank_cnt[1]_i_1_n_0 ),
         .Q(regl_rank_cnt[1]),
         .R(\<const0> ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "179" *) 
   (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'h000000AE)) 
@@ -74724,14 +73115,11 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .D(\rnk_cnt_r[0]_i_1__0_n_0 ),
         .Q(\rnk_cnt_r_reg_n_0_[0] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \rnk_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\cal1_cnt_cpt_r_reg[0]_CE_cooolgate_en_sig_111 ),
+        .CE(\<const1> ),
         .D(\rnk_cnt_r[1]_i_1__0_n_0 ),
         .Q(\rnk_cnt_r_reg_n_0_[1] ),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
@@ -74769,27 +73157,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I2(samp_edge_cnt1_r_reg[10]),
         .I3(samp_edge_cnt1_r_reg[3]),
         .O(samp_cnt_done_r_i_4_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     samp_cnt_done_r_reg
        (.C(CLK),
-        .CE(samp_cnt_done_r_reg_CE_cooolgate_en_sig_285),
+        .CE(\<const1> ),
         .D(samp_cnt_done_r_i_1_n_0),
         .Q(samp_cnt_done_r_reg_n_0),
         .R(\<const0> ));
-  LUT6 #(
-    .INIT(64'hffffffff0001ffff)) 
-    samp_cnt_done_r_reg_CE_cooolgate_en_gate_799
-       (.I0(samp_edge_cnt1_r_reg[4]),
-        .I1(samp_edge_cnt1_r_reg[2]),
-        .I2(samp_edge_cnt1_r_reg[1]),
-        .I3(samp_edge_cnt1_r_reg[11]),
-        .I4(samp_edge_cnt0_en_r),
-        .I5(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
-        .O(samp_cnt_done_r_reg_CE_cooolgate_en_sig_285));
   LUT2 #(
     .INIT(4'hE)) 
     samp_edge_cnt0_en_r_i_1
@@ -75168,28 +73543,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[0] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(tap_cnt_cpt_r0),
         .Q(\second_edge_taps_r_reg_n_0_[0] ),
         .R(\second_edge_taps_r[5]_i_1_n_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF400000000000)) 
-    \second_edge_taps_r_reg[0]_CE_cooolgate_en_gate_116_LOPT_REMAP 
+    \second_edge_taps_r_reg[0]_CE_cooolgate_en_gate_245_LOPT_REMAP 
        (.I0(tap_limit_cpt_r),
         .I1(store_sr_req_pulsed_r),
         .I2(found_edge_r_reg_n_0),
         .I3(detect_edge_done_r),
         .I4(cal1_prech_req_r),
         .I5(\second_edge_taps_r[5]_i_2_n_0 ),
-        .O(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ));
+        .O(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[1] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(\second_edge_taps_r[1]_i_1_n_0 ),
         .Q(\second_edge_taps_r_reg_n_0_[1] ),
         .R(\<const0> ));
@@ -75199,7 +73574,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[2] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(\second_edge_taps_r[2]_i_1_n_0 ),
         .Q(\second_edge_taps_r_reg_n_0_[2] ),
         .R(\<const0> ));
@@ -75209,7 +73584,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[3] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(\second_edge_taps_r[3]_i_1_n_0 ),
         .Q(\second_edge_taps_r_reg_n_0_[3] ),
         .R(\<const0> ));
@@ -75219,7 +73594,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[4] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(\second_edge_taps_r[4]_i_1_n_0 ),
         .Q(\second_edge_taps_r_reg_n_0_[4] ),
         .R(\<const0> ));
@@ -75229,7 +73604,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \second_edge_taps_r_reg[5] 
        (.C(CLK),
-        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_11 ),
+        .CE(\second_edge_taps_r_reg[0]_CE_cooolgate_en_sig_13 ),
         .D(\second_edge_taps_r[5]_i_3_n_0 ),
         .Q(\second_edge_taps_r_reg_n_0_[5] ),
         .R(\second_edge_taps_r[5]_i_1_n_0 ));
@@ -75288,19 +73663,19 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     store_sr_req_pulsed_r_reg
        (.C(CLK),
-        .CE(store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_132),
+        .CE(store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_134),
         .D(store_sr_req_pulsed_r),
         .Q(store_sr_req_pulsed_r__0),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
   LUT5 #(
     .INIT(32'h000000ca)) 
-    store_sr_req_pulsed_r_reg_CE_cooolgate_en_gate_513
+    store_sr_req_pulsed_r_reg_CE_cooolgate_en_gate_643
        (.I0(store_sr_req_pulsed_r),
         .I1(\FSM_onehot_cal1_state_r[21]_i_1_n_0 ),
         .I2(\FSM_onehot_cal1_state_r[34]_i_1_n_0 ),
         .I3(pwropt_1),
         .I4(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
-        .O(store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_132));
+        .O(store_sr_req_pulsed_r_reg_CE_cooolgate_en_sig_134));
   LUT5 #(
     .INIT(32'h4F444444)) 
     store_sr_req_r_i_1
@@ -75316,18 +73691,18 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     store_sr_req_r_reg
        (.C(CLK),
-        .CE(store_sr_req_r_reg_CE_cooolgate_en_sig_170),
+        .CE(store_sr_req_r_reg_CE_cooolgate_en_sig_172),
         .D(store_sr_req_r),
         .Q(store_sr_req_r_reg_n_0),
         .R(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]));
   LUT4 #(
     .INIT(16'h00fd)) 
-    store_sr_req_r_reg_CE_cooolgate_en_gate_575
+    store_sr_req_r_reg_CE_cooolgate_en_gate_705
        (.I0(store_sr_r_i_1_n_0),
         .I1(sr_valid_r_i_1_n_0),
         .I2(\rdlvl_dqs_tap_cnt_r_reg[0][1][4]_0 [1]),
         .I3(pwropt_1),
-        .O(store_sr_req_r_reg_CE_cooolgate_en_sig_170));
+        .O(store_sr_req_r_reg_CE_cooolgate_en_sig_172));
   LUT3 #(
     .INIT(8'h69)) 
     \tap_cnt_cpt_r[1]_i_1 
@@ -75513,7 +73888,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
         .I3(wait_cnt_r_reg[0]),
         .I4(wait_cnt_r_reg[1]),
         .O(wait_cnt_r0));
-  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   LUT4 #(
     .INIT(16'hAAA9)) 
     \wait_cnt_r[3]_i_3__0 
@@ -75528,28 +73903,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \wait_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ),
+        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
         .D(wait_cnt_r0__0[0]),
         .Q(wait_cnt_r_reg[0]),
         .R(\wait_cnt_r_reg[0]_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFF4F00000000)) 
-    \wait_cnt_r_reg[0]_CE_cooolgate_en_gate_266_LOPT_REMAP 
+    \wait_cnt_r_reg[0]_CE_cooolgate_en_gate_400_LOPT_REMAP 
        (.I0(wait_cnt_r_reg[0]),
         .I1(dqs_po_dec_done_r2),
         .I2(pwropt_1),
         .I3(pi_cnt_dec_reg_0),
         .I4(\idelay_tap_cnt_r_reg[0][1][1]_0 ),
         .I5(wait_cnt_r0),
-        .O(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ));
+        .O(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \wait_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ),
+        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
         .D(\wait_cnt_r[1]_i_1__0_n_0 ),
         .Q(wait_cnt_r_reg[1]),
         .R(\wait_cnt_r_reg[0]_0 ));
@@ -75559,7 +73934,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b0)) 
     \wait_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ),
+        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
         .D(wait_cnt_r0__0[2]),
         .Q(wait_cnt_r_reg[2]),
         .R(\wait_cnt_r_reg[0]_0 ));
@@ -75569,7 +73944,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_rdlvl
     .INIT(1'b1)) 
     \wait_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_50 ),
+        .CE(\wait_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
         .D(wait_cnt_r0__0[3]),
         .Q(wait_cnt_r_reg[3]),
         .S(\wait_cnt_r_reg[0]_0 ));
@@ -80268,7 +78643,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_tempmon
     \three_dec_min_limit[11]_i_2 
        (.I0(two_dec_max_limit[11]),
         .O(\three_dec_min_limit[11]_i_2_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "153" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \three_dec_min_limit[11]_i_3 
@@ -80335,7 +78709,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_tempmon
         .R(\three_dec_max_limit_reg[0]_0 [0]));
   (* ADDER_THRESHOLD = "35" *) 
   (* OPT_MODIFIED = "SWEEP" *) 
-  (* \PinAttr:DI[0]:HOLD_DETOUR  = "153" *) 
   CARRY4 \three_dec_min_limit_reg[11]_i_1 
        (.CI(\three_dec_min_limit_reg[9]_i_1_n_0 ),
         .CYINIT(\<const0> ),
@@ -81612,9 +79985,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_top
     pwropt,
     pwropt_1,
     pwropt_2,
-    .pwropt_3(\^pwropt_5 ),
-    .pwropt_4(pwropt_7),
-    .pwropt_5(pwropt_8));
+    .pwropt_3(pwropt_5));
   output \rd_ptr_reg[0] ;
   output \rd_ptr_reg[1] ;
   output \rd_ptr_reg[2] ;
@@ -81877,9 +80248,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_top
   output pwropt;
   input pwropt_1;
   output pwropt_2;
-  output \^pwropt_5 ;
-  input pwropt_7;
-  output pwropt_8;
+  output pwropt_5;
 
   wire A_rst_primitives_reg;
   wire A_rst_primitives_reg_0;
@@ -82072,11 +80441,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_top
   wire pwropt_1;
   wire pwropt_2;
   wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
-  wire \^pwropt_5 ;
+  wire pwropt_4;
+  wire pwropt_5;
   wire pwropt_6;
-  wire pwropt_7;
-  wire pwropt_8;
   wire \rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] ;
   wire [5:0]\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ;
   wire rd_data_en;
@@ -82608,11 +80975,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_top
         .pwropt_1(pwropt_1),
         .pwropt_2(pwropt_2),
         .pwropt_3(\^pwropt_3 ),
-        .pwropt_4(\^pwropt_4 ),
-        .pwropt_5(\^pwropt_5 ),
+        .pwropt_4(pwropt_4),
+        .pwropt_5(pwropt_5),
         .pwropt_6(pwropt_6),
-        .pwropt_7(pwropt_7),
-        .pwropt_8(pwropt_8),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] ),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] (\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ),
         .\rd_mux_sel_r_reg[0] (u_ddr_calib_top_n_3),
@@ -82924,7 +81289,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_top
         .pwropt(pwropt_2),
         .pwropt_1(pwropt_1),
         .pwropt_2(\^pwropt_3 ),
-        .pwropt_3(\^pwropt_4 ),
+        .pwropt_3(pwropt_4),
         .pwropt_4(pwropt_6),
         .rd_data_en(rd_data_en),
         .\rd_ptr_reg[0] (\rd_ptr_reg[0] ),
@@ -83249,7 +81614,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
   wire \cal2_state_r[3]_i_8_n_0 ;
   wire \cal2_state_r[3]_i_9_n_0 ;
   wire \cal2_state_r_reg[0]_0 ;
-  wire \cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ;
+  wire \cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ;
   wire \cal2_state_r_reg[0]_i_1_n_0 ;
   wire \cal2_state_r_reg[1]_i_1_n_0 ;
   wire \cal2_state_r_reg_n_0_[0] ;
@@ -83277,7 +81642,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
   wire early2_data_i_1_n_0;
   wire early2_data_match_r0;
   wire early2_data_reg_0;
-  wire early2_data_reg_CE_cooolgate_en_sig_209;
   wire early2_data_reg_n_0;
   wire early2_match_fall0_and_r;
   wire [7:0]early2_match_fall0_r;
@@ -83636,12 +82000,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
   wire idelay_ld;
   wire idelay_ld_done_i_1_n_0;
   wire idelay_ld_done_i_2_n_0;
-  wire idelay_ld_done_reg_CE_cooolgate_en_sig_223;
   wire idelay_ld_done_reg_n_0;
   wire idelay_ld_i_1_n_0;
   wire idelay_ld_i_2_n_0;
   wire idelay_ld_reg_0;
-  wire idelay_ld_reg_CE_cooolgate_en_sig_234;
   wire idelay_ld_rst;
   wire \idelay_tap_cnt_r_reg[0][1][4] ;
   wire \idelay_tap_cnt_r_reg[0][1][4]_0 ;
@@ -83687,14 +82049,13 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
   wire \wrcal_dqs_cnt_r[0]_i_2_n_0 ;
   wire \wrcal_dqs_cnt_r[1]_i_1_n_0 ;
   wire \wrcal_dqs_cnt_r[1]_i_2_n_0 ;
-  wire \wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_92 ;
+  wire \wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_94 ;
   wire \wrcal_dqs_cnt_r_reg_n_0_[0] ;
   wire wrcal_pat_resume_r;
   wire wrcal_pat_resume_r2_reg_srl2_n_0;
   wire wrcal_pat_resume_r_i_1_n_0;
   wire wrcal_pat_resume_r_i_2_n_0;
   wire wrcal_pat_resume_r_i_3_n_0;
-  wire wrcal_pat_resume_r_reg_CE_cooolgate_en_sig_272;
   wire wrcal_prech_req;
   wire wrcal_rd_wait;
   wire wrcal_resume_w;
@@ -83713,7 +82074,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
   wire wrlvl_byte_redo_r;
   wire wrlvl_byte_redo_reg_0;
   wire wrlvl_byte_redo_reg_1;
-  wire wrlvl_byte_redo_reg_CE_cooolgate_en_sig_210;
   wire wrlvl_done_r1;
 
   GND GND
@@ -84008,21 +82368,21 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \cal2_state_r_reg[0] 
        (.C(CLK),
-        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ),
+        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ),
         .D(\cal2_state_r_reg[0]_i_1_n_0 ),
         .Q(\cal2_state_r_reg_n_0_[0] ),
         .R(wrcal_sanity_chk_done_reg_2));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF10FF00000000)) 
-    \cal2_state_r_reg[0]_CE_cooolgate_en_gate_256_LOPT_REMAP 
+    \cal2_state_r_reg[0]_CE_cooolgate_en_gate_385_LOPT_REMAP 
        (.I0(\cal2_state_r_reg_n_0_[2] ),
         .I1(\cal2_state_r_reg_n_0_[1] ),
         .I2(\cal2_state_r_reg_n_0_[0] ),
         .I3(\cal2_state_r_reg_n_0_[3] ),
         .I4(wrcal_sanity_chk_done_reg_2),
         .I5(cal2_state_r),
-        .O(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ));
+        .O(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ));
   MUXF7 \cal2_state_r_reg[0]_i_1 
        (.I0(\cal2_state_r[0]_i_2_n_0 ),
         .I1(\cal2_state_r[0]_i_3_n_0 ),
@@ -84034,7 +82394,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \cal2_state_r_reg[1] 
        (.C(CLK),
-        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ),
+        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ),
         .D(\cal2_state_r_reg[1]_i_1_n_0 ),
         .Q(\cal2_state_r_reg_n_0_[1] ),
         .R(wrcal_sanity_chk_done_reg_2));
@@ -84049,7 +82409,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \cal2_state_r_reg[2] 
        (.C(CLK),
-        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ),
+        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ),
         .D(\cal2_state_r[2]_i_1_n_0 ),
         .Q(\cal2_state_r_reg_n_0_[2] ),
         .R(wrcal_sanity_chk_done_reg_2));
@@ -84059,7 +82419,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \cal2_state_r_reg[3] 
        (.C(CLK),
-        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_46 ),
+        .CE(\cal2_state_r_reg[0]_CE_cooolgate_en_sig_48 ),
         .D(\cal2_state_r[3]_i_2_n_0 ),
         .Q(\cal2_state_r_reg_n_0_[3] ),
         .R(wrcal_sanity_chk_done_reg_2));
@@ -84110,27 +82470,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I3(early1_data_i_2_n_0),
         .I4(early2_data_reg_n_0),
         .O(early2_data_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     early2_data_reg
        (.C(CLK),
-        .CE(early2_data_reg_CE_cooolgate_en_sig_209),
+        .CE(\<const1> ),
         .D(early2_data_i_1_n_0),
         .Q(early2_data_reg_n_0),
         .R(wrcal_sanity_chk_done_reg_2));
-  LUT6 #(
-    .INIT(64'hffffffff000d0000)) 
-    early2_data_reg_CE_cooolgate_en_gate_647
-       (.I0(wrcal_sanity_chk_r_reg_n_0),
-        .I1(\cal2_state_r_reg_n_0_[1] ),
-        .I2(\cal2_state_r_reg_n_0_[3] ),
-        .I3(\cal2_state_r_reg_n_0_[2] ),
-        .I4(\cal2_state_r_reg_n_0_[0] ),
-        .I5(wrcal_sanity_chk_done_reg_2),
-        .O(early2_data_reg_CE_cooolgate_en_sig_209));
   FDRE #(
     .INIT(1'b0)) 
     \gen_mux_rd_div4.gen_mux_rd[0].mux_rd_fall0_r_reg[0] 
@@ -84786,6 +83133,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(\gen_pat_match_div4.early1_match_rise1_and_r_i_1_n_0 ),
         .Q(early1_match_rise1_and_r),
         .R(\<const0> ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "142" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.early1_match_rise2_and_r_i_1 
@@ -85020,6 +83368,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I3(early2_match_rise2_r[5]),
         .I4(early2_match_rise2_r[1]),
         .O(\gen_pat_match_div4.early2_match_rise2_and_r_i_1_n_0 ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "142" *) 
   LUT4 #(
     .INIT(16'h8000)) 
     \gen_pat_match_div4.early2_match_rise2_and_r_i_2 
@@ -85036,7 +83385,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(\gen_pat_match_div4.early2_match_rise2_and_r_i_1_n_0 ),
         .Q(early2_match_rise2_and_r),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "141" *) 
   LUT5 #(
     .INIT(32'h00008000)) 
     \gen_pat_match_div4.early2_match_rise3_and_r_i_1 
@@ -85519,6 +83867,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(\gen_sr_div4.gen_sr[2].sr_rise0_r_reg[2]_257 ),
         .Q(early2_match_rise0_r[2]),
         .R(\<const0> ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "153" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_pat_match_div4.gen_pat_match[2].pat_match_rise1_r[2]_i_1 
@@ -85792,7 +84141,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(\gen_sr_div4.gen_sr[4].sr_fall1_r_reg[4]_267 ),
         .Q(\gen_pat_match_div4.gen_pat_match[4].pat_match_fall1_r_reg ),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "152" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \gen_pat_match_div4.gen_pat_match[4].pat_match_fall2_r[4]_i_1 
@@ -86389,6 +84737,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(\gen_pat_match_div4.pat_match_fall0_and_r_i_1_n_0 ),
         .Q(pat_match_fall0_and_r),
         .R(\<const0> ));
+  (* \PinAttr:I4:HOLD_DETOUR  = "141" *) 
   LUT5 #(
     .INIT(32'h80000000)) 
     \gen_pat_match_div4.pat_match_fall1_and_r_i_1 
@@ -87058,27 +85407,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I2(tap_inc_wait_cnt_reg[1]),
         .I3(tap_inc_wait_cnt_reg[3]),
         .O(idelay_ld_done_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     idelay_ld_done_reg
        (.C(CLK),
-        .CE(idelay_ld_done_reg_CE_cooolgate_en_sig_223),
+        .CE(\<const1> ),
         .D(idelay_ld_done_i_1_n_0),
         .Q(idelay_ld_done_reg_n_0),
         .R(wrcal_sanity_chk_done_reg_2));
-  LUT6 #(
-    .INIT(64'hffffffff0000111f)) 
-    idelay_ld_done_reg_CE_cooolgate_en_gate_675
-       (.I0(tap_inc_wait_cnt_reg[1]),
-        .I1(\cal2_state_r_reg_n_0_[1] ),
-        .I2(\cal2_state_r_reg_n_0_[2] ),
-        .I3(\cal2_state_r_reg_n_0_[0] ),
-        .I4(\cal2_state_r_reg_n_0_[3] ),
-        .I5(wrcal_sanity_chk_done_reg_2),
-        .O(idelay_ld_done_reg_CE_cooolgate_en_sig_223));
   LUT4 #(
     .INIT(16'h2F20)) 
     idelay_ld_i_1
@@ -87097,23 +85433,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I4(\cal2_state_r_reg_n_0_[1] ),
         .I5(\cal2_state_r_reg_n_0_[0] ),
         .O(idelay_ld_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     idelay_ld_reg
        (.C(CLK),
-        .CE(idelay_ld_reg_CE_cooolgate_en_sig_234),
+        .CE(\<const1> ),
         .D(idelay_ld_i_1_n_0),
         .Q(idelay_ld),
         .R(idelay_ld_reg_0));
-  LUT3 #(
-    .INIT(8'hf4)) 
-    idelay_ld_reg_CE_cooolgate_en_gate_697
-       (.I0(\cal2_state_r_reg_n_0_[3] ),
-        .I1(\cal2_state_r_reg_n_0_[0] ),
-        .I2(idelay_ld_reg_0),
-        .O(idelay_ld_reg_CE_cooolgate_en_sig_234));
   LUT3 #(
     .INIT(8'hFB)) 
     \idelay_tap_cnt_r[0][0][4]_i_2 
@@ -87230,6 +85557,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I4(\cal2_state_r_reg_n_0_[0] ),
         .I5(wrcal_rd_wait),
         .O(\not_empty_wait_cnt[4]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "198" *) 
   LUT5 #(
     .INIT(32'h6AAAAAAA)) 
     \not_empty_wait_cnt[4]_i_2 
@@ -87323,14 +85651,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .D(phy_rddata_en),
         .Q(E),
         .R(\<const0> ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair430" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \tap_inc_wait_cnt[0]_i_1 
        (.I0(tap_inc_wait_cnt_reg[0]),
         .O(p_0_in__0[0]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair430" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -87338,7 +85666,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
        (.I0(tap_inc_wait_cnt_reg[1]),
         .I1(tap_inc_wait_cnt_reg[0]),
         .O(p_0_in__0[1]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair429" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -87356,7 +85684,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I3(\cal2_state_r_reg_n_0_[0] ),
         .I4(wrcal_done_reg_2),
         .O(\tap_inc_wait_cnt[3]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair429" *) 
   LUT4 #(
     .INIT(16'h6AAA)) 
@@ -87465,20 +85793,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \wrcal_dqs_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_92 ),
+        .CE(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_94 ),
         .D(\wrcal_dqs_cnt_r[0]_i_1_n_0 ),
         .Q(\wrcal_dqs_cnt_r_reg_n_0_[0] ),
         .R(wrcal_sanity_chk_done_reg_2));
   LUT6 #(
     .INIT(64'hffffffff00000700)) 
-    \wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_gate_405 
+    \wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_gate_535 
        (.I0(wrcal_sanity_chk_r_reg_n_0),
         .I1(\cal2_state_r_reg_n_0_[2] ),
         .I2(\cal2_state_r_reg_n_0_[3] ),
         .I3(\cal2_state_r_reg_n_0_[1] ),
         .I4(\cal2_state_r_reg_n_0_[0] ),
         .I5(wrcal_sanity_chk_done_reg_2),
-        .O(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_92 ));
+        .O(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_94 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -87487,7 +85815,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
     .INIT(1'b0)) 
     \wrcal_dqs_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_92 ),
+        .CE(\wrcal_dqs_cnt_r_reg[0]_CE_cooolgate_en_sig_94 ),
         .D(\wrcal_dqs_cnt_r[1]_i_1_n_0 ),
         .Q(wrcal_dqs_cnt_r),
         .R(wrcal_sanity_chk_done_reg_2));
@@ -87532,25 +85860,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I4(wrcal_sanity_chk_r_reg_n_0),
         .I5(tap_inc_wait_cnt_reg[3]),
         .O(wrcal_pat_resume_r_i_3_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wrcal_pat_resume_r_reg
        (.C(CLK),
-        .CE(wrcal_pat_resume_r_reg_CE_cooolgate_en_sig_272),
+        .CE(\<const1> ),
         .D(wrcal_pat_resume_r_i_1_n_0),
         .Q(wrcal_pat_resume_r),
         .R(wrcal_sanity_chk_done_reg_2));
-  LUT4 #(
-    .INIT(16'hff87)) 
-    wrcal_pat_resume_r_reg_CE_cooolgate_en_gate_773
-       (.I0(\cal2_state_r_reg_n_0_[2] ),
-        .I1(\cal2_state_r_reg_n_0_[0] ),
-        .I2(\cal2_state_r_reg_n_0_[1] ),
-        .I3(wrcal_sanity_chk_done_reg_2),
-        .O(wrcal_pat_resume_r_reg_CE_cooolgate_en_sig_272));
   FDRE #(
     .INIT(1'b0)) 
     wrcal_pat_resume_reg
@@ -87631,27 +85948,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrcal
         .I4(\gen_pat_match_div4.pat_data_match_r_reg_n_0 ),
         .I5(\cal2_state_r_reg_n_0_[2] ),
         .O(wrlvl_byte_redo_i_3_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wrlvl_byte_redo_reg
        (.C(CLK),
-        .CE(wrlvl_byte_redo_reg_CE_cooolgate_en_sig_210),
+        .CE(\<const1> ),
         .D(wrlvl_byte_redo_i_1_n_0),
         .Q(wrlvl_byte_redo),
         .R(wrcal_sanity_chk_done_reg_2));
-  LUT6 #(
-    .INIT(64'hffffffff000d0000)) 
-    wrlvl_byte_redo_reg_CE_cooolgate_en_gate_649
-       (.I0(wrcal_sanity_chk_r_reg_n_0),
-        .I1(wrlvl_byte_done),
-        .I2(\cal2_state_r_reg_n_0_[3] ),
-        .I3(\cal2_state_r_reg_n_0_[2] ),
-        .I4(\cal2_state_r_reg_n_0_[0] ),
-        .I5(wrcal_sanity_chk_done_reg_2),
-        .O(wrlvl_byte_redo_reg_CE_cooolgate_en_sig_210));
   LUT6 #(
     .INIT(64'hCCC000C0DDDDDDDD)) 
     \wrlvl_redo_corse_inc[2]_i_5 
@@ -87742,10 +86046,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .pwropt(phy_ctl_ready_r4_reg_srl4_n_0),
     .pwropt_1(phy_ctl_ready_r5),
     .pwropt_2(\^pwropt ),
-    .pwropt_3(\^pwropt_1 ),
-    .pwropt_4(\^pwropt_2 ),
-    .pwropt_5(\^pwropt_3 ),
-    .pwropt_6(\^pwropt_4 ));
+    .pwropt_3(po_dec_done));
   output wrlvl_byte_redo_r;
   output dqs_po_dec_done_reg_0;
   output dqs_po_en_stg2_f;
@@ -87822,10 +86123,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   output phy_ctl_ready_r4_reg_srl4_n_0;
   output phy_ctl_ready_r5;
   input \^pwropt ;
-  input \^pwropt_1 ;
-  input \^pwropt_2 ;
-  input \^pwropt_3 ;
-  input \^pwropt_4 ;
+  output po_dec_done;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -87933,8 +86231,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \corse_cnt[1][2]_i_1_n_0 ;
   wire \corse_cnt[1][2]_i_2_n_0 ;
   wire \corse_cnt[1][2]_i_3_n_0 ;
-  wire \corse_cnt_reg[0][2]_CE_cooolgate_en_sig_392 ;
-  wire \corse_cnt_reg[1][0]_CE_cooolgate_en_sig_264 ;
   wire \corse_cnt_reg_n_0_[0][0] ;
   wire \corse_cnt_reg_n_0_[0][1] ;
   wire \corse_cnt_reg_n_0_[0][2] ;
@@ -87953,7 +86249,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \corse_dec[1][2]_i_1_n_0 ;
   wire \corse_dec[1][2]_i_3_n_0 ;
   wire \corse_dec[1][2]_i_4_n_0 ;
-  wire \corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ;
+  wire \corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ;
   wire [2:0]\corse_dec_reg[0]_7 ;
   wire [2:0]\corse_dec_reg[1]_6 ;
   wire \corse_inc[0][0]_i_1_n_0 ;
@@ -87971,7 +86267,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \corse_inc[1][2]_i_5_n_0 ;
   wire \corse_inc[1][2]_i_6_n_0 ;
   wire \corse_inc[1][2]_i_7_n_0 ;
-  wire \corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ;
+  wire \corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ;
   wire \corse_inc_reg_n_0_[0][0] ;
   wire \corse_inc_reg_n_0_[0][1] ;
   wire \corse_inc_reg_n_0_[0][2] ;
@@ -87983,7 +86279,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire dq_cnt_inc_i_1_n_0;
   wire dq_cnt_inc_i_2_n_0;
   wire dq_cnt_inc_i_3_n_0;
-  wire dq_cnt_inc_reg_CE_cooolgate_en_sig_211;
   wire [1:0]dqs_count_r;
   wire \dqs_count_r[0]_i_1_n_0 ;
   wire \dqs_count_r[0]_i_2_n_0 ;
@@ -88008,7 +86303,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire dqs_po_dec_done_reg_0;
   wire dqs_po_en_stg2_f;
   wire dqs_po_en_stg2_f_i_1_n_0;
-  wire dqs_po_en_stg2_f_reg_CE_cooolgate_en_sig_140;
   wire dqs_po_stg2_f_incdec;
   wire dqs_po_stg2_f_incdec_i_1_n_0;
   wire dqs_po_stg2_f_incdec_i_2_n_0;
@@ -88034,7 +86328,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \fine_dec_cnt[5]_i_7_n_0 ;
   wire \fine_dec_cnt[5]_i_8_n_0 ;
   wire \fine_dec_cnt[5]_i_9_n_0 ;
-  wire \fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ;
+  wire \fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ;
   wire \fine_dec_cnt_reg_n_0_[0] ;
   wire \fine_dec_cnt_reg_n_0_[1] ;
   wire \fine_dec_cnt_reg_n_0_[2] ;
@@ -88066,9 +86360,9 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \fine_inc[1][5]_i_5_n_0 ;
   wire \fine_inc[1][5]_i_6_n_0 ;
   wire \fine_inc[1][5]_i_7_n_0 ;
-  wire \fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ;
+  wire \fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ;
   wire [5:0]\fine_inc_reg[0]_3 ;
-  wire \fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ;
+  wire \fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ;
   wire [5:0]\fine_inc_reg[1]_2 ;
   wire flag_ck_negedge09_out;
   wire flag_ck_negedge_i_1_n_0;
@@ -88136,7 +86430,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire inhibit_edge_detect_r_i_7_n_0;
   wire inhibit_edge_detect_r_i_8_n_0;
   wire inhibit_edge_detect_r_i_9_n_0;
-  wire inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_177;
   wire inhibit_edge_detect_r_reg_n_0;
   wire [5:0]largest;
   wire p_0_in;
@@ -88156,7 +86449,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire po_dec_done;
   wire po_dec_done_i_1_n_0;
   wire po_dec_done_i_2_n_0;
-  wire po_dec_done_reg_CE_cooolgate_en_sig_255;
   wire [0:0]po_enstg2_f;
   wire [8:0]po_rdval_cnt;
   wire \po_rdval_cnt[0]_i_1_n_0 ;
@@ -88180,14 +86472,10 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire [8:0]\po_rdval_cnt_reg[8]_0 ;
   wire [2:2]po_stg2_cincdec;
   wire \^pwropt ;
-  wire \^pwropt_1 ;
-  wire \^pwropt_2 ;
-  wire \^pwropt_3 ;
-  wire \^pwropt_4 ;
   wire rank_cnt_r;
   wire \rank_cnt_r[0]_i_1_n_0 ;
   wire \rank_cnt_r[1]_i_1_n_0 ;
-  wire \rank_cnt_r_reg[0]_CE_cooolgate_en_sig_104 ;
+  wire \rank_cnt_r_reg[0]_CE_cooolgate_en_sig_106 ;
   wire \rank_cnt_r_reg_n_0_[0] ;
   wire \rank_cnt_r_reg_n_0_[1] ;
   wire \rd_data_edge_detect_r[0]_i_1_n_0 ;
@@ -88229,7 +86517,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire [3:0]wait_cnt0__0;
   wire \wait_cnt[1]_i_1_n_0 ;
   wire [3:0]wait_cnt_reg;
-  wire \wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ;
+  wire \wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ;
   wire \wl_corse_cnt[0][0][0]_i_1_n_0 ;
   wire \wl_corse_cnt[0][0][1]_i_1_n_0 ;
   wire \wl_corse_cnt[0][0][2]_i_1_n_0 ;
@@ -88248,7 +86536,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \wl_dqs_tap_count_r_reg_n_0_[0][1][5] ;
   wire wl_edge_detect_valid_r;
   wire wl_edge_detect_valid_r_i_1_n_0;
-  wire wl_edge_detect_valid_r_reg_CE_cooolgate_en_sig_236;
   wire wl_edge_detect_valid_r_reg_n_0;
   wire wl_sm_start;
   wire \wl_state_r1[0]_i_1_n_0 ;
@@ -88256,9 +86543,8 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \wl_state_r1[2]_i_1_n_0 ;
   wire \wl_state_r1[3]_i_1_n_0 ;
   wire \wl_state_r1[4]_i_1_n_0 ;
-  wire \wl_state_r1_reg[1]_CE_cooolgate_en_sig_125 ;
-  wire \wl_state_r1_reg[2]_CE_cooolgate_en_sig_265 ;
-  wire \wl_state_r1_reg[4]_CE_cooolgate_en_sig_133 ;
+  wire \wl_state_r1_reg[1]_CE_cooolgate_en_sig_127 ;
+  wire \wl_state_r1_reg[4]_CE_cooolgate_en_sig_135 ;
   wire \wl_state_r1_reg_n_0_[0] ;
   wire \wl_state_r1_reg_n_0_[1] ;
   wire \wl_state_r1_reg_n_0_[2] ;
@@ -88276,7 +86562,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \wl_tap_count_r[5]_i_4_n_0 ;
   wire \wl_tap_count_r[5]_i_5_n_0 ;
   wire \wl_tap_count_r[5]_i_6_n_0 ;
-  wire \wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ;
+  wire \wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ;
   wire \wl_tap_count_r_reg_n_0_[0] ;
   wire \wl_tap_count_r_reg_n_0_[1] ;
   wire \wl_tap_count_r_reg_n_0_[2] ;
@@ -88291,14 +86577,12 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire wr_level_done_r5;
   wire wr_level_done_r_i_1_n_0;
   wire wr_level_done_r_i_2_n_0;
-  wire wr_level_done_r_reg_CE_cooolgate_en_sig_212;
   wire wr_level_done_r_reg_n_0;
   wire wr_level_done_reg_0;
   wire wr_level_start_r;
   wire wr_level_start_r_reg_0;
   wire wrlvl_byte_done;
   wire wrlvl_byte_done_i_1_n_0;
-  wire wrlvl_byte_done_reg_CE_cooolgate_en_sig_237;
   wire wrlvl_byte_redo;
   wire wrlvl_byte_redo_r;
   wire wrlvl_rank_done;
@@ -88313,7 +86597,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
   wire \wrlvl_redo_corse_inc[2]_i_2_n_0 ;
   wire \wrlvl_redo_corse_inc[2]_i_3_n_0 ;
   wire \wrlvl_redo_corse_inc[2]_i_4_n_0 ;
-  wire \wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_71 ;
+  wire \wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_73 ;
   wire \wrlvl_redo_corse_inc_reg_n_0_[0] ;
   wire \wrlvl_redo_corse_inc_reg_n_0_[1] ;
   wire \wrlvl_redo_corse_inc_reg_n_0_[2] ;
@@ -89196,41 +87480,22 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .D(\corse_cnt[0][1]_i_1_n_0 ),
         .Q(\corse_cnt_reg_n_0_[0][1] ),
         .R(\smallest_reg[1][0]_0 [0]));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \corse_cnt_reg[0][2] 
        (.C(CLK),
-        .CE(\corse_cnt_reg[0][2]_CE_cooolgate_en_sig_392 ),
+        .CE(\<const1> ),
         .D(\corse_cnt[0][2]_i_1_n_0 ),
         .Q(\corse_cnt_reg_n_0_[0][2] ),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT5 #(
-    .INIT(32'hfffffff1)) 
-    \corse_cnt_reg[0][2]_CE_cooolgate_en_gate_1013 
-       (.I0(wl_state_r__0[4]),
-        .I1(wl_state_r__0[2]),
-        .I2(wl_state_r__0[1]),
-        .I3(rank_cnt_r),
-        .I4(\smallest_reg[1][0]_0 [0]),
-        .O(\corse_cnt_reg[0][2]_CE_cooolgate_en_sig_392 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \corse_cnt_reg[1][0] 
        (.C(CLK),
-        .CE(\corse_cnt_reg[1][0]_CE_cooolgate_en_sig_264 ),
+        .CE(\<const1> ),
         .D(\corse_cnt[1][0]_i_1_n_0 ),
         .Q(\corse_cnt_reg_n_0_[1][0] ),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \corse_cnt_reg[1][0]_CE_cooolgate_en_gate_757 
-       (.I0(\^pwropt ),
-        .I1(\dqs_count_r[0]_i_1_n_0 ),
-        .O(\corse_cnt_reg[1][0]_CE_cooolgate_en_sig_264 ));
   FDRE #(
     .INIT(1'b0)) 
     \corse_cnt_reg[1][1] 
@@ -89361,20 +87626,20 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[0][0] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[0][0]_i_1_n_0 ),
         .Q(\corse_dec_reg[0]_7 [0]),
         .R(\smallest_reg[1][0]_0 [0]));
   LUT6 #(
     .INIT(64'hffffffff00002000)) 
-    \corse_dec_reg[0][0]_CE_cooolgate_en_gate_177 
+    \corse_dec_reg[0][0]_CE_cooolgate_en_gate_306 
        (.I0(wl_state_r__0[4]),
         .I1(wl_state_r__0[3]),
         .I2(wl_state_r__0[2]),
         .I3(wl_state_r__0[1]),
         .I4(wl_state_r__0[0]),
         .I5(\smallest_reg[1][0]_0 [0]),
-        .O(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ));
+        .O(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -89382,7 +87647,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[0][1] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[0][1]_i_1_n_0 ),
         .Q(\corse_dec_reg[0]_7 [1]),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89393,7 +87658,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[0][2] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[0][2]_i_1_n_0 ),
         .Q(\corse_dec_reg[0]_7 [2]),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89404,7 +87669,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[1][0] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[1][0]_i_1_n_0 ),
         .Q(\corse_dec_reg[1]_6 [0]),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89415,7 +87680,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[1][1] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[1][1]_i_1_n_0 ),
         .Q(\corse_dec_reg[1]_6 [1]),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89426,7 +87691,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_dec_reg[1][2] 
        (.C(CLK),
-        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_26 ),
+        .CE(\corse_dec_reg[0][0]_CE_cooolgate_en_sig_28 ),
         .D(\corse_dec[1][2]_i_1_n_0 ),
         .Q(\corse_dec_reg[1]_6 [2]),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89570,24 +87835,24 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_inc_reg[0][0] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[0][0]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[0][0] ),
         .R(\smallest_reg[1][0]_0 [0]));
   LUT3 #(
     .INIT(8'hf4)) 
-    \corse_inc_reg[0][0]_CE_cooolgate_en_gate_184 
+    \corse_inc_reg[0][0]_CE_cooolgate_en_gate_313 
        (.I0(wl_state_r__0[4]),
         .I1(wl_state_r__0[1]),
         .I2(\smallest_reg[1][0]_0 [0]),
-        .O(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ));
+        .O(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \corse_inc_reg[0][1] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[0][1]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[0][1] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89597,7 +87862,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_inc_reg[0][2] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[0][2]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[0][2] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89607,7 +87872,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_inc_reg[1][0] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[1][0]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[1][0] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89617,7 +87882,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_inc_reg[1][1] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[1][1]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[1][1] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89627,7 +87892,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \corse_inc_reg[1][2] 
        (.C(CLK),
-        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_27 ),
+        .CE(\corse_inc_reg[0][0]_CE_cooolgate_en_sig_29 ),
         .D(\corse_inc[1][2]_i_1_n_0 ),
         .Q(\corse_inc_reg_n_0_[1][2] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -89663,26 +87928,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
        (.I0(wl_state_r__0[3]),
         .I1(wl_state_r__0[0]),
         .O(dq_cnt_inc_i_3_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDSE #(
     .INIT(1'b1)) 
     dq_cnt_inc_reg
        (.C(CLK),
-        .CE(dq_cnt_inc_reg_CE_cooolgate_en_sig_211),
+        .CE(\<const1> ),
         .D(dq_cnt_inc_i_1_n_0),
         .Q(p_0_in),
         .S(\wl_dqs_tap_count_r_reg[0][0][2]_0 ));
-  LUT5 #(
-    .INIT(32'hffff0006)) 
-    dq_cnt_inc_reg_CE_cooolgate_en_gate_651
-       (.I0(wl_state_r__0[2]),
-        .I1(wl_state_r__0[1]),
-        .I2(wl_state_r__0[3]),
-        .I3(wl_state_r__0[0]),
-        .I4(\wl_dqs_tap_count_r_reg[0][0][2]_0 ),
-        .O(dq_cnt_inc_reg_CE_cooolgate_en_sig_211));
   LUT4 #(
     .INIT(16'hEFE0)) 
     \dqs_count_r[0]_i_1 
@@ -89887,24 +88140,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I4(wl_state_r__0[4]),
         .I5(wl_state_r__0[1]),
         .O(dqs_po_en_stg2_f_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     dqs_po_en_stg2_f_reg
        (.C(CLK),
-        .CE(dqs_po_en_stg2_f_reg_CE_cooolgate_en_sig_140),
+        .CE(\<const1> ),
         .D(dqs_po_en_stg2_f_i_1_n_0),
         .Q(dqs_po_en_stg2_f),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT4 #(
-    .INIT(16'h000d)) 
-    dqs_po_en_stg2_f_reg_CE_cooolgate_en_gate_529
-       (.I0(\^pwropt_4 ),
-        .I1(\^pwropt_3 ),
-        .I2(\^pwropt_2 ),
-        .I3(\^pwropt_1 ),
-        .O(dqs_po_en_stg2_f_reg_CE_cooolgate_en_sig_140));
   LUT6 #(
     .INIT(64'h0000000002000000)) 
     dqs_po_stg2_f_incdec_i_1
@@ -90017,7 +88260,6 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I3(\fine_dec_cnt_reg_n_0_[1] ),
         .I4(wl_state_r__0[2]),
         .O(fine_dec_cnt[1]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "155" *) 
   LUT6 #(
     .INIT(64'h00000000A9A9FF00)) 
     \fine_dec_cnt[2]_i_1 
@@ -90159,26 +88401,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[0] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[0]),
         .Q(\fine_dec_cnt_reg_n_0_[0] ),
         .R(\smallest_reg[1][0]_0 [0]));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT4 #(
     .INIT(16'hFD00)) 
-    \fine_dec_cnt_reg[0]_CE_cooolgate_en_gate_158_LOPT_REMAP 
+    \fine_dec_cnt_reg[0]_CE_cooolgate_en_gate_287_LOPT_REMAP 
        (.I0(wl_state_r__0[1]),
         .I1(wl_state_r__0[4]),
         .I2(\smallest_reg[1][0]_0 [0]),
         .I3(\fine_dec_cnt[5]_i_1_n_0 ),
-        .O(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ));
+        .O(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[1] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[1]),
         .Q(\fine_dec_cnt_reg_n_0_[1] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -90188,7 +88430,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[2] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[2]),
         .Q(\fine_dec_cnt_reg_n_0_[2] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -90198,7 +88440,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[3] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[3]),
         .Q(\fine_dec_cnt_reg_n_0_[3] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -90208,7 +88450,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[4] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[4]),
         .Q(\fine_dec_cnt_reg_n_0_[4] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -90218,7 +88460,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_dec_cnt_reg[5] 
        (.C(CLK),
-        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_23 ),
+        .CE(\fine_dec_cnt_reg[0]_CE_cooolgate_en_sig_25 ),
         .D(fine_dec_cnt[5]),
         .Q(\fine_dec_cnt_reg_n_0_[5] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -90483,28 +88725,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[0][0] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(fine_inc[0]),
         .Q(\fine_inc_reg[0]_3 [0]),
         .R(\smallest_reg[1][0]_0 [1]));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF4F0000000000)) 
-    \fine_inc_reg[0][0]_CE_cooolgate_en_gate_130_LOPT_REMAP 
+    \fine_inc_reg[0][0]_CE_cooolgate_en_gate_259_LOPT_REMAP 
        (.I0(wr_level_done_r5),
         .I1(wr_level_done_r4),
         .I2(wl_state_r__0[1]),
         .I3(\fine_inc[1][5]_i_3_n_0 ),
         .I4(\smallest_reg[1][0]_0 [1]),
         .I5(\fine_inc[0][5]_i_1_n_0 ),
-        .O(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ));
+        .O(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \fine_inc_reg[0][1] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(fine_inc[1]),
         .Q(\fine_inc_reg[0]_3 [1]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90514,7 +88756,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[0][2] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(fine_inc[2]),
         .Q(\fine_inc_reg[0]_3 [2]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90524,7 +88766,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[0][3] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(fine_inc[3]),
         .Q(\fine_inc_reg[0]_3 [3]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90534,7 +88776,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[0][4] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(fine_inc[4]),
         .Q(\fine_inc_reg[0]_3 [4]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90544,7 +88786,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[0][5] 
        (.C(CLK),
-        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_15 ),
+        .CE(\fine_inc_reg[0][0]_CE_cooolgate_en_sig_17 ),
         .D(\fine_inc[0][5]_i_2_n_0 ),
         .Q(\fine_inc_reg[0]_3 [5]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90554,28 +88796,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[1][0] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][0]_i_1_n_0 ),
         .Q(\fine_inc_reg[1]_2 [0]),
         .R(\smallest_reg[1][0]_0 [1]));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF4F0000000000)) 
-    \fine_inc_reg[1][0]_CE_cooolgate_en_gate_137_LOPT_REMAP 
+    \fine_inc_reg[1][0]_CE_cooolgate_en_gate_266_LOPT_REMAP 
        (.I0(wr_level_done_r5),
         .I1(wr_level_done_r4),
         .I2(wl_state_r__0[1]),
         .I3(\fine_inc[1][5]_i_3_n_0 ),
         .I4(\smallest_reg[1][0]_0 [1]),
         .I5(\fine_inc[1][5]_i_1_n_0 ),
-        .O(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ));
+        .O(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \fine_inc_reg[1][1] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][1]_i_1_n_0 ),
         .Q(\fine_inc_reg[1]_2 [1]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90585,7 +88827,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[1][2] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][2]_i_1_n_0 ),
         .Q(\fine_inc_reg[1]_2 [2]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90595,7 +88837,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[1][3] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][3]_i_1_n_0 ),
         .Q(\fine_inc_reg[1]_2 [3]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90605,7 +88847,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[1][4] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][4]_i_1_n_0 ),
         .Q(\fine_inc_reg[1]_2 [4]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90615,7 +88857,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \fine_inc_reg[1][5] 
        (.C(CLK),
-        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_17 ),
+        .CE(\fine_inc_reg[1][0]_CE_cooolgate_en_sig_19 ),
         .D(\fine_inc[1][5]_i_2_n_0 ),
         .Q(\fine_inc_reg[1]_2 [5]),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -90898,6 +89140,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     \incdec_wait_cnt[0]_i_1 
        (.I0(incdec_wait_cnt_reg[0]),
         .O(p_0_in__0__0[0]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair287" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -90905,6 +89148,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
        (.I0(incdec_wait_cnt_reg[1]),
         .I1(incdec_wait_cnt_reg[0]),
         .O(p_0_in__0__0[1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair287" *) 
   LUT3 #(
     .INIT(8'h6A)) 
@@ -91041,25 +89285,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I4(wl_state_r__0[4]),
         .I5(wl_state_r__0[1]),
         .O(inhibit_edge_detect_r_i_9_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDSE #(
     .INIT(1'b1)) 
     inhibit_edge_detect_r_reg
        (.C(CLK),
-        .CE(inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_177),
+        .CE(\<const1> ),
         .D(inhibit_edge_detect_r_i_1_n_0),
         .Q(inhibit_edge_detect_r_reg_n_0),
         .S(\wl_dqs_tap_count_r_reg[0][0][2]_0 ));
-  LUT5 #(
-    .INIT(32'h0000ff7f)) 
-    inhibit_edge_detect_r_reg_CE_cooolgate_en_gate_587
-       (.I0(wl_state_r__0[4]),
-        .I1(wl_state_r__0[2]),
-        .I2(wl_state_r__0[1]),
-        .I3(\wl_dqs_tap_count_r_reg[0][0][2]_0 ),
-        .I4(\^pwropt ),
-        .O(inhibit_edge_detect_r_reg_CE_cooolgate_en_sig_177));
   LUT5 #(
     .INIT(32'h00000004)) 
     phaser_out_i_1
@@ -91211,26 +89444,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I3(po_rdval_cnt[6]),
         .I4(po_rdval_cnt[5]),
         .O(po_dec_done_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     po_dec_done_reg
        (.C(CLK),
-        .CE(po_dec_done_reg_CE_cooolgate_en_sig_255),
+        .CE(\<const1> ),
         .D(po_dec_done_i_1_n_0),
         .Q(po_dec_done),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT5 #(
-    .INIT(32'hffff4f44)) 
-    po_dec_done_reg_CE_cooolgate_en_gate_739
-       (.I0(po_rdval_cnt[6]),
-        .I1(po_rdval_cnt[0]),
-        .I2(\po_rdval_cnt[8]_i_3_n_0 ),
-        .I3(phy_ctl_ready_r6_reg_n_0),
-        .I4(\smallest_reg[1][0]_0 [0]),
-        .O(po_dec_done_reg_CE_cooolgate_en_sig_255));
   LUT5 #(
     .INIT(32'h0808FB08)) 
     \po_rdval_cnt[0]_i_1 
@@ -91493,19 +89714,19 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \rank_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_104 ),
+        .CE(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_106 ),
         .D(\rank_cnt_r[0]_i_1_n_0 ),
         .Q(\rank_cnt_r_reg_n_0_[0] ),
         .R(\smallest_reg[1][0]_0 [1]));
   LUT5 #(
     .INIT(32'hfffff700)) 
-    \rank_cnt_r_reg[0]_CE_cooolgate_en_gate_441 
+    \rank_cnt_r_reg[0]_CE_cooolgate_en_gate_571 
        (.I0(\rank_cnt_r[1]_i_1_n_0 ),
         .I1(\^pwropt ),
         .I2(\rank_cnt_r_reg_n_0_[0] ),
         .I3(rank_cnt_r),
         .I4(\smallest_reg[1][0]_0 [1]),
-        .O(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_104 ));
+        .O(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_106 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -91513,7 +89734,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \rank_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_104 ),
+        .CE(\rank_cnt_r_reg[0]_CE_cooolgate_en_sig_106 ),
         .D(\rank_cnt_r[1]_i_1_n_0 ),
         .Q(\rank_cnt_r_reg_n_0_[1] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -91925,7 +90146,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     \wait_cnt[0]_i_1 
        (.I0(wait_cnt_reg[0]),
         .O(wait_cnt0__0[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair288" *) 
   LUT2 #(
     .INIT(4'h9)) 
@@ -91933,7 +90154,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
        (.I0(wait_cnt_reg[1]),
         .I1(wait_cnt_reg[0]),
         .O(\wait_cnt[1]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair288" *) 
   LUT3 #(
     .INIT(8'hA9)) 
@@ -91965,26 +90186,26 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wait_cnt_reg[0] 
        (.C(CLK),
-        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ),
+        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ),
         .D(wait_cnt0__0[0]),
         .Q(wait_cnt_reg[0]),
         .R(SS));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT4 #(
     .INIT(16'h00D0)) 
-    \wait_cnt_reg[0]_CE_cooolgate_en_gate_241_LOPT_REMAP 
+    \wait_cnt_reg[0]_CE_cooolgate_en_gate_370_LOPT_REMAP 
        (.I0(po_cnt_dec_i_1_n_0),
         .I1(phy_ctl_ready_r5),
         .I2(wait_cnt0),
         .I3(\^pwropt ),
-        .O(\wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ));
+        .O(\wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \wait_cnt_reg[1] 
        (.C(CLK),
-        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ),
+        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ),
         .D(\wait_cnt[1]_i_1_n_0 ),
         .Q(wait_cnt_reg[1]),
         .R(SS));
@@ -91994,7 +90215,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wait_cnt_reg[2] 
        (.C(CLK),
-        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ),
+        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ),
         .D(wait_cnt0__0[2]),
         .Q(wait_cnt_reg[2]),
         .R(SS));
@@ -92004,7 +90225,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b1)) 
     \wait_cnt_reg[3] 
        (.C(CLK),
-        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_40 ),
+        .CE(\wait_cnt_reg[0]_CE_cooolgate_en_sig_42 ),
         .D(wait_cnt0__0[3]),
         .Q(wait_cnt_reg[3]),
         .S(SS));
@@ -92213,27 +90434,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I4(wl_state_r__0[1]),
         .I5(wl_state_r__0[2]),
         .O(wl_edge_detect_valid_r_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wl_edge_detect_valid_r_reg
        (.C(CLK),
-        .CE(wl_edge_detect_valid_r_reg_CE_cooolgate_en_sig_236),
+        .CE(\<const1> ),
         .D(wl_edge_detect_valid_r_i_1_n_0),
         .Q(wl_edge_detect_valid_r_reg_n_0),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT6 #(
-    .INIT(64'hffffffff11c0020f)) 
-    wl_edge_detect_valid_r_reg_CE_cooolgate_en_gate_701
-       (.I0(wl_state_r__0[4]),
-        .I1(wl_state_r__0[1]),
-        .I2(wl_state_r__0[3]),
-        .I3(wl_state_r__0[2]),
-        .I4(wl_state_r__0[0]),
-        .I5(\smallest_reg[1][0]_0 [0]),
-        .O(wl_edge_detect_valid_r_reg_CE_cooolgate_en_sig_236));
   LUT5 #(
     .INIT(32'hF05A55B6)) 
     \wl_state_r1[0]_i_1 
@@ -92293,36 +90501,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_state_r1_reg[1] 
        (.C(CLK),
-        .CE(\wl_state_r1_reg[1]_CE_cooolgate_en_sig_125 ),
+        .CE(\wl_state_r1_reg[1]_CE_cooolgate_en_sig_127 ),
         .D(\wl_state_r1[1]_i_1_n_0 ),
         .Q(\wl_state_r1_reg_n_0_[1] ),
         .R(\smallest_reg[1][0]_0 [0]));
   LUT6 #(
     .INIT(64'h0000000000070000)) 
-    \wl_state_r1_reg[1]_CE_cooolgate_en_gate_499 
+    \wl_state_r1_reg[1]_CE_cooolgate_en_gate_629 
        (.I0(\wl_state_r1[0]_i_1_n_0 ),
         .I1(\^pwropt ),
         .I2(\wl_state_r1[4]_i_1_n_0 ),
         .I3(\wl_state_r1[3]_i_1_n_0 ),
         .I4(\wl_state_r1[2]_i_1_n_0 ),
         .I5(\smallest_reg[1][0]_0 [0]),
-        .O(\wl_state_r1_reg[1]_CE_cooolgate_en_sig_125 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
+        .O(\wl_state_r1_reg[1]_CE_cooolgate_en_sig_127 ));
   FDRE #(
     .INIT(1'b0)) 
     \wl_state_r1_reg[2] 
        (.C(CLK),
-        .CE(\wl_state_r1_reg[2]_CE_cooolgate_en_sig_265 ),
+        .CE(\<const1> ),
         .D(\wl_state_r1[2]_i_1_n_0 ),
         .Q(\wl_state_r1_reg_n_0_[2] ),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \wl_state_r1_reg[2]_CE_cooolgate_en_gate_759 
-       (.I0(\wl_state_r1[3]_i_1_n_0 ),
-        .I1(\smallest_reg[1][0]_0 [0]),
-        .O(\wl_state_r1_reg[2]_CE_cooolgate_en_sig_265 ));
   FDRE #(
     .INIT(1'b0)) 
     \wl_state_r1_reg[3] 
@@ -92337,17 +90537,17 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_state_r1_reg[4] 
        (.C(CLK),
-        .CE(\wl_state_r1_reg[4]_CE_cooolgate_en_sig_133 ),
+        .CE(\wl_state_r1_reg[4]_CE_cooolgate_en_sig_135 ),
         .D(\wl_state_r1[4]_i_1_n_0 ),
         .Q(\wl_state_r1_reg_n_0_[4] ),
         .R(\smallest_reg[1][0]_0 [0]));
   LUT3 #(
     .INIT(8'h04)) 
-    \wl_state_r1_reg[4]_CE_cooolgate_en_gate_515 
+    \wl_state_r1_reg[4]_CE_cooolgate_en_gate_645 
        (.I0(\wl_state_r1[3]_i_1_n_0 ),
         .I1(\wl_state_r1[2]_i_1_n_0 ),
         .I2(\smallest_reg[1][0]_0 [0]),
-        .O(\wl_state_r1_reg[4]_CE_cooolgate_en_sig_133 ));
+        .O(\wl_state_r1_reg[4]_CE_cooolgate_en_sig_135 ));
   LUT6 #(
     .INIT(64'h88888888888A8A8A)) 
     \wl_tap_count_r[0]_i_1 
@@ -92501,28 +90701,28 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[0] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[0]),
         .Q(\wl_tap_count_r_reg_n_0_[0] ),
         .R(\smallest_reg[1][0]_0 [1]));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF4FFF00000000)) 
-    \wl_tap_count_r_reg[0]_CE_cooolgate_en_gate_165_LOPT_REMAP 
+    \wl_tap_count_r_reg[0]_CE_cooolgate_en_gate_294_LOPT_REMAP 
        (.I0(wl_state_r__0[1]),
         .I1(wl_state_r__0[0]),
         .I2(wl_state_r__0[4]),
         .I3(wl_state_r__0[2]),
         .I4(\smallest_reg[1][0]_0 [1]),
         .I5(\wl_tap_count_r[5]_i_1_n_0 ),
-        .O(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ));
+        .O(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[1] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[1]),
         .Q(\wl_tap_count_r_reg_n_0_[1] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -92532,7 +90732,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[2] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[2]),
         .Q(\wl_tap_count_r_reg_n_0_[2] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -92542,7 +90742,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[3] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[3]),
         .Q(\wl_tap_count_r_reg_n_0_[3] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -92552,7 +90752,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[4] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[4]),
         .Q(\wl_tap_count_r_reg_n_0_[4] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -92562,7 +90762,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wl_tap_count_r_reg[5] 
        (.C(CLK),
-        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_25 ),
+        .CE(\wl_tap_count_r_reg[0]_CE_cooolgate_en_sig_27 ),
         .D(wl_tap_count_r[5]),
         .Q(\wl_tap_count_r_reg_n_0_[5] ),
         .R(\smallest_reg[1][0]_0 [1]));
@@ -92613,6 +90813,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .D(wr_level_done_r4),
         .Q(wr_level_done_r5),
         .R(\<const0> ));
+  (* \PinAttr:I4:HOLD_DETOUR  = "193" *) 
   LUT5 #(
     .INIT(32'h01FF0100)) 
     wr_level_done_r_i_1
@@ -92632,26 +90833,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I4(p_0_in),
         .I5(wl_state_r__0[3]),
         .O(wr_level_done_r_i_2_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wr_level_done_r_reg
        (.C(CLK),
-        .CE(wr_level_done_r_reg_CE_cooolgate_en_sig_212),
+        .CE(\<const1> ),
         .D(wr_level_done_r_i_1_n_0),
         .Q(wr_level_done_r_reg_n_0),
         .R(\smallest_reg[1][0]_0 [0]));
-  LUT5 #(
-    .INIT(32'hffff0600)) 
-    wr_level_done_r_reg_CE_cooolgate_en_gate_653
-       (.I0(wl_state_r__0[2]),
-        .I1(wl_state_r__0[0]),
-        .I2(wl_state_r__0[4]),
-        .I3(wl_state_r__0[1]),
-        .I4(\smallest_reg[1][0]_0 [0]),
-        .O(wr_level_done_r_reg_CE_cooolgate_en_sig_212));
   (* syn_maxfan = "2" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -92679,26 +90868,14 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
         .I4(wrlvl_byte_redo_r),
         .I5(dqs_po_stg2_f_incdec_reg_0),
         .O(wrlvl_byte_done_i_1_n_0));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     wrlvl_byte_done_reg
        (.C(CLK),
-        .CE(wrlvl_byte_done_reg_CE_cooolgate_en_sig_237),
+        .CE(\<const1> ),
         .D(wrlvl_byte_done_i_1_n_0),
         .Q(wrlvl_byte_done),
         .R(\<const0> ));
-  LUT5 #(
-    .INIT(32'hffff4f00)) 
-    wrlvl_byte_done_reg_CE_cooolgate_en_gate_703
-       (.I0(wr_level_done_r4),
-        .I1(wr_level_done_r3),
-        .I2(wrlvl_byte_redo_r),
-        .I3(wrlvl_byte_redo),
-        .I4(dqs_po_stg2_f_incdec_reg_0),
-        .O(wrlvl_byte_done_reg_CE_cooolgate_en_sig_237));
   FDRE #(
     .INIT(1'b0)) 
     wrlvl_byte_redo_r_reg
@@ -92810,18 +90987,18 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wrlvl_redo_corse_inc_reg[0] 
        (.C(CLK),
-        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_71 ),
+        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_73 ),
         .D(\wrlvl_redo_corse_inc[0]_i_1_n_0 ),
         .Q(\wrlvl_redo_corse_inc_reg_n_0_[0] ),
         .R(\smallest_reg[1][0]_0 [0]));
   LUT4 #(
     .INIT(16'hff40)) 
-    \wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_gate_345 
+    \wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_gate_475 
        (.I0(wl_state_r__0[4]),
         .I1(wl_state_r__0[3]),
         .I2(wl_state_r__0[1]),
         .I3(\smallest_reg[1][0]_0 [0]),
-        .O(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_71 ));
+        .O(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_73 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -92829,7 +91006,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wrlvl_redo_corse_inc_reg[1] 
        (.C(CLK),
-        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_71 ),
+        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_73 ),
         .D(\wrlvl_redo_corse_inc[1]_i_1_n_0 ),
         .Q(\wrlvl_redo_corse_inc_reg_n_0_[1] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -92840,7 +91017,7 @@ module mig_7series_0mig_7series_v4_2_ddr_phy_wrlvl
     .INIT(1'b0)) 
     \wrlvl_redo_corse_inc_reg[2] 
        (.C(CLK),
-        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_71 ),
+        .CE(\wrlvl_redo_corse_inc_reg[0]_CE_cooolgate_en_sig_73 ),
         .D(\wrlvl_redo_corse_inc[2]_i_1_n_0 ),
         .Q(\wrlvl_redo_corse_inc_reg_n_0_[2] ),
         .R(\smallest_reg[1][0]_0 [0]));
@@ -93795,12 +91972,10 @@ module mig_7series_0mig_7series_v4_2_mc
     pwropt_2,
     pwropt_3,
     .pwropt_4(\^pwropt_8 ),
-    .pwropt_5(\^pwropt_9 ),
-    .pwropt_6(\^pwropt_10 ),
+    .pwropt_5(pwropt_9),
+    .pwropt_6(pwropt_10),
     .pwropt_7(pwropt_11),
-    .pwropt_8(pwropt_12),
-    .pwropt_9(pwropt_17),
-    .pwropt_10(pwropt_18));
+    .pwropt_8(pwropt_12));
   output app_ref_ack;
   output app_zq_ack;
   output \generate_maint_cmds.insert_maint_r_lcl_reg ;
@@ -93900,12 +92075,10 @@ module mig_7series_0mig_7series_v4_2_mc
   input pwropt_2;
   input pwropt_3;
   input \^pwropt_8 ;
-  input \^pwropt_9 ;
-  input \^pwropt_10 ;
+  input pwropt_9;
+  input pwropt_10;
   input pwropt_11;
   input pwropt_12;
-  input pwropt_17;
-  input pwropt_18;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -94012,15 +92185,9 @@ module mig_7series_0mig_7series_v4_2_mc
   wire phy_mc_data_full;
   wire pwropt;
   wire pwropt_1;
-  wire \^pwropt_10 ;
+  wire pwropt_10;
   wire pwropt_11;
   wire pwropt_12;
-  wire pwropt_13;
-  wire pwropt_14;
-  wire pwropt_15;
-  wire pwropt_16;
-  wire pwropt_17;
-  wire pwropt_18;
   wire pwropt_2;
   wire pwropt_3;
   wire \^pwropt_4 ;
@@ -94028,7 +92195,7 @@ module mig_7series_0mig_7series_v4_2_mc
   wire \^pwropt_6 ;
   wire \^pwropt_7 ;
   wire \^pwropt_8 ;
-  wire \^pwropt_9 ;
+  wire pwropt_9;
   wire [3:0]ram_init_addr;
   wire ram_init_done_r;
   wire \rank_cntrl[0].rank_cntrl0/act_this_rank ;
@@ -94201,19 +92368,13 @@ module mig_7series_0mig_7series_v4_2_mc
         .\pre_4_1_1T_arb.granted_pre_r_reg_0 ({mc_address_ns[41:28],mc_address_ns[24:0]}),
         .pwropt(pwropt_1),
         .pwropt_1(\^pwropt_4 ),
-        .pwropt_10(pwropt_14),
-        .pwropt_11(pwropt_15),
-        .pwropt_12(pwropt_16),
-        .pwropt_13(pwropt_17),
-        .pwropt_14(pwropt_18),
         .pwropt_2(\^pwropt_5 ),
         .pwropt_3(\^pwropt_6 ),
         .pwropt_4(\^pwropt_7 ),
         .pwropt_5(pwropt_3),
-        .pwropt_6(\^pwropt_9 ),
+        .pwropt_6(pwropt_9),
         .pwropt_7(pwropt_11),
         .pwropt_8(pwropt_12),
-        .pwropt_9(pwropt_13),
         .q_has_rd(\bank_cntrl[0].bank0/q_has_rd ),
         .q_has_rd_0(\bank_cntrl[1].bank0/q_has_rd ),
         .q_has_rd_1(\bank_cntrl[2].bank0/q_has_rd ),
@@ -94920,9 +93081,9 @@ module mig_7series_0mig_7series_v4_2_mc
         .pwropt_2(\^pwropt_6 ),
         .pwropt_3(\^pwropt_7 ),
         .pwropt_4(\^pwropt_8 ),
-        .pwropt_5(\^pwropt_9 ),
+        .pwropt_5(pwropt_9),
         .pwropt_6(pwropt_3),
-        .pwropt_7(\^pwropt_10 ),
+        .pwropt_7(pwropt_10),
         .ram_init_addr(ram_init_addr),
         .ram_init_done_r(ram_init_done_r),
         .rd_data_en(rd_data_en),
@@ -95039,10 +93200,6 @@ module mig_7series_0mig_7series_v4_2_mc
         .pwropt_1(pwropt_1),
         .pwropt_2(pwropt_2),
         .pwropt_3(pwropt_3),
-        .pwropt_4(pwropt_13),
-        .pwropt_5(pwropt_14),
-        .pwropt_6(pwropt_15),
-        .pwropt_7(pwropt_16),
         .q_has_rd(\bank_cntrl[3].bank0/q_has_rd ),
         .q_has_rd_3(\bank_cntrl[2].bank0/q_has_rd ),
         .q_has_rd_4(\bank_cntrl[1].bank0/q_has_rd ),
@@ -95831,7 +93988,6 @@ module mig_7series_0mig_7series_v4_2_mem_intfc
   wire \^pwropt_6 ;
   wire \^pwropt_7 ;
   wire pwropt_8;
-  wire pwropt_9;
   wire [3:0]ram_init_addr;
   wire ram_init_done_r;
   wire rb_hit_busy_r_reg;
@@ -96003,8 +94159,6 @@ module mig_7series_0mig_7series_v4_2_mem_intfc
         .pwropt_1(pwropt_1),
         .pwropt_2(\^pwropt_2 ),
         .pwropt_3(\^pwropt_4 ),
-        .pwropt_4(\^pwropt_3 ),
-        .pwropt_5(pwropt_9),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][0] (ddr_phy_top0_n_220),
         .\rank_final_loop[0].bank_final_loop[0].final_data_offset_mc_reg[0][5] ({ddr_phy_top0_n_221,ddr_phy_top0_n_222,ddr_phy_top0_n_223,ddr_phy_top0_n_224,ddr_phy_top0_n_225,ddr_phy_top0_n_226}),
         .rd_data_en(rd_data_en),
@@ -96103,7 +94257,6 @@ module mig_7series_0mig_7series_v4_2_mem_intfc
         .phy_mc_data_full(phy_mc_data_full),
         .pwropt(pwropt),
         .pwropt_1(\^pwropt_2 ),
-        .pwropt_10(pwropt_9),
         .pwropt_2(\^pwropt_3 ),
         .pwropt_3(pwropt_1),
         .pwropt_4(\^pwropt_4 ),
@@ -96111,7 +94264,6 @@ module mig_7series_0mig_7series_v4_2_mem_intfc
         .pwropt_6(\^pwropt_6 ),
         .pwropt_7(\^pwropt_7 ),
         .pwropt_8(pwropt_8),
-        .pwropt_9(init_calib_complete_reg),
         .ram_init_addr(ram_init_addr),
         .ram_init_done_r(ram_init_done_r),
         .rb_hit_busy_r_reg(rb_hit_busy_r_reg),
@@ -96405,6 +94557,7 @@ module mig_7series_0mig_7series_v4_2_memc_ui_top_std
   wire [127:0]app_rd_data;
   wire app_rd_data_valid;
   wire [127:0]app_wdf_data;
+  wire [15:0]app_wdf_mask;
   wire app_wdf_rdy;
   wire app_wdf_wren;
   wire [40:0]\cmd_pipe_plus.mc_cke_reg[3] ;
@@ -96576,6 +94729,7 @@ module mig_7series_0mig_7series_v4_2_memc_ui_top_std
   wire [16:0]\NLW_mem_intfc0_req_row_r_lcl_reg[13]_UNCONNECTED ;
   wire [13:0]NLW_mem_intfc0_row_UNCONNECTED;
   wire [26:0]NLW_u_ui_top_app_addr_UNCONNECTED;
+  wire [15:0]NLW_u_ui_top_app_wdf_mask_UNCONNECTED;
   wire [13:0]NLW_u_ui_top_row_UNCONNECTED;
   wire [16:0]NLW_u_ui_top_row_hit_r_reg_UNCONNECTED;
 
@@ -96777,6 +94931,7 @@ module mig_7series_0mig_7series_v4_2_memc_ui_top_std
         .app_rdy_r_reg(E),
         .app_wdf_data(app_wdf_data),
         .app_wdf_end_r1_reg(reset_reg_n_0),
+        .app_wdf_mask({app_wdf_mask[15:2],NLW_u_ui_top_app_wdf_mask_UNCONNECTED[1:0]}),
         .app_wdf_rdy(app_wdf_rdy),
         .app_wdf_wren(app_wdf_wren),
         .\ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29 (mem_intfc0_n_64),
@@ -96861,13 +95016,7 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
     pwropt,
     pwropt_1,
     pwropt_2,
-    pwropt_3,
-    pwropt_4,
-    pwropt_5,
-    pwropt_6,
-    pwropt_7,
-    pwropt_8,
-    pwropt_9);
+    pwropt_3);
   output \periodic_rd_generation.read_this_rank_r ;
   output inhbt_act_faw_r;
   output \periodic_rd_generation.periodic_rd_request_r ;
@@ -96896,12 +95045,6 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
   input pwropt_1;
   input pwropt_2;
   input pwropt_3;
-  input pwropt_4;
-  input pwropt_5;
-  input pwropt_6;
-  input pwropt_7;
-  input pwropt_8;
-  input pwropt_9;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -96911,7 +95054,7 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
   wire act_this_rank;
   wire clear_periodic_rd_request;
   wire in0;
-  wire \inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_4 ;
+  wire \inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_6 ;
   wire \inhbt_act_faw.act_delayed ;
   wire [2:0]\inhbt_act_faw.faw_cnt_r ;
   wire \inhbt_act_faw.faw_cnt_r[0]_i_1_n_0 ;
@@ -96939,21 +95082,13 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
   wire pwropt_1;
   wire pwropt_2;
   wire pwropt_3;
-  wire pwropt_4;
-  wire pwropt_5;
-  wire pwropt_6;
-  wire pwropt_7;
-  wire pwropt_8;
-  wire pwropt_9;
   wire \refresh_generation.refresh_bank_r ;
   wire \refresh_generation.refresh_bank_r_reg[0]_0 ;
-  wire \refresh_generation.refresh_bank_r_reg[0]_CE_cooolgate_en_sig_171 ;
   wire [0:0]\wtr_timer.wtr_cnt_r ;
   wire \wtr_timer.wtr_cnt_r[0]_i_1_n_0 ;
   wire \wtr_timer.wtr_cnt_r[1]_i_1_n_0 ;
   wire \wtr_timer.wtr_cnt_r_reg[0]_0 ;
   wire \wtr_timer.wtr_cnt_r_reg[0]_1 ;
-  wire \wtr_timer.wtr_cnt_r_reg[0]_CE_cooolgate_en_sig_142 ;
 
   GND GND
        (.G(\<const0> ));
@@ -96975,17 +95110,16 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
         .A1(\<const0> ),
         .A2(\<const0> ),
         .A3(\<const0> ),
-        .CE(\inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_4 ),
+        .CE(\inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_6 ),
         .CLK(CLK),
         .D(act_this_rank),
         .Q(\inhbt_act_faw.act_delayed ));
   LUT2 #(
     .INIT(4'h7)) 
-    \inhbt_act_faw.SRLC32E0_CE_cooolgate_en_gate_74 
+    \inhbt_act_faw.SRLC32E0_CE_cooolgate_en_gate_203 
        (.I0(pwropt_3),
         .I1(pwropt_2),
-        .O(\inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_4 ));
-  (* \PinAttr:I3:HOLD_DETOUR  = "197" *) 
+        .O(\inhbt_act_faw.SRLC32E0_CE_cooolgate_en_sig_6 ));
   (* SOFT_HLUTNM = "soft_lutpair537" *) 
   LUT4 #(
     .INIT(16'h4114)) 
@@ -96995,7 +95129,6 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
         .I2(act_this_rank),
         .I3(\inhbt_act_faw.faw_cnt_r [0]),
         .O(\inhbt_act_faw.faw_cnt_r[0]_i_1_n_0 ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "197" *) 
   (* SOFT_HLUTNM = "soft_lutpair537" *) 
   LUT5 #(
     .INIT(32'h41444414)) 
@@ -97162,25 +95295,15 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
         .D(\periodic_rd_generation.read_this_rank ),
         .Q(\periodic_rd_generation.read_this_rank_r ),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \refresh_generation.refresh_bank_r_reg[0] 
        (.C(CLK),
-        .CE(\refresh_generation.refresh_bank_r_reg[0]_CE_cooolgate_en_sig_171 ),
+        .CE(\<const1> ),
         .D(\refresh_generation.refresh_bank_r_reg[0]_0 ),
         .Q(\refresh_generation.refresh_bank_r ),
         .R(\<const0> ));
-  LUT4 #(
-    .INIT(16'h7f00)) 
-    \refresh_generation.refresh_bank_r_reg[0]_CE_cooolgate_en_gate_577 
-       (.I0(pwropt_9),
-        .I1(pwropt_8),
-        .I2(\periodic_rd_generation.periodic_rd_request_r_reg_0 ),
-        .I3(pwropt),
-        .O(\refresh_generation.refresh_bank_r_reg[0]_CE_cooolgate_en_sig_171 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair538" *) 
   LUT4 #(
     .INIT(16'h0455)) 
     \wtr_timer.wtr_cnt_r[0]_i_1 
@@ -97189,7 +95312,7 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
         .I2(\wtr_timer.wtr_cnt_r ),
         .I3(\wtr_timer.wtr_cnt_r_reg[0]_1 ),
         .O(\wtr_timer.wtr_cnt_r[0]_i_1_n_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "180" *) 
+  (* SOFT_HLUTNM = "soft_lutpair538" *) 
   LUT4 #(
     .INIT(16'h4055)) 
     \wtr_timer.wtr_cnt_r[1]_i_1 
@@ -97198,27 +95321,14 @@ module mig_7series_0mig_7series_v4_2_rank_cntrl
         .I2(\wtr_timer.wtr_cnt_r ),
         .I3(\wtr_timer.wtr_cnt_r_reg[0]_1 ),
         .O(\wtr_timer.wtr_cnt_r[1]_i_1_n_0 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \wtr_timer.wtr_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\wtr_timer.wtr_cnt_r_reg[0]_CE_cooolgate_en_sig_142 ),
+        .CE(\<const1> ),
         .D(\wtr_timer.wtr_cnt_r[0]_i_1_n_0 ),
         .Q(\wtr_timer.wtr_cnt_r ),
         .R(\<const0> ));
-  (* OPT_MODIFIED = "RETARGET" *) 
-  LUT6 #(
-    .INIT(64'h00000000BFFF0000)) 
-    \wtr_timer.wtr_cnt_r_reg[0]_CE_cooolgate_en_gate_533 
-       (.I0(pwropt_7),
-        .I1(pwropt_6),
-        .I2(pwropt_5),
-        .I3(pwropt_4),
-        .I4(\wtr_timer.wtr_cnt_r[1]_i_1_n_0 ),
-        .I5(pwropt_3),
-        .O(\wtr_timer.wtr_cnt_r_reg[0]_CE_cooolgate_en_sig_142 ));
   FDRE #(
     .INIT(1'b0)) 
     \wtr_timer.wtr_cnt_r_reg[1] 
@@ -97304,9 +95414,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     q_has_rd_5,
     auto_pre_r_lcl_reg,
     pwropt,
-    pwropt_1,
-    .pwropt_2(maint_sre_r),
-    .pwropt_3(\refresh_timer.refresh_timer_r_reg [5]));
+    pwropt_1);
   output maint_prescaler_tick_r;
   output \maintenance_request.maint_req_r_lcl_reg_0 ;
   output app_ref_ack;
@@ -97381,8 +95489,6 @@ module mig_7series_0mig_7series_v4_2_rank_common
   input auto_pre_r_lcl_reg;
   input pwropt;
   input pwropt_1;
-  output maint_sre_r;
-     output [5:0]\refresh_timer.refresh_timer_r_reg ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -97403,7 +95509,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
   wire \maint_prescaler.maint_prescaler_r[1]_i_1_n_0 ;
   wire \maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ;
   wire [4:0]\maint_prescaler.maint_prescaler_r_reg ;
-  wire \maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ;
+  wire \maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ;
   wire \maint_prescaler.maint_prescaler_tick_ns ;
   wire maint_prescaler_tick_r;
   wire maint_ref_zq_wip;
@@ -97431,7 +95537,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
   wire \periodic_read_request.periodic_rd_grant_r ;
   wire \periodic_read_request.periodic_rd_grant_r[0]_i_1_n_0 ;
   wire \periodic_read_request.periodic_rd_grant_r_reg[0]_0 ;
-  wire \periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_128 ;
+  wire \periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_130 ;
   wire \periodic_read_request.periodic_rd_r_cnt ;
   wire \periodic_read_request.periodic_rd_r_cnt_i_1_n_0 ;
   wire \periodic_read_request.periodic_rd_r_lcl_i_1_n_0 ;
@@ -97460,7 +95566,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
   wire \refresh_timer.refresh_timer_r[5]_i_5_n_0 ;
   wire \refresh_timer.refresh_timer_r[5]_i_6_n_0 ;
   wire [5:0]\refresh_timer.refresh_timer_r_reg ;
-  wire \refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ;
+  wire \refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ;
   wire \rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r_reg[7] ;
   wire \rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r_reg[7]_0 ;
   wire \rfc_zq_xsdll_timer.rfc_zq_xsdll_timer_r_reg[7]_1 ;
@@ -97533,12 +95639,14 @@ module mig_7series_0mig_7series_v4_2_rank_common
         .I4(auto_pre_r_lcl_reg),
         .I5(maint_wip_r),
         .O(\maintenance_request.maint_sre_r_lcl_reg_1 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair551" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \maint_prescaler.maint_prescaler_r[0]_i_1 
        (.I0(\maint_prescaler.maint_prescaler_r_reg [0]),
         .O(\maint_prescaler.maint_prescaler_r0 [0]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
   (* SOFT_HLUTNM = "soft_lutpair551" *) 
   LUT2 #(
     .INIT(4'h9)) 
@@ -97599,28 +95707,28 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \maint_prescaler.maint_prescaler_r_reg[0] 
        (.C(CLK),
-        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ),
+        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ),
         .D(\maint_prescaler.maint_prescaler_r0 [0]),
         .Q(\maint_prescaler.maint_prescaler_r_reg [0]),
         .R(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFF1FFF00000000)) 
-    \maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_gate_211_LOPT_REMAP 
+    \maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_gate_340_LOPT_REMAP 
        (.I0(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ),
         .I1(\maint_prescaler.maint_prescaler_r0 [4]),
         .I2(\maint_prescaler.maint_prescaler_r_reg [1]),
         .I3(\grant_r_reg[0] ),
         .I4(pwropt),
         .I5(sel),
-        .O(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ));
+        .O(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \maint_prescaler.maint_prescaler_r_reg[1] 
        (.C(CLK),
-        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ),
+        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ),
         .D(\maint_prescaler.maint_prescaler_r[1]_i_1_n_0 ),
         .Q(\maint_prescaler.maint_prescaler_r_reg [1]),
         .R(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ));
@@ -97630,7 +95738,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \maint_prescaler.maint_prescaler_r_reg[2] 
        (.C(CLK),
-        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ),
+        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ),
         .D(\maint_prescaler.maint_prescaler_r0 [2]),
         .Q(\maint_prescaler.maint_prescaler_r_reg [2]),
         .R(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ));
@@ -97640,7 +95748,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \maint_prescaler.maint_prescaler_r_reg[3] 
        (.C(CLK),
-        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ),
+        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ),
         .D(\maint_prescaler.maint_prescaler_r0 [3]),
         .Q(\maint_prescaler.maint_prescaler_r_reg [3]),
         .R(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ));
@@ -97650,7 +95758,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b1)) 
     \maint_prescaler.maint_prescaler_r_reg[4] 
        (.C(CLK),
-        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_33 ),
+        .CE(\maint_prescaler.maint_prescaler_r_reg[0]_CE_cooolgate_en_sig_35 ),
         .D(\maint_prescaler.maint_prescaler_r0 [4]),
         .Q(\maint_prescaler.maint_prescaler_r_reg [4]),
         .S(\maint_prescaler.maint_prescaler_r[4]_i_1_n_0 ));
@@ -97789,6 +95897,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
         .I1(\periodic_read_request.periodic_rd_r_lcl_reg_2 ),
         .I2(\periodic_rd_generation.periodic_rd_cntr1_r ),
         .O(\periodic_read_request.periodic_rd_grant_r_reg[0]_0 ));
+  (* \PinAttr:I4:HOLD_DETOUR  = "180" *) 
   (* SOFT_HLUTNM = "soft_lutpair544" *) 
   LUT5 #(
     .INIT(32'hFFFF0008)) 
@@ -97806,18 +95915,18 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \periodic_read_request.periodic_rd_grant_r_reg[0] 
        (.C(CLK),
-        .CE(\periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_128 ),
+        .CE(\periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_130 ),
         .D(\periodic_read_request.periodic_rd_grant_r[0]_i_1_n_0 ),
         .Q(\periodic_read_request.periodic_rd_grant_r ),
         .R(\<const0> ));
   LUT4 #(
     .INIT(16'h1000)) 
-    \periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_gate_505 
+    \periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_gate_635 
        (.I0(\periodic_read_request.upd_last_master_r ),
         .I1(\periodic_read_request.periodic_rd_r_lcl_reg_0 ),
         .I2(\periodic_rd_generation.periodic_rd_request_r ),
         .I3(\grant_r_reg[0] ),
-        .O(\periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_128 ));
+        .O(\periodic_read_request.periodic_rd_grant_r_reg[0]_CE_cooolgate_en_sig_130 ));
   (* SOFT_HLUTNM = "soft_lutpair549" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -97977,7 +96086,6 @@ module mig_7series_0mig_7series_v4_2_rank_common
         .I3(\refresh_timer.refresh_timer_r_reg [4]),
         .I4(\refresh_timer.refresh_timer_r_reg [3]),
         .O(\refresh_timer.refresh_timer_r0_0 ));
-  (* \PinAttr:I2:HOLD_DETOUR  = "152" *) 
   LUT6 #(
     .INIT(64'hAAAAAAAAAAAAAAA9)) 
     \refresh_timer.refresh_timer_r[5]_i_3 
@@ -98017,25 +96125,25 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b1)) 
     \refresh_timer.refresh_timer_r_reg[0] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r0 [0]),
         .Q(\refresh_timer.refresh_timer_r_reg [0]),
         .S(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT3 #(
     .INIT(8'hD0)) 
-    \refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_gate_144_LOPT_REMAP 
+    \refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_gate_273_LOPT_REMAP 
        (.I0(\grant_r_reg[0] ),
         .I1(maint_prescaler_tick_r),
         .I2(\refresh_timer.refresh_timer_r0_0 ),
-        .O(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ));
+        .O(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \refresh_timer.refresh_timer_r_reg[1] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r[1]_i_1_n_0 ),
         .Q(\refresh_timer.refresh_timer_r_reg [1]),
         .R(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
@@ -98045,7 +96153,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b1)) 
     \refresh_timer.refresh_timer_r_reg[2] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r0 [2]),
         .Q(\refresh_timer.refresh_timer_r_reg [2]),
         .S(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
@@ -98055,7 +96163,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \refresh_timer.refresh_timer_r_reg[3] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r0 [3]),
         .Q(\refresh_timer.refresh_timer_r_reg [3]),
         .R(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
@@ -98065,7 +96173,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b0)) 
     \refresh_timer.refresh_timer_r_reg[4] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r0 [4]),
         .Q(\refresh_timer.refresh_timer_r_reg [4]),
         .R(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
@@ -98075,7 +96183,7 @@ module mig_7series_0mig_7series_v4_2_rank_common
     .INIT(1'b1)) 
     \refresh_timer.refresh_timer_r_reg[5] 
        (.C(CLK),
-        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_19 ),
+        .CE(\refresh_timer.refresh_timer_r_reg[0]_CE_cooolgate_en_sig_21 ),
         .D(\refresh_timer.refresh_timer_r0 [5]),
         .Q(\refresh_timer.refresh_timer_r_reg [5]),
         .S(\refresh_timer.refresh_timer_r[5]_i_1_n_0 ));
@@ -98582,11 +96690,7 @@ module mig_7series_0mig_7series_v4_2_rank_mach
     pwropt,
     pwropt_1,
     pwropt_2,
-    pwropt_3,
-    pwropt_4,
-    pwropt_5,
-    pwropt_6,
-    pwropt_7);
+    pwropt_3);
   output \periodic_rd_generation.read_this_rank_r ;
   output inhbt_act_faw_r;
   output maint_req_r;
@@ -98665,10 +96769,6 @@ module mig_7series_0mig_7series_v4_2_rank_mach
   input pwropt_1;
   input pwropt_2;
   input pwropt_3;
-  input pwropt_4;
-  input pwropt_5;
-  input pwropt_6;
-  input pwropt_7;
 
   wire CLK;
   wire [0:0]I120;
@@ -98713,12 +96813,6 @@ module mig_7series_0mig_7series_v4_2_rank_mach
   wire pwropt_1;
   wire pwropt_2;
   wire pwropt_3;
-  wire pwropt_4;
-  wire pwropt_5;
-  wire pwropt_6;
-  wire pwropt_7;
-  wire pwropt_8;
-  wire pwropt_9;
   wire q_has_rd;
   wire q_has_rd_3;
   wire q_has_rd_4;
@@ -98777,12 +96871,6 @@ module mig_7series_0mig_7series_v4_2_rank_mach
         .pwropt_1(pwropt_1),
         .pwropt_2(pwropt_2),
         .pwropt_3(pwropt_3),
-        .pwropt_4(pwropt_4),
-        .pwropt_5(pwropt_5),
-        .pwropt_6(pwropt_6),
-        .pwropt_7(pwropt_7),
-        .pwropt_8(pwropt_8),
-        .pwropt_9(pwropt_9),
         .\refresh_generation.refresh_bank_r (\refresh_generation.refresh_bank_r ),
         .\refresh_generation.refresh_bank_r_reg[0]_0 (rank_common0_n_18),
         .\wtr_timer.wtr_cnt_r_reg[0]_0 (\maintenance_request.maint_sre_r_lcl_reg_1 ),
@@ -98822,8 +96910,6 @@ module mig_7series_0mig_7series_v4_2_rank_mach
         .\periodic_read_request.periodic_rd_r_lcl_reg_2 (\periodic_read_request.periodic_rd_r_lcl_reg_1 ),
         .pwropt(pwropt),
         .pwropt_1(pwropt_3),
-        .pwropt_2(pwropt_8),
-        .pwropt_3(pwropt_9),
         .q_has_rd(q_has_rd),
         .q_has_rd_3(q_has_rd_3),
         .q_has_rd_4(q_has_rd_4),
@@ -98911,7 +96997,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb
   wire \grant_r[2]_i_1__0_n_0 ;
   wire \grant_r[2]_i_2__3_n_0 ;
   wire \grant_r_reg[0]_0 ;
-  wire \grant_r_reg[0]_CE_cooolgate_en_sig_134 ;
+  wire \grant_r_reg[0]_CE_cooolgate_en_sig_136 ;
   wire [2:0]last_master_r;
   wire \last_master_r[0]_i_1__3_n_0 ;
   wire \last_master_r[1]_i_1__3_n_0 ;
@@ -98962,6 +97048,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb
         .I4(\grant_r_reg[0]_0 ),
         .I5(\grant_r[1]_i_3_n_0 ),
         .O(\grant_r[1]_i_1__0_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
   LUT4 #(
     .INIT(16'h04F7)) 
     \grant_r[1]_i_2__0 
@@ -99005,17 +97092,17 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb
     .INIT(1'b0)) 
     \grant_r_reg[0] 
        (.C(CLK),
-        .CE(\grant_r_reg[0]_CE_cooolgate_en_sig_134 ),
+        .CE(\grant_r_reg[0]_CE_cooolgate_en_sig_136 ),
         .D(\grant_r[0]_i_1__0_n_0 ),
         .Q(\maintenance_request.maint_grant_r [0]),
         .R(\<const0> ));
   LUT3 #(
     .INIT(8'h04)) 
-    \grant_r_reg[0]_CE_cooolgate_en_gate_517 
+    \grant_r_reg[0]_CE_cooolgate_en_gate_647 
        (.I0(\maintenance_request.upd_last_master_r ),
         .I1(pwropt_1),
         .I2(pwropt),
-        .O(\grant_r_reg[0]_CE_cooolgate_en_sig_134 ));
+        .O(\grant_r_reg[0]_CE_cooolgate_en_sig_136 ));
   FDRE #(
     .INIT(1'b0)) 
     \grant_r_reg[1] 
@@ -99032,7 +97119,6 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb
         .D(\grant_r[2]_i_1__0_n_0 ),
         .Q(\maintenance_request.maint_grant_r [2]),
         .R(\<const0> ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "181" *) 
   LUT5 #(
     .INIT(32'h54550400)) 
     \last_master_r[0]_i_1__3 
@@ -99042,6 +97128,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb
         .I3(\maintenance_request.upd_last_master_r ),
         .I4(last_master_r[0]),
         .O(\last_master_r[0]_i_1__3_n_0 ));
+  (* \PinAttr:I4:HOLD_DETOUR  = "193" *) 
   LUT5 #(
     .INIT(32'h45444044)) 
     \last_master_r[1]_i_1__3 
@@ -99365,7 +97452,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1
   wire \last_master_r[0]_i_1_n_0 ;
   wire \last_master_r[2]_i_1__0_n_0 ;
   wire \last_master_r[3]_i_1_n_0 ;
-  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_56 ;
+  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_60 ;
   wire [0:0]\last_master_r_reg[1]_0 ;
   wire \last_master_r_reg[2]_0 ;
   wire [0:0]mc_ras_n_ns;
@@ -99836,16 +97923,16 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1
     .INIT(1'b0)) 
     \last_master_r_reg[0] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_56 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_60 ),
         .D(\last_master_r[0]_i_1_n_0 ),
         .Q(last_master_r[0]),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'he)) 
-    \last_master_r_reg[0]_CE_cooolgate_en_gate_285 
+    \last_master_r_reg[0]_CE_cooolgate_en_gate_419 
        (.I0(\cmd_pipe_plus.mc_data_offset_reg[0] ),
         .I1(\last_master_r_reg[2]_0 ),
-        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_56 ));
+        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_60 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -99853,7 +97940,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1
     .INIT(1'b0)) 
     \last_master_r_reg[1] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_56 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_60 ),
         .D(\last_master_r_reg[1]_0 ),
         .Q(last_master_r[1]),
         .R(\<const0> ));
@@ -99864,7 +97951,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1
     .INIT(1'b0)) 
     \last_master_r_reg[2] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_56 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_60 ),
         .D(\last_master_r[2]_i_1__0_n_0 ),
         .Q(last_master_r[2]),
         .R(\<const0> ));
@@ -99875,7 +97962,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1
     .INIT(1'b0)) 
     \last_master_r_reg[3] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_56 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_60 ),
         .D(\last_master_r[3]_i_1_n_0 ),
         .Q(last_master_r[3]),
         .R(\<const0> ));
@@ -100098,7 +98185,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
   wire \last_master_r[1]_i_1__0_n_0 ;
   wire \last_master_r[2]_i_1__1_n_0 ;
   wire \last_master_r[3]_i_1__0_n_0 ;
-  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_57 ;
+  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_61 ;
   wire \last_master_r_reg[2]_0 ;
   wire ofs_rdy_r;
   wire ofs_rdy_r_2;
@@ -100268,6 +98355,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
         .I2(grant_config_r[0]),
         .I3(\last_master_r_reg[2]_0 ),
         .O(\last_master_r[0]_i_1__0_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   LUT4 #(
     .INIT(16'h00E2)) 
     \last_master_r[1]_i_1__0 
@@ -100299,16 +98387,16 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
     .INIT(1'b0)) 
     \last_master_r_reg[0] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_57 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_61 ),
         .D(\last_master_r[0]_i_1__0_n_0 ),
         .Q(last_master_r[0]),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'he)) 
-    \last_master_r_reg[0]_CE_cooolgate_en_gate_290 
+    \last_master_r_reg[0]_CE_cooolgate_en_gate_424 
        (.I0(rnk_config_strobe),
         .I1(\last_master_r_reg[2]_0 ),
-        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_57 ));
+        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_61 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -100316,7 +98404,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
     .INIT(1'b0)) 
     \last_master_r_reg[1] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_57 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_61 ),
         .D(\last_master_r[1]_i_1__0_n_0 ),
         .Q(last_master_r[1]),
         .R(\<const0> ));
@@ -100327,7 +98415,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
     .INIT(1'b0)) 
     \last_master_r_reg[2] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_57 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_61 ),
         .D(\last_master_r[2]_i_1__1_n_0 ),
         .Q(last_master_r[2]),
         .R(\<const0> ));
@@ -100338,7 +98426,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_3
     .INIT(1'b0)) 
     \last_master_r_reg[3] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_57 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_61 ),
         .D(\last_master_r[3]_i_1__0_n_0 ),
         .Q(last_master_r[3]),
         .R(\<const0> ));
@@ -100382,9 +98470,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
     \cmd_pipe_plus.mc_bank_reg[8]_1 ,
     \cmd_pipe_plus.mc_bank_reg[8]_2 ,
     \cmd_pipe_plus.mc_address_reg[41] ,
-    CLK,
-    pwropt,
-    pwropt_1);
+    CLK);
   output [3:0]Q;
   output [13:0]\pre_4_1_1T_arb.granted_pre_r_reg ;
   output [2:0]\pre_4_1_1T_arb.granted_pre_r_reg_0 ;
@@ -100405,8 +98491,6 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
   input [2:0]\cmd_pipe_plus.mc_bank_reg[8]_2 ;
   input [16:0]\cmd_pipe_plus.mc_address_reg[41] ;
   input CLK;
-  input pwropt;
-  input pwropt_1;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -100428,19 +98512,16 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
   wire \grant_r_reg[0]_1 ;
   wire \grant_r_reg[0]_2 ;
   wire \grant_r_reg[1]_0 ;
-  wire \grant_r_reg[3]_CE_cooolgate_en_sig_274 ;
   wire [3:0]last_master_r;
   wire \last_master_r[0]_i_1__2_n_0 ;
   wire \last_master_r[1]_i_1__2_n_0 ;
   wire \last_master_r[2]_i_1__3_n_0 ;
   wire \last_master_r[3]_i_1__2_n_0 ;
-  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_58 ;
+  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_62 ;
   wire \last_master_r_reg[2]_0 ;
   wire [0:0]mc_cas_n_ns;
   wire [13:0]\pre_4_1_1T_arb.granted_pre_r_reg ;
   wire [2:0]\pre_4_1_1T_arb.granted_pre_r_reg_0 ;
-  wire pwropt;
-  wire pwropt_1;
   wire [36:0]req_row_r;
   wire [3:0]row_cmd_wr;
 
@@ -100677,22 +98758,15 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
         .D(\grant_r[2]_i_1__3_n_0 ),
         .Q(Q[2]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \grant_r_reg[3] 
        (.C(CLK),
-        .CE(\grant_r_reg[3]_CE_cooolgate_en_sig_274 ),
+        .CE(\<const1> ),
         .D(\grant_r[3]_i_1__0_n_0 ),
         .Q(Q[3]),
         .R(\<const0> ));
-  LUT2 #(
-    .INIT(4'hd)) 
-    \grant_r_reg[3]_CE_cooolgate_en_gate_777 
-       (.I0(pwropt_1),
-        .I1(pwropt),
-        .O(\grant_r_reg[3]_CE_cooolgate_en_sig_274 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "181" *) 
   LUT4 #(
     .INIT(16'h00E2)) 
     \last_master_r[0]_i_1__2 
@@ -100732,16 +98806,16 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
     .INIT(1'b0)) 
     \last_master_r_reg[0] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_58 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_62 ),
         .D(\last_master_r[0]_i_1__2_n_0 ),
         .Q(last_master_r[0]),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'he)) 
-    \last_master_r_reg[0]_CE_cooolgate_en_gate_295 
+    \last_master_r_reg[0]_CE_cooolgate_en_gate_429 
        (.I0(cs_en2),
         .I1(\last_master_r_reg[2]_0 ),
-        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_58 ));
+        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_62 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -100749,7 +98823,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
     .INIT(1'b0)) 
     \last_master_r_reg[1] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_58 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_62 ),
         .D(\last_master_r[1]_i_1__2_n_0 ),
         .Q(last_master_r[1]),
         .R(\<const0> ));
@@ -100760,7 +98834,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
     .INIT(1'b0)) 
     \last_master_r_reg[2] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_58 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_62 ),
         .D(\last_master_r[2]_i_1__3_n_0 ),
         .Q(last_master_r[2]),
         .R(\<const0> ));
@@ -100771,7 +98845,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_4
     .INIT(1'b0)) 
     \last_master_r_reg[3] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_58 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_62 ),
         .D(\last_master_r[3]_i_1__2_n_0 ),
         .Q(last_master_r[3]),
         .R(\<const0> ));
@@ -100819,8 +98893,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
     \cmd_pipe_plus.mc_bank_reg[2]_0 ,
     \cmd_pipe_plus.mc_bank_reg[2]_1 ,
     \cmd_pipe_plus.mc_bank_reg[2]_2 ,
-    CLK,
-    .pwropt(\grant_r[3]_i_1__2_n_0 ));
+    CLK);
   output [3:0]Q;
   output granted_row_ns;
   output [0:0]D;
@@ -100862,7 +98935,6 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
   input [2:0]\cmd_pipe_plus.mc_bank_reg[2]_1 ;
   input [2:0]\cmd_pipe_plus.mc_bank_reg[2]_2 ;
   input CLK;
-  output \grant_r[3]_i_1__2_n_0 ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -100922,7 +98994,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
   wire \last_master_r[1]_i_1__1_n_0 ;
   wire \last_master_r[2]_i_1__2_n_0 ;
   wire \last_master_r[3]_i_1__1_n_0 ;
-  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_59 ;
+  wire \last_master_r_reg[0]_CE_cooolgate_en_sig_63 ;
   wire \last_master_r_reg[1]_0 ;
   wire maint_rank_r;
   wire maint_srx_r;
@@ -101379,7 +99451,6 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
         .I2(act_this_rank_r[2]),
         .I3(Q[2]),
         .O(\inhbt_act_faw.SRLC32E0_i_2_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
   LUT4 #(
     .INIT(16'h00E2)) 
     \last_master_r[0]_i_1__1 
@@ -101419,16 +99490,16 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
     .INIT(1'b0)) 
     \last_master_r_reg[0] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_59 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_63 ),
         .D(\last_master_r[0]_i_1__1_n_0 ),
         .Q(last_master_r[0]),
         .R(\<const0> ));
   LUT2 #(
     .INIT(4'he)) 
-    \last_master_r_reg[0]_CE_cooolgate_en_gate_300 
+    \last_master_r_reg[0]_CE_cooolgate_en_gate_434 
        (.I0(sent_row),
         .I1(\last_master_r_reg[1]_0 ),
-        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_59 ));
+        .O(\last_master_r_reg[0]_CE_cooolgate_en_sig_63 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -101436,7 +99507,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
     .INIT(1'b0)) 
     \last_master_r_reg[1] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_59 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_63 ),
         .D(\last_master_r[1]_i_1__1_n_0 ),
         .Q(last_master_r[1]),
         .R(\<const0> ));
@@ -101447,7 +99518,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
     .INIT(1'b0)) 
     \last_master_r_reg[2] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_59 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_63 ),
         .D(\last_master_r[2]_i_1__2_n_0 ),
         .Q(last_master_r[2]),
         .R(\<const0> ));
@@ -101458,7 +99529,7 @@ module mig_7series_0mig_7series_v4_2_round_robin_arb__parameterized1_5
     .INIT(1'b0)) 
     \last_master_r_reg[3] 
        (.C(CLK),
-        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_59 ),
+        .CE(\last_master_r_reg[0]_CE_cooolgate_en_sig_63 ),
         .D(\last_master_r[3]_i_1__1_n_0 ),
         .Q(last_master_r[3]),
         .R(\<const0> ));
@@ -101526,10 +99597,9 @@ module mig_7series_0mig_7series_v4_2_tempmon
   wire \xadc_supplied_temperature.temperature ;
   wire \xadc_supplied_temperature.xadc_den ;
   wire [15:0]\xadc_supplied_temperature.xadc_do ;
-  wire \xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ;
+  wire \xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ;
   wire \xadc_supplied_temperature.xadc_drdy ;
   wire \xadc_supplied_temperature.xadc_drdy_r ;
-  wire \xadc_supplied_temperature.xadc_drdy_r_reg_CE_cooolgate_en_sig_144 ;
   wire [3:0]NLW_device_temp_sync_r4_neq_r3_reg_i_1_CO_UNCONNECTED;
   wire [15:0]\NLW_xadc_supplied_temperature.XADC_inst_DO_UNCONNECTED ;
 
@@ -102527,7 +100597,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
        (.I0(sync_cntr_reg[0]),
         .I1(sync_cntr_reg[1]),
         .O(p_0_in__1[1]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -102550,7 +100620,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I2(sync_cntr_reg[0]),
         .I3(sync_cntr_reg[1]),
         .O(\sync_cntr[3]_i_2_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "194" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -102725,7 +100795,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I4(\xadc_supplied_temperature.sample_timer_reg [2]),
         .I5(\xadc_supplied_temperature.sample_timer_reg [4]),
         .O(\xadc_supplied_temperature.sample_timer[10]_i_3_n_0 ));
-  (* \PinAttr:I1:HOLD_DETOUR  = "189" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "190" *) 
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -102733,7 +100803,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
        (.I0(\xadc_supplied_temperature.sample_timer_reg [0]),
         .I1(\xadc_supplied_temperature.sample_timer_reg [1]),
         .O(p_0_in__0[1]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "189" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "190" *) 
   (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -102742,7 +100812,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I1(\xadc_supplied_temperature.sample_timer_reg [1]),
         .I2(\xadc_supplied_temperature.sample_timer_reg [2]),
         .O(p_0_in__0[2]));
-  (* \PinAttr:I3:HOLD_DETOUR  = "189" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -102752,7 +100822,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I2(\xadc_supplied_temperature.sample_timer_reg [2]),
         .I3(\xadc_supplied_temperature.sample_timer_reg [3]),
         .O(p_0_in__0[3]));
-  (* \PinAttr:I3:HOLD_DETOUR  = "189" *) 
+  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
@@ -102773,7 +100843,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I4(\xadc_supplied_temperature.sample_timer_reg [4]),
         .I5(\xadc_supplied_temperature.sample_timer_reg [5]),
         .O(p_0_in__0[5]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -102781,7 +100851,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
        (.I0(\xadc_supplied_temperature.sample_timer[10]_i_3_n_0 ),
         .I1(\xadc_supplied_temperature.sample_timer_reg [6]),
         .O(p_0_in__0[6]));
-  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I1:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -102790,6 +100860,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I1(\xadc_supplied_temperature.sample_timer_reg [6]),
         .I2(\xadc_supplied_temperature.sample_timer_reg [7]),
         .O(p_0_in__0[7]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -102799,6 +100870,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
         .I2(\xadc_supplied_temperature.sample_timer_reg [7]),
         .I3(\xadc_supplied_temperature.sample_timer_reg [8]),
         .O(p_0_in__0[8]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "195" *) 
   (* SOFT_HLUTNM = "soft_lutpair0" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
@@ -103032,25 +101104,25 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[10] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [10]),
         .Q(p_0_in[6]),
         .R(\xadc_supplied_temperature.rst_r2 ));
   LUT4 #(
     .INIT(16'h00ca)) 
-    \xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_gate_76 
+    \xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_gate_205 
        (.I0(\xadc_supplied_temperature.temperature ),
         .I1(\FSM_onehot_xadc_supplied_temperature.tempmon_state_reg_n_0_[2] ),
         .I2(\FSM_onehot_xadc_supplied_temperature.tempmon_state[3]_i_1_n_0 ),
         .I3(\xadc_supplied_temperature.rst_r2 ),
-        .O(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ));
+        .O(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[11] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [11]),
         .Q(p_0_in[7]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103060,7 +101132,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[12] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [12]),
         .Q(p_0_in[8]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103070,7 +101142,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[13] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [13]),
         .Q(p_0_in[9]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103080,7 +101152,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[14] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [14]),
         .Q(p_0_in[10]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103090,7 +101162,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[15] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [15]),
         .Q(p_0_in[11]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103100,7 +101172,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[4] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [4]),
         .Q(p_0_in[0]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103110,7 +101182,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[5] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [5]),
         .Q(p_0_in[1]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103120,7 +101192,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[6] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [6]),
         .Q(p_0_in[2]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103130,7 +101202,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[7] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [7]),
         .Q(p_0_in[3]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103140,7 +101212,7 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[8] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [8]),
         .Q(p_0_in[4]),
         .R(\xadc_supplied_temperature.rst_r2 ));
@@ -103150,29 +101222,18 @@ module mig_7series_0mig_7series_v4_2_tempmon
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_do_r_reg[9] 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_5 ),
+        .CE(\xadc_supplied_temperature.xadc_do_r_reg[10]_CE_cooolgate_en_sig_7 ),
         .D(\xadc_supplied_temperature.xadc_do [9]),
         .Q(p_0_in[5]),
         .R(\xadc_supplied_temperature.rst_r2 ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \xadc_supplied_temperature.xadc_drdy_r_reg 
        (.C(clk_ref_i),
-        .CE(\xadc_supplied_temperature.xadc_drdy_r_reg_CE_cooolgate_en_sig_144 ),
+        .CE(\<const1> ),
         .D(\xadc_supplied_temperature.xadc_drdy ),
         .Q(\xadc_supplied_temperature.xadc_drdy_r ),
         .R(\xadc_supplied_temperature.rst_r2 ));
-  LUT5 #(
-    .INIT(32'h0000107f)) 
-    \xadc_supplied_temperature.xadc_drdy_r_reg_CE_cooolgate_en_gate_537 
-       (.I0(\xadc_supplied_temperature.sample_en_i_1_n_0 ),
-        .I1(\FSM_onehot_xadc_supplied_temperature.tempmon_state_reg_n_0_[2] ),
-        .I2(\FSM_onehot_xadc_supplied_temperature.tempmon_state[3]_i_1_n_0 ),
-        .I3(\xadc_supplied_temperature.temperature ),
-        .I4(\xadc_supplied_temperature.rst_r2 ),
-        .O(\xadc_supplied_temperature.xadc_drdy_r_reg_CE_cooolgate_en_sig_144 ));
 endmodule
 
 (* ORIG_REF_NAME = "mig_7series_v4_2_ui_cmd" *) 
@@ -103700,8 +101761,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .pwropt_6(\^pwropt_5 ),
     .pwropt_7(\^pwropt_6 ),
     .pwropt_8(\^pwropt_7 ),
-    .pwropt_9(\^pwropt_8 ),
-    .pwropt_10(\^pwropt_9 ));
+    .pwropt_9(\^pwropt_8 ));
   output [0:0]\not_strict_mode.status_ram.rd_buf_we_r1_reg_0 ;
   output [4:0]ADDRA;
   output [1:0]DOA;
@@ -103862,7 +101922,6 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
   input \^pwropt_6 ;
   input \^pwropt_7 ;
   input \^pwropt_8 ;
-  input \^pwropt_9 ;
 
   wire \<const0> ;
   wire \<const1> ;
@@ -103886,8 +101945,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
   wire [1:0]\not_strict_mode.app_rd_data_reg[5]_0 ;
   wire [1:0]\not_strict_mode.app_rd_data_reg[5]_1 ;
   wire \not_strict_mode.app_rd_data_valid_copy ;
-  wire \not_strict_mode.app_rd_data_valid_copy_reg_CE_cooolgate_en_sig_176 ;
-  wire \not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_163 ;
+  wire \not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_165 ;
   wire \not_strict_mode.bypass__0 ;
   wire [5:2]\not_strict_mode.occ_cnt_r ;
   wire \not_strict_mode.occ_cnt_r[0]_i_1_n_0 ;
@@ -103897,14 +101955,14 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
   wire \not_strict_mode.occ_cnt_r[4]_i_1_n_0 ;
   wire \not_strict_mode.occ_cnt_r[4]_i_2_n_0 ;
   wire \not_strict_mode.occ_cnt_r[5]_i_2_n_0 ;
-  wire \not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ;
+  wire \not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ;
   wire [1:0]\not_strict_mode.occ_cnt_r_reg[1]_0 ;
   wire \not_strict_mode.occ_cnt_r_reg[5]_0 ;
   wire \not_strict_mode.occ_cnt_r_reg[5]_1 ;
   (* RTL_KEEP = "true" *) (* syn_keep = "true" *) wire [4:0]\not_strict_mode.rd_buf.rd_buf_indx_copy_r ;
   wire \not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ;
   wire [1:0]\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[4]_2 ;
-  wire \not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ;
+  wire \not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ;
   wire [0:0]\not_strict_mode.rd_status ;
   wire \not_strict_mode.status_ram.rd_buf_we_r1 ;
   wire [0:0]\not_strict_mode.status_ram.rd_buf_we_r1_reg_0 ;
@@ -103915,7 +101973,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
   wire [6:0]\not_strict_mode.status_ram.status_ram_wr_data_r_reg[1]_0 ;
   wire \not_strict_mode.status_ram.wr_status ;
   wire \not_strict_mode.status_ram.wr_status_r1 ;
-  wire \not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_135 ;
+  wire \not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_137 ;
   wire [4:0]p_0_in__2;
   wire [0:0]p_0_out__0;
   wire [0:0]p_0_out__0__0;
@@ -103929,12 +101987,11 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
   wire \^pwropt_6 ;
   wire \^pwropt_7 ;
   wire \^pwropt_8 ;
-  wire \^pwropt_9 ;
   wire rd_accepted;
   wire \rd_buf_indx.ram_init_done_ns0 ;
   wire \rd_buf_indx.ram_init_done_r_lcl_reg_0 ;
   wire \rd_buf_indx.rd_buf_indx_r[5]_i_2_n_0 ;
-  wire \rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ;
+  wire \rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ;
   wire \rd_buf_indx.rd_buf_indx_r_reg_n_0_[5] ;
   wire \rd_buf_indx.upd_rd_buf_indx0 ;
   wire [5:0]rd_buf_indx_ns;
@@ -104017,27 +102074,15 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
         .D(D[7]),
         .Q(app_rd_data[7]),
         .R(\<const0> ));
-  (* IS_CLOCK_GATED *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
     \not_strict_mode.app_rd_data_valid_copy_reg 
        (.C(CLK),
-        .CE(\not_strict_mode.app_rd_data_valid_copy_reg_CE_cooolgate_en_sig_176 ),
+        .CE(\<const1> ),
         .D(app_rd_data_valid_ns0),
         .Q(\not_strict_mode.app_rd_data_valid_copy ),
         .R(\rd_buf_indx.upd_rd_buf_indx0 ));
-  LUT6 #(
-    .INIT(64'h00000000ffffff1f)) 
-    \not_strict_mode.app_rd_data_valid_copy_reg_CE_cooolgate_en_gate_585 
-       (.I0(\not_strict_mode.occ_cnt_r[1]_i_1_n_0 ),
-        .I1(\not_strict_mode.occ_cnt_r[0]_i_1_n_0 ),
-        .I2(\^pwropt_4 ),
-        .I3(\^pwropt_9 ),
-        .I4(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ),
-        .I5(pwropt),
-        .O(\not_strict_mode.app_rd_data_valid_copy_reg_CE_cooolgate_en_sig_176 ));
   LUT1 #(
     .INIT(2'h1)) 
     \not_strict_mode.app_rd_data_valid_i_1 
@@ -104057,20 +102102,20 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.app_rd_data_valid_reg 
        (.C(CLK),
-        .CE(\not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_163 ),
+        .CE(\not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_165 ),
         .D(app_rd_data_valid_ns0),
         .Q(app_rd_data_valid),
         .R(\rd_buf_indx.upd_rd_buf_indx0 ));
   LUT5 #(
     .INIT(32'h0000f0dd)) 
-    \not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_gate_563 
+    \not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_gate_693 
        (.I0(\^pwropt_8 ),
         .I1(\^pwropt_7 ),
         .I2(\^pwropt_6 ),
         .I3(\^pwropt_5 ),
         .I4(\^pwropt_4 ),
-        .O(\not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_163 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "185" *) 
+        .O(\not_strict_mode.app_rd_data_valid_reg_CE_cooolgate_en_sig_165 ));
+  (* SOFT_HLUTNM = "soft_lutpair570" *) 
   LUT4 #(
     .INIT(16'h9666)) 
     \not_strict_mode.occ_cnt_r[0]_i_1 
@@ -104079,7 +102124,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
         .I2(\not_strict_mode.app_rd_data_valid_copy ),
         .I3(\^not_strict_mode.app_rd_data_end_reg_0 ),
         .O(\not_strict_mode.occ_cnt_r[0]_i_1_n_0 ));
-  (* \PinAttr:I4:HOLD_DETOUR  = "185" *) 
+  (* SOFT_HLUTNM = "soft_lutpair570" *) 
   LUT5 #(
     .INIT(32'hA6669AAA)) 
     \not_strict_mode.occ_cnt_r[1]_i_1 
@@ -104159,25 +102204,25 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r[0]_i_1_n_0 ),
         .Q(\not_strict_mode.occ_cnt_r_reg[1]_0 [0]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
   LUT4 #(
     .INIT(16'hff9f)) 
-    \not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_gate_191 
+    \not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_gate_320 
        (.I0(\not_strict_mode.occ_cnt_r_reg[1]_0 [0]),
         .I1(rd_accepted),
         .I2(pwropt),
         .I3(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ),
-        .O(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ));
+        .O(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r[1]_i_1_n_0 ),
         .Q(\not_strict_mode.occ_cnt_r_reg[1]_0 [1]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104187,7 +102232,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r[2]_i_1_n_0 ),
         .Q(\not_strict_mode.occ_cnt_r [2]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104198,7 +102243,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r[3]_i_1_n_0 ),
         .Q(\not_strict_mode.occ_cnt_r [3]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104208,7 +102253,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[4] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r[4]_i_1_n_0 ),
         .Q(\not_strict_mode.occ_cnt_r [4]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104218,7 +102263,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.occ_cnt_r_reg[5] 
        (.C(CLK),
-        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_28 ),
+        .CE(\not_strict_mode.occ_cnt_r_reg[0]_CE_cooolgate_en_sig_30 ),
         .D(\not_strict_mode.occ_cnt_r_reg[5]_0 ),
         .Q(\not_strict_mode.occ_cnt_r [5]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104317,6 +102362,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     \not_strict_mode.rd_data_buf_addr_r_lcl[0]_i_1 
        (.I0(Q[0]),
         .O(p_0_in__2[0]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair572" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -104324,6 +102370,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
        (.I0(Q[0]),
         .I1(Q[1]),
         .O(p_0_in__2[1]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair572" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -104332,6 +102379,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
         .I1(Q[1]),
         .I2(Q[2]),
         .O(p_0_in__2[2]));
+  (* \PinAttr:I0:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair571" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -104341,6 +102389,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
         .I2(Q[2]),
         .I3(Q[3]),
         .O(p_0_in__2[3]));
+  (* \PinAttr:I2:HOLD_DETOUR  = "196" *) 
   (* SOFT_HLUTNM = "soft_lutpair571" *) 
   LUT5 #(
     .INIT(32'h7FFF8000)) 
@@ -104357,28 +102406,28 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.rd_data_buf_addr_r_lcl_reg[0] 
        (.C(CLK),
-        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ),
+        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ),
         .D(p_0_in__2[0]),
         .Q(Q[0]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFFF700000000)) 
-    \not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_gate_217_LOPT_REMAP 
+    \not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_gate_346_LOPT_REMAP 
        (.I0(pwropt_2),
         .I1(pwropt),
         .I2(Q[0]),
         .I3(pwropt_1),
         .I4(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ),
         .I5(rd_accepted),
-        .O(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ));
+        .O(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \not_strict_mode.rd_data_buf_addr_r_lcl_reg[1] 
        (.C(CLK),
-        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ),
+        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ),
         .D(p_0_in__2[1]),
         .Q(Q[1]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104388,7 +102437,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.rd_data_buf_addr_r_lcl_reg[2] 
        (.C(CLK),
-        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ),
+        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ),
         .D(p_0_in__2[2]),
         .Q(Q[2]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104398,7 +102447,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.rd_data_buf_addr_r_lcl_reg[3] 
        (.C(CLK),
-        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ),
+        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ),
         .D(p_0_in__2[3]),
         .Q(Q[3]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104408,7 +102457,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.rd_data_buf_addr_r_lcl_reg[4] 
        (.C(CLK),
-        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_35 ),
+        .CE(\not_strict_mode.rd_data_buf_addr_r_lcl_reg[0]_CE_cooolgate_en_sig_37 ),
         .D(p_0_in__2[4]),
         .Q(Q[4]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104556,17 +102605,17 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \not_strict_mode.status_ram.wr_status_r1_reg 
        (.C(CLK),
-        .CE(\not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_135 ),
+        .CE(\not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_137 ),
         .D(\not_strict_mode.status_ram.wr_status ),
         .Q(\not_strict_mode.status_ram.wr_status_r1 ),
         .R(\<const0> ));
   LUT3 #(
     .INIT(8'h20)) 
-    \not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_gate_519 
+    \not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_gate_649 
        (.I0(\rd_buf_indx.ram_init_done_ns0 ),
         .I1(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ),
         .I2(\^pwropt_3 ),
-        .O(\not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_135 ));
+        .O(\not_strict_mode.status_ram.wr_status_r1_reg_CE_cooolgate_en_sig_137 ));
   LUT3 #(
     .INIT(8'hB8)) 
     \pointer_ram.rams[0].RAM32M0_i_2 
@@ -104722,16 +102771,16 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \rd_buf_indx.rd_buf_indx_r_reg[1] 
        (.C(CLK),
-        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ),
+        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ),
         .D(rd_buf_indx_ns[1]),
         .Q(ADDRA[1]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
   LUT2 #(
     .INIT(4'he)) 
-    \rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_gate_222 
+    \rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_gate_351 
        (.I0(ADDRA[0]),
         .I1(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ),
-        .O(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ));
+        .O(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -104739,7 +102788,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \rd_buf_indx.rd_buf_indx_r_reg[2] 
        (.C(CLK),
-        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ),
+        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ),
         .D(rd_buf_indx_ns[2]),
         .Q(ADDRA[2]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104750,7 +102799,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \rd_buf_indx.rd_buf_indx_r_reg[3] 
        (.C(CLK),
-        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ),
+        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ),
         .D(rd_buf_indx_ns[3]),
         .Q(ADDRA[3]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104761,7 +102810,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \rd_buf_indx.rd_buf_indx_r_reg[4] 
        (.C(CLK),
-        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ),
+        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ),
         .D(rd_buf_indx_ns[4]),
         .Q(ADDRA[4]),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -104772,7 +102821,7 @@ module mig_7series_0mig_7series_v4_2_ui_rd_data
     .INIT(1'b0)) 
     \rd_buf_indx.rd_buf_indx_r_reg[5] 
        (.C(CLK),
-        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_36 ),
+        .CE(\rd_buf_indx.rd_buf_indx_r_reg[1]_CE_cooolgate_en_sig_38 ),
         .D(rd_buf_indx_ns[5]),
         .Q(\rd_buf_indx.rd_buf_indx_r_reg_n_0_[5] ),
         .R(\not_strict_mode.rd_buf.rd_buf_indx_copy_r_reg[0]_0 ));
@@ -105208,6 +103257,7 @@ module mig_7series_0mig_7series_v4_2_ui_top
   wire app_rdy_r_reg;
   wire [127:0]app_wdf_data;
   wire app_wdf_end_r1_reg;
+  wire [15:0]app_wdf_mask;
   wire app_wdf_rdy;
   wire app_wdf_wren;
   wire \ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29 ;
@@ -105278,6 +103328,7 @@ module mig_7series_0mig_7series_v4_2_ui_top
   wire [26:0]NLW_ui_cmd0_app_addr_UNCONNECTED;
   wire [13:0]NLW_ui_cmd0_row_UNCONNECTED;
   wire [16:0]NLW_ui_cmd0_row_hit_r_reg_UNCONNECTED;
+  wire [15:0]NLW_ui_wr_data0_app_wdf_mask_UNCONNECTED;
 
   mig_7series_0mig_7series_v4_2_ui_cmd ui_cmd0
        (.CLK(CLK),
@@ -105356,7 +103407,6 @@ module mig_7series_0mig_7series_v4_2_ui_top
         .\pointer_ram.pointer_wr_data (\pointer_ram.pointer_wr_data ),
         .pwropt(pwropt),
         .pwropt_1(\^pwropt_1 ),
-        .pwropt_10(app_rdy_ns),
         .pwropt_2(app_rdy_r_reg),
         .pwropt_3(\^pwropt_2 ),
         .pwropt_4(pwropt_4),
@@ -105379,6 +103429,7 @@ module mig_7series_0mig_7series_v4_2_ui_top
         .app_rdy_r_reg(ui_rd_data0_n_137),
         .app_wdf_data(app_wdf_data),
         .app_wdf_end_r1_reg_0(app_wdf_end_r1_reg),
+        .app_wdf_mask({app_wdf_mask[15:2],NLW_ui_wr_data0_app_wdf_mask_UNCONNECTED[1:0]}),
         .app_wdf_rdy(app_wdf_rdy),
         .app_wdf_wren(app_wdf_wren),
         .\ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29 (\ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29 ),
@@ -105485,10 +103536,13 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
   wire app_rdy_r_reg;
   wire [127:0]app_wdf_data;
   wire [127:0]app_wdf_data_r1;
+  wire \app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ;
   wire app_wdf_end_r1;
   wire app_wdf_end_r1_i_1_n_0;
   wire app_wdf_end_r1_reg_0;
-  wire app_wdf_end_r1_reg_CE_cooolgate_en_sig_110;
+  wire app_wdf_end_r1_reg_CE_cooolgate_en_sig_112;
+  wire [15:0]app_wdf_mask;
+  wire [15:0]app_wdf_mask_r1;
   wire app_wdf_rdy;
   wire app_wdf_rdy_r_copy1;
   wire app_wdf_rdy_r_copy2;
@@ -105497,7 +103551,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
   wire app_wdf_wren_r1;
   wire app_wdf_wren_r1_i_1_n_0;
   wire [3:0]\data_buf_address_counter.data_buf_addr_cnt_r_reg ;
-  wire \data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ;
+  wire \data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ;
   wire \ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29 ;
   wire \ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_24_29_0 ;
   wire \ddr_byte_lane_C.ddr_byte_lane_C/of_pre_fifo_gen.u_ddr_of_pre_fifo/mem_reg_0_15_48_53 ;
@@ -105560,8 +103614,8 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
   wire \wr_req_counter.wr_req_cnt_r[4]_i_2_n_0 ;
   wire [0:0]\wr_req_counter.wr_req_cnt_r_reg[0]_0 ;
   wire \wr_req_counter.wr_req_cnt_r_reg[0]_1 ;
-  wire \wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_169 ;
-  wire \wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ;
+  wire \wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_171 ;
+  wire \wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ;
   wire [143:0]\write_buffer.wr_buf_in_data ;
   wire [11:0]\write_buffer.wr_buf_out_data_reg[12]_0 ;
   wire [143:0]\write_buffer.wr_buf_out_data_reg[143]_0 ;
@@ -105573,12 +103627,11 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
   wire \write_buffer.wr_buffer_ram[0].RAM32M0_i_9_n_0 ;
   wire \write_data_control.wb_wr_data_addr0_ns02_in ;
   wire \write_data_control.wb_wr_data_addr0_r ;
-  wire \write_data_control.wb_wr_data_addr0_r_reg_CE_cooolgate_en_sig_284 ;
   wire [4:1]\write_data_control.wb_wr_data_addr_r ;
   wire \write_data_control.wb_wr_data_addr_r_reg[2]_0 ;
   wire \write_data_control.wr_data_addr_le__2 ;
   wire [3:0]\write_data_control.wr_data_indx_r_reg ;
-  wire \write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_sig_67 ;
+  wire \write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ;
 
   GND GND
        (.G(\<const0> ));
@@ -105607,1034 +103660,1297 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I4(app_wdf_end_r1_reg_0),
         .I5(\wr_req_counter.wr_req_cnt_r[4]_i_1_n_0 ),
         .O(app_rdy_r_i_2_n_0));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[0] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[0]),
         .Q(app_wdf_data_r1[0]),
         .R(\<const0> ));
+  (* OPT_MODIFIED = "REMAP" *) 
+  LUT2 #(
+    .INIT(4'h4)) 
+    \app_wdf_data_r1_reg[0]_CE_cooolgate_en_gate_2_LOPT_REMAP 
+       (.I0(wdf_rdy_ns),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[100] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[100]),
         .Q(app_wdf_data_r1[100]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[101] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[101]),
         .Q(app_wdf_data_r1[101]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[102] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[102]),
         .Q(app_wdf_data_r1[102]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[103] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[103]),
         .Q(app_wdf_data_r1[103]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[104] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[104]),
         .Q(app_wdf_data_r1[104]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[105] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[105]),
         .Q(app_wdf_data_r1[105]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[106] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[106]),
         .Q(app_wdf_data_r1[106]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[107] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[107]),
         .Q(app_wdf_data_r1[107]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[108] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[108]),
         .Q(app_wdf_data_r1[108]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[109] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[109]),
         .Q(app_wdf_data_r1[109]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[10] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[10]),
         .Q(app_wdf_data_r1[10]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[110] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[110]),
         .Q(app_wdf_data_r1[110]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[111] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[111]),
         .Q(app_wdf_data_r1[111]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[112] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[112]),
         .Q(app_wdf_data_r1[112]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[113] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[113]),
         .Q(app_wdf_data_r1[113]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[114] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[114]),
         .Q(app_wdf_data_r1[114]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[115] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[115]),
         .Q(app_wdf_data_r1[115]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[116] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[116]),
         .Q(app_wdf_data_r1[116]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[117] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[117]),
         .Q(app_wdf_data_r1[117]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[118] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[118]),
         .Q(app_wdf_data_r1[118]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[119] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[119]),
         .Q(app_wdf_data_r1[119]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[11] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[11]),
         .Q(app_wdf_data_r1[11]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[120] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[120]),
         .Q(app_wdf_data_r1[120]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[121] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[121]),
         .Q(app_wdf_data_r1[121]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[122] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[122]),
         .Q(app_wdf_data_r1[122]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[123] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[123]),
         .Q(app_wdf_data_r1[123]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[124] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[124]),
         .Q(app_wdf_data_r1[124]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[125] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[125]),
         .Q(app_wdf_data_r1[125]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[126] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[126]),
         .Q(app_wdf_data_r1[126]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[127] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[127]),
         .Q(app_wdf_data_r1[127]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[12] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[12]),
         .Q(app_wdf_data_r1[12]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[13] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[13]),
         .Q(app_wdf_data_r1[13]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[14] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[14]),
         .Q(app_wdf_data_r1[14]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[15] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[15]),
         .Q(app_wdf_data_r1[15]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[16] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[16]),
         .Q(app_wdf_data_r1[16]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[17] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[17]),
         .Q(app_wdf_data_r1[17]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[18] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[18]),
         .Q(app_wdf_data_r1[18]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[19] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[19]),
         .Q(app_wdf_data_r1[19]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[1] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[1]),
         .Q(app_wdf_data_r1[1]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[20] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[20]),
         .Q(app_wdf_data_r1[20]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[21] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[21]),
         .Q(app_wdf_data_r1[21]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[22] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[22]),
         .Q(app_wdf_data_r1[22]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[23] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[23]),
         .Q(app_wdf_data_r1[23]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[24] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[24]),
         .Q(app_wdf_data_r1[24]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[25] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[25]),
         .Q(app_wdf_data_r1[25]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[26] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[26]),
         .Q(app_wdf_data_r1[26]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[27] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[27]),
         .Q(app_wdf_data_r1[27]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[28] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[28]),
         .Q(app_wdf_data_r1[28]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[29] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[29]),
         .Q(app_wdf_data_r1[29]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[2] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[2]),
         .Q(app_wdf_data_r1[2]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[30] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[30]),
         .Q(app_wdf_data_r1[30]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[31] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[31]),
         .Q(app_wdf_data_r1[31]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[32] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[32]),
         .Q(app_wdf_data_r1[32]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[33] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[33]),
         .Q(app_wdf_data_r1[33]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[34] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[34]),
         .Q(app_wdf_data_r1[34]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[35] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[35]),
         .Q(app_wdf_data_r1[35]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[36] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[36]),
         .Q(app_wdf_data_r1[36]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[37] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[37]),
         .Q(app_wdf_data_r1[37]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[38] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[38]),
         .Q(app_wdf_data_r1[38]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[39] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[39]),
         .Q(app_wdf_data_r1[39]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[3] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[3]),
         .Q(app_wdf_data_r1[3]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[40] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[40]),
         .Q(app_wdf_data_r1[40]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[41] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[41]),
         .Q(app_wdf_data_r1[41]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[42] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[42]),
         .Q(app_wdf_data_r1[42]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[43] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[43]),
         .Q(app_wdf_data_r1[43]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[44] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[44]),
         .Q(app_wdf_data_r1[44]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[45] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[45]),
         .Q(app_wdf_data_r1[45]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[46] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[46]),
         .Q(app_wdf_data_r1[46]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[47] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[47]),
         .Q(app_wdf_data_r1[47]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[48] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[48]),
         .Q(app_wdf_data_r1[48]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[49] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[49]),
         .Q(app_wdf_data_r1[49]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[4] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[4]),
         .Q(app_wdf_data_r1[4]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[50] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[50]),
         .Q(app_wdf_data_r1[50]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[51] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[51]),
         .Q(app_wdf_data_r1[51]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[52] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[52]),
         .Q(app_wdf_data_r1[52]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[53] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[53]),
         .Q(app_wdf_data_r1[53]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[54] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[54]),
         .Q(app_wdf_data_r1[54]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[55] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[55]),
         .Q(app_wdf_data_r1[55]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[56] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[56]),
         .Q(app_wdf_data_r1[56]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[57] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[57]),
         .Q(app_wdf_data_r1[57]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[58] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[58]),
         .Q(app_wdf_data_r1[58]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[59] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[59]),
         .Q(app_wdf_data_r1[59]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[5] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[5]),
         .Q(app_wdf_data_r1[5]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[60] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[60]),
         .Q(app_wdf_data_r1[60]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[61] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[61]),
         .Q(app_wdf_data_r1[61]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[62] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[62]),
         .Q(app_wdf_data_r1[62]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[63] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[63]),
         .Q(app_wdf_data_r1[63]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[64] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[64]),
         .Q(app_wdf_data_r1[64]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[65] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[65]),
         .Q(app_wdf_data_r1[65]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[66] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[66]),
         .Q(app_wdf_data_r1[66]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[67] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[67]),
         .Q(app_wdf_data_r1[67]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[68] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[68]),
         .Q(app_wdf_data_r1[68]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[69] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[69]),
         .Q(app_wdf_data_r1[69]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[6] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[6]),
         .Q(app_wdf_data_r1[6]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[70] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[70]),
         .Q(app_wdf_data_r1[70]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[71] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[71]),
         .Q(app_wdf_data_r1[71]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[72] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[72]),
         .Q(app_wdf_data_r1[72]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[73] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[73]),
         .Q(app_wdf_data_r1[73]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[74] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[74]),
         .Q(app_wdf_data_r1[74]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[75] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[75]),
         .Q(app_wdf_data_r1[75]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[76] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[76]),
         .Q(app_wdf_data_r1[76]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[77] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[77]),
         .Q(app_wdf_data_r1[77]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[78] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[78]),
         .Q(app_wdf_data_r1[78]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[79] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[79]),
         .Q(app_wdf_data_r1[79]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[7] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[7]),
         .Q(app_wdf_data_r1[7]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[80] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[80]),
         .Q(app_wdf_data_r1[80]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[81] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[81]),
         .Q(app_wdf_data_r1[81]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[82] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[82]),
         .Q(app_wdf_data_r1[82]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[83] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[83]),
         .Q(app_wdf_data_r1[83]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[84] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[84]),
         .Q(app_wdf_data_r1[84]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[85] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[85]),
         .Q(app_wdf_data_r1[85]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[86] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[86]),
         .Q(app_wdf_data_r1[86]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[87] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[87]),
         .Q(app_wdf_data_r1[87]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[88] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[88]),
         .Q(app_wdf_data_r1[88]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[89] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[89]),
         .Q(app_wdf_data_r1[89]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[8] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[8]),
         .Q(app_wdf_data_r1[8]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[90] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[90]),
         .Q(app_wdf_data_r1[90]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[91] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[91]),
         .Q(app_wdf_data_r1[91]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[92] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[92]),
         .Q(app_wdf_data_r1[92]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[93] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[93]),
         .Q(app_wdf_data_r1[93]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[94] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[94]),
         .Q(app_wdf_data_r1[94]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[95] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[95]),
         .Q(app_wdf_data_r1[95]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[96] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[96]),
         .Q(app_wdf_data_r1[96]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[97] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[97]),
         .Q(app_wdf_data_r1[97]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[98] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[98]),
         .Q(app_wdf_data_r1[98]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[99] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[99]),
         .Q(app_wdf_data_r1[99]),
         .R(\<const0> ));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \app_wdf_data_r1_reg[9] 
        (.C(CLK),
-        .CE(app_wdf_rdy_r_copy2),
+        .CE(\app_wdf_data_r1_reg[0]_CE_cooolgate_en_sig_2 ),
         .D(app_wdf_data[9]),
         .Q(app_wdf_data_r1[9]),
         .R(\<const0> ));
   (* OPT_MODIFIED = "RETARGET" *) 
   (* SOFT_HLUTNM = "soft_lutpair580" *) 
   LUT2 #(
-    .INIT(4'h4)) 
+    .INIT(4'hE)) 
     app_wdf_end_r1_i_1
        (.I0(app_wdf_rdy_r_copy2),
         .I1(app_wdf_end_r1),
@@ -106646,16 +104962,128 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     app_wdf_end_r1_reg
        (.C(CLK),
-        .CE(app_wdf_end_r1_reg_CE_cooolgate_en_sig_110),
+        .CE(app_wdf_end_r1_reg_CE_cooolgate_en_sig_112),
         .D(app_wdf_end_r1_i_1_n_0),
         .Q(app_wdf_end_r1),
         .R(app_wdf_end_r1_reg_0));
   LUT2 #(
     .INIT(4'he)) 
-    app_wdf_end_r1_reg_CE_cooolgate_en_gate_459
+    app_wdf_end_r1_reg_CE_cooolgate_en_gate_589
        (.I0(app_wdf_rdy_r_copy2),
         .I1(app_wdf_end_r1_reg_0),
-        .O(app_wdf_end_r1_reg_CE_cooolgate_en_sig_110));
+        .O(app_wdf_end_r1_reg_CE_cooolgate_en_sig_112));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[10] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[10]),
+        .Q(app_wdf_mask_r1[10]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[11] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[11]),
+        .Q(app_wdf_mask_r1[11]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[12] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[12]),
+        .Q(app_wdf_mask_r1[12]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[13] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[13]),
+        .Q(app_wdf_mask_r1[13]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[14] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[14]),
+        .Q(app_wdf_mask_r1[14]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[15] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[15]),
+        .Q(app_wdf_mask_r1[15]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[2] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[2]),
+        .Q(app_wdf_mask_r1[2]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[3] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[3]),
+        .Q(app_wdf_mask_r1[3]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[4] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[4]),
+        .Q(app_wdf_mask_r1[4]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[5] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[5]),
+        .Q(app_wdf_mask_r1[5]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[6] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[6]),
+        .Q(app_wdf_mask_r1[6]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[7] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[7]),
+        .Q(app_wdf_mask_r1[7]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[8] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[8]),
+        .Q(app_wdf_mask_r1[8]),
+        .R(\<const0> ));
+  FDRE #(
+    .INIT(1'b0)) 
+    \app_wdf_mask_r1_reg[9] 
+       (.C(CLK),
+        .CE(app_wdf_rdy_r_copy2),
+        .D(app_wdf_mask[9]),
+        .Q(app_wdf_mask_r1[9]),
+        .R(\<const0> ));
   (* equivalent_register_removal = "no" *) 
   FDRE #(
     .INIT(1'b0)) 
@@ -106698,18 +105126,18 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     app_wdf_wren_r1_reg
        (.C(CLK),
-        .CE(app_wdf_end_r1_reg_CE_cooolgate_en_sig_110),
+        .CE(app_wdf_end_r1_reg_CE_cooolgate_en_sig_112),
         .D(app_wdf_wren_r1_i_1_n_0),
         .Q(app_wdf_wren_r1),
         .R(app_wdf_end_r1_reg_0));
-  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair581" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \data_buf_address_counter.data_buf_addr_cnt_r[0]_i_1 
        (.I0(\data_buf_address_counter.data_buf_addr_cnt_r_reg [0]),
         .O(p_0_in__0[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "192" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair581" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -106740,28 +105168,28 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \data_buf_address_counter.data_buf_addr_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
+        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ),
         .D(p_0_in__0[0]),
         .Q(\data_buf_address_counter.data_buf_addr_cnt_r_reg [0]),
         .R(app_wdf_end_r1_reg_0));
   (* OPT_MODIFIED = "REMAP" *) 
   LUT6 #(
     .INIT(64'hFFFFFF7F00000000)) 
-    \data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_gate_276_LOPT_REMAP 
+    \data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_gate_410_LOPT_REMAP 
        (.I0(pwropt_2),
         .I1(pwropt_1),
         .I2(pwropt),
         .I3(\data_buf_address_counter.data_buf_addr_cnt_r_reg [0]),
         .I4(app_wdf_end_r1_reg_0),
         .I5(wr_accepted),
-        .O(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ));
+        .O(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \data_buf_address_counter.data_buf_addr_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
+        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ),
         .D(p_0_in__0[1]),
         .Q(\data_buf_address_counter.data_buf_addr_cnt_r_reg [1]),
         .R(app_wdf_end_r1_reg_0));
@@ -106771,7 +105199,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \data_buf_address_counter.data_buf_addr_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
+        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ),
         .D(p_0_in__0[2]),
         .Q(\data_buf_address_counter.data_buf_addr_cnt_r_reg [2]),
         .R(app_wdf_end_r1_reg_0));
@@ -106781,7 +105209,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \data_buf_address_counter.data_buf_addr_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_54 ),
+        .CE(\data_buf_address_counter.data_buf_addr_cnt_r_reg[0]_CE_cooolgate_en_sig_58 ),
         .D(p_0_in__0[3]),
         .Q(\data_buf_address_counter.data_buf_addr_cnt_r_reg [3]),
         .R(app_wdf_end_r1_reg_0));
@@ -106955,6 +105383,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .D(wdf_rdy_ns),
         .Q(app_wdf_rdy),
         .R(\<const0> ));
+  (* \PinAttr:I3:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair575" *) 
   LUT4 #(
     .INIT(16'hFF80)) 
@@ -106991,7 +105420,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I3(app_wdf_wren_r1),
         .I4(\occupied_counter.occ_cnt_reg_n_0_[13] ),
         .O(\occupied_counter.occ_cnt[12]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "181" *) 
   (* SOFT_HLUTNM = "soft_lutpair576" *) 
   LUT5 #(
     .INIT(32'hBFFF8000)) 
@@ -107037,6 +105465,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I3(app_wdf_wren_r1),
         .I4(\occupied_counter.occ_cnt_reg_n_0_[2] ),
         .O(\occupied_counter.occ_cnt[1]_i_1_n_0 ));
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair575" *) 
   LUT5 #(
     .INIT(32'hBFFF8000)) 
@@ -107278,14 +105707,14 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .DOC(wr_data_pntr[3:2]),
         .WCLK(CLK),
         .WE(\write_data_control.wb_wr_data_addr_r_reg[2]_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair582" *) 
   LUT1 #(
     .INIT(2'h1)) 
     \read_data_indx.rd_data_indx_r[0]_i_1 
        (.I0(Q[0]),
         .O(p_0_in__1[0]));
-  (* \PinAttr:I0:HOLD_DETOUR  = "193" *) 
+  (* \PinAttr:I0:HOLD_DETOUR  = "191" *) 
   (* SOFT_HLUTNM = "soft_lutpair582" *) 
   LUT2 #(
     .INIT(4'h6)) 
@@ -107358,7 +105787,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I2(p_0_in),
         .I3(\wr_req_counter.wr_req_cnt_r_reg[0]_0 ),
         .O(\wr_req_counter.wr_req_cnt_r[1]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "184" *) 
   LUT5 #(
     .INIT(32'hA6AAAA9A)) 
     \wr_req_counter.wr_req_cnt_r[2]_i_1 
@@ -107388,7 +105816,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I4(\wr_req_counter.wr_req_cnt_r [2]),
         .I5(\wr_req_counter.wr_req_cnt_r[4]_i_2_n_0 ),
         .O(\wr_req_counter.wr_req_cnt_r[4]_i_1_n_0 ));
-  (* \PinAttr:I0:HOLD_DETOUR  = "184" *) 
   LUT4 #(
     .INIT(16'hD554)) 
     \wr_req_counter.wr_req_cnt_r[4]_i_2 
@@ -107403,20 +105830,20 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \wr_req_counter.wr_req_cnt_r_reg[0] 
        (.C(CLK),
-        .CE(\wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_169 ),
+        .CE(\wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_171 ),
         .D(\wr_req_counter.wr_req_cnt_r_reg[0]_1 ),
         .Q(\wr_req_counter.wr_req_cnt_r_reg[0]_0 ),
         .R(app_wdf_end_r1_reg_0));
   LUT6 #(
     .INIT(64'h00000000fffff708)) 
-    \wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_gate_573 
+    \wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_gate_703 
        (.I0(pwropt_4),
         .I1(pwropt_1),
         .I2(pwropt_3),
         .I3(p_0_in),
         .I4(app_wdf_end_r1_reg_0),
         .I5(pwropt),
-        .O(\wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_169 ));
+        .O(\wr_req_counter.wr_req_cnt_r_reg[0]_CE_cooolgate_en_sig_171 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -107424,17 +105851,17 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \wr_req_counter.wr_req_cnt_r_reg[1] 
        (.C(CLK),
-        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ),
+        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ),
         .D(\wr_req_counter.wr_req_cnt_r[1]_i_1_n_0 ),
         .Q(\wr_req_counter.wr_req_cnt_r [1]),
         .R(app_wdf_end_r1_reg_0));
   LUT3 #(
     .INIT(8'hf9)) 
-    \wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_gate_305 
+    \wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_gate_439 
        (.I0(\wr_req_counter.wr_req_cnt_r_reg[0]_0 ),
         .I1(wr_accepted),
         .I2(app_wdf_end_r1_reg_0),
-        .O(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ));
+        .O(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -107442,7 +105869,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \wr_req_counter.wr_req_cnt_r_reg[2] 
        (.C(CLK),
-        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ),
+        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ),
         .D(\wr_req_counter.wr_req_cnt_r[2]_i_1_n_0 ),
         .Q(\wr_req_counter.wr_req_cnt_r [2]),
         .R(app_wdf_end_r1_reg_0));
@@ -107453,7 +105880,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \wr_req_counter.wr_req_cnt_r_reg[3] 
        (.C(CLK),
-        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ),
+        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ),
         .D(\wr_req_counter.wr_req_cnt_r[3]_i_1_n_0 ),
         .Q(\wr_req_counter.wr_req_cnt_r [3]),
         .R(app_wdf_end_r1_reg_0));
@@ -107464,7 +105891,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \wr_req_counter.wr_req_cnt_r_reg[4] 
        (.C(CLK),
-        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_60 ),
+        .CE(\wr_req_counter.wr_req_cnt_r_reg[1]_CE_cooolgate_en_sig_64 ),
         .D(\wr_req_counter.wr_req_cnt_r[4]_i_1_n_0 ),
         .Q(\wr_req_counter.wr_req_cnt_r [4]),
         .R(app_wdf_end_r1_reg_0));
@@ -109493,7 +107920,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .ADDRB({wr_data_addr,\<const0> }),
         .ADDRC({wr_data_addr,\<const0> }),
         .ADDRD({\write_buffer.wr_buffer_ram[0].RAM32M0_i_7_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_8_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_9_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_10_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_11_n_0 }),
-        .DIA({ZERO,ZERO}),
+        .DIA(\write_buffer.wr_buf_in_data [131:130]),
         .DIB({ZERO,ZERO}),
         .DIC(\write_buffer.wr_buf_in_data [127:126]),
         .DID({\<const0> ,\<const0> }),
@@ -109502,6 +107929,20 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .DOC(wr_buf_out_data_w[127:126]),
         .WCLK(CLK),
         .WE(wdf_rdy_ns));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[21].RAM32M0_i_1 
+       (.I0(app_wdf_mask_r1[3]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [131]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[21].RAM32M0_i_2 
+       (.I0(app_wdf_mask_r1[2]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [130]));
   LUT3 #(
     .INIT(8'hAC)) 
     \write_buffer.wr_buffer_ram[21].RAM32M0_i_5 
@@ -109517,7 +107958,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I2(app_wdf_rdy_r_copy2),
         .O(\write_buffer.wr_buf_in_data [126]));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* OPT_MODIFIED = "PROPCONST" *) 
   RAM32M #(
     .INIT_A(64'h0000000000000000),
     .INIT_B(64'h0000000000000000),
@@ -109529,17 +107969,58 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .ADDRB({wr_data_addr,\<const0> }),
         .ADDRC({wr_data_addr,\<const0> }),
         .ADDRD({\write_buffer.wr_buffer_ram[0].RAM32M0_i_7_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_8_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_9_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_10_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_11_n_0 }),
-        .DIA({ZERO,ZERO}),
-        .DIB({ZERO,ZERO}),
-        .DIC({ZERO,ZERO}),
+        .DIA(\write_buffer.wr_buf_in_data [137:136]),
+        .DIB(\write_buffer.wr_buf_in_data [135:134]),
+        .DIC(\write_buffer.wr_buf_in_data [133:132]),
         .DID({\<const0> ,\<const0> }),
         .DOA(wr_buf_out_data_w[137:136]),
         .DOB(wr_buf_out_data_w[135:134]),
         .DOC(wr_buf_out_data_w[133:132]),
         .WCLK(CLK),
         .WE(wdf_rdy_ns));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_1 
+       (.I0(app_wdf_mask_r1[9]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [137]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_2 
+       (.I0(app_wdf_mask_r1[8]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [136]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_3 
+       (.I0(app_wdf_mask_r1[7]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [135]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_4 
+       (.I0(app_wdf_mask_r1[6]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [134]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_5 
+       (.I0(app_wdf_mask_r1[5]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [133]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[22].RAM32M0_i_6 
+       (.I0(app_wdf_mask_r1[4]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [132]));
   (* BOX_TYPE = "PRIMITIVE" *) 
-  (* OPT_MODIFIED = "PROPCONST" *) 
   RAM32M #(
     .INIT_A(64'h0000000000000000),
     .INIT_B(64'h0000000000000000),
@@ -109551,15 +108032,57 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .ADDRB({wr_data_addr,\<const0> }),
         .ADDRC({wr_data_addr,\<const0> }),
         .ADDRD({\write_buffer.wr_buffer_ram[0].RAM32M0_i_7_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_8_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_9_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_10_n_0 ,\write_buffer.wr_buffer_ram[0].RAM32M0_i_11_n_0 }),
-        .DIA({ZERO,ZERO}),
-        .DIB({ZERO,ZERO}),
-        .DIC({ZERO,ZERO}),
+        .DIA(\write_buffer.wr_buf_in_data [143:142]),
+        .DIB(\write_buffer.wr_buf_in_data [141:140]),
+        .DIC(\write_buffer.wr_buf_in_data [139:138]),
         .DID({\<const0> ,\<const0> }),
         .DOA(wr_buf_out_data_w[143:142]),
         .DOB(wr_buf_out_data_w[141:140]),
         .DOC(wr_buf_out_data_w[139:138]),
         .WCLK(CLK),
         .WE(wdf_rdy_ns));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_1 
+       (.I0(app_wdf_mask_r1[15]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [143]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_2 
+       (.I0(app_wdf_mask_r1[14]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [142]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_3 
+       (.I0(app_wdf_mask_r1[13]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [141]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_4 
+       (.I0(app_wdf_mask_r1[12]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [140]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_5 
+       (.I0(app_wdf_mask_r1[11]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [139]));
+  (* OPT_MODIFIED = "RETARGET" *) 
+  LUT2 #(
+    .INIT(4'hE)) 
+    \write_buffer.wr_buffer_ram[23].RAM32M0_i_6 
+       (.I0(app_wdf_mask_r1[10]),
+        .I1(app_wdf_rdy_r_copy2),
+        .O(\write_buffer.wr_buf_in_data [138]));
   (* BOX_TYPE = "PRIMITIVE" *) 
   RAM32M #(
     .INIT_A(64'h0000000000000000),
@@ -109917,6 +108440,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I1(app_wdf_data_r1[45]),
         .I2(app_wdf_rdy_r_copy2),
         .O(\write_buffer.wr_buf_in_data [45]));
+  (* \PinAttr:I1:HOLD_DETOUR  = "165" *) 
   LUT3 #(
     .INIT(8'hAC)) 
     \write_buffer.wr_buffer_ram[7].RAM32M0_i_4 
@@ -110072,23 +108596,14 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I2(app_wdf_wren_r1),
         .I3(\write_data_control.wb_wr_data_addr0_r ),
         .O(\write_data_control.wb_wr_data_addr0_ns02_in ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \write_data_control.wb_wr_data_addr0_r_reg 
        (.C(CLK),
-        .CE(\write_data_control.wb_wr_data_addr0_r_reg_CE_cooolgate_en_sig_284 ),
+        .CE(\<const1> ),
         .D(\write_data_control.wb_wr_data_addr0_ns02_in ),
         .Q(\write_data_control.wb_wr_data_addr0_r ),
         .R(app_wdf_end_r1_reg_0));
-  LUT2 #(
-    .INIT(4'he)) 
-    \write_data_control.wb_wr_data_addr0_r_reg_CE_cooolgate_en_gate_797 
-       (.I0(app_wdf_wren_r1),
-        .I1(app_wdf_end_r1_reg_0),
-        .O(\write_data_control.wb_wr_data_addr0_r_reg_CE_cooolgate_en_sig_284 ));
   LUT5 #(
     .INIT(32'h80FF8000)) 
     \write_data_control.wb_wr_data_addr_r[4]_i_1 
@@ -110141,7 +108656,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
        (.I0(\write_data_control.wr_data_indx_r_reg [0]),
         .I1(\write_data_control.wr_data_indx_r_reg [1]),
         .O(p_0_in__0__0[1]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair578" *) 
   LUT3 #(
     .INIT(8'h78)) 
@@ -110150,7 +108664,6 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I1(\write_data_control.wr_data_indx_r_reg [1]),
         .I2(\write_data_control.wr_data_indx_r_reg [2]),
         .O(p_0_in__0__0[2]));
-  (* \PinAttr:I2:HOLD_DETOUR  = "192" *) 
   (* SOFT_HLUTNM = "soft_lutpair578" *) 
   LUT4 #(
     .INIT(16'h7F80)) 
@@ -110160,39 +108673,43 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
         .I2(\write_data_control.wr_data_indx_r_reg [2]),
         .I3(\write_data_control.wr_data_indx_r_reg [3]),
         .O(p_0_in__0__0[3]));
+  (* IS_CLOCK_GATED *) 
+  (* POWER_OPTED_CE = "CE=AUG" *) 
   FDSE #(
     .INIT(1'b1)) 
     \write_data_control.wr_data_indx_r_reg[0] 
        (.C(CLK),
-        .CE(\write_data_control.wr_data_addr_le__2 ),
+        .CE(\write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ),
         .D(p_0_in__0__0[0]),
         .Q(\write_data_control.wr_data_indx_r_reg [0]),
         .S(app_wdf_end_r1_reg_0));
+  (* OPT_MODIFIED = "REMAP" *) 
+  LUT5 #(
+    .INIT(32'hFF8F0000)) 
+    \write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_gate_390_LOPT_REMAP 
+       (.I0(\write_data_control.wr_data_indx_r_reg [1]),
+        .I1(\write_data_control.wr_data_indx_r_reg [0]),
+        .I2(pwropt),
+        .I3(app_wdf_end_r1_reg_0),
+        .I4(\write_data_control.wr_data_addr_le__2 ),
+        .O(\write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \write_data_control.wr_data_indx_r_reg[1] 
        (.C(CLK),
-        .CE(\write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_sig_67 ),
+        .CE(\write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ),
         .D(p_0_in__0__0[1]),
         .Q(\write_data_control.wr_data_indx_r_reg [1]),
         .R(app_wdf_end_r1_reg_0));
-  (* OPT_MODIFIED = "REMAP" *) 
-  LUT3 #(
-    .INIT(8'hE0)) 
-    \write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_gate_330_LOPT_REMAP 
-       (.I0(\write_data_control.wr_data_indx_r_reg [0]),
-        .I1(app_wdf_end_r1_reg_0),
-        .I2(\write_data_control.wr_data_addr_le__2 ),
-        .O(\write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_sig_67 ));
   (* IS_CLOCK_GATED *) 
   (* POWER_OPTED_CE = "CE=AUG" *) 
   FDRE #(
     .INIT(1'b0)) 
     \write_data_control.wr_data_indx_r_reg[2] 
        (.C(CLK),
-        .CE(\write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_sig_67 ),
+        .CE(\write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ),
         .D(p_0_in__0__0[2]),
         .Q(\write_data_control.wr_data_indx_r_reg [2]),
         .R(app_wdf_end_r1_reg_0));
@@ -110202,7 +108719,7 @@ module mig_7series_0mig_7series_v4_2_ui_wr_data
     .INIT(1'b0)) 
     \write_data_control.wr_data_indx_r_reg[3] 
        (.C(CLK),
-        .CE(\write_data_control.wr_data_indx_r_reg[1]_CE_cooolgate_en_sig_67 ),
+        .CE(\write_data_control.wr_data_indx_r_reg[0]_CE_cooolgate_en_sig_50 ),
         .D(p_0_in__0__0[3]),
         .Q(\write_data_control.wr_data_indx_r_reg [3]),
         .R(app_wdf_end_r1_reg_0));
@@ -110236,21 +108753,18 @@ module sseg_cs_generator
   wire chip_select_reg_i_3_n_0;
   wire chip_select_reg_i_4_n_0;
   wire chip_select_reg_i_5_n_0;
-  wire chip_select_reg_reg_CE_cooolgate_en_sig_121;
+  wire chip_select_reg_reg_CE_cooolgate_en_sig_123;
   wire clk;
   wire [19:0]clkcnt_reg;
   wire \clkcnt_reg[0]_i_1_n_0 ;
   wire \clkcnt_reg[19]_i_2_n_0 ;
   wire \clkcnt_reg[19]_i_3_n_0 ;
-  wire \clkcnt_reg_reg[12]_CE_cooolgate_en_sig_122 ;
-  wire \clkcnt_reg_reg[16]_CE_cooolgate_en_sig_172 ;
-  wire \clkcnt_reg_reg[2]_CE_cooolgate_en_sig_150 ;
-  wire \clkcnt_reg_reg[3]_CE_cooolgate_en_sig_136 ;
-  wire \clkcnt_reg_reg[4]_CE_cooolgate_en_sig_129 ;
-  wire \clkcnt_reg_reg[6]_CE_cooolgate_en_sig_173 ;
-  wire \clkcnt_reg_reg[7]_CE_cooolgate_en_sig_137 ;
-  wire \clkcnt_reg_reg[8]_CE_cooolgate_en_sig_130 ;
-  wire \clkcnt_reg_reg[9]_CE_cooolgate_en_sig_143 ;
+  wire \clkcnt_reg_reg[12]_CE_cooolgate_en_sig_124 ;
+  wire \clkcnt_reg_reg[2]_CE_cooolgate_en_sig_152 ;
+  wire \clkcnt_reg_reg[3]_CE_cooolgate_en_sig_138 ;
+  wire \clkcnt_reg_reg[4]_CE_cooolgate_en_sig_131 ;
+  wire \clkcnt_reg_reg[7]_CE_cooolgate_en_sig_139 ;
+  wire \clkcnt_reg_reg[8]_CE_cooolgate_en_sig_132 ;
   wire [19:1]data0;
   wire plusOp_carry__0_n_0;
   wire plusOp_carry__1_n_0;
@@ -110315,20 +108829,20 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     chip_select_reg_reg
        (.C(clk),
-        .CE(chip_select_reg_reg_CE_cooolgate_en_sig_121),
+        .CE(chip_select_reg_reg_CE_cooolgate_en_sig_123),
         .D(chip_select_reg_i_1_n_0),
         .Q(sseg_cs_out_OBUF),
         .R(\<const0> ));
   LUT6 #(
     .INIT(64'h0000000000000010)) 
-    chip_select_reg_reg_CE_cooolgate_en_gate_491
+    chip_select_reg_reg_CE_cooolgate_en_gate_621
        (.I0(clkcnt_reg[4]),
         .I1(\clkcnt_reg[19]_i_2_n_0 ),
         .I2(clkcnt_reg[16]),
         .I3(clkcnt_reg[11]),
         .I4(chip_select_reg_i_4_n_0),
         .I5(chip_select_reg_i_3_n_0),
-        .O(chip_select_reg_reg_CE_cooolgate_en_sig_121));
+        .O(chip_select_reg_reg_CE_cooolgate_en_sig_123));
   LUT1 #(
     .INIT(2'h1)) 
     \clkcnt_reg[0]_i_1 
@@ -110393,20 +108907,20 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[12] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[12]_CE_cooolgate_en_sig_122 ),
+        .CE(\clkcnt_reg_reg[12]_CE_cooolgate_en_sig_124 ),
         .D(data0[12]),
         .Q(clkcnt_reg[12]),
         .R(chip_select_reg));
   LUT6 #(
     .INIT(64'h8000000000000000)) 
-    \clkcnt_reg_reg[12]_CE_cooolgate_en_gate_493 
+    \clkcnt_reg_reg[12]_CE_cooolgate_en_gate_623 
        (.I0(plusOp_carry_n_0),
         .I1(clkcnt_reg[8]),
         .I2(clkcnt_reg[7]),
         .I3(clkcnt_reg[6]),
         .I4(clkcnt_reg[5]),
         .I5(clkcnt_reg[11]),
-        .O(\clkcnt_reg_reg[12]_CE_cooolgate_en_sig_122 ));
+        .O(\clkcnt_reg_reg[12]_CE_cooolgate_en_sig_124 ));
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[13] 
@@ -110431,25 +108945,14 @@ module sseg_cs_generator
         .D(data0[15]),
         .Q(clkcnt_reg[15]),
         .R(chip_select_reg));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[16] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[16]_CE_cooolgate_en_sig_172 ),
+        .CE(\<const1> ),
         .D(data0[16]),
         .Q(clkcnt_reg[16]),
         .R(chip_select_reg));
-  LUT4 #(
-    .INIT(16'hf111)) 
-    \clkcnt_reg_reg[16]_CE_cooolgate_en_gate_579 
-       (.I0(chip_select_reg_i_4_n_0),
-        .I1(chip_select_reg_i_3_n_0),
-        .I2(clkcnt_reg[15]),
-        .I3(clkcnt_reg[12]),
-        .O(\clkcnt_reg_reg[16]_CE_cooolgate_en_sig_172 ));
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[17] 
@@ -110489,16 +108992,16 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[2] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[2]_CE_cooolgate_en_sig_150 ),
+        .CE(\clkcnt_reg_reg[2]_CE_cooolgate_en_sig_152 ),
         .D(data0[2]),
         .Q(clkcnt_reg[2]),
         .R(chip_select_reg));
   LUT2 #(
     .INIT(4'h8)) 
-    \clkcnt_reg_reg[2]_CE_cooolgate_en_gate_547 
+    \clkcnt_reg_reg[2]_CE_cooolgate_en_gate_677 
        (.I0(clkcnt_reg[1]),
         .I1(clkcnt_reg[0]),
-        .O(\clkcnt_reg_reg[2]_CE_cooolgate_en_sig_150 ));
+        .O(\clkcnt_reg_reg[2]_CE_cooolgate_en_sig_152 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -110506,17 +109009,17 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[3] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[3]_CE_cooolgate_en_sig_136 ),
+        .CE(\clkcnt_reg_reg[3]_CE_cooolgate_en_sig_138 ),
         .D(data0[3]),
         .Q(clkcnt_reg[3]),
         .R(chip_select_reg));
   LUT3 #(
     .INIT(8'h80)) 
-    \clkcnt_reg_reg[3]_CE_cooolgate_en_gate_521 
+    \clkcnt_reg_reg[3]_CE_cooolgate_en_gate_651 
        (.I0(clkcnt_reg[2]),
         .I1(clkcnt_reg[1]),
         .I2(clkcnt_reg[0]),
-        .O(\clkcnt_reg_reg[3]_CE_cooolgate_en_sig_136 ));
+        .O(\clkcnt_reg_reg[3]_CE_cooolgate_en_sig_138 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -110524,18 +109027,18 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[4] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[4]_CE_cooolgate_en_sig_129 ),
+        .CE(\clkcnt_reg_reg[4]_CE_cooolgate_en_sig_131 ),
         .D(data0[4]),
         .Q(clkcnt_reg[4]),
         .R(chip_select_reg));
   LUT4 #(
     .INIT(16'h8000)) 
-    \clkcnt_reg_reg[4]_CE_cooolgate_en_gate_507 
+    \clkcnt_reg_reg[4]_CE_cooolgate_en_gate_637 
        (.I0(clkcnt_reg[3]),
         .I1(clkcnt_reg[2]),
         .I2(clkcnt_reg[1]),
         .I3(clkcnt_reg[0]),
-        .O(\clkcnt_reg_reg[4]_CE_cooolgate_en_sig_129 ));
+        .O(\clkcnt_reg_reg[4]_CE_cooolgate_en_sig_131 ));
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[5] 
@@ -110544,25 +109047,14 @@ module sseg_cs_generator
         .D(data0[5]),
         .Q(clkcnt_reg[5]),
         .R(chip_select_reg));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[6] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[6]_CE_cooolgate_en_sig_173 ),
+        .CE(\<const1> ),
         .D(data0[6]),
         .Q(clkcnt_reg[6]),
         .R(chip_select_reg));
-  LUT4 #(
-    .INIT(16'h8f88)) 
-    \clkcnt_reg_reg[6]_CE_cooolgate_en_gate_581 
-       (.I0(plusOp_carry_n_0),
-        .I1(clkcnt_reg[5]),
-        .I2(\clkcnt_reg[19]_i_2_n_0 ),
-        .I3(clkcnt_reg[16]),
-        .O(\clkcnt_reg_reg[6]_CE_cooolgate_en_sig_173 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -110570,17 +109062,17 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[7] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[7]_CE_cooolgate_en_sig_137 ),
+        .CE(\clkcnt_reg_reg[7]_CE_cooolgate_en_sig_139 ),
         .D(data0[7]),
         .Q(clkcnt_reg[7]),
         .R(chip_select_reg));
   LUT3 #(
     .INIT(8'h80)) 
-    \clkcnt_reg_reg[7]_CE_cooolgate_en_gate_523 
+    \clkcnt_reg_reg[7]_CE_cooolgate_en_gate_653 
        (.I0(plusOp_carry_n_0),
         .I1(clkcnt_reg[6]),
         .I2(clkcnt_reg[5]),
-        .O(\clkcnt_reg_reg[7]_CE_cooolgate_en_sig_137 ));
+        .O(\clkcnt_reg_reg[7]_CE_cooolgate_en_sig_139 ));
   (* IS_CLOCK_GATED *) 
   (* IS_PWROPT_IDT_ONLY *) 
   (* POWER_OPTED_CE = "CE=NEW" *) 
@@ -110588,39 +109080,26 @@ module sseg_cs_generator
     .INIT(1'b0)) 
     \clkcnt_reg_reg[8] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[8]_CE_cooolgate_en_sig_130 ),
+        .CE(\clkcnt_reg_reg[8]_CE_cooolgate_en_sig_132 ),
         .D(data0[8]),
         .Q(clkcnt_reg[8]),
         .R(chip_select_reg));
   LUT4 #(
     .INIT(16'h8000)) 
-    \clkcnt_reg_reg[8]_CE_cooolgate_en_gate_509 
+    \clkcnt_reg_reg[8]_CE_cooolgate_en_gate_639 
        (.I0(plusOp_carry_n_0),
         .I1(clkcnt_reg[7]),
         .I2(clkcnt_reg[6]),
         .I3(clkcnt_reg[5]),
-        .O(\clkcnt_reg_reg[8]_CE_cooolgate_en_sig_130 ));
-  (* IS_CLOCK_GATED *) 
-  (* IS_PWROPT_IDT_ONLY *) 
-  (* POWER_OPTED_CE = "CE=NEW" *) 
+        .O(\clkcnt_reg_reg[8]_CE_cooolgate_en_sig_132 ));
   FDRE #(
     .INIT(1'b0)) 
     \clkcnt_reg_reg[9] 
        (.C(clk),
-        .CE(\clkcnt_reg_reg[9]_CE_cooolgate_en_sig_143 ),
+        .CE(\<const1> ),
         .D(data0[9]),
         .Q(clkcnt_reg[9]),
         .R(chip_select_reg));
-  LUT6 #(
-    .INIT(64'hff04040404040404)) 
-    \clkcnt_reg_reg[9]_CE_cooolgate_en_gate_535 
-       (.I0(\clkcnt_reg[19]_i_2_n_0 ),
-        .I1(clkcnt_reg[16]),
-        .I2(chip_select_reg_i_3_n_0),
-        .I3(plusOp_carry_n_0),
-        .I4(clkcnt_reg[7]),
-        .I5(clkcnt_reg[5]),
-        .O(\clkcnt_reg_reg[9]_CE_cooolgate_en_sig_143 ));
   (* ADDER_THRESHOLD = "35" *) 
   (* OPT_MODIFIED = "SWEEP" *) 
   CARRY4 plusOp_carry
@@ -110667,7 +109146,7 @@ module sseg_cs_generator
         .S({\<const0> ,clkcnt_reg[19:17]}));
 endmodule
 
-(* ECO_CHECKSUM = "a44bde69" *) (* POWER_OPT_BRAM_CDC = "0" *) (* POWER_OPT_BRAM_SR_ADDR = "0" *) 
+(* ECO_CHECKSUM = "654845d4" *) (* POWER_OPT_BRAM_CDC = "0" *) (* POWER_OPT_BRAM_SR_ADDR = "0" *) 
 (* POWER_OPT_LOOPED_NET_PERCENTAGE = "0" *) 
 (* STRUCTURAL_NETLIST = "yes" *)
 module top
@@ -110767,6 +109246,7 @@ module top
   wire ui_clk;
   wire ui_clk_sync_rst;
   wire [27:0]NLW_ddr3_mig_app_addr_UNCONNECTED;
+  wire [15:0]NLW_ddr3_mig_app_wdf_mask_UNCONNECTED;
 
   GND GND
        (.G(\<const0> ));
@@ -110802,6 +109282,7 @@ module top
         .app_rd_data_valid(app_rd_data_valid),
         .app_rdy(app_rdy),
         .app_wdf_data({app_wdf_data,led_OBUF}),
+        .app_wdf_mask({\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,\<const1> ,NLW_ddr3_mig_app_wdf_mask_UNCONNECTED[1:0]}),
         .app_wdf_rdy(app_wdf_rdy),
         .app_wdf_wren(app_wdf_wren),
         .clk_ref_i(clk_200_o),
