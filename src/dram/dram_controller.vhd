@@ -34,6 +34,7 @@ ARCHITECTURE arch OF dram_controller IS
 
     SIGNAL clk_cnt_reg, clk_cnt_next : unsigned(31 DOWNTO 0) := (OTHERS => '0');
     SIGNAL data_reg, data_next : unsigned(127 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL address_reg, address_next : unsigned(7 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_wdf_wren_reg, app_wdf_wren_next : STD_LOGIC := '0';
     SIGNAL app_addr_reg, app_addr_next : STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_cmd_reg, app_cmd_next : STD_LOGIC_VECTOR(2 DOWNTO 0) := (OTHERS => '0');
@@ -66,9 +67,11 @@ BEGIN
                 data_read_from_memory_reg <= (OTHERS => '0');
                 data_reg <= (OTHERS => '0');
                 clk_cnt_reg <= (OTHERS => '0');
+                address_reg <= (OTHERS => '0');
             ELSE
                 state_reg <= state_next;
                 app_en_reg <= app_en_next;
+                address_reg <= address_next;
                 app_wdf_wren_reg <= app_wdf_wren_next;
                 app_addr_reg <= app_addr_next;
                 app_cmd_reg <= app_cmd_next;
@@ -80,7 +83,7 @@ BEGIN
         END IF;
     END PROCESS;
 
-    PROCESS (app_rdy, state_reg, clk_cnt_reg, data_reg, init_calib_complete, app_rd_data, app_wdf_rdy, app_en_reg, app_rd_data_valid, app_wdf_data_reg, app_wdf_wren_reg, app_cmd_reg, app_addr_reg, data_read_from_memory_reg)
+    PROCESS (app_rdy, state_reg, address_reg, clk_cnt_reg, data_reg, init_calib_complete, app_rd_data, app_wdf_rdy, app_en_reg, app_rd_data_valid, app_wdf_data_reg, app_wdf_wren_reg, app_cmd_reg, app_addr_reg, data_read_from_memory_reg)
     BEGIN
         state_next <= state_reg;
         app_en_next <= app_en_reg;
@@ -91,12 +94,13 @@ BEGIN
         data_read_from_memory_next <= data_read_from_memory_reg;
         clk_cnt_next <= clk_cnt_reg;
         data_next <= data_reg;
+        address_next <= address_reg;
 
         CASE state_reg IS
 
             WHEN IDLE =>
-                app_addr_next <= (17 => '1', OTHERS => '0');
                 IF (init_calib_complete = '1') THEN
+                    app_addr_next(18 downto 11) <= STD_LOGIC_VECTOR(address_reg);
                     data_read_from_memory_next <= (OTHERS => '0');
                     state_next <= WRITE;
                 END IF;
@@ -145,6 +149,7 @@ BEGIN
                 IF clk_cnt_reg = 0 THEN
                     clk_cnt_next <= to_unsigned(20_000_000, clk_cnt_reg'length);
                     data_next <= data_reg + 1;
+                    address_next <= address_reg + 1;
                     state_next <= IDLE;
                 END IF;
         END CASE;
