@@ -8,7 +8,7 @@ read_vhdl -library work [ glob ../src/sseg/*.vhd]
 read_vhdl -library work [ glob ../src/debounce/*.vhd]
 read_vhdl -library work [ glob ../src/dram/*.vhd]
 read_xdc ../constraints/Arty-A7-100-Master.xdc       
-read_ip ../ip/clk_wiz_test/clk_wiz_test.xci    
+read_ip ../ip/clk_wiz_test_4/clk_wiz_test.xci    
 read_ip ../ip/mig_7series_0/mig_7series_0.xci
 
 synth_design -top top -part XC7A100TCSG324-1 -flatten rebuilt 

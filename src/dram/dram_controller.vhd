@@ -29,7 +29,7 @@ ARCHITECTURE arch OF dram_controller IS
     TYPE state_type IS (IDLE, WRITE, WRITE_DONE, READ, READ_DONE, PARK);
     SIGNAL state_reg, state_next : state_type := IDLE;
 
-    SIGNAL clk_cnt_reg, clk_cnt_next : unsigned(31 DOWNTO 0) := (OTHERS => '0');
+    SIGNAL clk_cnt_reg, clk_cnt_next : INTEGER RANGE 0 TO 20_000_000 := 0;
     SIGNAL data_reg, data_next : unsigned(127 DOWNTO 0) := (OTHERS => '0');
     SIGNAL app_wdf_wren_reg, app_wdf_wren_next : STD_LOGIC := '0';
     SIGNAL app_addr_reg, app_addr_next : STD_LOGIC_VECTOR(27 DOWNTO 0) := (OTHERS => '0');
@@ -38,6 +38,8 @@ ARCHITECTURE arch OF dram_controller IS
     SIGNAL app_en_reg, app_en_next : STD_LOGIC := '0';
     SIGNAL data_read_from_memory_reg, data_read_from_memory_next : STD_LOGIC_VECTOR(127 DOWNTO 0) := (OTHERS => '0');
 
+    CONSTANT DRAM_READ_CMD : STD_LOGIC_VECTOR(2 DOWNTO 0) := "001";
+    CONSTANT DRAM_WRITE_CMD : STD_LOGIC_VECTOR(2 DOWNTO 0) := "000";
 BEGIN
 
     app_en <= app_en_reg;
@@ -46,7 +48,7 @@ BEGIN
     app_cmd <= app_cmd_reg;
     app_wdf_data <= app_wdf_data_reg;
     result <= data_read_from_memory_reg(7 DOWNTO 0);
-    debug <= std_logic_vector(app_wdf_data_reg(3 DOWNTO 0));
+    debug <= STD_LOGIC_VECTOR(app_wdf_data_reg(3 DOWNTO 0));
 
     app_wdf_mask <= X"FFFC";
 
@@ -62,7 +64,7 @@ BEGIN
                 app_wdf_data_reg <= (OTHERS => '0');
                 data_read_from_memory_reg <= (OTHERS => '0');
                 data_reg <= (OTHERS => '0');
-                clk_cnt_reg <= (OTHERS => '0');
+                clk_cnt_reg <= 0;
             ELSE
                 state_reg <= state_next;
                 app_en_reg <= app_en_next;
@@ -94,7 +96,7 @@ BEGIN
             WHEN IDLE =>
                 app_addr_next <= (17 => '1', OTHERS => '0');
                 IF (init_calib_complete = '1') THEN
-                    clk_cnt_next <= to_unsigned(20_000_000, clk_cnt_reg'length);
+                    clk_cnt_next <= 20_000_000;
                     data_next <= data_reg + 1;
                     data_read_from_memory_next <= (OTHERS => '0');
                     state_next <= WRITE;
@@ -105,7 +107,7 @@ BEGIN
                     state_next <= WRITE_DONE;
                     app_en_next <= '1';
                     app_wdf_wren_next <= '1';
-                    app_cmd_next <= "000";
+                    app_cmd_next <= DRAM_WRITE_CMD;
                     app_wdf_data_next <= STD_LOGIC_VECTOR(data_reg);
                 END IF;
 
@@ -125,7 +127,7 @@ BEGIN
             WHEN READ =>
                 IF app_rdy = '1' THEN
                     app_en_next <= '1';
-                    app_cmd_next <= "001";
+                    app_cmd_next <= DRAM_READ_CMD;
                     state_next <= READ_DONE;
                 END IF;
 

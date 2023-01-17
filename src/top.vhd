@@ -24,8 +24,6 @@ ENTITY top IS
         ddr3_dm : OUT STD_LOGIC_VECTOR (1 DOWNTO 0);
         ddr3_odt : OUT STD_LOGIC_VECTOR (0 TO 0);
         sseg_cs_out : OUT STD_LOGIC;
-        ck_a10_power : OUT STD_LOGIC;
-        ck_a11_power : OUT STD_LOGIC;
         sseg : OUT STD_LOGIC_VECTOR(6 DOWNTO 0)
     );
 END top;
@@ -127,8 +125,7 @@ ARCHITECTURE Behavioral OF top IS
 BEGIN
 
     sys_rst <= '1';
-    ck_a10_power <= '1';
-    ck_a11_power <= '1';
+    
     sseg <= sseg_o;
     sseg_cs_out <= sseg_cs_o;
 
